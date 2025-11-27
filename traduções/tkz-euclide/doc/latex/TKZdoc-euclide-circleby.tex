@@ -1,0 +1,144 @@
+\subsection{Definição de círculo por transformação; \tkzcname{tkzDefCircleBy} }
+Estas transformações são:
+
+\begin{itemize}
+   \item translação;
+   \item homotetia;
+   \item reflexão ortogonal ou simetria;
+   \item simetria central;
+   \item projeção ortogonal;
+   \item rotação (graus);
+   \item inversão.
+\end{itemize}
+
+A escolha das transformações é feita através das opções. A macro é \tkzcname{tkzDefCircleBy} e a outra para a transformação de uma lista de pontos \tkzcname{tkzDefCirclesBy}. Por exemplo, escreveremos:
+\begin{tkzltxexample}[]
+\tkzDefCircleBy[translation= from A to A'](O,M)
+\end{tkzltxexample}
+$O$ é o centro e $M$ é um ponto no círculo.
+A imagem é um círculo. O novo centro é |tkzFirstPointResult| e |tkzSecondPointResult| é um ponto no novo círculo. Você pode obter os resultados com a macro \tkzcname{tkzGetPoints}.
+\medskip
+\begin{NewMacroBox}{tkzDefCircleBy}{\oarg{opções locais}\parg{pt1,pt2}}%
+O argumento é um par de pontos. O resultado é um par de pontos. Se você deseja manter esses pontos, então a macro \tkzcname{tkzGetPoints\{O'\}\{M'\}} permite atribuir o nome \tkzname{O'} ao centro e \tkzname{M'} ao ponto no círculo.
+
+\begin{tabular}{lll}%
+\toprule
+argumentos &  definição & exemplos               \\
+\midrule
+\TAline{pt1,pt2}   {pontos existentes}   {$(O,M)$}
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lll}%
+opções     &     & exemplos                         \\
+\midrule
+\TOline{translation}{= from \#1 to \#2}{[translation=from A to B](O,M)}
+\TOline{homothety}  {= center \#1 ratio \#2}{[homothety=center A ratio .5](O,M)}
+\TOline{reflection} {= over \#1--\#2}{[reflection=over A--B](O,M)}
+\TOline{symmetry }  {= center \#1}{[symmetry=center A](O,M)}
+\TOline{projection }{= onto \#1--\#2}{[projection=onto A--B](O,M)}
+\TOline{rotation }  {= center \#1 angle \#2}{[rotation=center O angle 30](O,M)}
+\TOline{inversion}{= center \#1 through \#2}{[inversion =center O through A](O,M)}
+% \TOline{inversion negative}{= center \#1 through \#2}{[inversion negative =center O through A](O,M)}
+\bottomrule
+\end{tabular}
+
+\medskip
+\emph{A imagem é apenas definida e não desenhada.}
+\end{NewMacroBox}
+
+\subsubsection{\tkzname{Translation}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[>=latex]
+ \tkzDefPoint(0,0){A}  \tkzDefPoint(3,1){B}
+ \tkzDefPoint(3,2){C}   \tkzDefPoint(4,3){D}
+ \tkzDefCircleBy[translation= from B to A](C,D)
+ \tkzGetPoints{C'}{D'}
+ \tkzDrawPoints[teal](A,B,C,D,C',D')
+ \tkzDrawSegments[orange,->](A,B)
+ \tkzDrawCircles(C,D C',D')
+ \tkzLabelPoints[color=teal](A,B,C,C')
+ \tkzLabelPoints[color=teal,above](D,D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Reflection} (simetria ortogonal)}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[>=latex]
+ \tkzDefPoint(0,0){A}  \tkzDefPoint(3,1){B}
+ \tkzDefPoint(3,2){C}   \tkzDefPoint(4,3){D}
+ \tkzDefCircleBy[reflection = over A--B](C,D)
+ \tkzGetPoints{C'}{D'}
+ \tkzDrawPoints[teal](A,B,C,D,C',D')
+ \tkzDrawLine[add =0 and 1][orange](A,B)
+ \tkzDrawCircles(C,D C',D')
+ \tkzLabelPoints[color=teal](A,B,C,C')
+ \tkzLabelPoints[color=teal,right](D,D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Homothety}}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2]
+ \tkzDefPoint(0,0){A}   \tkzDefPoint(3,1){B}
+ \tkzDefPoint(3,2){C}   \tkzDefPoint(4,3){D}
+ \tkzDefCircleBy[homothety=center A ratio .5](C,D)
+ \tkzGetPoints{C'}{D'}
+ \tkzDrawPoints[teal](A,C,D,C',D')
+ \tkzDrawCircles(C,D C',D')
+ \tkzLabelPoints[color=teal](A,C,C')
+ \tkzLabelPoints[color=teal,right](D,D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Symmetry}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1]
+ \tkzDefPoint(3,1){B}
+ \tkzDefPoint(3,2){C}   \tkzDefPoint(4,3){D}
+ \tkzDefCircleBy[symmetry=center B](C,D)
+ \tkzGetPoints{C'}{D'}
+ \tkzDrawPoints[teal](B,C,D,C',D')
+ \tkzDrawLines[orange](C,C' D,D')
+ \tkzDrawCircles(C,D C',D')
+ \tkzLabelPoints[color=teal](C,C')
+ \tkzLabelPoints[color=teal,above](D)
+ \tkzLabelPoints[color=teal,below](D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Rotation}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=0.5]
+ \tkzDefPoint(3,-1){B}
+ \tkzDefPoint(3,2){C}   \tkzDefPoint(4,3){D}
+ \tkzDefCircleBy[rotation=center B angle 90](C,D)
+ \tkzGetPoints{C'}{D'}
+ \tkzDrawPoints[teal](B,C,D,C',D')
+ \tkzLabelPoints[color=teal](B,C,D,C',D')
+ \tkzDrawCircles(C,D C',D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Inversion}}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.5]
+\tkzSetUpPoint[size=3,color=red,fill=red!20]
+\tkzSetUpStyle[color=purple,ultra thin]{st1}
+\tkzSetUpStyle[color=cyan,ultra thin]{st2}
+\tkzDefPoint(2,0){A} \tkzDefPoint(3,0){B}
+\tkzDefPoint(3,2){C} \tkzDefPoint(4,2){D}
+\tkzDefCircleBy[inversion = center B through A](C,D)
+\tkzGetPoints{C'}{D'}
+\tkzDrawPoints(A,B,C,D,C',D')
+\tkzLabelPoints(A,B,C,D,C',D')
+\tkzDrawCircles(B,A)
+\tkzDrawCircles[st1](C,D)
+\tkzDrawCircles[st2](C',D')
+\end{tikzpicture}
+\end{tkzexample}
+
+\endinput

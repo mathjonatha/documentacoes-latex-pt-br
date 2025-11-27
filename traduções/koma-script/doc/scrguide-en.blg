@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: scrguide-en.aux
+The style file: babalpha-fl.bst
+A level-1 auxiliary file: preface-en.aux
+A level-1 auxiliary file: introduction-en.aux
+A level-1 auxiliary file: authorpart-en.aux
+A level-1 auxiliary file: typearea-en.aux
+A level-1 auxiliary file: scrbookreportarticle-en.aux
+A level-1 auxiliary file: scrlttr2-en.aux
+A level-1 auxiliary file: scrlayer-scrpage-en.aux
+A level-1 auxiliary file: scrdate-en.aux
+A level-1 auxiliary file: scrtime-en.aux
+A level-1 auxiliary file: scraddr-en.aux
+A level-1 auxiliary file: scrextend-en.aux
+A level-1 auxiliary file: scrjura-en.aux
+A level-1 auxiliary file: scrlogo-en.aux
+A level-1 auxiliary file: expertpart-en.aux
+A level-1 auxiliary file: scrbase-en.aux
+A level-1 auxiliary file: scrlfile-en.aux
+A level-1 auxiliary file: scrwfile-en.aux
+A level-1 auxiliary file: tocbasic-en.aux
+A level-1 auxiliary file: scrlayer-en.aux
+A level-1 auxiliary file: scrlayer-scrpage-experts-en.aux
+A level-1 auxiliary file: scrlayer-notecolumn-en.aux
+A level-1 auxiliary file: typearea-experts-en.aux
+A level-1 auxiliary file: scrbookreportarticle-experts-en.aux
+A level-1 auxiliary file: scrlttr2-experts-en.aux
+A level-1 auxiliary file: japanlco-en.aux
+Database file #1: scrguide.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+You've used 56 entries,
+            3218 wiz_defined-function locations,
+            1009 strings with 13112 characters,
+and the built_in function-call counts, 19524 in all, are:
+= -- 1699
+> -- 561
+< -- 48
++ -- 184
+- -- 159
+* -- 1938
+:= -- 2725
+add.period$ -- 115
+call.type$ -- 56
+change.case$ -- 288
+chr.to.int$ -- 51
+cite$ -- 56
+duplicate$ -- 999
+empty$ -- 2025
+format.name$ -- 405
+if$ -- 4110
+int.to.chr$ -- 6
+int.to.str$ -- 0
+missing$ -- 14
+newline$ -- 256
+num.names$ -- 162
+pop$ -- 599
+preamble$ -- 1
+purify$ -- 352
+quote$ -- 0
+skip$ -- 751
+stack$ -- 0
+substring$ -- 450
+swap$ -- 261
+text.length$ -- 48
+text.prefix$ -- 48
+top$ -- 0
+type$ -- 428
+warning$ -- 0
+while$ -- 119
+width$ -- 62
+write$ -- 548

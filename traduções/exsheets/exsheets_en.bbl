@@ -1,0 +1,386 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{tex.sx:133907}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=a80dbd10e3e9171f92e428903a43f458}{%
+           family={Assail},
+           familyi={A\bibinitperiod},
+           given={Forkrul},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{fullhash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{fullhashraw}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{bibnamehash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{authorbibnamehash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{authornamehash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{authorfullhash}{a80dbd10e3e9171f92e428903a43f458}
+      \strng{authorfullhashraw}{a80dbd10e3e9171f92e428903a43f458}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{18}
+      \field{month}{9}
+      \field{title}{How do I extract repeated functionality (\ExSheets{} workaround) to make it reusable?}
+      \field{urlday}{22}
+      \field{urlmonth}{9}
+      \field{urlyear}{2013}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://tex.stackexchange.com/q/133907/5049
+      \endverb
+      \verb{url}
+      \verb http://tex.stackexchange.com/q/133907/5049
+      \endverb
+    \endentry
+    \entry{tex.sx:131546}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=6242d1e076e52e2c6b9a6ade58dd0027}{%
+           family={Bragaglia},
+           familyi={B\bibinitperiod},
+           given={Stefano},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{fullhash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{fullhashraw}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{bibnamehash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{authorbibnamehash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{authornamehash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{authorfullhash}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \strng{authorfullhashraw}{6242d1e076e52e2c6b9a6ade58dd0027}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{4}
+      \field{month}{9}
+      \field{title}{Fixing lstlisting inside \ExSheets{} \code{question} and \code{solution} environments}
+      \field{urlday}{22}
+      \field{urlmonth}{9}
+      \field{urlyear}{2013}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb http://tex.stackexchange.com/q/131546/5049
+      \endverb
+      \verb{url}
+      \verb http://tex.stackexchange.com/q/131546/5049
+      \endverb
+    \endentry
+    \entry{companion}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e341c89f7bb5be4f5a050618c0b63942}{%
+           family={Samarin},
+           familyi={S\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{fullhash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{fullhashraw}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{bibnamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authorbibnamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authornamehash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authorfullhash}{369a4e878eb8157d94588ee72e0b486b}
+      \strng{authorfullhashraw}{369a4e878eb8157d94588ee72e0b486b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{A book with three authors. Note the formatting of the author list. By default, only the first name is reversed in the bibliography}
+      \field{edition}{1}
+      \field{indextitle}{LaTeX Companion, The}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{pagetotal}{528}
+      \field{shorttitle}{LaTeX Companion}
+      \field{title}{The {LaTeX} Companion}
+      \field{year}{1994}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct}{mvbook}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{1}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{A five-volume book cited as a whole. This is a \texttt{mvbook} entry, note the \texttt{volumes} field}
+      \field{endyear}{1986}
+      \field{indexsorttitle}{Computers & Typesetting}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{title}{Computers \& Typesetting}
+      \field{volumes}{5}
+      \field{year}{1984}
+      \field{enddateera}{ce}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct:a}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{2}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{The first volume of a five-volume book. Note the \texttt{sorttitle} field. We want this volume to be listed after the entry referring to the entire five-volume set. Also note the \texttt{indextitle} and \texttt{indexsorttitle} fields. Indexing packages that don't generate robust index entries require some control sequences to be protected from expansion}
+      \field{indexsorttitle}{The TeXbook}
+      \field{indextitle}{\protect\TeX book, The}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{maintitle}{Computers \& Typesetting}
+      \field{shorttitle}{\TeX book}
+      \field{title}{The {\TeX book}}
+      \field{volume}{A}
+      \field{year}{1984}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct:b}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{3}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{The second volume of a five-volume book. Note the \texttt{sorttitle} field. Also note the \texttt{indexsorttitle} field}
+      \field{indexsorttitle}{TeX: The Program}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{maintitle}{Computers \& Typesetting}
+      \field{shorttitle}{\TeX}
+      \field{title}{{\TeX}: The Program}
+      \field{volume}{B}
+      \field{year}{1986}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct:c}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{4}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{The third volume of a five-volume book. Note the \texttt{sorttitle} field as well as the \texttt{indextitle} field}
+      \field{indextitle}{METAFONTbook, The}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{maintitle}{Computers \& Typesetting}
+      \field{shorttitle}{METAFONTbook}
+      \field{title}{The {METAFONTbook}}
+      \field{volume}{C}
+      \field{year}{1986}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct:d}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{5}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{The fourth volume of a five-volume book. Note the \texttt{sorttitle} field}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{maintitle}{Computers \& Typesetting}
+      \field{shorttitle}{METAFONT}
+      \field{title}{{METAFONT}: The Program}
+      \field{volume}{D}
+      \field{year}{1986}
+      \field{dateera}{ce}
+    \endentry
+    \entry{knuth:ct:e}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=ec08e6f01da5f3814f28a70c89c64656}{%
+           family={Knuth},
+           familyi={K\bibinitperiod},
+           given={Donald\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading, Mass.}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{fullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{bibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorbibnamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authornamehash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhash}{ec08e6f01da5f3814f28a70c89c64656}
+      \strng{authorfullhashraw}{ec08e6f01da5f3814f28a70c89c64656}
+      \field{extraname}{6}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{The fifth volume of a five-volume book. Note the \texttt{sorttitle} field}
+      \field{langid}{english}
+      \field{langidopts}{variant=american}
+      \field{maintitle}{Computers \& Typesetting}
+      \field{title}{{Computer Modern} Typefaces}
+      \field{volume}{E}
+      \field{year}{1986}
+      \field{dateera}{ce}
+    \endentry
+  \enddatalist
+  \missing{bnd:l3experimental}
+  \missing{bnd:l3kernel}
+  \missing{bnd:l3packages}
+  \missing{cls:exam}
+  \missing{pkg:answers}
+  \missing{pkg:environ}
+  \missing{pkg:eqexam}
+  \missing{pkg:esami}
+  \missing{pkg:etoolbox}
+  \missing{pkg:examdesign}
+  \missing{pkg:exercise}
+  \missing{pkg:exsol}
+  \missing{pkg:pgf}
+  \missing{pkg:probsoln}
+  \missing{pkg:ulem}
+  \missing{pkg:xcolor}
+\endrefsection
+\endinput
+

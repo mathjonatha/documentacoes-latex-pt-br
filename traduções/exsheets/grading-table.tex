@@ -1,0 +1,48 @@
+% ----------------------------------------------------------------------------
+% o pacote EXSHEETS
+%
+%   Mais um pacote para a criação de listas de exercícios
+%
+% ----------------------------------------------------------------------------
+% Clemens Niederberger
+% Web:    http://www.mychemistry.eu/forums/forum/exsheets
+% E-Mail: contact@mychemistry.eu
+% ----------------------------------------------------------------------------
+% Copyright 2011-2017 Clemens Niederberger
+%
+% Este trabalho pode ser distribuído e/ou modificado sob as
+% condições da Licença Pública do Projeto LaTeX, versão 1.3
+% desta licença ou (à sua escolha) qualquer versão posterior.
+% A versão mais recente desta licença está em
+%   http://www.latex-project.org/lppl.txt
+% e a versão 1.3 ou posterior faz parte de todas as distribuições do LaTeX
+% versão 2005/12/01 ou posterior.
+%
+% Este trabalho tem o status de manutenção LPPL 'mantido'.
+%
+% O Mantenedor Atual deste trabalho é Clemens Niederberger.
+% ----------------------------------------------------------------------------
+% Se você tiver ideias, dúvidas, sugestões ou bugs para reportar, por favor
+% sinta-se à vontade para entrar em contato.
+% ----------------------------------------------------------------------------
+\documentclass{scrartcl}
+\usepackage{exsheets}
+
+\begin{document}
+
+\begin{question}{3}
+\end{question}
+\begin{question}{5}
+\end{question}
+\begin{question}{10}
+\end{question}
+\begin{question}{8}
+\end{question}
+
+\begin{tabular}{|l|*{\numberofquestions}{c|}c|}\hline
+  Questão   & \ForEachQuestion{\QuestionNumber{#1}\iflastquestion{}{&}} & Total \\ \hline
+  Pontos    & \ForEachQuestion{\GetQuestionProperty{points}{#1}\iflastquestion{}{&}} & \pointssum* \\ \hline
+  Alcançado & \ForEachQuestion{\iflastquestion{}{&}} & \\ \hline
+\end{tabular}
+
+\end{document}

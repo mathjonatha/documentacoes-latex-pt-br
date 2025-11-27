@@ -1,0 +1,412 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{{Ame}02}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\btxselectlanguage {english}
+\bibitem [{{Ame}02}]{package:amsmath}
+\btxnamefont {\btxlastnamefont {{American Mathematical
+  Society}}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {User's guide for
+  the {\Package{amsmath}} package}{User's Guide for the {\Package{amsmath}}
+  Package}}, \btxprintmonthyear{.}{2}{2002}{long}.
+\newblock {\latintext
+  \btxurlfont{CTAN://macros/latex/required/amslatex/math/}}.
+
+\bibitem [{BB13}]{package:babel}
+\btxnamefont {Johannes \btxlastnamefont {Braams}} \btxandlong {}\ \btxnamefont
+  {Javier \btxlastnamefont {Bezos}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Babel}{Babel}}, \btxprintmonthyear{.}{12}{2013}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/babel/}}.
+
+\bibitem [{BCJ{\etalchar{+}}05}]{latex:source2e}
+\btxnamefont {Johannes \btxlastnamefont {Braams}}, \btxnamefont {David
+  \btxlastnamefont {Carlisle}}, \btxnamefont {Alan \btxlastnamefont {Jeffrey}},
+  \btxnamefont {Leslie \btxlastnamefont {Lamport}}, \btxnamefont {Frank
+  \btxlastnamefont {Mittelbach}}, \btxnamefont {Chris \btxlastnamefont
+  {Rowley}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Rainer
+  \btxlastnamefont {Schöpf}}\btxauthorcolon\ \btxtitlefont {The {\LaTeX2e}
+  Source}, \btxprintmonthyear{.}{12}{2005}{long}.
+
+\bibitem [{BJ04}]{package:supertabular}
+\btxnamefont {Johannes\btxfnamespacelong L. \btxlastnamefont {Braams}}
+  \btxandlong {}\ \btxnamefont {Theo \btxlastnamefont
+  {Jurriens}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {The
+  {\Package{supertabular}} environment}{The {\Package{supertabular}}
+  environment}}, \btxprintmonthyear{.}{2}{2004}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/supertabular}}.
+
+\bibitem [{Car99a}]{package:keyval}
+\btxnamefont {David \btxlastnamefont {Carlisle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{keyval}} package}{The {\Package{keyval}}
+  package}}, \btxprintmonthyear{.}{3}{1999}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/graphics/}}.
+
+\bibitem [{Car99b}]{package:tabularx}
+\btxnamefont {David \btxlastnamefont {Carlisle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{tabularx}} package}{The {\Package{tabularx}}
+  package}}, \btxprintmonthyear{.}{1}{1999}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/tools/}}.
+
+\bibitem [{Car04}]{package:longtable}
+\btxnamefont {David \btxlastnamefont {Carlisle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{longtable}} package}{The
+  {\Package{longtable}} package}}, \btxprintmonthyear{.}{2}{2004}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/tools/}}.
+
+\bibitem [{Car17}]{package:graphics}
+\btxnamefont {David\btxfnamespacelong P. \btxlastnamefont
+  {Carlisle}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Packages in the
+  `graphics' bundle}{Packages in the `graphics' bundle}},
+  \btxprintmonthyear{.}{6}{2017}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/graphics/}}.
+
+\bibitem [{CRSR22}]{package:polyglossia}
+\btxnamefont {François \btxlastnamefont {Charette}}, \btxnamefont {Arthur
+  \btxlastnamefont {Reutenauer}}, \btxnamefont {Jürgen \btxlastnamefont
+  {Spitzmüller}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Bastien
+  \btxlastnamefont {Roucariès}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Polyglossia: Modern multilingual typesetting with
+  {\XeLaTeX} and {\LuaLaTeX}}{Polyglossia: Modern multilingual typesetting with
+  {\XeLaTeX} and {\LuaLaTeX}}}, \btxprintmonthyear{.}{4}{2022}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/unicodetex/latex/polyglossia}}.
+
+\bibitem [{Dal10}]{package:natbib}
+\btxnamefont {Patrick\btxfnamespacelong W. \btxlastnamefont
+  {Daly}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Natural sciences
+  citations and references}{Natural Sciences Citations and References}},
+  \btxprintmonthyear{.}{9}{2010}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/natbib/}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{DUD96}]{DUDEN}
+\btxnamefont {\btxlastnamefont {DUDEN}}\btxauthorcolon\ \btxtitlefont {Die
+  deutsche Rechtschreibung}.
+\newblock \btxpublisherfont {DUDENVERLAG}, Mannheim, \btxeditionnumlong {21}{},
+  1996.
+
+\btxselectlanguage {english}
+\bibitem [{Fai11}]{package:footmisc}
+\btxnamefont {Robin \btxlastnamefont {Fairbairns}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {{\Package{footmisc}} --- a portmanteau
+  package for customising footnotes in {\LaTeX}}{{\Package{footmisc}} --- a
+  portmanteau package for customising footnotes in {\LaTeX}}},
+  \btxprintmonthyear{.}{6}{2011}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/footmisc/}}.
+
+\bibitem [{FAQ13}]{UK:FAQ}
+\btxtitlefont {\btxifchangecase {Tex frequently asked questions on the web}{TeX
+  Frequently Asked Questions on the Web}},
+  \btxprintmonthyear{.}{6}{2013}{long}.
+\newblock {\latintext \btxurlfont{http://www.tex.ac.uk/faq}}.
+
+\bibitem [{Gau07}]{package:french}
+\btxnamefont {Bernard \btxlastnamefont {Gaulle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Les distributions de fichiers de francisation pour
+  latex}{Les distributions de fichiers de francisation pour LaTeX}},
+  \btxprintmonthyear{.}{5}{2007}{long}.
+\newblock {\latintext \btxurlfont{CTAN://language/french/}}.
+
+\bibitem [{Gre12}]{package:xpatch}
+\btxnamefont {Enrico \btxlastnamefont {Gregorio}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{xpatch}} package, extending
+  {\Package{etoolbox}} patching commands}{The {\Package{xpatch}} package,
+  Extending {\Package{etoolbox}} patching commands}},
+  \btxprintmonthyear{.}{10}{2012}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/xpatch/}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{KDP}]{homepage}
+\btxtitlefont {\btxifchangecase {{\KOMAScript{}} homepage}{{\KOMAScript{}}
+  Homepage}}.
+\newblock {\latintext \btxurlfont{http://www.komascript.de}}.
+
+\btxselectlanguage {english}
+\bibitem [{Keh97}]{xindy}
+\btxnamefont {Roger \btxlastnamefont {Kehr}}\btxauthorcolon\ \btxtitlefont
+  {XINDY, A Flexible Indexing System}, 1997.
+
+\bibitem [{Ker07}]{package:xcolor}
+\btxnamefont {Dr.\btxfnamespacelong Uwe \btxlastnamefont
+  {Kern}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {Extending {\LaTeX}'s
+  color facilities: the {\Package{xcolor}} package}{Extending {\LaTeX}'s color
+  facilities: the {\Package{xcolor}} package}},
+  \btxprintmonthyear{.}{1}{2007}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/xcolor/}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{Kie10}]{package:adrconv}
+\btxnamefont {Axel \btxlastnamefont {Kielhorn}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {adrconv}{adrconv}}, \btxprintmonthyear{.}{4}{2010}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/adrconv/}}.
+
+\btxselectlanguage {english}
+\bibitem [{Knu90}]{knuth:texbook}
+\btxnamefont {Donald\btxfnamespacelong E. \btxlastnamefont
+  {Knuth}}\btxauthorcolon\ \btxtitlefont {The {\TeX book}}, \btxvolumelong
+  {}~\btxvolumefont {A} \btxofserieslong {}\ \btxtitlefont {Computers and
+  Typesetting}.
+\newblock \btxpublisherfont {Addison-Wesley Publishing Company}, Reading,
+  Mass., \btxeditionnumlong {19}{}, 1990.
+
+\btxselectlanguage {ngerman}
+\bibitem [{Koh02}]{DANTE:TK0402:MJK}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Satzspiegelkonstruktionen im
+  vergleich}{Satzspiegelkonstruktionen im Vergleich}}.
+\newblock \btxjournalfont {Die {\TeX}nische Komödie}, 4:28--48, 2002.
+\newblock {DANTE} e.\,V.
+
+\bibitem [{Koh03}]{DANTE:TK0203:MJK}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxjtitlefont
+  {\btxifchangecase {Moderne briefe mit {\KOMAScript}}{Moderne Briefe mit
+  {\KOMAScript}}}.
+\newblock \btxjournalfont {Die {\TeX}nische Komödie}, 2:32--51, 2003.
+\newblock {DANTE} e.\,V.
+
+\btxselectlanguage {english}
+\bibitem [{Koh12}]{package:marginnote}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Non-floating margin notes with
+  {\Package{marginnote}}}{Non-Floating Margin Notes with
+  {\Package{marginnote}}}}, \btxprintmonthyear{.}{3}{2012}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/marginnote/}}.
+
+\bibitem [{Koh14}]{package:splitindex}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Creating more than one index using {\Package{splitidx}}
+  and {\Package{splitindex}}}{Creating More Than One Index Using
+  {\Package{splitidx}} And {\Package{SplitIndex}}}},
+  \btxprintmonthyear{.}{4}{2014}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/splitindex/}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{Koh15}]{https://komascript.de/comment/5070}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\OptionValue{chapteratlists}{entry}} automatisch nur für
+  kapitel mit einträgen}{{\OptionValue{chapteratlists}{entry}} automatisch nur
+  für Kapitel mit Einträgen}}, \btxprintmonthyear{.}{7}{2015}{long}.
+\newblock {\latintext
+  \btxurlfont{https://komascript.de/comment/5070#comment-5070}}.
+
+\bibitem [{Koh20}]{book:komascript}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {{\KOMAScript}}.
+\newblock Edition DANTE. \btxpublisherfont {Lehmanns Media}, Berlin,
+  \btxeditionnumlong {7}{}, 2020\ifbtxprintISBN {, \mbox{\btxISBN~\btxISBNfont
+  {978-3-96543-097-6}}}.
+\newblock Print-Ausgabe.
+
+\btxselectlanguage {english}
+\bibitem [{Koh23a}]{pkg:scrhack:manual}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {Emulating Former {\KOMAScript} Package {\Package{scrhack}}},
+  \btxeditionnumlong {3.42}{}, \btxprintmonthyear{.}{8}{2023}{long}.
+\newblock {\latintext
+  \btxurlfont{CTAN://macros/latex/contrib/scrhack/scrhack.pdf}}.
+
+\bibitem [{Koh23b}]{pkg:floatbytocbasic:manual}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {Improving Package {\Package{float}} Using {\KOMAScript} Package
+  {\Package{tocbasic}}}, \btxeditionnumlong {3.42}{},
+  \btxprintmonthyear{.}{8}{2023}{long}.
+\newblock {\latintext
+  \btxurlfont{CTAN://macros/latex/contrib/floatbytocbasic/floatbytocbasic.pdf}}.
+
+\bibitem [{Koh23c}]{package:scrwfile}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\Package{scrwfile}} -- use {\LaTeX} {\File{.aux}} file in
+  place of {\Macro{newfile}} files}{{\Package{scrwfile}} -- Use {\LaTeX}
+  {\File{.aux}} file in place of {\Macro{newfile}} files}},
+  \btxprintmonthyear{.}{4}{2023}{long}.
+\newblock {\latintext \btxurlfont{https://www.ctan.org/pkg/scrwfile}}.
+
+\bibitem [{Koh24}]{package:contract}
+\btxnamefont {Markus \btxlastnamefont {Kohm}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Typeset formalized legal documents such as contracts,
+  statutes, etc}{Typeset formalized legal documents such as contracts,
+  statutes, etc}}, \btxprintmonthyear{.}{2}{2024}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/contract}}.
+
+\bibitem [{Lam87}]{makeindex}
+\btxnamefont {Leslie \btxlastnamefont {Lamport}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\Package{MakeIndex}}: An index processor for
+  {\LaTeX}}{{\Package{MakeIndex}}: An Index Processor For {\LaTeX}}},
+  \btxprintmonthyear{.}{2}{1987}{long}.
+\newblock {\latintext
+  \btxurlfont{CTAN://indexing/makeindex/doc/makeindex.pdf}}.
+
+\bibitem [{Lap08}]{package:floatrow}
+\btxnamefont {Olga \btxlastnamefont {Lapko}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{floatrow}} package}{The {\Package{floatrow}}
+  package}}, \btxprintmonthyear{.}{8}{2008}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/floatrow/}}.
+
+\bibitem [{Leh11}]{package:etoolbox}
+\btxnamefont {Philipp \btxlastnamefont {Lehman}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{etoolbox}} package}{The {\Package{etoolbox}}
+  Package}}, \btxprintmonthyear{.}{1}{2011}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/etoolbox/}}.
+
+\bibitem [{Lin01}]{package:float}
+\btxnamefont {Anselm \btxlastnamefont {Lingnau}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {An improved environment for floats}{An Improved
+  Environment for Floats}}, \btxprintmonthyear{.}{11}{2001}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/float/}}.
+
+\bibitem [{Mit11}]{package:multicol}
+\btxnamefont {Frank \btxlastnamefont {Mittelbach}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {An environment for multicolumn output}{An
+  environment for multicolumn output}}, \btxprintmonthyear{.}{6}{2011}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/required/tools/}}.
+
+\bibitem [{Nie15}]{package:eso-pic}
+\btxnamefont {Rolf \btxlastnamefont {Niepraschk}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{eso-pic}} package}{The {\Package{eso-pic}}
+  package}}, \btxprintmonthyear{.}{7}{2015}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/eso-pic/}}.
+
+\bibitem [{Obe10}]{package:engord}
+\btxnamefont {Heiko \btxlastnamefont {Oberdiek}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{engord}} package}{The {\Package{engord}}
+  package}}, \btxprintmonthyear{.}{3}{2010}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/oberdiek/}}.
+
+\bibitem [{OPHS11}]{lshort}
+\btxnamefont {Tobias \btxlastnamefont {Oetker}}, \btxnamefont {Hubert
+  \btxlastnamefont {Partl}}, \btxnamefont {Irene \btxlastnamefont
+  {Hyna}}\btxandcomma {} \btxandlong {}\ \btxnamefont {Elisabeth
+  \btxlastnamefont {Schlegl}}\btxauthorcolon\ \btxtitlefont {The Not So Short
+  Introduction to {\LaTeXe}}, \btxprintmonthyear{.}{4}{2011}{long}.
+\newblock {\latintext \btxurlfont{CTAN://info/lshort/english/}}.
+
+\bibitem [{Pac}]{www:NF.lco}
+\btxnamefont {Jean\btxfnamespacelong Marie \btxlastnamefont
+  {Pacquet}}\btxauthorcolon\ \btxtitlefont {\btxifchangecase {{KomaLetter2};
+  {E}xample by {J}ean-{M}arie {P}acquet ({F}rench style)}{{KomaLetter2};
+  {E}xample by {J}ean-{M}arie {P}acquet ({F}rench style)}}.
+\newblock Wiki.
+\newblock {\latintext
+  \btxurlfont{http://wiki.lyx.org/Examples/KomaLetter2#toc6}}.
+
+\bibitem [{Rai98a}]{package:german}
+\btxnamefont {Bernd \btxlastnamefont {Raichle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\Package{german}} package}{{\Package{german}} package}},
+  \btxprintmonthyear{.}{7}{1998}{long}.
+\newblock {\latintext \btxurlfont{CTAN://language/german/}}.
+
+\bibitem [{Rai98b}]{package:ngerman}
+\btxnamefont {Bernd \btxlastnamefont {Raichle}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\Package{ngerman}} package}{{\Package{ngerman}}
+  package}}, \btxprintmonthyear{.}{7}{1998}{long}.
+\newblock {\latintext \btxurlfont{CTAN://language/german/}}.
+
+\bibitem [{Sch09}]{package:ragged2e}
+\btxnamefont {Martin \btxlastnamefont {Schröder}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {The {\Package{ragged2e}} package}{The
+  {\Package{Ragged2e}} package}}, \btxprintmonthyear{.}{6}{2009}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/ms/}}.
+
+\bibitem [{Sch13}]{package:microtype}
+\btxnamefont {R \btxlastnamefont {Schlicht}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{microtype}} package: An interface to the
+  micro-typographic extensions of pdf{\TeX}}{The {\Package{microtype}} package:
+  An interface to the micro-typographic extensions of pdf{\TeX}}},
+  \btxprintmonthyear{.}{5}{2013}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/microtype/}}.
+
+\bibitem [{Sch18}]{package:mwe}
+\btxnamefont {Martin \btxlastnamefont {Scharrer}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{mwe}} package}{The {\Package{mwe}}
+  Package}}, \btxprintmonthyear{.}{3}{2018}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/mwe/}}.
+
+\bibitem [{Som13}]{package:caption.engl}
+\btxnamefont {Axel \btxlastnamefont {Sommerfeldt}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Customizing captions of floating
+  environments using the {\Package{caption}} package}{Customizing captions of
+  floating environments using the {\Package{caption}} package}},
+  \btxprintmonthyear{.}{5}{2013}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/caption/}}.
+
+\bibitem [{Tea98}]{manual:eTeX}
+\btxnamefont {The\btxfnamespacelong {\NTS} \btxlastnamefont
+  {Team}}\btxauthorcolon\ \btxtitlefont {The {\eTeX} manual},
+  \btxprintmonthyear{.}{2}{1998}{long}.
+\newblock {\latintext \btxurlfont{CTAN://systems/e-tex/v2/doc/etex_man.pdf}}.
+
+\bibitem [{Tea05a}]{latex:fntguide}
+\btxnamefont {{\LaTeX3}\btxfnamespacelong Project \btxlastnamefont
+  {Team}}\btxauthorcolon\ \btxtitlefont {{\LaTeXe} font selection},
+  \btxprintmonthyear{.}{11}{2005}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/doc/fntguide.pdf}}.
+
+\bibitem [{Tea05b}]{latex:usrguide}
+\btxnamefont {{\LaTeX3}\btxfnamespacelong Project \btxlastnamefont
+  {Team}}\btxauthorcolon\ \btxtitlefont {{\LaTeXe} for authors},
+  \btxprintmonthyear{.}{11}{2005}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/doc/usrguide.pdf}}.
+
+\bibitem [{Tea06}]{latex:clsguide}
+\btxnamefont {{\LaTeX3}\btxfnamespacelong Project \btxlastnamefont
+  {Team}}\btxauthorcolon\ \btxtitlefont {{\LaTeXe} for class and package
+  writers}, \btxprintmonthyear{.}{2}{2006}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/doc/clsguide.pdf}}.
+
+\bibitem [{TF11}]{package:setspace}
+\btxnamefont {Geoffrey \btxlastnamefont {Tobin}} \btxandlong {}\ \btxnamefont
+  {Robin \btxlastnamefont {Fairbairns}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {{\Package{setspace}} {\LaTeX}
+  package}{{\Package{setspace}} {\LaTeX} package}},
+  \btxprintmonthyear{.}{12}{2011}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/setspace/}}.
+
+\bibitem [{{The}19}]{package:iftex}
+\btxnamefont {\btxlastnamefont {{The \LaTeX{} Project Team}}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {The {\Package{iftex}} package}{The
+  {\Package{iftex}} package}}, \btxprintmonthyear{.}{11}{2019}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/iftex}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{Tsc87}]{JTsch87}
+\btxnamefont {Jan \btxlastnamefont {Tschichold}}\btxauthorcolon\ \btxtitlefont
+  {Ausgewählte Aufsätze über Fragen der Gestalt des Buches und der
+  Typographie}.
+\newblock \btxpublisherfont {Birkhäuser Verlag}, Basel, \btxeditionnumlong
+  {2}{}, 1987.
+
+\btxselectlanguage {english}
+\bibitem [{Ume10}]{package:geometry}
+\btxnamefont {Hideo \btxlastnamefont {Umeki}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {The {\Package{geometry}} package}{The {\Package{geometry}}
+  package}}, \btxprintmonthyear{.}{9}{2010}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/geometry/}}.
+
+\bibitem [{vO04}]{package:fancyhdr}
+\btxnamefont {Piet van \btxlastnamefont {Oostrum}}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Page layout in {\LaTeX}}{Page layout in
+  {\LaTeX}}}, \btxprintmonthyear{.}{3}{2004}{long}.
+\newblock {\latintext \btxurlfont{CTAN://macros/latex/contrib/fancyhdr/}}.
+
+\btxselectlanguage {ngerman}
+\bibitem [{WF00}]{TYPO:ErsteHilfe}
+\btxnamefont {Hans\btxfnamespacelong Peter \btxlastnamefont {Willberg}}
+  \btxandlong {}\ \btxnamefont {Friedrich \btxlastnamefont
+  {Forssman}}\btxauthorcolon\ \btxtitlefont {Erste Hilfe in Typografie}.
+\newblock \btxpublisherfont {Verlag Hermann Schmidt}, Mainz, 2000.
+
+\bibitem [{Wik}]{DANTE:FAQ}
+\btxnamefont {\btxlastnamefont {Wiki}}\btxauthorcolon\ \btxtitlefont
+  {\btxifchangecase {Deutsche {\TeX}-faq}{Deutsche {\TeX}-FAQ}}.
+\newblock {\latintext \btxurlfont{http://projekte.dante.de/DanteFAQ/WebHome}}.
+
+\end{thebibliography}

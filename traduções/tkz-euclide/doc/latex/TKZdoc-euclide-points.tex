@@ -1,0 +1,303 @@
+\section{Primeiro passo: pontos fixos}
+
+O primeiro passo em uma construção geométrica é definir os pontos fixos a partir dos quais a figura será construída.
+
+A ideia geral é evitar manipular coordenadas e preferir usar as referências dos pontos fixados no primeiro passo ou obtidos usando as ferramentas fornecidas pelo pacote. Mesmo que seja possível, penso que é uma má ideia trabalhar diretamente com coordenadas. Preferível é usar pontos nomeados.
+
+\tkzname{\tkznameofpack} usa macros e vocabulário específico para construção geométrica. É claro que é possível usar as ferramentas do \TIKZ\ mas parece-me mais lógico não misturar as diferentes sintaxes.
+
+Um ponto em \tkzname{\tkznameofpack} é um \code{node} particular para o \TIKZ. Na próxima seção veremos como definir pontos usando coordenadas. O estilo dos pontos (cor e forma) não será discutido. Você encontrará algumas indicações em alguns exemplos; para mais informações você pode ler a seção seguinte \ref{custom}.
+
+
+\section{Definição de um ponto: \tkzcname{tkzDefPoint} ou \tkzcname{tkzDefPoints}}
+
+Os pontos podem ser especificados de qualquer uma das seguintes formas:
+\begin{itemize}
+\item Coordenadas cartesianas;
+\item Coordenadas polares;
+\item Pontos nomeados;
+\item Pontos relativos.
+\end{itemize}
+
+Um ponto é definido se ele tem um nome vinculado a um par único de números decimais.
+ Seja $(x,y)$ ou $(a:d)$ isto é ($x$ abscissa, $y$ ordenada) ou ($a$ ângulo: $d$ distância).
+ Isso é possível porque o plano foi fornecido com um sistema de coordenadas cartesianas ortonormado. Os eixos de trabalho são (orto)normados com unidade igual a $1$~cm.
+
+ A coordenada cartesiana $(a,b)$ refere-se ao
+ ponto $a$ centímetros na direção $x$ e $b$ centímetros na
+ direção $y$.
+
+ Um ponto em coordenadas polares requer um ângulo $\alpha$, em graus,
+ e uma distância $d$ da origem com uma unidade
+ dimensional, por padrão é o \texttt{cm}.
+
+ A macro \tkzNameMacro{tkzDefPoint} é usada para definir um ponto atribuindo coordenadas a ele. Esta macro é baseada em
+
+ \tkzNameMacro{coordinate}, uma macro do \TIKZ. Ela pode usar opções específicas do \TIKZ\ como \tkzname{shift}. Se cálculos forem necessários, então o pacote \tkzNamePack{xfp} é escolhido. Podemos usar coordenadas cartesianas ou polares.
+
+\begin{minipage}[t]{0.48\textwidth}
+ Coordenadas cartesianas
+\begin{tkzexample}[code only,small]
+\begin{tikzpicture}[scale=1]
+  \tkzInit[xmax=5,ymax=5]
+  % necessário para limitar
+  % o tamanho dos eixos
+  \tkzDrawX[>=latex]
+  \tkzDrawY[>=latex]
+  \tkzDefPoints{0/0/O,1/0/I,0/1/J}
+  \tkzDefPoint(3,4){A}
+  \tkzDrawPoints(O,A)
+  \tkzLabelPoint[above](A){$A_1(x_1,y_1)$}
+  \tkzShowPointCoord[xlabel=$x_1$,
+                     ylabel=$y_1$](A)
+  \tkzLabelPoints(O,I)
+  \tkzLabelPoints[left](J)
+  \tkzDrawPoints[shape=cross](I,J)
+\end{tikzpicture}
+\end{tkzexample}%
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+ Coordenadas polares
+\begin{tkzexample}[code only,small]
+\begin{tikzpicture}[scale=1]
+  \tkzInit[xmax=5,ymax=5]
+  \tkzDrawX[>=latex]
+  \tkzDrawY[>=latex]
+  \tkzDefPoints{0/0/O,1/0/I,0/1/J}
+  \tkzDefPoint(40:4){P}
+  \tkzDrawSegment[dim={$d$,
+                 16pt,above=6pt}](O,P)
+  \tkzDrawPoints(O,P)
+  \tkzMarkAngle[mark=none,->](I,O,P)
+  \tkzFillAngle[opacity=.5](I,O,P)
+  \tkzLabelAngle[pos=1.25](I,O,P){%
+                              $\alpha$}
+  \tkzLabelPoint[right](P){$P(\alpha:d)$}
+  \tkzDrawPoints[shape=cross](I,J)
+  \tkzLabelPoints(O,I)
+  \tkzLabelPoints[left](J)
+\end{tikzpicture}
+\end{tkzexample}
+\end{minipage}%
+
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[scale=1]
+  \tkzInit[xmax=5,ymax=5]
+  \tkzDrawX[>=latex]
+  \tkzDrawY[>=latex]
+  \tkzDefPoints{0/0/O,1/0/I,0/1/J}
+  \tkzDefPoint(3,4){A}
+  \tkzDrawPoints(O,A)
+  \tkzLabelPoint[above](A){$A_1 (x_1,y_1)$}
+  \tkzShowPointCoord[xlabel=$x_1$,ylabel=$y_1$](A)
+  \tkzLabelPoints(O,I)
+  \tkzLabelPoints[left](J)
+  \tkzDrawPoints[shape=cross](I,J)
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[b]{0.45\textwidth}
+\begin{tikzpicture}[,scale=1]
+  \tkzInit[xmax=5,ymax=5]
+  \tkzDrawX[>=latex]
+  \tkzDrawY[>=latex]
+  \tkzDefPoints{0/0/O,1/0/I,0/1/J}
+  \tkzDefPoint(40:4){P}
+  \tkzDrawSegment[dim={$d$,
+                 16pt,above=6pt}](O,P)
+  \tkzDrawPoints(O,P)
+  \tkzMarkAngle[mark=none,->](I,O,P)
+  \tkzFillAngle[opacity=.5](I,O,P)
+  \tkzLabelAngle[pos=1.25](I,O,P){$\alpha$}
+  \tkzLabelPoint[right](P){$P  (\alpha : d )$}
+  \tkzDrawPoints[shape=cross](I,J)
+  \tkzLabelPoints(O,I)
+  \tkzLabelPoints[left](J)
+\end{tikzpicture}
+\end{minipage}%
+
+\subsection{Definindo um ponto nomeado \tkzcname{tkzDefPoint}}
+
+\begin{NewMacroBox}{tkzDefPoint}{\oarg{opções locais}\parg{$x,y$}\marg{ref} ou \parg{$\alpha$:$d$}\marg{ref}}%
+\begin{tabular}{lll}%
+argumentos &  padrão & definição  \\
+\midrule
+\TAline{($x,y$)}{sem padrão}{$x$ e $y$ são duas dimensões, por padrão em cm.}
+\TAline{($\alpha$:$d$)}{sem padrão}{$\alpha$ é um ângulo em graus, $d$ é uma dimensão}
+\TAline{\{ref\}}{sem padrão}{Referência atribuída ao ponto: $A$, $T\_a$ ,$P1$ ou $P_1$}
+\bottomrule
+\end{tabular}
+
+\medskip
+\emph{Os argumentos obrigatórios desta macro são duas dimensões expressas com decimais, no primeiro caso são duas medidas de comprimento, no segundo caso são uma medida de comprimento e a medida de um ângulo em graus. Não confunda a referência com o nome de um ponto. A referência é usada pelos cálculos, mas frequentemente, o nome é idêntico à referência.}
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição  \\
+\midrule
+\TOline{label} {sem padrão} {permite colocar um rótulo a uma distância predefinida}
+\TOline{shift} {sem padrão} {adiciona $(x,y)$ ou $(\alpha:d)$ a todas as coordenadas}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Coordenadas cartesianas}
+
+\begin{tkzexample}[latex=6cm,small]
+  \begin{tikzpicture}
+  \tkzInit[xmax=5,ymax=5] % limita o tamanho dos eixos
+  \tkzDrawX[>=latex]
+  \tkzDrawY[>=latex]
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefPoint(0,3){C}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPoints(A,B,C)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Cálculos com \tkzNamePack{xfp}}
+
+ \begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1]
+  \tkzInit[xmax=4,ymax=4]
+  \tkzDrawX\tkzDrawY
+  \tkzDefPoint(-1+2,sqrt(4)){O}
+  \tkzDefPoint({3*ln(exp(1))},{exp(1)}){A}
+  \tkzDefPoint({4*sin(pi/6)},{4*cos(pi/6)}){B}
+  \tkzDrawPoints(O,B,A)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Coordenadas polares}
+
+\begin{tkzexample}[latex=7cm,small]
+  \begin{tikzpicture}
+  \foreach \an [count=\i] in {0,60,...,300}
+   { \tkzDefPoint(\an:3){A_\i}}
+  \tkzDrawPolygon(A_1,A_...,A_6)
+  \tkzDrawPoints(A_1,A_...,A_6)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Pontos relativos}
+Primeiro, podemos usar o ambiente \tkzNameEnv{scope} do \TIKZ.
+No exemplo seguinte, temos uma maneira de definir um triângulo equilátero.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1]
+ \begin{scope}[rotate=30]
+  \tkzDefPoint(2,3){A}
+  \begin{scope}[shift=(A)]
+     \tkzDefPoint(90:5){B}
+     \tkzDefPoint(30:5){C}
+  \end{scope}
+ \end{scope}
+ \tkzDrawPolygon(A,B,C)
+\tkzLabelPoints[above](B,C)
+\tkzLabelPoints[below](A)
+\tkzDrawPoints(A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Ponto relativo a outro: \tkzcname{tkzDefShiftPoint}}
+\begin{NewMacroBox}{tkzDefShiftPoint}{\oarg{Ponto}\parg{$x,y$}\marg{ref} ou \parg{$\alpha$:$d$}\marg{ref}}%
+\begin{tabular}{lll}%
+argumentos &  padrão & definição \\
+\midrule
+\TAline{($x,y$)}{sem padrão}{$x$ e $y$ são duas dimensões, por padrão em cm.}
+\TAline{($\alpha$:$d$)}{sem padrão}{$\alpha$ é um ângulo em graus, $d$ é uma dimensão}
+\TAline{\{ref\}}{sem padrão}{Referência atribuída ao ponto: $A$, $T\_a$ ,$P1$ ou $P_1$}
+
+\midrule
+opções &  padrão & definição \\
+
+\midrule
+\TOline{[pt]} {sem padrão} {\tkzcname{tkzDefShiftPoint}[A](0:4)\{B\}}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Triângulo isósceles}
+Esta macro permite colocar um ponto relativo a outro. Isso é equivalente a uma translação. Aqui está como construir um triângulo isósceles com vértice principal $A$ e ângulo no vértice de $30^{\circ}$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[rotate=-30]
+ \tkzDefPoint(2,3){A}
+ \tkzDefShiftPoint[A](0:4){B}
+ \tkzDefShiftPoint[A](30:4){C}
+ \tkzDrawSegments(A,B B,C C,A)
+ \tkzMarkSegments[mark=|](A,B A,C)
+ \tkzDrawPoints(A,B,C)
+ \tkzLabelPoints[right](B,C)
+ \tkzLabelPoints[above left](A)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Triângulo equilátero}
+Vamos ver como obter um triângulo equilátero (há muito mais simples)
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1]
+ \tkzDefPoint(2,3){A}
+ \tkzDefShiftPoint[A](30:3){B}
+ \tkzDefShiftPoint[A](-30:3){C}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPoints(A,B,C)
+ \tkzLabelPoints[right](B,C)
+ \tkzLabelPoints[above left](A)
+ \tkzMarkSegments[mark=|](A,B A,C B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Paralelogramo}
+Há uma maneira mais simples
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+ \tkzDefPoint(0,0){A}
+ \tkzDefPoint(30:3){B}
+ \tkzDefShiftPointCoord[B](10:2){C}
+ \tkzDefShiftPointCoord[A](10:2){D}
+ \tkzDrawPolygon(A,...,D)
+ \tkzDrawPoints(A,...,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Definição de múltiplos pontos: \tkzcname{tkzDefPoints}}
+
+\begin{NewMacroBox}{tkzDefPoints}{\oarg{opções locais}\marg{$x_1/y_1/n_1,x_2/y_2/r_2$, ...}}%
+$x_i$ e $y_i$ são as coordenadas de um ponto referenciado $r_i$
+
+\begin{tabular}{lll}%
+\toprule
+argumentos &  padrão  & exemplo  \\
+\midrule
+\TAline{$x_i/y_i/r_i$}{}{\tkzcname{tkzDefPoints\{0/0/O,2/2/A\}}}
+\end{tabular}
+
+\medskip
+\begin{tabular}{lll}%
+opções             & padrão & definição   \\
+\midrule
+\TOline{shift} {sem padrão} {Adiciona $(x,y)$ ou $(\alpha:d)$ a todas as coordenadas}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsection{Criar um triângulo}
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.75]
+ \tkzDefPoints{0/0/A,4/0/B,4/3/C}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPoints(A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Criar um quadrado}
+Note aqui a sintaxe para desenhar o polígono.
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=1]
+ \tkzDefPoints{0/0/A,2/0/B,2/2/C,0/2/D}
+ \tkzDrawPolygon(A,...,D)
+ \tkzDrawPoints(A,...,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\endinput

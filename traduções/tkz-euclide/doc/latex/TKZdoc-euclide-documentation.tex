@@ -1,0 +1,28 @@
+\section{Sobre esta documentação e os exemplos}
+
+É obtida compilando com \code{lualatex}. Eu uso uma classe \tkzname{doc.cls} baseada em \tkzname{scrartcl}.
+
+Abaixo a lista de estilos usados na documentação. Para entender como usar os estilos, consulte a seção \ref{custom}
+
+|\tkzSetUpColors[background=white,text=black]  |
+
+|\tkzSetUpCompass[color=orange, line width=.2pt,delta=10]|
+
+|\tkzSetUpArc[color=gray,line width=.2pt]|
+
+|\tkzSetUpPoint[size=2,color=teal]|
+
+|\tkzSetUpLine[line width=.2pt,color=teal]|
+
+|\tkzSetUpStyle[color=orange,line width=.2pt]{new}|
+
+|\tikzset{every picture/.style={line width=.2pt}}|
+
+|\tikzset{label angle style/.append style={color=teal,font=\footnotesize}}|
+
+
+|\tikzset{label style/.append style={below,color=teal,font=\scriptsize}}|
+
+Alguns exemplos usam estilos predefinidos como
+
+|\tikzset{new/.style={color=orange,line width=.2pt}}  |

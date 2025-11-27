@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(pdflatex:*)",
+      "Bash(latex:*)",
+      "Bash(makeindex:*)",
+      "Bash(bibtex:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

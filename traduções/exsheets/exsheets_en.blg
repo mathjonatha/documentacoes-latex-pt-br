@@ -1,0 +1,35 @@
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'exsheets_en.blg'
+[91] biber-MSWIN64:340> INFO - === 
+[119] Biber.pm:420> INFO - Reading 'exsheets_en.bcf'
+[205] Biber.pm:994> INFO - Found 25 citekeys in bib section 0
+[217] Biber.pm:4463> INFO - Processing section 0
+[228] Biber.pm:4654> INFO - Looking for bibtex file 'biblatex-examples.bib' for section 0
+[674] bibtex.pm:1713> INFO - LaTeX decoding ...
+[813] bibtex.pm:1519> INFO - Found BibTeX data source 'c:/texlive/2025/texmf-dist/bibtex/bib/biblatex/biblatex/biblatex-examples.bib'
+[867] Biber.pm:4654> INFO - Looking for bibtex file 'exsheets_en.bib' for section 0
+[902] bibtex.pm:1713> INFO - LaTeX decoding ...
+[907] bibtex.pm:1519> INFO - Found BibTeX data source 'exsheets_en.bib'
+[927] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[927] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[927] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'pt-BR'
+[928] Biber.pm:4289> INFO - No sort tailoring available for locale 'pt-BR'
+[938] bbl.pm:676> INFO - Writing 'exsheets_en.bbl' with encoding 'UTF-8'
+[942] bbl.pm:779> INFO - Output to exsheets_en.bbl
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'bnd:l3kernel' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'bnd:l3packages' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'bnd:l3experimental' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:xcolor' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:ulem' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:etoolbox' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:environ' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:pgf' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:eqexam' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'cls:exam' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:examdesign' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:exercise' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:probsoln' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:answers' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:esami' (section 0)
+[942] Biber.pm:131> WARN - I didn't find a database entry for 'pkg:exsol' (section 0)
+[942] Biber.pm:133> INFO - WARNINGS: 16

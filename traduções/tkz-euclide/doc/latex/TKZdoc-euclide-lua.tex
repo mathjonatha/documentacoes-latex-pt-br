@@ -1,0 +1,32 @@
+\newpage
+\section{Trabalhando com lua} \label{calc_with_lua}
+
+\subsubsection{Opção \code{lua}} % (fold)
+\label{ssub:option_code_lua}
+
+% subsubsection option_code_lua (end)
+Você pode agora usar a opção \ItkzPopt{tkz-euclide}{lua} com \tkzname{\tkznameofpack} versão 5.
+Você só precisa escrever no seu preâmbulo
+
+ |usepackage[lua]{tkz-euclide}|.
+ Obviamente, você precisará compilar com LuaLaTeX. Nada muda para a sintaxe.
+
+Sem a opção, você pode usar \tkzname{\tkznameofpack} com o código proposto da versão 4.25.
+
+Esta versão ainda não está finalizada, embora a documentação que você está lendo atualmente tenha sido compilada com esta opção.
+
+Algumas informações sobre o método usado e os resultados obtidos. Quanto ao método, considerei duas possibilidades. A primeira era simplesmente substituir em todos os lugares que eu pudesse os cálculos feitos por \code{xfp} ou às vezes por \code{lua}. Foi assim que passei de \code{fp} para \code{xfp} e agora para \code{lua}. A segunda possibilidade, mais ambiciosa, teria sido associar a cada ponto um número complexo e fazer os cálculos sobre os complexos com \code{lua}. Infelizmente para isso eu teria que usar bibliotecas das quais não conheço a licença.
+
+Caso contrário, os resultados são bons. Esta documentação com \code{LualaTeX} e \code{xfp} compila em 47s enquanto com \code{lua} leva apenas 30s para 236 páginas.
+
+Outro documento de 61 páginas é compilado em 16s com \code{pdflaTeX} e \code{xfp} e em 13s com  \code{LualaTeX} e \code{xfp}.
+
+Esta documentação compila com |\usepackage{tkz-base}|  e |\usepackage[lua]{tkz-euclide}|, mas não testei todas as interações minuciosamente.
+
+\subsubsection{Opção \code{mini}} % (fold)
+\label{ssub:option_code_mini}
+
+Quando você usa \tkzNamePack{tkz-elements} apenas para determinar os pontos em suas figuras, não é necessário carregar todos os módulos do \tkzname{\tkznameofpack}. Neste caso, usando a opção \ItkzPopt{tkz-euclide}{mini} |\usepackage[mini]{tkz-euclide}|, você carregará apenas os módulos necessários para os desenhos.
+
+% subsubsection option_code_mini (end)
+\endinput

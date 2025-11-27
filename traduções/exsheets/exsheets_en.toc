@@ -1,0 +1,94 @@
+\acswitchoff 
+\babel@toc {brazilian}{}\relax 
+\contentsline {part}{\numberline {I}Preliminares}{4}{part.1}%
+\contentsline {section}{\numberline {1}Licença e Requisitos}{4}{section.1}%
+\contentsline {section}{\numberline {2}Motivação}{4}{section.2}%
+\contentsline {section}{\numberline {3}Pacotes Adicionais}{5}{section.3}%
+\contentsline {section}{\numberline {4}Agradecimentos}{5}{section.4}%
+\contentsline {part}{\numberline {II}O pacote \textsf {ExSheets}}{6}{part.2}%
+\contentsline {section}{\numberline {5}Configuração}{6}{section.5}%
+\contentsline {section}{\numberline {6}Opções Gerais}{7}{section.6}%
+\contentsline {section}{\numberline {7}Criar Questões/Exercícios e suas Soluções}{7}{section.7}%
+\contentsline {subsection}{\numberline {7.1}O Ambiente \texttt {*}{question}}{8}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Opções para o Ambiente \texttt {*}{question}}{9}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Subtítulos para Questões}{10}{subsection.7.3}%
+\contentsline {subsection}{\numberline {7.4}O Ambiente \texttt {*}{solution}}{11}{subsection.7.4}%
+\contentsline {subsection}{\numberline {7.5}Opções para o Ambiente \texttt {*}{solution}}{11}{subsection.7.5}%
+\contentsline {subsection}{\numberline {7.6}Configurando o Contador}{12}{subsection.7.6}%
+\contentsline {subsection}{\numberline {7.7}Configurações de Idioma}{12}{subsection.7.7}%
+\contentsline {section}{\numberline {8}Contagem de Pontos}{13}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Os Comandos}{13}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Opções}{14}{subsection.8.2}%
+\contentsline {section}{\numberline {9}Imprimindo Soluções}{15}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Imprimir todas}{16}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Imprimir por capítulo/seção}{16}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Imprimir por \acs {id}}{18}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Impressão Condicional de Questões}{19}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Usando Classes}{19}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Usando Tópicos}{20}{subsection.10.2}%
+\contentsline {subsection}{\numberline {10.3}Conceitos de Divisão Próprios}{20}{subsection.10.3}%
+\contentsline {subsection}{\numberline {10.4}Recuperando o Valor de Classe em uma Questão}{21}{subsection.10.4}%
+\contentsline {subsection}{\numberline {10.5}Marcando Questões com Tags}{21}{subsection.10.5}%
+\contentsline {section}{\numberline {11}Adicionando e Usando Informações Adicionais a Questões}{22}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Propriedades de Questões -- o Básico}{22}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Propriedades Pré-definidas}{23}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Uso Avançado}{24}{subsection.11.3}%
+\contentsline {section}{\numberline {12}Variações de uma Prova}{24}{section.12}%
+\contentsline {section}{\numberline {13}Uma Distribuição de Notas}{25}{section.13}%
+\contentsline {section}{\numberline {14}Incluir Seletivamente Questões de Arquivos Externos}{26}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Advertência}{26}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Como funciona}{26}{subsection.14.2}%
+\contentsline {section}{\numberline {15}A Opção \texttt {*}{auto-label}}{27}{section.15}%
+\contentsline {section}{\numberline {16}Pares Questão/Solução Próprios}{28}{section.16}%
+\contentsline {section}{\numberline {17}Preenchendo Espaços em Branco}{28}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Cloze}{28}{subsection.17.1}%
+\contentsline {subsection}{\numberline {17.2}Espaço Vertical para respostas}{30}{subsection.17.2}%
+\contentsline {section}{\numberline {18}Estilizando suas Folhas de Exercícios/Provas}{30}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Contexto}{30}{subsection.18.1}%
+\contentsline {subsection}{\numberline {18.2}O Objeto \texttt {exsheets-headings}}{31}{subsection.18.2}%
+\contentsline {subsubsection}{\numberline {18.2.1}Opções Disponíveis}{31}{subsubsection.18.2.1}%
+\contentsline {subsubsection}{\numberline {18.2.2}The `block' Instance}{33}{subsubsection.18.2.2}%
+\contentsline {subsubsection}{\numberline {18.2.3}The `runin' Instance}{33}{subsubsection.18.2.3}%
+\contentsline {subsubsection}{\numberline {18.2.4}The `simple' Instance}{34}{subsubsection.18.2.4}%
+\contentsline {subsubsection}{\numberline {18.2.5}The `empty' Instance}{34}{subsubsection.18.2.5}%
+\contentsline {subsubsection}{\numberline {18.2.6}The `block-rev' Instance}{35}{subsubsection.18.2.6}%
+\contentsline {subsubsection}{\numberline {18.2.7}The `block-subtitle' Instance}{35}{subsubsection.18.2.7}%
+\contentsline {subsubsection}{\numberline {18.2.8}The `block-wp' Instance}{36}{subsubsection.18.2.8}%
+\contentsline {subsubsection}{\numberline {18.2.9}The `block-wp-rev' Instance}{36}{subsubsection.18.2.9}%
+\contentsline {subsubsection}{\numberline {18.2.10}The `block-nr' Instance}{37}{subsubsection.18.2.10}%
+\contentsline {subsubsection}{\numberline {18.2.11}The `block-nr-wp' Instance}{37}{subsubsection.18.2.11}%
+\contentsline {subsubsection}{\numberline {18.2.12}The `runin-rev' Instance}{38}{subsubsection.18.2.12}%
+\contentsline {subsubsection}{\numberline {18.2.13}The `runin-wp' Instance}{38}{subsubsection.18.2.13}%
+\contentsline {subsubsection}{\numberline {18.2.14}The `runin-wp-rev' Instance}{39}{subsubsection.18.2.14}%
+\contentsline {subsubsection}{\numberline {18.2.15}The `runin-nr' Instance}{39}{subsubsection.18.2.15}%
+\contentsline {subsubsection}{\numberline {18.2.16}The `runin-fixed-nr' Instance}{39}{subsubsection.18.2.16}%
+\contentsline {subsubsection}{\numberline {18.2.17}The `runin-nr-wp' Instance}{40}{subsubsection.18.2.17}%
+\contentsline {subsubsection}{\numberline {18.2.18}The `inline' Instance}{40}{subsubsection.18.2.18}%
+\contentsline {subsubsection}{\numberline {18.2.19}The `inline-wp' Instance}{41}{subsubsection.18.2.19}%
+\contentsline {subsubsection}{\numberline {18.2.20}The `inline-nr' Instance}{41}{subsubsection.18.2.20}%
+\contentsline {subsubsection}{\numberline {18.2.21}The `centered' Instance}{42}{subsubsection.18.2.21}%
+\contentsline {subsubsection}{\numberline {18.2.22}The `centered-wp' Instance}{42}{subsubsection.18.2.22}%
+\contentsline {subsubsection}{\numberline {18.2.23}The `margin' Instance}{43}{subsubsection.18.2.23}%
+\contentsline {subsubsection}{\numberline {18.2.24}The `margin-nr' Instance}{43}{subsubsection.18.2.24}%
+\contentsline {subsubsection}{\numberline {18.2.25}The `raggedleft' Instance}{44}{subsubsection.18.2.25}%
+\contentsline {subsubsection}{\numberline {18.2.26}The `fancy' Instance}{44}{subsubsection.18.2.26}%
+\contentsline {subsubsection}{\numberline {18.2.27}The `fancy-wp' Instance}{45}{subsubsection.18.2.27}%
+\contentsline {subsection}{\numberline {18.3}Usando um Cabeçalho \textsf {ExSheets}{} em Código Personalizado}{45}{subsection.18.3}%
+\contentsline {subsection}{\numberline {18.4}Carregar Configurações Personalizadas}{46}{subsection.18.4}%
+\contentsline {part}{\numberline {III}O Pacote \textsf {ExSheets-listings}}{46}{part.3}%
+\contentsline {section}{\numberline {19}O Problema}{46}{section.19}%
+\contentsline {section}{\numberline {20}A Solução Proposta}{47}{section.20}%
+\contentsline {section}{\numberline {21}Ambientes Próprios}{48}{section.21}%
+\contentsline {part}{\numberline {IV}Apêndice}{48}{part.4}%
+\contentsline {section}{\numberline {A}Uma Lista de todas as Soluções usadas neste Manual}{48}{appendix.A}%
+\contentsline {subsection}{Solu\c c\~ao\ 9.}{48}{section*.2}%
+\contentsline {subsection}{Solu\c c\~ao\ 10.}{48}{section*.3}%
+\contentsline {subsection}{Nome elegante\ 11.}{48}{section*.4}%
+\contentsline {subsection}{Solu\c c\~ao\ 18.}{48}{section*.5}%
+\contentsline {subsection}{Solu\c c\~ao\ 19.}{48}{section*.6}%
+\contentsline {subsection}{Solu\c c\~ao\ 20.}{48}{section*.7}%
+\contentsline {subsection}{Solu\c c\~ao\ 27.}{49}{section*.8}%
+\contentsline {subsection}{Solu\c c\~ao\ 28.}{49}{section*.9}%
+\contentsline {subsection}{\questionstar Solução\ 29.}{49}{section*.10}%
+\contentsline {subsection}{Solu\c c\~ao\ 30.}{49}{section*.11}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

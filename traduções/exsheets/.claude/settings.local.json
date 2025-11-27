@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python translate_helper.py:*)",
+      "Bash(arara:*)",
+      "Bash(pdflatex:*)",
+      "Bash(tlmgr install:*)",
+      "Bash(C:texlive2025binwindowstlmgr.bat install libertinehologopatch)",
+      "Bash(\"C:/texlive/2025/bin/windows/tlmgr.bat\" install libertinehologopatch)",
+      "Bash(\"C:/texlive/2025/bin/windows/tlmgr.bat\" update --self)",
+      "Bash(\"C:/texlive/2025/bin/windows/tlmgr.bat\" info libertine)",
+      "Bash(dir:*)",
+      "Bash(timeout 180 pdflatex:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(biber:*)",
+      "Bash(pdfinfo:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

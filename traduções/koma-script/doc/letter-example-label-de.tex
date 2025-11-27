@@ -1,0 +1,49 @@
+\AtBeginDocument{%
+  \usepackage{xcolor,eso-pic}%
+  \BeforeClosingMainAux{%
+    \AddToShipoutPicture*{%
+      \thinlines\color{gray!50}%
+      \AtPageLowerLeft{%
+        \put(0,\LenToUnit{8mm}){%
+          \line(0,1){\LenToUnit{180mm}}%
+        }%
+        \multiput(\LenToUnit{70mm},\LenToUnit{8mm})(\LenToUnit{70mm},0){3}{%
+          \line(0,1){\LenToUnit{216mm}}%
+        }%
+        \multiput(0,\LenToUnit{8mm})(0,\LenToUnit{36mm}){6}{%
+          \line(1,0){\LenToUnit{210mm}}%
+        }%
+        \put(\LenToUnit{70mm},\LenToUnit{224mm}){%
+          \line(1,0){\LenToUnit{140mm}}%
+        }%
+      }\color{black}%
+    }%
+  }%
+}
+\documentclass[version=last]{scrlttr2}
+\LoadLetterOptions{ich,settleford600label}
+\usepackage[ngerman]{babel}
+\usepackage{graphics}
+\begin{document}
+\setkomavar{date}{29. Februar 2011}
+\setkomavar{subject}{Mitgliederversammlung vermisst}
+\begin{letter}{%
+    Petra Mustermann\\
+    Vor dem Berg 1\\
+    12345 Musterhausen%
+  }
+\savelabel{3}{2}
+\opening{Liebe Vereinsvorsitzende,}
+seit einem Jahr gab es keine Mitgliederversammlung
+mehr. Ich erinnere daran, dass unsere Satzung eine
+solche jedes halbe Jahr vorsieht. Ich fordere den
+Vorstand daher auf, umgehend eine solche in
+Angriff zu nehmen.
+\closing{In Erwartung einer Einladung}
+\ps PS: Ich hoffe, Du nimmst mir das nicht krumm.
+\setkomavar*{enclseparator}{Anlage}
+\encl{Auszug aus der Satzung, in dem die
+  Mitgliederversammlungen geregelt sind}
+\cc{Die Vereinsvorsitzende\\Alle Mitglieder}
+\end{letter}
+\end{document}

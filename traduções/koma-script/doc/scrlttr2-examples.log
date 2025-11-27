@@ -1,0 +1,364 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=latex 2025.11.26)  27 NOV 2025 19:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**scrlttr2-examples.dtx
+(./scrlttr2-examples.dtx
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+(c:/texlive/2025/texmf-dist/tex/latex/base/docstrip.tex
+\blockLevel=\count196
+\emptyLines=\count197
+\processedLines=\count198
+\commentsRemoved=\count199
+\commentsPassed=\count266
+\codeLinesPassed=\count267
+\TotalprocessedLines=\count268
+\TotalcommentsRemoved=\count269
+\TotalcommentsPassed=\count270
+\TotalcodeLinesPassed=\count271
+\NumberOfFiles=\count272
+\inFile=\read2
+\inputcheck=\read3
+\off@0=\count273
+\off@1=\count274
+\off@2=\count275
+\off@3=\count276
+\off@4=\count277
+\off@5=\count278
+\off@6=\count279
+\off@7=\count280
+\off@8=\count281
+\off@9=\count282
+\off@10=\count283
+\off@11=\count284
+\off@12=\count285
+\off@13=\count286
+\off@14=\count287
+\off@15=\count288
+\@maxfiles=\count289
+\@maxoutfiles=\count290
+
+Utility: `docstrip' v2.6b <2022-09-03>
+English documentation    <2024-02-08>
+
+**********************************************************
+* This program converts documented macro-files into fast *
+* loadable files by stripping off (nearly) all comments! *
+**********************************************************
+
+********************************************************
+* No Configuration file found, using default settings. *
+********************************************************
+
+(./scrlttr2-examples.dtx
+
+Generating file(s) ./musterlogo.eps 
+\openout0 = `./musterlogo.eps'.
+
+
+Processing file scrlttr2-examples.dtx (logo) -> musterlogo.eps
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+
+Generating file(s) ./ich.lco ./me.lco 
+\openout0 = `./ich.lco'.
+
+\openout1 = `./me.lco'.
+
+
+Processing file scrlttr2-examples.dtx (lco,23,ngerman) -> ich.lco
+                                      (lco,23,english) -> me.lco
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+
+Generating file(s) ./letter-example-00-en.tex ./letter-example-01-en.tex ./lett
+er-example-02-en.tex ./letter-example-03-en.tex ./letter-example-04-en.tex ./le
+tter-example-05-en.tex ./letter-example-06-en.tex ./letter-example-07-en.tex ./
+letter-example-08-en.tex ./letter-example-09-en.tex ./letter-example-10-en.tex 
+./letter-example-11-en.tex ./letter-example-12-en.tex ./letter-example-13-en.te
+x ./letter-example-14-en.tex ./letter-example-15-en.tex ./letter-example-16-en.
+tex ./letter-example-17-en.tex ./letter-example-18-en.tex ./letter-example-19-e
+n.tex ./letter-example-20-en.tex ./letter-example-21-en.tex ./letter-example-22
+-en.tex ./letter-example-23-en.tex ./letter-example-label-en.tex ./letter-examp
+le-nipponA-en.tex ./letter-example-nipponB-en.tex ./letter-example-00-de.tex ./
+letter-example-01-de.tex ./letter-example-02-de.tex ./letter-example-03-de.tex 
+./letter-example-04-de.tex ./letter-example-05-de.tex ./letter-example-06-de.te
+x ./letter-example-07-de.tex ./letter-example-08-de.tex ./letter-example-09-de.
+tex ./letter-example-10-de.tex ./letter-example-11-de.tex ./letter-example-12-d
+e.tex ./letter-example-13-de.tex ./letter-example-14-de.tex ./letter-example-15
+-de.tex ./letter-example-16-de.tex ./letter-example-17-de.tex ./letter-example-
+18-de.tex ./letter-example-19-de.tex ./letter-example-20-de.tex ./letter-exampl
+e-21-de.tex ./letter-example-22-de.tex ./letter-example-23-de.tex ./letter-exam
+ple-label-de.tex ./letter-example-nipponA-de.tex ./letter-example-nipponB-de.te
+x 
+\openout0 = `./letter-example-00-en.tex'.
+
+\openout1 = `./letter-example-01-en.tex'.
+
+\openout2 = `./letter-example-02-en.tex'.
+
+\openout3 = `./letter-example-03-en.tex'.
+
+\openout4 = `./letter-example-04-en.tex'.
+
+\openout5 = `./letter-example-05-en.tex'.
+
+\openout6 = `./letter-example-06-en.tex'.
+
+\openout7 = `./letter-example-07-en.tex'.
+
+\openout8 = `./letter-example-08-en.tex'.
+
+\openout9 = `./letter-example-09-en.tex'.
+
+\openout10 = `./letter-example-10-en.tex'.
+
+\openout11 = `./letter-example-11-en.tex'.
+
+\openout12 = `./letter-example-12-en.tex'.
+
+\openout13 = `./letter-example-13-en.tex'.
+
+\openout14 = `./letter-example-14-en.tex'.
+
+\openout15 = `./letter-example-15-en.tex'.
+
+
+Processing file scrlttr2-examples.dtx (example,0,english) -> letter-example-00-
+en.tex
+                                      (example,1,english) -> letter-example-01-
+en.tex
+                                      (example,2,english) -> letter-example-02-
+en.tex
+                                      (example,3,english) -> letter-example-03-
+en.tex
+                                      (example,4,english) -> letter-example-04-
+en.tex
+                                      (example,5,english) -> letter-example-05-
+en.tex
+                                      (example,6,english) -> letter-example-06-
+en.tex
+                                      (example,7,english) -> letter-example-07-
+en.tex
+                                      (example,8,english) -> letter-example-08-
+en.tex
+                                      (example,9,english) -> letter-example-09-
+en.tex
+                                      (example,10,english) -> letter-example-10
+-en.tex
+                                      (example,11,english) -> letter-example-11
+-en.tex
+                                      (example,12,english) -> letter-example-12
+-en.tex
+                                      (example,13,english) -> letter-example-13
+-en.tex
+                                      (example,14,english) -> letter-example-14
+-en.tex
+                                      (example,15,english) -> letter-example-15
+-en.tex
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+\openout0 = `./letter-example-16-en.tex'.
+
+\openout1 = `./letter-example-17-en.tex'.
+
+\openout2 = `./letter-example-18-en.tex'.
+
+\openout3 = `./letter-example-19-en.tex'.
+
+\openout4 = `./letter-example-20-en.tex'.
+
+\openout5 = `./letter-example-21-en.tex'.
+
+\openout6 = `./letter-example-22-en.tex'.
+
+\openout7 = `./letter-example-23-en.tex'.
+
+\openout8 = `./letter-example-label-en.tex'.
+
+\openout9 = `./letter-example-nipponA-en.tex'.
+
+\openout10 = `./letter-example-nipponB-en.tex'.
+
+\openout11 = `./letter-example-00-de.tex'.
+
+\openout12 = `./letter-example-01-de.tex'.
+
+\openout13 = `./letter-example-02-de.tex'.
+
+\openout14 = `./letter-example-03-de.tex'.
+
+\openout15 = `./letter-example-04-de.tex'.
+
+
+Processing file scrlttr2-examples.dtx (example,16,english) -> letter-example-16
+-en.tex
+                                      (example,17,english) -> letter-example-17
+-en.tex
+                                      (example,18,english) -> letter-example-18
+-en.tex
+                                      (example,19,english) -> letter-example-19
+-en.tex
+                                      (example,20,english) -> letter-example-20
+-en.tex
+                                      (example,21,english) -> letter-example-21
+-en.tex
+                                      (example,22,english) -> letter-example-22
+-en.tex
+                                      (example,23,english) -> letter-example-23
+-en.tex
+                                      (example,label,english) -> letter-example
+-label-en.tex
+                                      (example,22,nipponA,english) -> letter-ex
+ample-nipponA-en.tex
+                                      (example,22,nipponB,english) -> letter-ex
+ample-nipponB-en.tex
+                                      (example,0,ngerman) -> letter-example-00-
+de.tex
+                                      (example,1,ngerman) -> letter-example-01-
+de.tex
+                                      (example,2,ngerman) -> letter-example-02-
+de.tex
+                                      (example,3,ngerman) -> letter-example-03-
+de.tex
+                                      (example,4,ngerman) -> letter-example-04-
+de.tex
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+\openout0 = `./letter-example-05-de.tex'.
+
+\openout1 = `./letter-example-06-de.tex'.
+
+\openout2 = `./letter-example-07-de.tex'.
+
+\openout3 = `./letter-example-08-de.tex'.
+
+\openout4 = `./letter-example-09-de.tex'.
+
+\openout5 = `./letter-example-10-de.tex'.
+
+\openout6 = `./letter-example-11-de.tex'.
+
+\openout7 = `./letter-example-12-de.tex'.
+
+\openout8 = `./letter-example-13-de.tex'.
+
+\openout9 = `./letter-example-14-de.tex'.
+
+\openout10 = `./letter-example-15-de.tex'.
+
+\openout11 = `./letter-example-16-de.tex'.
+
+\openout12 = `./letter-example-17-de.tex'.
+
+\openout13 = `./letter-example-18-de.tex'.
+
+\openout14 = `./letter-example-19-de.tex'.
+
+\openout15 = `./letter-example-20-de.tex'.
+
+
+Processing file scrlttr2-examples.dtx (example,5,ngerman) -> letter-example-05-
+de.tex
+                                      (example,6,ngerman) -> letter-example-06-
+de.tex
+                                      (example,7,ngerman) -> letter-example-07-
+de.tex
+                                      (example,8,ngerman) -> letter-example-08-
+de.tex
+                                      (example,9,ngerman) -> letter-example-09-
+de.tex
+                                      (example,10,ngerman) -> letter-example-10
+-de.tex
+                                      (example,11,ngerman) -> letter-example-11
+-de.tex
+                                      (example,12,ngerman) -> letter-example-12
+-de.tex
+                                      (example,13,ngerman) -> letter-example-13
+-de.tex
+                                      (example,14,ngerman) -> letter-example-14
+-de.tex
+                                      (example,15,ngerman) -> letter-example-15
+-de.tex
+                                      (example,16,ngerman) -> letter-example-16
+-de.tex
+                                      (example,17,ngerman) -> letter-example-17
+-de.tex
+                                      (example,18,ngerman) -> letter-example-18
+-de.tex
+                                      (example,19,ngerman) -> letter-example-19
+-de.tex
+                                      (example,20,ngerman) -> letter-example-20
+-de.tex
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+\openout0 = `./letter-example-21-de.tex'.
+
+\openout1 = `./letter-example-22-de.tex'.
+
+\openout2 = `./letter-example-23-de.tex'.
+
+\openout3 = `./letter-example-label-de.tex'.
+
+\openout4 = `./letter-example-nipponA-de.tex'.
+
+\openout5 = `./letter-example-nipponB-de.tex'.
+
+
+Processing file scrlttr2-examples.dtx (example,21,ngerman) -> letter-example-21
+-de.tex
+                                      (example,22,ngerman) -> letter-example-22
+-de.tex
+                                      (example,23,ngerman) -> letter-example-23
+-de.tex
+                                      (example,label,ngerman) -> letter-example
+-label-de.tex
+                                      (example,22,nipponA,ngerman) -> letter-ex
+ample-nipponA-de.tex
+                                      (example,22,nipponB,ngerman) -> letter-ex
+ample-nipponB-de.tex
+File scrlttr2-examples.dtx ended by \endinput.
+Lines  processed: 399
+Comments removed: 29
+Comments  passed: 2
+Codelines passed: 243
+
+)
+Overall statistics:
+Files  processed: 6
+Lines  processed: 2394
+Comments removed: 174
+Comments  passed: 12
+Codelines passed: 1458
+ ) ) 
+Here is how much of TeX's memory you used:
+ 772 strings out of 473191
+ 14061 string characters out of 5720004
+ 411341 words of memory out of 5000000
+ 24060 multiletter control sequences out of 15000+600000
+ 558837 words of font info for 36 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 17i,0n,15p,169b,484s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+No pages of output.

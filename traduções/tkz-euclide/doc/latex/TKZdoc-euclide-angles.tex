@@ -1,0 +1,264 @@
+\section{Ângulos}
+\subsection{Definição e uso com \tkzname{tkz-euclide}}
+Na geometria euclidiana, um ângulo é a figura formada por dois raios, chamados de lados do ângulo, compartilhando um ponto final comum, chamado de vértice do ângulo.[Wikipedia]. Um raio com \tkzname{tkz-euclide} é definido por dois pontos, assim cada ângulo é definido com três pontos como $\widehat{AOB}$. O vértice $O$ é o segundo ponto. A ordem é importante porque presume-se que o ângulo é especificado na ordem direta (sentido anti-horário).
+Na trigonometria e na matemática em geral, os ângulos planos são convencionalmente medidos no sentido anti-horário, começando com $0^\circ$ apontando diretamente para a direita (ou leste), e $90^\circ$ apontando diretamente para cima (ou norte)[Wikipedia].
+Vamos concordar que um ângulo medido no sentido anti-horário é positivo.
+
+  \begin{center}
+    \begin{tikzpicture}[scale=.75]
+      \node {horário};
+      \tkzDefPoint(0,0){O} \tkzDefPoint(90:2){A}\tkzDefPoint(180:2){B}
+      \tkzDrawArc[black,line width=2pt,arrows = {Stealth-}](O,B)(A)
+    \end{tikzpicture}
+    \begin{tikzpicture}[scale=.75]
+          \node {anti-horário};
+      \tkzDefPoint(0,0){O} \tkzDefPoint(90:2){A}\tkzDefPoint(0:2){B}
+      \tkzDrawArc[black,line width=2pt,arrows = {-Stealth}](O,A)(B)
+    \end{tikzpicture}
+  \end{center}
+
+ \tkzname{Ângulos} estão envolvidos em várias macros como \tkzcname{tkzDefPoint},\tkzcname{tkzDefPointBy[rotation = \dots]}, \tkzcname{tkzDrawArc}
+ e a próxima \tkzcname{tkzGetAngle}. Com exceção da última, todas essas macros aceitam ângulos negativos.
+
+ \begin{figure}[!ht]
+ \centering
+ \begin{tabular}{|c|c|}
+ \hline
+ \tkzsubf{\begin{tikzpicture}
+ \tkzDefPoint(0,0){O}    \tkzDefPoint(0:2){A}
+ \tkzDefPointBy[rotation=center O angle 80](A)  \tkzGetPoint{B}
+ \tkzDrawSegments[-{Stealth}](O,A O,B)
+ \tkzMarkAngles[size=2,-Stealth,teal](A,O,B)
+ \tkzFindAngle(A,O,B)   \tkzGetAngle{an}
+ \tkzLabelAngle[pos=1,teal](A,O,B){$ \pgfmathprintnumber{\an}^\circ$}
+ \tkzLabelPoints(A)  \tkzLabelPoints[above](B)
+ \end{tikzpicture}}
+      {Rotação $80^\circ$ de $(O,A)$ para $(O,B)$\\
+    {\textbackslash}tkzDefPointBy[rotation=center O angle 80]}
+ &
+ \tkzsubf{\begin{tikzpicture}
+ \tkzDefPoint(0,0){O}    \tkzDefPoint(0:2){A}
+ \tkzDefPointBy[rotation=center O angle -80](A)  \tkzGetPoint{B}
+ \tkzDrawSegments[-{Stealth}](O,A O,B)
+ \tkzMarkAngles[size=2,Stealth-,red](B,O,A)
+ \tkzFindAngle(B,O,A)   \tkzGetAngle{an}
+ \tkzLabelAngle[pos=1,red](B,O,A){$-\pgfmathprintnumber{\an}^\circ$}
+\tkzLabelPoints[right](A)  \tkzLabelPoints[below](B)
+ \end{tikzpicture}}
+  {Rotação $-80^\circ$ de $(O,A)$ para $(O,B)$\\
+     {\textbackslash}tkzDefPointBy[rotation=center O angle -80]}
+ \\ \hline
+ \tkzsubf{\begin{tikzpicture}
+ \tkzDefPoint(0,0){O}    \tkzDefPoint(0:2){A}
+ \tkzDefPointBy[rotation=center O angle 80](A)  \tkzGetPoint{B}
+ \tkzDrawSegments[-{Stealth}](O,A O,B)
+ \tkzMarkAngles[size=1.5,-Stealth,teal](A,O,B)
+ \tkzFindAngle(A,O,B)   \tkzGetAngle{an}
+ \tkzLabelAngle[pos=1,teal](A,O,B){$ \pgfmathprintnumber{\an}^\circ$}
+\tkzLabelPoints(A)  \tkzLabelPoints[above](B)
+ \end{tikzpicture}}
+      { {\textbackslash}tkzFindAngle(A,O,B) resulta em $80$}
+ &
+ \tkzsubf{\begin{tikzpicture}
+ \tkzDefPoint(0,0){O}    \tkzDefPoint(0:2){A}
+ \tkzDefPointBy[rotation=center O angle -80](A)  \tkzGetPoint{B}
+ \tkzDrawSegments[-{Stealth}](O,A O,B)
+ \tkzMarkAngles[size=1,-Stealth,red](A,O,B)
+ \tkzFindAngle(A,O,B)   \tkzGetAngle{an}
+ \tkzLabelAngle[pos=.75,red](A,O,B){$\pgfmathprintnumber{\an}^\circ$}
+\tkzLabelPoints[right](A)  \tkzLabelPoints[below](B)
+ \end{tikzpicture}}
+  {{\textbackslash}tkzFindAngle(A,O,B) resulta em $\pgfmathprintnumber{\an}^\circ$}
+ \\\hline
+ \end{tabular}
+ \end{figure}
+
+Como podemos ver, a rotação $-80^\circ$ define um ângulo horário mas a macro
+\tkzcname{tkzFindAngle} recupera um ângulo anti-horário.
+
+\subsection{Recuperando um ângulo \tkzcname{tkzGetAngle}}
+\begin{NewMacroBox}{tkzGetAngle}{\parg{nome da macro}}%
+Atribui o valor em graus de um ângulo a uma macro. O valor é positivo e está entre $0^\circ$ e $360^\circ$. Esta macro recupera \tkzcname{tkzAngleResult} e armazena o resultado em uma nova macro.
+
+\medskip
+
+\begin{tabular}{lll}%
+\toprule
+argumentos             & exemplo & explicação             \\
+\midrule
+\TAline{nome da macro} {\tkzcname{tkzGetAngle}\{ang\}}{\tkzcname{ang} contém o valor do ângulo.}
+\end{tabular}
+\end{NewMacroBox}
+
+Esta é uma macro auxiliar que permite recuperar o resultado da seguinte macro \tkzcname{tkzFindAngle}.
+
+\subsection{Ângulo formado por três pontos}
+
+\begin{NewMacroBox}{tkzFindAngle}{\parg{pt1,pt2,pt3}}%
+O resultado é armazenado em uma macro \tkzcname{tkzAngleResult}.
+
+\medskip
+
+\begin{tabular}{lll}%
+\toprule
+argumentos     & exemplo & explicação     \\
+\midrule
+\TAline{(pt1,pt2,pt3)} {\tkzcname{tkzFindAngle}(A,B,C)}{\tkzcname{tkzAngleResult} fornece o ângulo ($\overrightarrow{BA},\overrightarrow{BC}$)}
+\bottomrule
+\end{tabular}
+
+\medskip
+A medida é sempre positiva e está entre $0^\circ$ e $360^\circ$. Com as convenções usuais, um ângulo anti-horário menor que um ângulo reto tem sempre uma medida entre $0^\circ$ e $180^\circ$, enquanto um ângulo horário menor que um ângulo reto terá uma medida maior que $180^\circ$. \tkzcname{tkzGetAngle} pode recuperar o ângulo.
+\end{NewMacroBox}
+
+\subsubsection{Verificação da medida de ângulo}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoint(-1,1){A}
+  \tkzDefPoint(5,2){B}
+  \tkzDefEquilateral(A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPolygon(A,B,C)
+  \tkzFindAngle(B,A,C) \tkzGetAngle{angleBAC}
+  \edef\angleBAC{\fpeval{round(\angleBAC)}}
+  \tkzDrawPoints(A,B,C)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoint[right](C){$C$}
+  \tkzLabelAngle(B,A,C){\angleBAC$^\circ$}
+  \tkzMarkAngle[size=1.5](B,A,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Determinação dos três ângulos de um triângulo}
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}
+\tikzset{label angle style/.append style={pos=1.4}}
+\tkzDefPoints{0/0/a,5/3/b,3/6/c}
+\tkzDrawPolygon(a,b,c)
+\tkzFindAngle(c,b,a)\tkzGetAngle{angleCBA}
+\pgfmathparse{round(1+\angleCBA)}
+\let\angleCBA\pgfmathresult
+\tkzFindAngle(a,c,b)\tkzGetAngle{angleACB}
+\pgfmathparse{round(\angleACB)}
+\let\angleACB\pgfmathresult
+\tkzFindAngle(b,a,c)\tkzGetAngle{angleBAC}
+\pgfmathparse{round(\angleBAC)}
+\let\angleBAC\pgfmathresult
+\tkzMarkAngle(c,b,a)
+\tkzLabelAngle(c,b,a){\tiny $\angleCBA^\circ$}
+\tkzMarkAngle(a,c,b)
+\tkzLabelAngle(a,c,b){\tiny $\angleACB^\circ$}
+\tkzMarkAngle(b,a,c)
+\tkzLabelAngle(b,a,c){\tiny $\angleBAC^\circ$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Ângulo entre dois círculos}
+Estamos procurando o ângulo formado pelas tangentes em um ponto de interseção
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.4]
+\pgfkeys{/pgf/number format/.cd,%
+          fixed,precision=1}
+\tkzDefPoints{0/0/A,6/0/B,4/2/C}
+\tkzDrawCircles(A,C B,C)
+\tkzDefLine[tangent at=C](A) \tkzGetPoint{a}
+\tkzDefPointsBy[symmetry = center C](a){d}
+\tkzDefLine[tangent at=C](B) \tkzGetPoint{b}
+\tkzDrawLines[add=1 and 4](a,C  C,b)
+\tkzFillAngle[fill=teal,opacity=.2%
+                        ,size=2](b,C,d)
+\tkzFindAngle(b,C,d)\tkzGetAngle{bcd}
+\tkzLabelAngle[pos=1.25](b,C,d){%
+  \tiny $\pgfmathprintnumber{\bcd}^\circ$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Ângulo formado por uma reta com o eixo horizontal \tkzcname{tkzFindSlopeAngle}}
+Muito mais interessante que a última. O resultado está entre -180 graus e +180 graus.
+
+\begin{NewMacroBox}{tkzFindSlopeAngle}{\parg{A,B}}%
+Determina a inclinação da reta (AB). O resultado é armazenado em uma macro \tkzcname{tkzAngleResult}.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+argumentos  & exemplo & explicação     \\
+\midrule
+\TAline{(pt1,pt2)} {\tkzcname{tkzFindSlopeAngle}(A,B)}{}
+\bottomrule
+\end{tabular}
+
+\medskip
+\tkzcname{tkzGetAngle} pode recuperar o resultado. Se a recuperação não for necessária, você pode usar \tkzcname{tkzAngleResult}.
+\end{NewMacroBox}
+
+\subsubsection{Como usar \tkzcname{tkzFindSlopeAngle}}
+
+ O ponto aqui é que $(AB)$ é a bissetriz de $\widehat{CAD}$, tal que a inclinação de $AD$ é zero. Recuperamos a inclinação de $(AB)$ e então rotacionamos duas vezes.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+ \tkzDefPoint(1,5){A} \tkzDefPoint(5,2){B}
+ \tkzFindSlopeAngle(A,B)\tkzGetAngle{tkzang}
+ \tkzDefPointBy[rotation= center A angle \tkzang ](B)
+ \tkzGetPoint{C}
+ \tkzDefPointBy[rotation= center A angle -\tkzang ](B)
+ \tkzGetPoint{D}
+ \tkzDrawSegment(A,B)
+ \tkzDrawSegments[new](A,C A,D)
+ \tkzDrawPoints(A,B,C,D)
+ \tkzCompass[length=1](A,C)
+ \tkzCompass[delta=10,brown](B,C)
+ \tkzLabelPoints(B,C,D)
+ \tkzLabelPoints[above left](A)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Uso de \tkzcname{tkzFindSlopeAngle} e \tkzcname{tkzGetAngle}}
+Aqui está outra versão da construção de uma mediatriz
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}
+ \tkzInit
+ \tkzDefPoint(0,0){A}        \tkzDefPoint(3,2){B}
+ \tkzDefLine[mediator](A,B)  \tkzGetPoints{I}{J}
+ \tkzCalcLength(A,B)         \tkzGetLength{dAB}
+ \tkzFindSlopeAngle(A,B)     \tkzGetAngle{tkzangle}
+ \begin{scope}[rotate=\tkzangle]
+   \tkzSetUpArc[color=gray,line width=0.2pt,%
+     /tkzcompass/delta=10]
+   \tkzDrawArc[R,arc](B,3/4*\dAB)(120,240)
+   \tkzDrawArc[R,arc](A,3/4*\dAB)(-45,60)
+   \tkzDrawLine(I,J)         \tkzDrawSegment(A,B)
+  \end{scope}
+  \tkzDrawPoints(A,B,I,J)    \tkzLabelPoints(A,B)
+   \tkzLabelPoints[right](I,J)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Outro uso de \tkzcname{tkzFindSlopeAngle}}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoint(1,2){A}    \tkzDefPoint(3,4){B}
+  \tkzDefPoint(3,2){C}    \tkzDefPoint(3,1){D}
+  \tkzDrawSegments(A,B A,C A,D)
+  \tkzDrawPoints[color=red](A,B,C,D)
+  \tkzLabelPoints(A,B,C,D)
+  \tkzFindSlopeAngle(A,B)\tkzGetAngle{SAB}
+  \tkzFindSlopeAngle(A,C)\tkzGetAngle{SAC}
+  \tkzFindSlopeAngle(A,D)\tkzGetAngle{SAD}
+  \pgfkeys{/pgf/number format/.cd,fixed,precision=2}
+  \tkzText(1,5){A inclinação de (AB) é:
+     $\pgfmathprintnumber{\SAB}^\circ$}
+  \tkzText(1,4.5){A inclinação de (AC) é:
+     $\pgfmathprintnumber{\SAC}^\circ$}
+  \tkzText(1,4){A inclinação de (AD) é:
+     $\pgfmathprintnumber{\SAD}^\circ$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\endinput

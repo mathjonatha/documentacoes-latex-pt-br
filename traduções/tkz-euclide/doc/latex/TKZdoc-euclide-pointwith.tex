@@ -1,0 +1,284 @@
+\section{Definindo pontos usando um vetor}
+
+\subsection{\tkzcname{tkzDefPointWith}}
+Existem várias possibilidades para criar pontos que atendam a certas condições vetoriais.
+Isso pode ser feito com
+
+\tkzcname{tkzDefPointWith}. O princípio geral é o seguinte: dois pontos são passados como argumentos, ou seja, um vetor. As diferentes opções permitem obter um novo ponto formando com o primeiro ponto (com algumas exceções) um vetor colinear ou um vetor ortogonal ao primeiro vetor. Em seguida, o comprimento é ou proporcional ao do primeiro, ou proporcional à unidade. Como este ponto é usado apenas temporariamente, ele não precisa ser nomeado imediatamente. O resultado está em \tkzname{tkzPointResult}. A macro \tkzNameMacro{tkzGetPoint} permite recuperar o ponto e nomeá-lo de forma diferente.
+
+ Existem opções para definir a distância entre o ponto dado e o ponto obtido.
+No caso geral, esta distância é a distância entre os 2 pontos dados como argumentos; se a opção for do tipo "normed", então a distância entre o ponto dado e o ponto obtido é 1 cm. Então a opção $K$ permite obter múltiplos.
+
+\begin{NewMacroBox}{tkzDefPointWith}{\parg{pt1,pt2}}%
+ É na verdade a definição de um ponto atendendo a condições vetoriais.
+
+\medskip
+
+\begin{tabular}{lll}%
+\toprule
+argumentos             & definição & explicação                         \\
+\midrule
+\TAline{(pt1,pt2)} {par de pontos}{o resultado é um ponto em \tkzname{tkzPointResult} } \\
+
+\bottomrule
+\end{tabular}
+
+\medskip
+No que segue, assume-se que o ponto é recuperado por \tkzNameMacro{tkzGetPoint\{C\}}
+
+\begin{tabular}{lll}%
+\toprule
+opções             & exemplo & explicação                         \\
+\midrule
+\TOline{orthogonal}{[orthogonal](A,B)}{$AC=AB$ e $\overrightarrow{AC} \perp \overrightarrow{AB}$}
+\TOline{orthogonal normed}{[orthogonal normed](A,B)}{$AC=1$ e $\overrightarrow{AC} \perp \overrightarrow{AB}$}
+\TOline{linear}{[linear](A,B)}{$\overrightarrow{AC}=K \times \overrightarrow{AB}$}
+\TOline{linear normed}{[linear normed](A,B)}{$AC=K$ e $\overrightarrow{AC}=k\times \overrightarrow{AB}$ }
+\TOline{colinear= at \#1}{[colinear= at C](A,B)}{$\overrightarrow{CD}= \overrightarrow{AB}$ }
+\TOline{colinear normed= at \#1}{[colinear normed= at C](A,B)}{$\overrightarrow{CD}= \overrightarrow{AB}$ }
+\TOline{K}{[linear](A,B),K=2}{$\overrightarrow{AC}=2\times \overrightarrow{AB}$}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Opção \tkzname{colinear at}, exemplo simples}
+ $(\overrightarrow{AB}=\overrightarrow{CD})$
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=1.2,
+   vect/.style={->,shorten >=1pt,>=latex'}]
+  \tkzDefPoint(2,3){A}   \tkzDefPoint(4,2){B}
+  \tkzDefPoint(0,1){C}
+  \tkzDefPointWith[colinear=at C](A,B)
+  \tkzGetPoint{D}
+  \tkzDrawPoints[new](A,B,C,D)
+  \tkzLabelPoints[above right=3pt](A,B,C,D)
+  \tkzDrawSegments[vect](A,B C,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{colinear at}, exemplo complexo}
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoints{0/0/B,3.6/0/C,1.5/4/A}
+\tkzDefSpcTriangle[ortho](A,B,C){Ha,Hb,Hc}
+\tkzDefTriangleCenter[ortho](A,B,C) \tkzGetPoint{H}
+\tkzDefSquare(A,C) \tkzGetPoints{R}{S}
+\tkzDefSquare(B,A) \tkzGetPoints{M}{N}
+\tkzDefSquare(C,B) \tkzGetPoints{P}{Q}
+\tkzDefPointWith[colinear= at M](A,S) \tkzGetPoint{A'}
+\tkzDefPointWith[colinear= at P](B,N) \tkzGetPoint{B'}
+\tkzDefPointWith[colinear= at Q](C,R) \tkzGetPoint{C'}
+\tkzDefPointBy[projection=onto P--Q](Ha) \tkzGetPoint{Pa}
+\tkzDrawPolygon[teal,thick](A,C,R,S)\tkzDrawPolygon[teal,thick](A,B,N,M)
+\tkzDrawPolygon[teal,thick](C,B,P,Q)
+\tkzDrawPoints[teal,size=2](A,B,C,Ha,Hb,Hc,A',B',C')
+\tkzDrawSegments[ultra thin,red](M,A' A',S P,B' B',N Q,C' C',R B,S C,M C,N B,R A,P A,Q)
+\tkzDrawSegments[ultra thin,teal, dashed](A,Ha B,Hb C,Hc)
+\tkzDefPointBy[rotation=center A angle 90](S) \tkzGetPoint{S'}
+\tkzDrawSegments[ultra thin,teal,dashed](B,S' A,S' A,A' M,S' B',Q P,C' M,S Ha,Pa)
+\tkzDrawArc(A,S)(S')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{colinear at}}
+Como usar $K$
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[vect/.style={->,
+               shorten >=1pt,>=latex'}]
+  \tkzDefPoints{0/0/A,5/0/B,1/2/C}
+  \tkzDefPointWith[colinear=at C](A,B)
+  \tkzGetPoint{G}
+  \tkzDefPointWith[colinear=at C, K=0.5](A,B)
+  \tkzGetPoint{H}
+  \tkzLabelPoints(A,B,C,G,H)
+  \tkzDrawPoints(A,B,C,G,H)
+  \tkzDrawSegments[vect](A,B C,H)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{colinear at} }
+Com $K=\frac{\sqrt{2}}{2}$
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[vect/.style={->,
+            shorten >=1pt,>=latex'}]
+ \tkzDefPoints{1/1/A,4/2/B,2/2/C}
+ \tkzDefPointWith[colinear=at C,K=sqrt(2)/2](A,B)
+ \tkzGetPoint{D}
+ \tkzDrawPoints[color=red](A,B,C,D)
+ \tkzDrawSegments[vect](A,B C,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{orthogonal}}
+AB=AC já que $K=1$.
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=1.2,
+  vect/.style={->,shorten >=1pt,>=latex'}]
+  \tkzDefPoints{2/3/A,4/2/B}
+   \tkzDefPointWith[orthogonal,K=1](A,B)
+     \tkzGetPoint{C}
+   \tkzDrawPoints[color=red](A,B,C)
+   \tkzLabelPoints[right=3pt](B,C)
+   \tkzLabelPoints[below=3pt](A)
+   \tkzDrawSegments[vect](A,B A,C)
+   \tkzMarkRightAngle(B,A,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+
+\subsubsection{Opção \tkzname{orthogonal}}
+ Com $K=-1$
+OK=OI já que $\lvert K \rvert=1$ então OI=OJ=OK.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoints{1/2/O,2/5/I}
+  \tkzDefPointWith[orthogonal](O,I)
+  \tkzGetPoint{J}
+  \tkzDefPointWith[orthogonal,K=-1](O,I)
+  \tkzGetPoint{K}
+  \tkzDrawSegment(O,I)
+  \tkzDrawSegments[->](O,J O,K)
+  \tkzMarkRightAngles(I,O,J I,O,K)
+  \tkzDrawPoints(O,I,J,K)
+  \tkzLabelPoints(O,I,J,K)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{orthogonal} exemplo mais complicado}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoints{0/0/A,6/0/B}
+  \tkzDefMidPoint(A,B)
+    \tkzGetPoint{I}
+  \tkzDefPointWith[orthogonal,K=-.75](B,A)
+  \tkzGetPoint{C}
+  \tkzInterLC(B,C)(B,I)
+     \tkzGetPoints{D}{F}
+  \tkzDuplicateSegment(B,F)(A,F)
+  \tkzGetPoint{E}
+  \tkzDrawArc[delta=10](F,E)(B)
+  \tkzInterLC(A,B)(A,E)
+    \tkzGetPoints{N}{M}
+  \tkzDrawArc[delta=10](A,M)(E)
+  \tkzDrawLines(A,B B,C A,F)
+  \tkzCompass(B,F)
+  \tkzDrawPoints(A,B,C,F,M,E)
+  \tkzLabelPoints(A,B,C,F,M)
+  \tkzLabelPoints[above](E)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opções \tkzname{colinear} e \tkzname{orthogonal}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2,
+  vect/.style={->,shorten >=1pt,>=latex'}]
+  \tkzDefPoints{2/1/A,6/2/B}
+  \tkzDefPointWith[orthogonal,K=.5](A,B)
+  \tkzGetPoint{C}
+  \tkzDefPointWith[colinear=at C,K=.5](A,B)
+  \tkzGetPoint{D}
+  \tkzMarkRightAngle[fill=gray!20](B,A,C)
+  \tkzDrawSegments[vect](A,B A,C C,D)
+  \tkzDrawPoints(A,...,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção  \tkzname{orthogonal normed}}
+ $K=1$ $AC=1$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2,
+  vect/.style={->,shorten >=1pt,>=latex'}]
+  \tkzDefPoints{2/3/A,4/2/B}
+  \tkzDefPointWith[orthogonal normed](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPoints[color=red](A,B,C)
+  \tkzDrawSegments[vect](A,B A,C)
+  \tkzMarkRightAngle[fill=gray!20](B,A,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{orthogonal normed} e K=2}
+$K=2$ portanto $AC=2$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2,
+   vect/.style={->,shorten >=1pt,>=latex'}]
+  \tkzDefPoints{2/3/A,5/1/B}
+  \tkzDefPointWith[orthogonal normed,K=2](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPoints[color=red](A,B,C)
+  \tkzDefCircle[R](A,2) \tkzGetPoint{a}
+  \tkzDrawCircle(A,a)
+  \tkzDrawSegments[vect](A,B A,C)
+  \tkzMarkRightAngle[fill=gray!20](B,A,C)
+  \tkzLabelPoints[above=3pt](A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{linear}}
+Aqui $K=0.5$.
+
+Isso equivale a aplicar uma homotetia ou uma multiplicação de um vetor por um real. Aqui está o ponto médio de $[AB]$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2]
+  \tkzDefPoints{1/3/A,4/2/B}
+  \tkzDefPointWith[linear,K=0.5](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPoints[color=red](A,B,C)
+  \tkzDrawSegment(A,B)
+  \tkzLabelPoints[above right=3pt](A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{linear normed}}
+No exemplo seguinte $AC=1$ e $C$ pertence a $(AB)$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.2]
+ \tkzDefPoints{1/3/A,4/2/B}
+ \tkzDefPointWith[linear normed](A,B)
+ \tkzGetPoint{C}
+ \tkzDrawPoints[color=red](A,B,C)
+ \tkzDrawSegment(A,B)
+ \tkzLabelSegment(A,C){$1$}
+ \tkzLabelPoints[above right=3pt](A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+%<--------------------------------------------------------------------------–>
+%         tkzGetVectxy
+%<--------------------------------------------------------------------------–>
+\subsection{\tkzcname{tkzGetVectxy} }
+Recuperando as coordenadas de um vetor.
+
+\begin{NewMacroBox}{tkzGetVectxy}{\parg{$A,B$}\var{text}}%
+Permite obter as coordenadas de um vetor.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+argumentos    & exemplo & explicação      \\
+
+\midrule
+
+\TAline{(ponto)\{nome da macro\}} {\tkzcname{tkzGetVectxy}(A,B)\{V\}}{\tkzcname{Vx},\tkzcname{Vy}: coordenadas de $\overrightarrow{AB}$}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Transferência de coordenadas com \tkzcname{tkzGetVectxy}}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+ \tkzDefPoints{0/0/O,1/1/A,4/2/B}
+ \tkzGetVectxy(A,B){v}
+ \tkzDefPoint(\vx,\vy){V}
+ \tkzDrawSegment[->,color=red](O,V)
+ \tkzDrawSegment[->,color=blue](A,B)
+ \tkzDrawPoints(A,B,O)
+ \tkzLabelPoints(A,B,O,V)
+\end{tikzpicture}
+\end{tkzexample}
+\endinput

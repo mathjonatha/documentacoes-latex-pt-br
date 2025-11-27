@@ -1,0 +1,614 @@
+\section{Apresentação e Visão Geral}
+
+\begin{tkzexample}[latex=5cm,small]
+  \begin{tikzpicture}[scale=.25]
+  \tkzDefPoints{0/0/A,12/0/B,6/12*sind(60)/C}
+  \foreach \density in {20,30,...,240}{%
+    \tkzDrawPolygon[fill=teal!\density](A,B,C)
+    \pgfnodealias{X}{A}
+    \tkzDefPointWith[linear,K=.15](A,B) \tkzGetPoint{A}
+    \tkzDefPointWith[linear,K=.15](B,C) \tkzGetPoint{B}
+    \tkzDefPointWith[linear,K=.15](C,X) \tkzGetPoint{C}}
+  \end{tikzpicture}
+\end{tkzexample}
+
+\vspace*{12pt}
+
+\subsection{Por que \tkzname{\tkznameofpack}? }
+Meu objetivo inicial era fornecer a outros professores de matemática e a mim mesmo uma ferramenta para criar rapidamente figuras de geometria euclidiana sem investir muito esforço no aprendizado de uma nova linguagem de programação.
+Obviamente, \tkzname{\tkznameofpack} é para professores de matemática que usam \LATEX\ e torna possível criar facilmente desenhos corretos por meio do \LATEX.
+
+Pareceu-me que o método mais simples era reproduzir aquele usado para obter construções à mão.
+Para descrever uma construção, você deve, é claro, definir os objetos, mas também as ações que você executa. Pareceu-me que uma sintaxe próxima à linguagem dos matemáticos e seus alunos seria mais facilmente compreensível; além disso, também me pareceu que essa sintaxe deveria estar próxima da do \LaTeX.
+Os objetos, é claro, são pontos, segmentos, retas, triângulos, polígonos e círculos. Quanto às ações, considerei cinco como suficientes, a saber: definir, criar, desenhar, marcar e rotular.
+
+A sintaxe talvez seja muito verbosa, mas é, acredito, facilmente acessível.
+Como resultado, os alunos assim como os professores conseguiram acessar facilmente esta ferramenta.
+
+\subsection{ \tkzname{\TIKZ } vs \tkzname{\tkznameofpack} }
+
+Eu amo programar com \TIKZ, e sem \TIKZ\ nunca teria tido a ideia de criar \tkzname{\tkznameofpack}, mas nunca esqueça que por trás dele está o \TIKZ\ e que sempre é possível inserir código do \TIKZ. \tkzname{\tkznameofpack} não impede você de usar \TIKZ.
+Dito isso, não acho que misturar sintaxes seja uma boa coisa.
+
+Não há necessidade de comparar \TIKZ\ e \tkzname{\tkznameofpack}. Este último não é direcionado ao mesmo público que o \TIKZ. O primeiro permite fazer muitas coisas, o segundo faz apenas desenhos de geometria. O primeiro pode fazer tudo que o segundo faz, mas o segundo fará mais facilmente o que você deseja.
+
+O objetivo principal é definir pontos para criar figuras geométricas. \tkzname{\tkznameofpack} permite desenhar os objetos essenciais da geometria euclidiana a partir desses pontos, mas pode ser insuficiente para algumas ações como colorir superfícies. Neste caso você terá que usar \TIKZ\ o que sempre é possível.
+
+Aqui estão algumas comparações entre \tkzname{\TIKZ } e \tkzname{\tkznameofpack} 4. Para isso usarei os exemplos de geometria do PGFManual.
+  As duas ferramentas euclidianas mais importantes usadas pelos gregos antigos para construir diferentes formas geométricas e ângulos eram um compasso e uma régua. Minha ideia é permitir que você siga passo a passo uma construção que seria feita à mão (com compasso e régua) da forma mais natural possível.
+
+\subsubsection{Livro I, proposição I  \_Elementos de Euclides\_ }
+
+\begin{tikzpicture}
+\node [mybox,title={Livro I, proposição I  \_Elementos de Euclides\_}] (box){%
+    \begin{minipage}{0.90\textwidth}
+{\emph{Construir um triângulo equilátero sobre uma reta finita dada.}
+}
+    \end{minipage}
+};
+\end{tikzpicture}%
+
+
+Explicação:
+
+O quarto tutorial do \emph{PgfManual} é sobre construções geométricas. \emph{T. Tantau} propõe obter o desenho com sua bela ferramenta Ti\emph{k}Z. Aqui proponho a mesma construção com \emph{tkz-elements}. A cor do código Ti\emph{k}Z é green!50!black e a do \emph{tkz-elements} é red.
+
+\medskip
+
+\vbox{\color{green!50!black} |\usepackage{tikz}|\\
+|\usetikzlibrary{calc,intersections,through,backgrounds}|}
+
+\medskip
+\vbox{\color{red} |\usepackage{tkz-euclide}|}
+
+\medskip
+Como obter a reta AB? Para obter esta reta, usamos dois pontos fixos.\\
+
+\medskip
+\vbox{\color{green!50!black} 
+|\coordinate [label=left:$A$] (A) at (0,0);|\\
+|\coordinate [label=right:$B$] (B) at (1.25,0.25);|\\
+|\draw (A) -- (B);|}
+
+\medskip
+\vbox{\color{red}
+|\tkzDefPoint(0,0){A}|\\
+|\tkzDefPoint(1.25,0.25){B}|\\
+|\tkzDrawSegment(A,B)|\\
+|\tkzLabelPoint[left](A){$A$}|\\
+|\tkzLabelPoint[right](B){$B$}|}
+
+Queremos desenhar um círculo ao redor dos pontos $A$ e $B$ cujo raio é dado pelo comprimento da reta AB. 
+\medskip
+
+\vbox{\color{green!50!black}
+|\draw let \p1 = ($ (B) - (A) $),|\\
+|\n2 = {veclen(\x1,\y1)} in|\\
+|          (A) circle (\n2)|\\
+|          (B) circle (\n2);|}
+
+\medskip
+\vbox{\color{red} 
+|\tkzDrawCircles(A,B B,A)|
+}
+
+A interseção dos círculos $\mathcal{D}$ e $\mathcal{E}$
+
+\medskip
+
+\vbox{\color{green!50!black} 
+|draw [name path=A--B] (A) -- (B);|\\
+|node (D) [name path=D,draw,circle through=(B),label=left:$D$] at (A) {}; |\\
+|node (E) [name path=E,draw,circle through=(A),label=right:$E$] at (B) {};|\\
+|path [name intersections={of=D and E, by={[label=above:$C$]C,[label=below:$C'$]C'}}]; |\\
+|draw [name path=C--C',red] (C) -- (C');|\\
+|path [name intersections={of=A--B and C--C',by=F}];|\\
+|node [fill=red,inner sep=1pt,label=-45:$F$] at (F) {};|\\}
+
+\medskip
+\vbox{\color{red} |\tkzInterCC(A,B)(B,A) \tkzGetPoints{C}{X}|\\}
+
+
+Como desenhar pontos:
+
+\medskip
+\vbox{\color{green!50!black} |\foreach \point in {A,B,C}|\\
+|\fill [black,opacity=.5] (\point) circle (2pt);|\\}
+
+\medskip
+\vbox{\color{red}| \tkzDrawPoints[fill=gray,opacity=.5](A,B,C)|\\}
+
+\subsubsection{Código completo com \pkg{tkz-euclide}}
+
+Precisamos definir cores 
+
+|\colorlet{input}{red!80!black} |\\
+|\colorlet{output}{red!70!black}|\\
+|\colorlet{triangle}{green!50!black!40}  |
+
+\begin{tkzexample}[vbox,small]
+  \colorlet{input}{red!80!black} 
+  \colorlet{output}{red!70!black}
+  \colorlet{triangle}{green!50!black!40}
+  \begin{tikzpicture}[scale=1.25,thick,help lines/.style={thin,draw=black!50}]
+  \tkzDefPoint(0,0){A}     
+  \tkzDefPoint(1.25+rand(),0.25+rand()){B}      
+  \tkzInterCC(A,B)(B,A) \tkzGetPoints{C}{X}
+
+  \tkzFillPolygon[triangle,opacity=.5](A,B,C)
+  \tkzDrawSegment[input](A,B) 
+  \tkzDrawSegments[red](A,C B,C)  
+  \tkzDrawCircles[help lines](A,B B,A)
+  \tkzDrawPoints[fill=gray,opacity=.5](A,B,C)
+  
+  \tkzLabelPoints(A,B)
+  \tkzLabelCircle[below=12pt](A,B)(180){$\mathcal{D}$}
+  \tkzLabelCircle[above=12pt](B,A)(180){$\mathcal{E}$}
+  \tkzLabelPoint[above,red](C){$C$}
+      
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Livro I, Proposição II  \_Elementos de Euclides\_}
+
+\begin{tikzpicture}
+\node [mybox,title={Livro I, Proposição II  \_Elementos de Euclides\_}] (box){%
+\begin{minipage}{0.90\textwidth}
+  {\emph{Colocar uma reta igual a uma reta dada com uma extremidade em um ponto dado.}}
+\end{minipage}
+};
+\end{tikzpicture}%
+
+Explicação
+
+Na primeira parte, precisamos encontrar o ponto médio da reta $AB$. Com \TIKZ\ podemos usar a biblioteca calc
+
+\medskip
+\vbox{\color{green!50!black} |\coordinate [label=left:$A$] (A) at (0,0);|\\
+|\coordinate [label=right:$B$] (B) at (1.25,0.25);|\\
+|\draw (A) -- (B);|\\
+|\node [fill=red,inner sep=1pt,label=below:$X$] (X) at ($ (A)!.5!(B) $) {};|\\}
+
+Com \pkg{tkz-euclide} temos uma macro \tkzcname{tkzDefMidPoint}, obtemos o ponto X com \tkzcname{tkzGetPoint}, mas não precisamos deste ponto para obter a próxima etapa.
+
+
+\medskip
+\vbox{\red |\tkzDefPoints{0/0/A,0.75/0.25/B,1/1.5/C}|\\  
+|\tkzDefMidPoint(A,B) \tkzGetPoint{X}|}
+
+\medskip
+Em seguida, precisamos construir um triângulo equilátero. É fácil com \pkg{tkz-euclide}. Com TikZ você precisa de algum esforço porque precisa usar o ponto médio $X$ para obter o ponto $D$ com cálculo trigonométrico.
+
+\medskip
+\vbox{\color{green!50!black}
+|\node [fill=red,inner sep=1pt,label=below:$X$] (X) at ($ (A)!.5!(B) $) {}; | \\
+|\node [fill=red,inner sep=1pt,label=above:$D$] (D) at                      |  \\
+|($ (X) ! {sin(60)*2} ! 90:(B) $) {};                                       |  \\
+|\draw (A) -- (D) -- (B);                                                   |  \\
+}                                                                           
+
+\medskip
+\vbox{\color{red} |\tkzDefTriangle[equilateral](A,B) \tkzGetPoint{D}|}
+
+Podemos desenhar o triângulo no final da figura com
+
+\medskip
+\vbox{\color{red} |\tkzDrawPolygon{A,B,C}|}
+
+\medskip
+Sabemos como desenhar o círculo $\mathcal{H}$ ao redor de $B$ passando por $C$ e como colocar os pontos $E$ e $F$
+
+\medskip
+\vbox{\color{green!50!black} 
+|\node (H) [label=135:$H$,draw,circle through=(C)] at (B) {};|          \\
+|\draw (D) -- ($ (D) ! 3.5 ! (B) $) coordinate [label=below:$F$] (F);|  \\
+|\draw (D) -- ($ (D) ! 2.5 ! (A) $) coordinate [label=below:$E$] (E);|} 
+
+\medskip
+
+\vbox{\color{red} |\tkzDrawCircle(B,C)|\\
+|\tkzDrawLines[add=0 and 2](D,A D,B)|}
+
+\medskip
+Podemos colocar os pontos $E$ e $F$ no final da figura. Não precisamos deles agora.
+
+Interseção de uma Reta e um Círculo: aqui procuramos a interseção do círculo ao redor de $B$ passando por $C$ e a reta $DB$.
+A reta infinita $DB$ intercepta o círculo, mas com \TIKZ\ precisamos estender as retas $DB$ e isso pode ser feito usando cálculos parciais. Obtemos o ponto $F$ e $BF$ ou $DF$ intercepta o círculo
+
+\medskip
+\vbox{\color{green!50!black}| \node (H) [label=135:$H$,draw,circle through=(C)] at (B) {}; |  \\
+|\path let \p1 = ($ (B) - (C) $) in|                                     \\
+|  coordinate [label=left:$G$] (G) at ($ (B) ! veclen(\x1,\y1) ! (F) $); |  \\
+|\fill[red,opacity=.5] (G) circle (2pt);|}                                
+
+\medskip
+Assim como a interseção de dois círculos, é fácil encontrar a interseção de uma reta e um círculo com \pkg{tkz-euclide}. Não precisamos de $F$ 
+
+\medskip
+\vbox{\color{red} | \tkzInterLC(B,D)(B,C)\tkzGetFirstPoint{G}|}
+
+\medskip
+Não há mais dificuldades. Aqui está o código final com algumas simplificações.
+Desenhamos o círculo $\mathcal{K}$ com centro $D$ e passando por $G$. Ele intercepta a reta $AD$ no ponto $L$. $AL = BC$.
+
+\vbox{\color{red} | \tkzDrawCircle(D,G)|}
+\vbox{\color{red} | \tkzInterLC(D,A)(D,G)\tkzGetSecondPoint{L}|}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1.5]
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(0.75,0.25){B}  
+\tkzDefPoint(1,1.5){C} 
+\tkzDefTriangle[equilateral](A,B)\tkzGetPoint{D}
+\tkzInterLC[near](D,B)(B,C)      \tkzGetSecondPoint{G}
+\tkzInterLC[near](A,D)(D,G)      \tkzGetFirstPoint{L}
+\tkzDrawCircles(B,C D,G)
+\tkzDrawLines[add=0 and 2](D,A D,B)
+\tkzDrawSegment(A,B) 
+\tkzDrawSegments[red](A,L B,C) 
+\tkzDrawPoints[red](D,L,G)
+\tkzDrawPoints[fill=gray](A,B,C)
+\tkzLabelPoints[left,red](A)
+\tkzLabelPoints[below right,red](L)
+\tkzLabelCircle[above](B,C)(20){$\mathcal{(H)}$}
+\tkzLabelPoints[above left](D)
+\tkzLabelPoints[above](G)
+\tkzLabelPoints[above,red](C)
+\tkzLabelPoints[right,red](B)
+\tkzLabelCircle[below](D,G)(-90){$\mathcal{(K)}$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{\tkzname{\tkznameofpack\ 4}   vs \tkzname{\tkznameofpack\ 3}}
+
+Agora não sou mais professor de Matemática e passo apenas algumas horas estudando geometria. Quis evitar múltiplas complicações tentando tornar \tkzname{tkz-euclide} independente de \tkzname{tkz-base}. Assim nasceu \tkzname{\tkznameofpack} 4. Este último é uma versão simplificada de seu predecessor. As macros do \tkzname{tkz-euclide 3} foram mantidas. A unidade agora é \tkzname{cm}. Se você precisar de algumas macros do \tkzname{tkz-base}, talvez precise usar \tkzcname{tkzInit}.
+
+\subsection{\tkzname{\tkznameofpack\ 5}   vs \tkzname{\tkznameofpack\ 4}}
+
+Nada muda para o usuário. A compilação deve ser realizada usando o motor LuaLaTeX, e os resultados são mais precisos e obtidos mais rapidamente. Basta carregar \tkzname{\tkznameofpack} assim |\usepackage[lua]{tkz-euclide}|.
+
+\subsection{Como usar o pacote \tkzname{\tkznameofpack}?}
+\subsubsection{Vejamos um exemplo clássico}
+Para mostrar o caminho certo, veremos como construir um triângulo equilátero. Várias possibilidades estão abertas para nós, vamos seguir os passos de Euclides.
+
+\begin{itemize}
+\item   Primeiro de tudo, você deve usar uma classe de documento. A melhor escolha para testar seu código é criar uma única figura com a classe \tkzname{standalone}\index{standalone}.
+\begin{verbatim}
+\documentclass{standalone}
+\end{verbatim}
+\item Em seguida, carregue o pacote \tkzname{\tkznameofpack}:
+\begin{verbatim}
+\usepackage{tkz-euclide} or \usepackage[lua]{tkz-euclide}
+\end{verbatim}
+
+ Você não precisa carregar \TIKZ\ porque o pacote \tkzname{\tkznameofpack} funciona sobre o TikZ e o carrega.
+
+ \item Inicie o documento e abra um ambiente de figura TikZ:
+\begin{verbatim}
+\begin{document}
+\begin{tikzpicture}
+\end{verbatim}
+
+\item Agora definimos dois pontos fixos:
+\begin{verbatim}
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,2){B}
+\end{verbatim}
+
+\item Dois pontos definem dois círculos, vamos usar esses círculos:
+
+ círculo com centro $A$ passando por $B$ e círculo com centro $B$ passando por $A$. Esses dois círculos têm dois pontos em comum.
+\begin{verbatim}
+\tkzInterCC(A,B)(B,A)
+\end{verbatim}
+Podemos obter os pontos de interseção com
+\begin{verbatim}
+\tkzGetPoints{C}{D}
+\end{verbatim}
+
+\item Todos os pontos necessários são obtidos, podemos passar para as etapas finais, incluindo os desenhos.
+\begin{verbatim}
+\tkzDrawCircles[gray,dashed](A,B B,A)
+\tkzDrawPolygon(A,B,C)% The triangle
+\end{verbatim}
+\item Desenhe todos os pontos $A$, $B$, $C$ e $D$:
+\begin{verbatim}
+\tkzDrawPoints(A,...,D)
+\end{verbatim}
+
+\item A etapa final, imprimimos rótulos aos pontos e usamos opções para posicionamento:\\
+\begin{verbatim}
+\tkzLabelSegments[swap](A,B){$c$}
+\tkzLabelPoints(A,B,D)
+\tkzLabelPoints[above](C)
+\end{verbatim}
+\item Finalmente fechamos ambos os ambientes
+\begin{verbatim}
+\end{tikzpicture}
+\end{document}
+\end{verbatim}
+
+\item O código completo
+
+\begin{tkzexample}[latex=8cm,small]
+ \begin{tikzpicture}[scale=.5]
+   % fixed points
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(5,2){B}
+  % calculus
+  \tkzInterCC(A,B)(B,A)
+  \tkzGetPoints{C}{D}
+  % drawings
+  \tkzDrawCircles(A,B B,A)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPoints(A,...,D)
+  % marking
+  \tkzMarkSegments[mark=s||](A,B B,C C,A)
+  % labelling
+  \tkzLabelSegments[swap](A,B){$c$}
+  \tkzLabelPoints(A,B,D)
+  \tkzLabelPoints[above](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+ \end{itemize}
+
+\subsubsection{ Parte I: triângulo dourado}
+\begin{center}
+\begin{tikzpicture}
+  
+\tkzDefPoint(0,0){C} % possible \tkzDefPoint[label=below:$C$](0,0){C} but don't do this
+\tkzDefPoint(2,6){B}
+% We get D and E with a rotation
+\tkzDefPointBy[rotation= center B angle 36](C) \tkzGetPoint{D} 
+\tkzDefPointBy[rotation= center B angle 72](C) \tkzGetPoint{E} 
+% Toget A we use an intersection of lines
+\tkzInterLL(B,E)(C,D) \tkzGetPoint{A}
+\tkzInterLL(C,E)(B,D) \tkzGetPoint{H}
+
+% angles 
+\tkzMarkAngles[size=2](C,B,D E,A,D) %this is to draw the arcs
+\tkzLabelAngles[pos=1.5](C,B,D E,A,D){$\alpha$}
+\tkzMarkRightAngle(B,H,C)
+\tkzDrawPoints(A,...,E)
+
+% drawing
+\tkzDrawArc[delta=10](B,C)(E)
+\tkzDrawPolygon(C,B,D)
+\tkzDrawSegments(D,A B,A C,E)
+
+% Label only now
+\tkzLabelPoints[below left](C,A)
+\tkzLabelPoints[below right](D)
+\tkzLabelPoints[above](B,E)
+\end{tikzpicture}
+\end{center}
+
+Vamos analisar a figura
+\begin{enumerate}
+  \item $CBD$ e $DBE$ são triângulos isósceles;
+
+  \item $BC=BE$ e $(BD)$ é uma bissetriz do ângulo $CBE$;
+
+  \item Disso deduzimos que os ângulos $CBD$ e $DBE$ são iguais e têm a mesma medida $\alpha$
+   \[\widehat{BAC} +\widehat{ABC} + \widehat{BCA}=180^\circ \ \text{no triângulo}\ BAC \]
+   \[3\alpha + \widehat{BCA}=180^\circ\  \text{no triângulo}\ CBD\]
+   então
+     \[\alpha + 2\widehat{BCA}=180^\circ \]
+   ou
+     \[\widehat{BCA}=90^\circ -\alpha/2 \]
+
+    \item  Finalmente   \[\widehat{CBD}=\alpha=36^\circ \]
+     o triângulo $CBD$ é um triângulo \code{golden} (dourado).
+\end{enumerate}
+
+\vspace*{24pt}
+Como construir um triângulo dourado ou um ângulo de $36^\circ$?
+
+\begin{enumerate}
+  \item Colocamos os pontos fixos $C$ e $D$. |\tkzDefPoint(0,0){C}| e |\tkzDefPoint(4,0){D}|;
+  \item  Construímos um quadrado $CDef$ e construímos o ponto médio $m$ de $[Cf]$;
+
+  Podemos fazer tudo isso com um compasso e uma régua;
+  \item Em seguida, traçamos um arco com centro $m$ passando por $e$. Este arco cruza a reta $(Cf)$ em $n$;
+  \item Agora os dois arcos com centro $C$ e $D$ e raio $Cn$ definem o ponto $B$.
+\end{enumerate}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint(0,0){C}
+  \tkzDefPoint(4,0){D}
+  \tkzDefSquare(C,D)                     
+  \tkzGetPoints{e}{f}
+  \tkzDefMidPoint(C,f)                   
+  \tkzGetPoint{m}
+  \tkzInterLC(C,f)(m,e)                  
+  \tkzGetSecondPoint{n}
+  \tkzInterCC[with nodes](C,C,n)(D,C,n) 
+  \tkzGetFirstPoint{B}
+  \tkzDrawSegment[brown,dashed](f,n)
+  \pgfinterruptboundingbox% from tikz
+  \tkzDrawPolygon[brown,dashed](C,D,e,f)
+  \tkzDrawArc[brown,dashed](m,e)(n)
+  \tkzCompass[brown,dashed,delta=20](C,B)
+  \tkzCompass[brown,dashed,delta=20](D,B)
+  \endpgfinterruptboundingbox 
+  \tkzDrawPolygon(B,...,D)
+  \tkzDrawPoints(B,C,D,e,f,m,n)
+  \tkzLabelPoints[above](B)
+  \tkzLabelPoints[left](f,m,n)
+  \tkzLabelPoints(C,D)
+  \tkzLabelPoints[right](e)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+Depois de construir o triângulo dourado $BCD$, construímos o ponto $A$ observando que $BD=DA$. Então obtemos o ponto $E$ e finalmente o ponto $F$. Isso é feito com interseções de objetos já definidos (reta e círculo).
+
+
+\subsubsection{Parte II: dois outros métodos com triângulos dourado e de euclides}
+
+\tkzname{\tkznameofpack} sabe como definir um triângulo \code{golden} (dourado) ou \code{euclide} (de euclides). Podemos definir $BCD$ e $BCA$ como triângulos dourados.
+
+
+  \begin{center}
+    \begin{tkzexample}[code only,small]
+      \begin{tikzpicture}
+        \tkzDefPoint(0,0){C}
+        \tkzDefPoint(4,0){D}
+        \tkzDefTriangle[golden](C,D)
+        \tkzGetPoint{B}
+        \tkzDefTriangle[golden](B,C)
+        \tkzGetPoint{A}
+        \tkzInterLC[near](A,B)(B,D) \tkzGetFirstPoint{E}
+        \tkzInterLL(B,D)(C,E) \tkzGetPoint{F}
+        \tkzDrawPoints(C,D,B)
+        \tkzDrawPolygon(B,...,D)  
+        \tkzDrawPolygon(B,C,D)
+        \tkzDrawSegments(D,A A,B C,E)
+        \tkzDrawArc[delta=10](B,C)(E)
+        \tkzDrawPoints(A,...,F) 
+        \tkzMarkRightAngle(B,F,C)  
+        \tkzMarkAngles(C,B,D E,A,D)
+        \tkzLabelAngles[pos=1.5](C,B,D E,A,D){$\alpha$} 
+        \tkzLabelPoints[below](A,C,D,E)
+        \tkzLabelPoints[above right](B,F)
+      \end{tikzpicture} 
+    \end{tkzexample}
+  \end{center}
+
+Aqui está um método final que usa rotações:  
+
+\begin{center}
+  \begin{tkzexample}[code only,small]
+  \begin{tikzpicture} 
+  \tkzDefPoint(0,0){C} % possible 
+  % \tkzDefPoint[label=below:$C$](0,0){C} 
+  % but don't do this
+  \tkzDefPoint(2,6){B}
+  % We get D and E with a rotation
+  \tkzDefPointBy[rotation= center B angle 36](C) \tkzGetPoint{D} 
+  \tkzDefPointBy[rotation= center B angle 72](C) \tkzGetPoint{E} 
+  % To get A we use an intersection of lines
+  \tkzInterLL(B,E)(C,D) \tkzGetPoint{A}
+  \tkzInterLL(C,E)(B,D) \tkzGetPoint{H}
+  % drawing
+  \tkzDrawArc[delta=10](B,C)(E)
+  \tkzDrawPolygon(C,B,D)
+  \tkzDrawSegments(D,A B,A C,E)
+  % angles 
+  \tkzMarkAngles(C,B,D E,A,D) %this is to draw the arcs
+  \tkzLabelAngles[pos=1.5](C,B,D E,A,D){$\alpha$}
+  \tkzMarkRightAngle(B,H,C)
+  \tkzDrawPoints(A,...,E)
+  % Label only now
+  \tkzLabelPoints[below left](C,A)
+  \tkzLabelPoints[below right](D)
+  \tkzLabelPoints[above](B,E)
+  \end{tikzpicture}
+  \end{tkzexample}
+\end{center}
+
+
+\subsubsection{Exemplo completo mas mínimo}
+
+
+Sendo escolhida uma unidade de comprimento, o exemplo mostra como obter um segmento de comprimento $\sqrt{a}$ a partir de um segmento de comprimento $a$, usando uma régua e um compasso.
+
+$IB=a$, $AI=1$
+
+\vspace{12pt}
+\hypertarget{firstex}{}
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}[scale=1,ra/.style={fill=gray!20}]
+   % fixed points
+   \tkzDefPoint(0,0){A}
+   \tkzDefPoint(1,0){I}
+   % calculation
+   \tkzDefPointBy[homothety=center A ratio  10 ](I) \tkzGetPoint{B}  
+   \tkzDefMidPoint(A,B)              \tkzGetPoint{M}
+   \tkzDefPointWith[orthogonal](I,M) \tkzGetPoint{H}
+   \tkzInterLC(I,H)(M,B)             \tkzGetFirstPoint{C}
+   \tkzDrawSegment[style=purple](I,C)
+   \tkzDrawArc(M,B)(A)
+   \tkzDrawSegment[dim={$1$,-16pt,}](A,I)
+   \tkzDrawSegment[dim={$(a-1)/2$,-10pt,}](I,M)
+   \tkzDrawSegment[dim={$(a+1)/2$,-16pt,}](M,B)   
+   \tkzMarkRightAngle[ra](A,I,C)
+   \tkzDrawPoints(I,A,B,C,M)  
+   \tkzLabelPoint[left](A){$A(0,0)$} 
+   \tkzLabelPoints[above right](I,M)
+   \tkzLabelPoints[above left](C)
+   \tkzLabelPoint[right](B){$B(10,0)$}
+   \tkzLabelSegment[right=4pt](I,C){$\sqrt{a^2}=a \ (a>0)$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\emph{Comentários}
+
+\begin{itemize}
+\item O Preâmbulo
+
+
+ Vamos primeiro olhar para o preâmbulo. Se você precisar, deve carregar \tkzname{xcolor} antes de \tkzname{tkz-euclide}, ou seja, antes de \TIKZ. \TIKZ\ pode causar problemas com os caracteres ativos, mas...
+ fornece uma biblioteca em sua versão mais recente que deve resolver esses problemas \NameLib{babel}.
+ 
+\begin{tkzltxexample}[]
+\documentclass{standalone} % or another class
+   % \usepackage{xcolor} % before tikz or tkz-euclide if necessary
+\usepackage{tkz-euclide} % no need to load TikZ
+   % \usetkzobj{all}  is no longer necessary 
+   % \usetikzlibrary{babel}  if there are problems with the active characters
+\end{tkzltxexample}
+
+O código a seguir consiste em várias partes:
+
+   \item  Definição de pontos fixos: a primeira parte inclui as definições dos pontos necessários para a construção, estes são os pontos fixos. As macros \tkzcname{tkzInit} e \tkzcname{tkzClip} na maioria dos casos não são necessárias.
+
+\begin{tkzltxexample}[]
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(1,0){I}
+\end{tkzltxexample}
+ 
+  \item A segunda parte é dedicada à criação de novos pontos a partir dos pontos fixos;
+  um ponto $B$ é colocado a $10$~cm de $A$. O meio de $[AB]$ é definido por $M$ e então a reta ortogonal à reta $(AB)$ é procurada no ponto $I$. Então procuramos a interseção desta reta com o semicírculo de centro $M$ passando por $A$.  
+  
+\begin{tkzltxexample}[]
+   \tkzDefPointBy[homothety=center A ratio  10 ](I)
+      \tkzGetPoint{B}
+   \tkzDefMidPoint(A,B)
+      \tkzGetPoint{M}
+   \tkzDefPointWith[orthogonal](I,M)
+      \tkzGetPoint{H}
+   \tkzInterLC(I,H)(M,B)             
+   \tkzGetSecondPoint{C}
+ \end{tkzltxexample}  
+     
+
+ \item A terceira inclui os diferentes desenhos;
+ \begin{tkzltxexample}[]
+   \tkzDrawSegment[style=purple](I,H)
+   \tkzDrawPoints(O,I,A,B,M)
+   \tkzDrawArc(M,A)(O)
+   \tkzDrawSegment[dim={$1$,-16pt,}](A,I)
+   \tkzDrawSegment[dim={$a/2$,-10pt,}](I,M)
+   \tkzDrawSegment[dim={$a/2$,-16pt,}](M,B)
+ \end{tkzltxexample}
+ 
+\item  Marcação: a quarta é dedicada à marcação;
+
+
+\begin{tkzltxexample}[]
+ \tkzMarkRightAngle[ra](A,I,C)
+ \end{tkzltxexample}
+ 
+ \item Rotulagem: esta última trata apenas da colocação de rótulos.
+\begin{tkzltxexample}[]
+   \tkzLabelPoint[left](A){$A(0,0)$} 
+   \tkzLabelPoint[right](B){$B(10,0)$}
+   \tkzLabelSegment[right=4pt](I,C){$\sqrt{a^2}=a \ (a>0)$}
+\end{tkzltxexample}
+
+\end{itemize}
+
+\endinput

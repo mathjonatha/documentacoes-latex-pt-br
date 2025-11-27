@@ -1,0 +1,134 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Type area dimensions dependent on \Option {DIV} for A4}}{33}{table.2.1}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces \PName {DIV} defaults for A4}}{34}{table.2.2}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Symbolic values for the \DescRef {typearea.option.DIV} option and the \PName {DIV} argument to \DescRef {typearea.cmd.typearea}}}{36}{table.2.3}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Symbolic \PName {BCOR} arguments for \DescRef {typearea.cmd.typearea}}}{38}{table.2.4}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Standard values for simple switches in \KOMAScript }}{39}{table.2.5}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces Output driver for option \OptionVName {pagesize}{output driver}}}{48}{table.2.6}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Class correspondence}}{51}{table.3.1}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces Elements whose font style can be changed in \Class {scrbook}, \Class {scrreprt} or \Class {scrartcl} with \Macro {setkomafont} and \Macro {addtokomafont}}}{57}{table.3.2}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces Font defaults for the elements of the title}}{67}{table.3.3}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces Main title}}{67}{table.3.4}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces Available values for the \Option {toc} option}}{71}{table.3.5}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces Default font styles for the elements of the table of contents}}{74}{table.3.6}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces Available values of option \Option {parskip}}}{76}{table.3.7}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces Default values for page style elements}}{80}{table.3.8}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces Macros to set up the page style of special pages}}{81}{table.3.9}%
+\contentsline {table}{\numberline {3.10}{\ignorespaces Available numbering styles of page numbers}}{83}{table.3.10}%
+\contentsline {table}{\numberline {3.11}{\ignorespaces Available values for the \Option {footnotes} option}}{87}{table.3.11}%
+\contentsline {table}{\numberline {3.12}{\ignorespaces Available values for the \Option {open} option}}{93}{table.3.12}%
+\contentsline {table}{\numberline {3.13}{\ignorespaces Available values for the \Option {headings} option}}{95}{table.3.13}%
+\contentsline {table}{\numberline {3.14}{\ignorespaces Available values for the \Option {numbers} option}}{98}{table.3.14}%
+\contentsline {table}{\numberline {3.15}{\ignorespaces Default font sizes for different levels of document sectioning}}{102}{table.3.15}%
+\contentsline {table}{\numberline {3.16}{\ignorespaces Default settings for the elements of a dictum}}{114}{table.3.16}%
+\contentsline {table}{\numberline {3.17}{\ignorespaces {Available values for the \Option {captions}} option}}{127}{table.3.17}%
+\contentsline {table}{\numberline {3.18}{\ignorespaces Font defaults for the elements of figure or table captions}}{130}{table.3.18}%
+\contentsline {table}{\numberline {3.19}{\ignorespaces Alignments for multi-line captions of floating environments}}{137}{table.3.19}%
+\contentsline {table}{\numberline {3.20}{\ignorespaces Available values for the \Option {listof} option}}{140}{table.3.20}%
+\contentsline {table}{\numberline {3.21}{\ignorespaces Available values for the \Option {bibliography} option}}{144}{table.3.21}%
+\contentsline {table}{\numberline {3.22}{\ignorespaces Available values for the \Option {index} option}}{146}{table.3.22}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Supported variables in \Class {scrlttr2} and \Package {scrletter}}}{152}{table.4.1}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Pseudo-lengths provided by \Class {scrlttr2} and \Package {scrletter}}}{157}{table.4.2}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Elements whose font style can be changed in the \Class {scrlttr2} class or the \Package {scrletter} package with the \Macro {setkomafont} and \Macro {addtokomafont} commands}}{178}{table.4.3}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Combinable values for configuring fold marks with the \Option {foldmarks} option}}{184}{table.4.4}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Available values for the \Option {fromalign} option with \Class {scrlttr2}}}{188}{table.4.5}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Available values for the \Option {fromrule} option with \Class {scrlttr2}}}{189}{table.4.6}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Default descriptions of the letterhead variables}}{194}{table.4.7}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Default descriptions and contents of the letterhead separators without the \Option {symbolicnames} option}}{195}{table.4.8}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Available values for the \Option {addrfield} option with \Class {scrlttr2}}}{201}{table.4.9}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Default font styles for the elements of the address field.}}{202}{table.4.10}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Available values for the \Option {priority} option in \Class {scrlttr2}}}{202}{table.4.11}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Available values for the \Option {locfield} option with \Class {scrlttr2}}}{206}{table.4.12}%
+\contentsline {table}{\numberline {4.13}{\ignorespaces Available values for the \Option {refline} option with \Class {scrlttr2}}}{209}{table.4.13}%
+\contentsline {table}{\numberline {4.14}{\ignorespaces Default descriptions of variables in the reference line}}{210}{table.4.14}%
+\contentsline {table}{\numberline {4.15}{\ignorespaces Default font styles for elements in the reference line}}{211}{table.4.15}%
+\contentsline {table}{\numberline {4.16}{\ignorespaces Default descriptions of variables for the subject}}{214}{table.4.16}%
+\contentsline {table}{\numberline {4.17}{\ignorespaces Available values for the \Option {subject} option with \Class {scrlttr2}}}{215}{table.4.17}%
+\contentsline {table}{\numberline {4.18}{\ignorespaces Available values for the \Option {pagenumber} option with \Class {scrlttr2}}}{227}{table.4.18}%
+\contentsline {table}{\numberline {4.19}{\ignorespaces Predefined \File {lco} files}}{242}{table.4.19}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Elements of \Package {scrlayer-scrpage} whose font styles can be changed with the \Macro {setkomafont} and \Macro {addtokomafont} commands}}{253}{table.5.1}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Available values for the \Option {markcase} option}}{269}{table.5.2}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Symbolic values for the \Option {headwidth} and \Option {footwidth} options}}{273}{table.5.3}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {9.1}{\ignorespaces Available extended features of \Package {scrextend}}}{289}{table.9.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {12.1}{\ignorespaces Overview of common language-dependent terms}}{329}{table.12.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {15.1}{\ignorespaces Attributes of the predefined TOC-entry styles of \Package {tocbasic}\labelofbase [tab]{tocstyle.attributes}}}{364}{table.15.1}%
+\contentsline {table}{\numberline {15.2}{\ignorespaces Options for command \Macro {DeclareNewTOC}}}{379}{table.15.2}%
+\contentsline {table}{\numberline {15.3}{\ignorespaces Comparing the example \Environment {remarkbox} environment with the \Environment {figure} environment}}{384}{table.15.3}%
+\contentsline {table}{\numberline {15.4}{\ignorespaces Example: Measure of the rectangle in figure~\ref {fig:tocbasic.rechteck}}}{388}{table.15.4}%
+\contentsline {table}{\numberline {15.5}{\ignorespaces with \Package {tocbasic} available patches}}{390}{table.15.5}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {16.1}{\ignorespaces Options for defining page layers and the meaning of the corresponding layer attribute}}{401}{table.16.1}%
+\contentsline {table}{\numberline {16.2}{\ignorespaces Hook options for page styles (in order of execution)}}{412}{table.16.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {17.1}{\ignorespaces The layers \Package {scrlayer-scrpage} defines for a page style}}{432}{table.17.1}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {18.1}{\ignorespaces Available settings for declaring note columns}}{441}{table.18.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {20.1}{\ignorespaces Style-independent attributes for declaring sectioning commands}}{461}{table.20.1}%
+\contentsline {table}{\numberline {20.2}{\ignorespaces Attributes of the \PValue {section} style when declaring a sectioning command}}{462}{table.20.2}%
+\contentsline {table}{\numberline {20.3}{\ignorespaces Attributes of the \PValue {chapter} style when declaring a sectioning command}}{463}{table.20.3}%
+\contentsline {table}{\numberline {20.4}{\ignorespaces Attributes of the \PValue {part} style when declaring a sectioning command}}{464}{table.20.4}%
+\contentsline {table}{\numberline {20.5}{\ignorespaces Defaults for the chapter headings of \Class {scrbook} and \Class {scrreprt} depending on the \DescRef {maincls.option.headings} option}}{466}{table.20.5}%
+\contentsline {table}{\numberline {20.6}{Defaults for the headings of \Class {scrbook} and \Class {scrreprt}}}{466}{table.20.6}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {21.1}{\ignorespaces Defaults for language-dependent terms }}{491}{table.21.1}%
+\contentsline {table}{\numberline {21.2}{\ignorespaces Language-dependent forms of the date}}{492}{table.21.2}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces ISO and JIS standard paper sizes}}{494}{table.A.1}%
+\contentsline {table}{\numberline {A.2}{\ignorespaces Japanese B-series variants}}{494}{table.A.2}%
+\contentsline {table}{\numberline {A.3}{\ignorespaces Main Japanese contemporary stationery}}{495}{table.A.3}%
+\contentsline {table}{\numberline {A.4}{\ignorespaces Japanese ISO envelope sizes}}{496}{table.A.4}%
+\contentsline {table}{\numberline {A.5}{Japanese envelope sizes 3}}{497}{table.A.5}%
+\contentsline {table}{\numberline {A.6}{\ignorespaces Supported Japanese envelope types, window sizes, and locations}}{499}{table.A.6}%
+\contentsline {table}{\numberline {A.7}{\ignorespaces \File {lco} files provided by \KOMAScript {} for Japanese window envelopes}}{500}{table.A.7}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

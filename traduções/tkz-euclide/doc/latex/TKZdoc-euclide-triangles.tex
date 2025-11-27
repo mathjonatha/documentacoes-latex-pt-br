@@ -1,0 +1,579 @@
+\section{Triângulos}
+
+\subsection{Definição de triângulos \tkzcname{tkzDefTriangle}}
+As seguintes macros permitirão que você defina ou construa um triângulo a partir de \tkzname{pelo menos} dois pontos.
+
+ No momento, é possível definir os seguintes triângulos:
+ \begin{itemize}
+\item  \tkzname{two angles}  determina um triângulo com dois ângulos;
+\item  \tkzname{equilateral}  determina um triângulo equilátero;
+\item  \tkzname{isosceles right}  determina um triângulo isósceles retângulo;
+\item \tkzname{half} determina um triângulo retângulo tal que a razão das medidas dos dois lados adjacentes ao ângulo reto é igual a $2$;
+\item \tkzname{pythagore} determina um triângulo retângulo cujas medidas dos lados são proporcionais a 3, 4 e 5;
+\item \tkzname{school} determina um triângulo retângulo cujos ângulos são 30, 60 e 90 graus;
+\item \tkzname{golden} determina um triângulo retângulo tal que a razão das medidas dos dois lados adjacentes ao ângulo reto é igual a $\Phi=1.618034$, escolhi "triângulo dourado" como denominação porque vem do retângulo dourado e mantive a denominação "triângulo de ouro" ou "triângulo de Euclides" para o triângulo isósceles cujos ângulos na base são 72 graus;
+
+\item  \tkzname{euclid} ou \tkzname{gold} para o triângulo de ouro; na versão anterior a opção era "euclide" com um "e".
+
+\item \tkzname{cheops} determina um terceiro ponto tal que o triângulo é isósceles com medidas de lados proporcionais a $2$, $\Phi$ e $\Phi$.
+\end{itemize}
+
+\newpage
+\begin{NewMacroBox}{tkzDefTriangle}{\oarg{opções locais}\parg{A,B}}%
+Os pontos são ordenados porque o triângulo é construído seguindo a direção direta do círculo trigonométrico. Esta macro é usada em parceria com \tkzcname{tkzGetPoint} ou usando \tkzname{tkzPointResult} se não for necessário manter o nome.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                        \\
+\midrule
+\TOline{two angles= \#1 and \#2}{sem padrão}{triângulo conhecendo dois ângulos}
+\TOline{equilateral} {equilateral}{triângulo equilátero }
+\TOline{half} {equilateral}{B retângulo  $AB=2BC$ $AC$ hipotenusa }
+\TOline{isosceles right} {equilateral}{triângulo isósceles retângulo }
+\TOline{pythagore}{equilateral}{proporcional ao triângulo pitagórico 3-4-5}
+\TOline{pythagoras}{equilateral}{mesmo que acima}
+\TOline{egyptian}{equilateral}{mesmo que acima}
+\TOline{school} {equilateral}{ângulos de 30, 60 e 90 graus }
+\TOline{gold}{equilateral}{B retângulo e $AB/AC = \Phi$}
+\TOline{euclid} {equilateral}{ângulos de 72, 72 e 36 graus, $A$ é o ápice}
+\TOline{golden} {equilateral}{ângulos de 72, 72 e 36 graus, $C$ é o ápice}
+\TOline{sublime} {equilateral}{ângulos de 72, 72 e 36 graus, $C$ é o ápice}
+\TOline{cheops} {equilateral}{AC=BC, AC e BC são proporcionais a $2$ e $\Phi$.}
+\TOline{swap} {false}{fornece o ponto simétrico em relação a $AB$}
+\bottomrule
+\end{tabular}
+
+\medskip
+\emph{\tkzcname{tkzGetPoint} permite armazenar o ponto, caso contrário \tkzname{tkzPointResult} permite uso imediato.}
+\end{NewMacroBox}
+
+\subsubsection{Opção \tkzname{equilateral}}
+\begin{tkzexample}[latex=7 cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefTriangle[equilateral](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPolygons(A,B,C)
+  \tkzDefTriangle[equilateral](B,A)
+  \tkzGetPoint{D}
+  \tkzDrawPolygon(B,A,D)
+  \tkzMarkSegments[mark=s|](A,B B,C A,C A,D B,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Opção \tkzname{two angles}}
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefTriangle[two angles = 50 and 70](A,B)
+\tkzGetPoint{C}
+\tkzDrawSegment(A,B)
+\tkzDrawPoints(A,B)
+\tkzLabelPoints(A,B)
+\tkzDrawSegments[new](A,C B,C)
+\tkzDrawPoints[new](C)
+\tkzLabelPoints[above,new](C)
+\tkzLabelAngle[pos=1.4](B,A,C){$50^\circ$}
+\tkzLabelAngle[pos=0.8](C,B,A){$70^\circ$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{school}}
+Os ângulos são 30, 60 e 90 graus.
+
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B}
+  \tkzDefTriangle[school](A,B)
+  \tkzGetPoint{C}
+  \tkzMarkRightAngles(C,B,A)
+  \tkzLabelAngle[pos=0.8](B,A,C){$30^\circ$}
+  \tkzLabelAngle[pos=0.8](C,B,A){$90^\circ$}
+  \tkzLabelAngle[pos=0.8](A,C,B){$60^\circ$}
+  \tkzDrawSegments(A,B)
+  \tkzDrawSegments[new](A,C B,C)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{pythagore}}
+Este triângulo tem lados cujos comprimentos são proporcionais a 3, 4 e 5.
+
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B}
+  \tkzDefTriangle[pythagore](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawSegments(A,B)
+  \tkzDrawSegments[new](A,C B,C)
+  \tkzMarkRightAngles(A,B,C)
+  \tkzDrawPoints[new](C)
+  \tkzDrawPoints(A,B)
+  \tkzLabelPoints[above](A,B)
+  \tkzLabelPoints[new](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{pythagore} e \tkzname{swap}}
+Este triângulo tem lados cujos comprimentos são proporcionais a 3, 4 e 5.
+
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B}
+  \tkzDefTriangle[pythagore,swap](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawSegments(A,B)
+  \tkzDrawSegments[new](A,C B,C)
+  \tkzMarkRightAngles(A,B,C)
+  \tkzLabelPoint[above,new](C){$C$}
+  \tkzDrawPoints[new](C)
+  \tkzDrawPoints(A,B)
+  \tkzLabelPoints(A,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{golden}}
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}[scale=.8]
+\tkzDefPoint(0,0){A} \tkzDefPoint(4,0){B}
+\tkzDefTriangle[golden](A,B)\tkzGetPoint{C}
+\tkzDefSpcTriangle[in,name=M](A,B,C){a,b,c}
+\tkzDrawPolygon(A,B,C)
+\tkzDrawPoints(A,B)
+\tkzDrawSegment(C,Mc)
+\tkzDrawPoints[new](C)
+\tkzLabelPoints(A,B)
+\tkzLabelPoints[above,new](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{euclid}}
+\tkzimp{Euclid} e \tkzimp{golden} são idênticos, mas o segmento AB é uma base em um e um lado no outro.
+
+\begin{tkzexample}[latex=7 cm,small]
+\begin{tikzpicture}[scale=.75]
+ \tkzDefPoint(0,0){A} \tkzDefPoint(4,0){B}
+ \tkzDefTriangle[euclid](A,B)\tkzGetPoint{C}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPoints(A,B,C)
+ \tkzLabelPoints(C)
+ \tkzLabelPoints[above](A,B)
+ \tkzLabelAngle[pos=0.8](A,B,C){$72^\circ$}
+ \tkzLabelAngle[pos=0.8](B,C,A){$72^\circ$}
+ \tkzLabelAngle[pos=0.8](C,A,B){$36^\circ$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{isosceles right}}
+\begin{tkzexample}[latex=7 cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(4,0){B}
+  \tkzDefTriangle[isosceles right](A,B)
+  \tkzGetPoint{C}
+  \tkzDrawPolygons(A,B,C)
+  \tkzDrawPoints(A,B,C)
+  \tkzMarkRightAngles(A,C,B)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{gold} }
+\begin{tkzexample}[latex=6 cm,small]
+\begin{tikzpicture}
+ \tkzDefPoints{0/0/A,4/0/B}
+ \tkzDefTriangle[gold](A,B)
+ \tkzGetPoint{C}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPoints(A,B,C)
+ \tkzLabelPoints[above](A,B)
+ \tkzLabelPoints[below](C)
+ \tkzMarkRightAngle(A,B,C)
+ \tkzText(0,-2){$\dfrac{AC}{AB}=\varphi$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\clearpage
+\subsection{Triângulos específicos com \tkzcname{tkzDefSpcTriangle}}
+
+Os centros de alguns triângulos foram definidos na seção "pontos", aqui é uma questão de determinar os três vértices de triângulos específicos.
+
+\begin{NewMacroBox}{tkzDefSpcTriangle}{\oarg{opções locais}\parg{p1,p2,p3}\marg{r1,r2,r3}}
+A ordem dos pontos é importante! p1p2p3 define um triângulo então o resultado é um triângulo cujos vértices têm como referência uma combinação com \tkzname{name} e r1,r2, r3. Se \tkzname{name} estiver vazio então as referências são r1,r2 e r3.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                        \\
+\midrule
+\TOline{orthic} {centroid}{determinado pelos pontos finais das alturas ...}
+\TOline{centroid ou medial}{centroid}{interseção das três medianas do triângulo}
+\TOline{in ou incentral}{centroid}{determinado com as bissetrizes}
+\TOline{ex ou excentral} {centroid}{determinado com os excentros}
+\TOline{extouch}{centroid}{formado pelos pontos de tangência com os excírculos}
+\TOline{intouch ou contact} {centroid}{formado pelos pontos de tangência do incírculo}
+\TOline{} {}{cada um dos vértices}
+\TOline{euler} {centroid}{formado pelos pontos de Euler no círculo de nove pontos}
+\TOline{symmedial} {centroid}{pontos de interseção das simedianas}
+\TOline{tangential}{centroid}{formado pelas retas tangentes ao circuncírculo}
+\TOline{feuerbach} {centroid}{formado pelos pontos de tangência do círculo de nove ...}
+\TOline{} {} {pontos com os excírculos}
+\TOline{name} {vazio}{usado para nomear os vértices}
+\midrule
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Como nomear os vértices}
+
+Com \tkzcname{tkzDefSpcTriangle[medial,name=M](A,B,C)\{\_A,\_B,\_C\}} você obtém três vértices nomeados $M_A$, $M_B$ e $M_C$.
+
+Com \tkzcname{tkzDefSpcTriangle[medial](A,B,C)\{a,b,c\}} você obtém três vértices nomeados e rotulados $a$, $b$ e $c$.
+
+Possível \tkzcname{tkzDefSpcTriangle[medial,name=M\_](A,B,C)\{A,B,C\}} você obtém três vértices nomeados $M_A$, $M_B$ e $M_C$.
+
+\subsection{Opção \tkzname{medial} ou \tkzname{centroid} }
+O centroide geométrico dos vértices do polígono de um triângulo é o ponto $G$ (às vezes também denotado $M$) que é também a interseção das três medianas do triângulo. O ponto é, portanto, às vezes chamado de ponto médio. O centroide está sempre no interior do triângulo.
+\\
+
+\href{http://mathworld.wolfram.com/TriangleCentroid.html}{Weisstein, Eric W. "Centroid triangle" From MathWorld--A Wolfram Web Resource.}
+
+No exemplo seguinte, obtemos o círculo de Euler que passa pelos pontos previamente definidos.
+
+\begin{tkzexample}[latex=7cm,small]
+  \begin{tikzpicture}[rotate=90,scale=.75]
+   \tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+   \tkzDefTriangleCenter[centroid](A,B,C)
+   \tkzGetPoint{M}
+   \tkzDefSpcTriangle[medial,name=M](A,B,C){_A,_B,_C}
+   \tkzDrawPolygon(A,B,C)
+   \tkzDrawSegments[dashed,new](A,M_A B,M_B C,M_C)
+   \tkzDrawPolygon[new](M_A,M_B,M_C)
+   \tkzDrawPoints(A,B,C)
+   \tkzDrawPoints[new](M,M_A,M_B,M_C)
+   \tkzLabelPoints[above](B)
+   \tkzLabelPoints[below](A,C,M_B)
+   \tkzLabelPoints[right](M_C)
+   \tkzLabelPoints[left](M_A)
+   \tkzLabelPoints[font=\scriptsize](M)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{in} ou \tkzname{incentral} }
+
+O triângulo incentral é o triângulo cujos vértices são determinados pelas
+interseções das bissetrizes dos ângulos do triângulo de referência com os
+respectivos lados opostos.
+\\
+\href{http://mathworld.wolfram.com/ContactTriangle.html}{Weisstein, Eric W. "Incentral triangle" From MathWorld--A Wolfram Web Resource.}
+
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=1]
+  \tkzDefPoints{ 0/0/A,5/0/B,2/3/C}
+  \tkzDefSpcTriangle[in,name=I](A,B,C){_a,_b,_c}
+  \tkzDefCircle[in](A,B,C) \tkzGetPoints{I}{a}
+  \tkzDrawCircle(I,a)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPolygon[new](I_a,I_b,I_c)
+  \tkzDrawSegments[dashed,new](A,I_a B,I_b C,I_c)
+  \tkzDrawPoints(A,B,C,I,I_a,I_b,I_c)
+  \tkzLabelPoints[below](A,B,I_c)
+  \tkzLabelPoints[above left](I_b)
+  \tkzLabelPoints[above right](C,I_a)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{ex} ou \tkzname{excentral} }
+
+O triângulo excentral de um triângulo $ABC$ é o triângulo $J_aJ_bJ_c$ com vértices correspondentes aos excentros de $ABC$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.6]
+ \tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+ \tkzDefSpcTriangle[excentral,name=J](A,B,C){_a,_b,_c}
+ \tkzDefSpcTriangle[extouch,name=T](A,B,C){_a,_b,_c}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPolygon[new](J_a,J_b,J_c)
+ \tkzClipBB
+ \tkzDrawPoints(A,B,C)
+ \tkzDrawPoints[new](J_a,J_b,J_c)
+ \tkzLabelPoints(A,B,C)
+ \tkzLabelPoints[new](J_b,J_c)
+ \tkzLabelPoints[new,above](J_a)
+ \tkzDrawCircles[gray](J_a,T_a J_b,T_b J_c,T_c)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Opção \tkzname{intouch} ou \tkzname{contact}}
+O triângulo de contato de um triângulo $ABC$, também chamado de triângulo intouch, é o triângulo formado pelos pontos de tangência do incírculo de $ABC$ com $ABC$.\\
+\href{http://mathworld.wolfram.com/ContactTriangle.html}{Weisstein, Eric W. "Contact triangle" From MathWorld--A Wolfram Web Resource.}
+
+Obtemos as interseções das bissetrizes com os lados.
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+ \tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+ \tkzDefSpcTriangle[intouch,name=X](A,B,C){_a,_b,_c}
+ \tkzInCenter(A,B,C)\tkzGetPoint{I}
+ \tkzDefCircle[in](A,B,C) \tkzGetPoints{I}{i}
+ \tkzDrawCircle(I,i)
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPolygon[new](X_a,X_b,X_c)
+ \tkzDrawPoints(A,B,C)
+ \tkzDrawPoints[new](X_a,X_b,X_c)
+ \tkzLabelPoints[right](X_a)
+ \tkzLabelPoints[left](X_b)
+ \tkzLabelPoints[above](C)
+ \tkzLabelPoints[below](A,B,X_c)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{extouch}}
+O triângulo extouch $T_aT_bT_c$ é o triângulo formado pelos pontos de tangência de um triângulo $ABC$ com seus excírculos $J_a$, $J_b$ e $J_c$. Os pontos $T_a$, $T_b$ e $T_c$ também podem ser construídos como os pontos que bissectam o perímetro de $A_1A_2A_3$ começando em $A$, $B$ e $C$.\\
+\href{http://mathworld.wolfram.com/ExtouchTriangle.html}{Weisstein, Eric W. "Extouch triangle" From MathWorld--A Wolfram Web Resource.}
+
+Obtemos os pontos de contato dos círculos ex-inscritos, bem como o triângulo formado pelos centros dos círculos ex-inscritos.
+
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}[scale=.7]
+\tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+\tkzDefSpcTriangle[excentral,
+                 name=J](A,B,C){_a,_b,_c}
+\tkzDefSpcTriangle[extouch,
+                  name=T](A,B,C){_a,_b,_c}
+\tkzDefTriangleCenter[nagel](A,B,C)
+\tkzGetPoint{N_a}
+\tkzDefTriangleCenter[centroid](A,B,C)
+\tkzGetPoint{G}
+\tkzDrawPoints[new](J_a,J_b,J_c)
+\tkzClipBB \tkzShowBB
+\tkzDrawCircles[gray](J_a,T_a J_b,T_b J_c,T_c)
+\tkzDrawLines[add=1 and 1](A,B B,C C,A)
+\tkzDrawSegments[new](A,T_a B,T_b C,T_c)
+\tkzDrawSegments[new](J_a,T_a J_b,T_b J_c,T_c)
+\tkzDrawPolygon(A,B,C)
+\tkzDrawPolygon[new](T_a,T_b,T_c)
+\tkzDrawPoints(A,B,C,N_a)
+\tkzDrawPoints[new](T_a,T_b,T_c)
+\tkzLabelPoints[below left](A)
+\tkzLabelPoints[below](N_a,B)
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[new,below left](T_b)
+\tkzLabelPoints[new,below right](T_c)
+\tkzLabelPoints[new,right=6pt](T_a)
+\tkzMarkRightAngles[fill=gray!15](J_a,T_a,B
+ J_b,T_b,C J_c,T_c,A)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{orthic}}
+
+Dado um triângulo $ABC$, o triângulo $H_AH_BH_C$ cujos vértices são pontos finais das alturas de cada um dos vértices de ABC é chamado de triângulo órtico, ou às vezes triângulo de altitude. As três linhas $AH_A$, $BH_B$ e $CH_C$ são concorrentes no ortocentro H de ABC.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoints{1/5/A,0/0/B,7/0/C}
+ \tkzDefSpcTriangle[orthic](A,B,C){H_A,H_B,H_C}
+ \tkzDefTriangleCenter[ortho](B,C,A)
+ \tkzGetPoint{H}
+ \tkzDefPointWith[orthogonal,normed](H_A,B)
+ \tkzGetPoint{a}
+ \tkzDrawSegments[new](A,H_A B,H_B C,H_C)
+ \tkzMarkRightAngles[fill=gray!20,
+         opacity=.5](A,H_A,C B,H_B,A C,H_C,A)
+ \tkzDrawPolygon[fill=teal!20,opacity=.3](A,B,C)
+ \tkzDrawPoints(A,B,C)
+ \tkzDrawPoints[new](H_A,H_B,H_C)
+ \tkzDrawPolygon[new,fill=orange!20,
+                opacity=.3](H_A,H_B,H_C)
+ \tkzLabelPoints(C)
+ \tkzLabelPoints[left](B)
+ \tkzLabelPoints[above](A)
+ \tkzLabelPoints[new](H_A)
+ \tkzLabelPoints[new,above left](H_C)
+ \tkzLabelPoints[new,above right](H_B,H)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{feuerbach}}
+O triângulo de Feuerbach é o triângulo formado pelos três pontos de tangência do círculo de nove pontos com os excírculos.\\
+\href{http://mathworld.wolfram.com/FeuerbachTriangle.html}{Weisstein, Eric W. "Feuerbach triangle" From MathWorld--A Wolfram Web Resource.}
+
+ Os pontos de tangência definem o triângulo de Feuerbach.
+
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}[scale=1]
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(3,0){B}
+  \tkzDefPoint(0.5,2.5){C}
+  \tkzDefCircle[euler](A,B,C) \tkzGetPoint{N}
+  \tkzDefSpcTriangle[feuerbach,
+                       name=F](A,B,C){_a,_b,_c}
+  \tkzDefSpcTriangle[excentral,
+                       name=J](A,B,C){_a,_b,_c}
+  \tkzDefSpcTriangle[extouch,
+                        name=T](A,B,C){_a,_b,_c}
+  \tkzLabelPoints[below left](J_a,J_b,J_c)
+  \tkzClipBB \tkzShowBB
+  \tkzDrawCircle[purple](N,F_a)
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPolygon[new](F_a,F_b,F_c)
+  \tkzDrawCircles[gray](J_a,F_a J_b,F_b J_c,F_c)
+  \tkzDrawPoints[blue](J_a,J_b,J_c,%
+          F_a,F_b,F_c,A,B,C)
+  \tkzLabelPoints(A,B,F_c)
+  \tkzLabelPoints[above](C)
+  \tkzLabelPoints[right](F_a)
+  \tkzLabelPoints[left](F_b)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção   \tkzname{tangential}}
+O triângulo tangencial é o triângulo $T_aT_bT_c$ formado pelas linhas tangentes ao circuncírculo de um dado triângulo $ABC$ em seus vértices. É, portanto, o triângulo antipedal de $ABC$ em relação ao circuncentro $O$.\\
+\href{http://mathworld.wolfram.com/TangentialTriangle.html}{Weisstein, Eric W. "Tangential Triangle." From MathWorld--A Wolfram Web Resource. }
+
+
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}[scale=.5,rotate=80]
+  \tkzDefPoints{0/0/A,6/0/B,1.8/4/C}
+  \tkzDefSpcTriangle[tangential,
+    name=T](A,B,C){_a,_b,_c}
+  \tkzDrawPolygon(A,B,C)
+  \tkzDrawPolygon[new](T_a,T_b,T_c)
+  \tkzDrawPoints(A,B,C)
+  \tkzDrawPoints[new](T_a,T_b,T_c)
+  \tkzDefCircle[circum](A,B,C)
+  \tkzGetPoint{O}
+  \tkzDrawCircle(O,A)
+  \tkzLabelPoints(A)
+  \tkzLabelPoints[above](B)
+  \tkzLabelPoints[left](C)
+  \tkzLabelPoints[new](T_b,T_c)
+  \tkzLabelPoints[new,left](T_a)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção   \tkzname{euler}}
+O triângulo de Euler de um triângulo $ABC$ é o triângulo $E_AE_BE_C$ cujos vértices são os pontos médios dos segmentos que unem o ortocentro $H$ com os respectivos vértices. Os vértices do triângulo são conhecidos como os pontos de Euler e ficam no círculo de nove pontos.
+\\
+\href{https://mathworld.wolfram.com/EulerTriangle.html}{Weisstein, Eric W. "Euler Triangle." From MathWorld--A Wolfram Web Resource.}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[rotate=90,scale=1.25]
+ \tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+ \tkzDefSpcTriangle[medial,
+     name=M](A,B,C){_A,_B,_C}
+ \tkzDefTriangleCenter[euler](A,B,C)
+     \tkzGetPoint{N} % I= N nine points
+ \tkzDefTriangleCenter[ortho](A,B,C)
+        \tkzGetPoint{H}
+ \tkzDefMidPoint(A,H) \tkzGetPoint{E_A}
+ \tkzDefMidPoint(C,H) \tkzGetPoint{E_C}
+ \tkzDefMidPoint(B,H) \tkzGetPoint{E_B}
+ \tkzDefSpcTriangle[ortho,name=H](A,B,C){_A,_B,_C}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawCircle(N,E_A)
+ \tkzDrawSegments[new](A,H_A B,H_B C,H_C)
+ \tkzDrawPoints(A,B,C,N,H)
+ \tkzDrawPoints[red](M_A,M_B,M_C)
+ \tkzDrawPoints[blue]( H_A,H_B,H_C)
+ \tkzDrawPoints[green](E_A,E_B,E_C)
+ \tkzAutoLabelPoints[center=N,font=\scriptsize]%
+(A,B,C,M_A,M_B,M_C,H_A,H_B,H_C,E_A,E_B,E_C)
+\tkzLabelPoints[font=\scriptsize](H,N)
+\tkzMarkSegments[mark=s|,size=3pt,
+  color=blue,line width=1pt](B,E_B E_B,H)
+   \tkzDrawPolygon[color=cyan](M_A,M_B,M_C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção  \tkzname{euler} e Opção  \tkzname{orthic}}
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}[scale=1.25]
+    \tkzDefPoints{0/0/A,6/0/B,0.8/4/C}
+    \tkzDefSpcTriangle[euler,name=E](A,B,C){a,b,c}
+    \tkzDefSpcTriangle[orthic,name=H](A,B,C){a,b,c}
+    \tkzDefExCircle(A,B,C) \tkzGetPoints{I}{i}
+    \tkzDefExCircle(C,A,B) \tkzGetPoints{J}{j}
+    \tkzDefExCircle(B,C,A) \tkzGetPoints{K}{k}
+    \tkzDrawPoints[orange](I,J,K)
+    \tkzLabelPoints[font=\scriptsize](A,B,C,I,J,K)
+    \tkzClipBB
+    \tkzInterLC(I,C)(I,i) \tkzGetSecondPoint{Fc}
+    \tkzInterLC(J,B)(J,j) \tkzGetSecondPoint{Fb}
+    \tkzInterLC(K,A)(K,k) \tkzGetSecondPoint{Fa}
+    \tkzDrawLines[add=1.5 and 1.5](A,B A,C B,C)
+    \tkzDefCircle[euler](A,B,C) \tkzGetPoints{E}{e}
+    \tkzDrawCircle[orange](E,e)
+    \tkzDrawSegments[orange](E,I E,J E,K)
+    \tkzDrawSegments[dashed](A,Ha B,Hb C,Hc)
+    \tkzDrawCircles(J,j I,i K,k)
+    \tkzDrawPoints(A,B,C)
+    \tkzDrawPoints[orange](E,I,J,K,Ha,Hb,Hc,Ea,Eb,Ec,Fa,Fb,Fc)
+    \tkzLabelPoints[font=\scriptsize](E,Ea,Eb,Ec,Ha,Hb,Hc,Fa,Fb,Fc)
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{symmedial}}
+O triângulo simediano $K_AK_BK_C$ é o triângulo cujos vértices são os pontos de interseção das simedianas com o triângulo de referência $ABC$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+\tkzDefPoint(0,0){A}
+\tkzDefPoint(5,0){B}
+\tkzDefPoint(.75,4){C}
+\tkzDefTriangleCenter[symmedian](A,B,C)\tkzGetPoint{K}
+\tkzDefSpcTriangle[symmedial,name=K_](A,B,C){A,B,C}
+\tkzDrawPolygon(A,B,C)
+\tkzDrawSegments[new](A,K_A B,K_B C,K_C)
+\tkzDrawPoints(A,B,C,K,K_A,K_B,K_C)
+\tkzLabelPoints(A,B,K,K_C)
+\tkzLabelPoints[above](C)
+\tkzLabelPoints[right](K_A)
+\tkzLabelPoints[left](K_B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Permutação de dois pontos de um triângulo}
+
+\begin{NewMacroBox}{tkzPermute}{\parg{$pt1$,$pt2$,$pt3$}}%
+\begin{tabular}{lll}%
+argumentos             & exemplo & explicação                         \\
+\midrule
+\TAline{(pt1,pt2,pt3)} {\tkzcname{tkzPermute}(A,B,C)}{$A$, $\widehat{B,A,C}$ permanecem inalterados, $B$, $C$ trocam de posição}
+\midrule
+\end{tabular}
+
+\medskip
+\emph{O triângulo permanece inalterado.}
+\end{NewMacroBox}
+
+\subsubsection{Modificação do triângulo \tkzname{school}}
+Este triângulo é construído a partir do segmento $[AB]$ em $[A,x)$.
+
+Se quisermos que o segmento $[AC]$ esteja em $[A,x)$, basta trocar $B$ e $C$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,4/0/B,6/0/x}
+  \tkzDefTriangle[school](A,B)
+  \tkzGetPoint{C}
+  \tkzPermute(A,B,C)
+  \tkzDrawSegments(A,B C,x)
+  \tkzDrawSegments(A,C B,C)
+  \tkzDrawPoints(A,B,C)
+  \tkzLabelPoints(A,C,x)
+  \tkzLabelPoints[above](B)
+  \tkzMarkRightAngles(C,B,A)
+\end{tikzpicture}
+\end{tkzexample}
+
+Observação: Apenas o primeiro ponto permanece inalterado. A ordem dos dois últimos parâmetros não é importante.
+
+\endinput

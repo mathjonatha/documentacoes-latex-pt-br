@@ -1,0 +1,505 @@
+\section{Definição de pontos por transformação}
+Essas transformações são:
+
+\begin{itemize}
+   \item translação;
+   \item homotetia;
+   \item reflexão ortogonal ou simetria;
+   \item simetria central;
+   \item projeção ortogonal;
+   \item rotação (graus ou radianos);
+   \item inversão em relação a um círculo.
+\end{itemize}
+
+\subsection{\tkzcname{tkzDefPointBy}}
+A escolha das transformações é feita através das opções. Existem duas macros, uma para a transformação de um único ponto \tkzcname{tkzDefPointBy} e outra para a transformação de uma lista de pontos \tkzcname{tkzDefPointsBy}. Por padrão a imagem de $A$ é $A'$. Por exemplo, escreveremos:
+\begin{tkzltxexample}[]
+\tkzDefPointBy[translation= from A to A'](B)
+\end{tkzltxexample}
+O resultado está em \tkzname{tkzPointResult}
+
+\medskip
+\begin{NewMacroBox}{tkzDefPointBy}{\oarg{local opções}\parg{pt}}%
+O argumento é um simples ponto existente e sua imagem é armazenada em \tkzname{tkzPointResult}. Se você quiser manter este ponto, então a macro \tkzcname{tkzGetPoint\{M\}} permite que você atribua o nome \tkzname{M} ao ponto.
+
+\begin{tabular}{lll}%
+\toprule
+argumentos &  definição & exemplos               \\
+\midrule
+\TAline{pt}   {nome do ponto existente}   {$(A)$}
+\bottomrule
+\end{tabular}
+
+\begin{tabular}{lll}%
+opções     &     & exemplos                         \\ 
+\midrule
+\TOline{translation}{= from \#1 to \#2}{[translation=from A to B](E)}
+\TOline{homothety}  {= center \#1 ratio \#2}{[homothety=center A ratio .5](E)}
+\TOline{reflection} {= over \#1--\#2}{[reflection=over A--B](E)}
+\TOline{symmetry }  {= center \#1}{[symmetry=center A](E)}
+\TOline{projection }{= onto \#1--\#2}{[projection=onto A--B](E)}
+\TOline{rotation }  {= center \#1 angle \#2}{[rotation=center O angle 30](E)}
+\TOline{rotation in rad}{= center \#1 angle \#2}{[rotation in rad=center O angle pi/3](E)} 
+\TOline{rotation with nodes}{= center \#1 from \#2 to \#3}{[center O from A to B](E)} 
+\TOline{inversion}{= center \#1 through \#2}{[inversion =center O through A](E)} 
+\TOline{inversion negative}{= center \#1 through \#2}{...} 
+\bottomrule
+\end{tabular}
+
+\medskip
+\emph{A imagem é apenas definida e não desenhada.}
+\end{NewMacroBox} 
+
+\subsubsection{\tkzname{translation}} 
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[>=latex] 
+ \tkzDefPoints{0/0/A,3/1/B,3/0/C}
+ \tkzDefPointBy[translation= from B to A](C) 
+ \tkzGetPoint{D} 
+ \tkzDrawPoints[teal](A,B,C,D)
+ \tkzLabelPoints[color=teal](A,B,C,D) 
+ \tkzDrawSegments[orange,->](A,B D,C) 
+\end{tikzpicture} 
+\end{tkzexample}
+
+\subsubsection{\tkzname{reflection} (orthogonal symmetry)} 
+
+\begin{tkzexample}[latex=7cm,small] 
+\begin{tikzpicture}[scale=.75]
+ \tkzDefPoints{-2/-2/A,-1/-1/C,-4/2/D,-4/0/O}    
+ \tkzDrawCircle(O,A)
+ \tkzDefPointBy[reflection = over C--D](A)
+ \tkzGetPoint{A'}
+ \tkzDefPointBy[reflection = over C--D](O)
+ \tkzGetPoint{O'}
+ \tkzDrawCircle(O',A')
+ \tkzDrawLine[add= .5 and .5](C,D)
+ \tkzDrawPoints(C,D,O,O')
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{\tkzname{homothety} and \tkzname{projection}}
+
+\begin{tkzexample}[latex=7cm,small] 
+\begin{tikzpicture}
+  \tkzDefPoints{0/1/A,5/3/B,3/4/C}
+  \tkzDefLine[bisector](B,A,C) \tkzGetPoint{a} 
+  \tkzDrawLine[add=0 and 0,color=magenta!50 ](A,a) 
+  \tkzDefPointBy[homothety=center A ratio .5](a)   
+  \tkzGetPoint{a'} 
+  \tkzDefPointBy[projection = onto A--B](a') 
+  \tkzGetPoint{k'}  
+  \tkzDefPointBy[projection = onto A--B](a) 
+  \tkzGetPoint{k} 
+  \tkzDrawLines[add= 0 and .3](A,k A,C)   
+  \tkzDrawSegments[blue](a',k' a,k) 
+  \tkzDrawPoints(a,a',k,k',A)
+  \tkzDrawCircles(a',k' a,k)   
+  \tkzLabelPoints(a,a',k,A)
+\end{tikzpicture}
+\end{tkzexample}  
+
+
+\subsubsection{\tkzname{projection}}
+\begin{tkzexample}[latex=7cm,small] 
+\begin{tikzpicture}[scale=1.25]  
+ \tkzDefPoints{0/0/A,0/4/B}
+ \tkzDefTriangle[pythagore](B,A) \tkzGetPoint{C}
+ \tkzDefLine[bisector](B,C,A) \tkzGetPoint{c}
+ \tkzInterLL(C,c)(A,B)  \tkzGetPoint{D}
+ \tkzDefPointBy[projection=onto B--C](D) 
+ \tkzGetPoint{G}
+ \tkzInterLC(C,D)(D,A) \tkzGetPoints{E}{F}
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawSegment(C,D)
+ \tkzDrawCircle(D,A)
+ \tkzDrawSegment[new](D,G)
+ \tkzMarkRightAngle[fill=orange!10](D,G,B)
+ \tkzDrawPoints(A,C,F) \tkzLabelPoints(A,C,F)
+ \tkzDrawPoints(B,D,E,G)   
+ \tkzLabelPoints[above right](B,D,E)
+  \tkzLabelPoints[above](G)
+ \end{tikzpicture}
+ \end{tkzexample} 
+
+\subsubsection{\tkzname{symmetry} }
+\begin{tkzexample}[latex=6cm,small] 
+\begin{tikzpicture}[scale=1]
+  \tkzDefPoints{2/-1/A,2/2/B,0/0/O}
+  \tkzDefPointsBy[symmetry=center O](B,A){}
+  \tkzDrawLine(A,A')
+  \tkzDrawLine(B,B')
+  \tkzMarkAngle[mark=s,arc=lll,
+      size=1.5,mkcolor=red](A,O,B) 
+  \tkzLabelAngle[pos=2,circle,draw,
+    fill=blue!10,font=\scriptsize](A,O,B){$60^{\circ}$}
+  \tkzDrawPoints(A,B,O,A',B') 
+  \tkzLabelPoints(B,B')
+  \tkzLabelPoints[below](A,O,A')  
+\end{tikzpicture}   
+\end{tkzexample}
+
+\subsubsection{\tkzname{rotation} } 
+\begin{tkzexample}[latex=7cm,small] 
+\begin{tikzpicture}[scale=0.75] 
+ \tkzDefPoints{0/0/A,5/0/B}
+ \tkzDrawSegment(A,B)
+ \tkzDefPointBy[rotation=center A angle 60](B) 
+ \tkzGetPoint{C} 
+ \tkzDefPointBy[symmetry=center C](A) 
+ \tkzGetPoint{D} 
+ \tkzDrawSegment(A,tkzPointResult) 
+ \tkzDrawLine(B,D)
+ \tkzDrawArc(A,B)(C) \tkzDrawArc(B,C)(A)
+ \tkzDrawArc(C,D)(D)  
+ \tkzMarkRightAngle(D,B,A) 
+ \tkzDrawPoints(A,B) 
+ \tkzLabelPoints(A,B)
+ \tkzLabelPoints[above](C)
+ \tkzLabelPoints[right](D)
+\end{tikzpicture}  
+\end{tkzexample}  
+
+\subsubsection{\tkzname{rotation in radian}} 
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint["$A$" left](1,5){A}
+  \tkzDefPoint["$B$" right](4,3){B}
+  \tkzDefPointBy[rotation in rad= center A angle pi/3](B)
+  \tkzGetPoint{C}  
+  \tkzDrawSegment(A,B)
+  \tkzDrawPoints(A,B,C) 
+  \tkzCompass(A,C)
+  \tkzCompass(B,C) 
+  \tkzLabelPoints(C)
+\end{tikzpicture}
+\end{tkzexample} 
+
+\subsubsection{\tkzname{rotation with nodes}} 
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}
+ \tkzDefPoint(0,0){O}    
+ \tkzDefPoint(0:2){A} 
+ \tkzDefPoint(40:2){B}  
+ \tkzDefPoint(20:4){C}
+ \tkzDrawLine(O,A)
+ \tkzDefPointBy[rotation with nodes%
+             =center O from A to B](C)  
+ \tkzGetPoint{D}
+\tkzDrawPoints(A,B,C,D)
+\tkzDrawCircle(O,A)
+\tkzLabelPoints(A,C,D)
+\tkzLabelPoints[above](B)
+\end{tikzpicture}
+\end{tkzexample} 
+
+\subsubsection{\tkzname{inversion }}
+
+Inversão é o processo de transformar pontos para um conjunto correspondente de pontos conhecidos como seus pontos inversos. Dois pontos $P$ e $P'$ são ditos inversos com respeito a um círculo de inversão tendo centro de inversão $O$ e raio de inversão $k$ se $P'$ é o pé perpendicular da altura de $OQP$, onde $Q$ é um ponto no círculo tal que $OQ$ é perpendicular a $PQ$.\\
+ A quantidade $k^2$ é conhecida como a potência do círculo (Coxeter 1969, p. 81).
+
+(\url{https://mathworld.wolfram.com/Inversion.html})
+
+Algumas proposições:
+\begin{itemize}
+\item O inverso de um círculo (que não passa pelo centro de inversão) é um círculo.
+\item O inverso de um círculo que passa pelo centro de inversão é uma reta.
+\item O inverso de uma reta (que não passa pelo centro de inversão) é um círculo que passa pelo centro de inversão.
+\item Um círculo ortogonal ao círculo de inversão é seu próprio inverso.
+\item Uma reta que passa pelo centro de inversão é seu próprio inverso.
+\item Ângulos são preservados na inversão.
+\end{itemize}
+
+Explicação:
+
+Diretamente
+(Centro O potência=$k^2={OA}^2=OP \times OP'$)
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.5]
+  \tkzDefPoints{4/0/A,6/0/P,0/0/O}
+  \tkzDefPointBy[inversion = center O through A](P)
+  \tkzGetPoint{P'}
+  \tkzDrawSegments(O,P)
+  \tkzDrawCircle(O,A)
+  \tkzLabelPoints[above right,font=\scriptsize](O,A,P,P')
+  \tkzDrawPoints(O,A,P,P')
+\end{tikzpicture}
+\end{tkzexample} 
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.5]
+  \tkzDefPoints{4/0/A,6/0/P,0/0/O}
+  \tkzDefLine[orthogonal=through P](O,P)
+  \tkzGetPoint{L}
+  \tkzDefLine[tangent from = P](O,A) \tkzGetPoints{R}{Q}
+  \tkzDefPointBy[projection=onto O--A](Q) \tkzGetPoint{P'}
+  \tkzDrawSegments(O,P O,A)
+  \tkzDrawSegments[new](O,P O,Q P,Q Q,P')
+  \tkzDrawCircle(O,A)
+  \tkzDrawLines[add=1 and 0](P,L)
+  \tkzLabelPoints[below,font=\scriptsize](O,P')
+  \tkzLabelPoints[above right,font=\scriptsize](P,Q)
+  \tkzDrawPoints(O,P) \tkzDrawPoints[new](Q,P')
+  \tkzLabelSegment[above](O,Q){$k$}
+  \tkzMarkRightAngles(A,P',Q P,Q,O)
+  \tkzLabelCircle[above=.5cm,
+      font=\scriptsize](O,A)(100){inversion circle}
+  \tkzLabelPoint[left,font=\scriptsize](O){inversion center}
+  \tkzLabelPoint[left,font=\scriptsize](L){polar}
+\end{tikzpicture}
+\end{tkzexample} 
+
+
+\subsubsection{\tkzname{Inversão de retas} ex 1}
+\begin{tkzexample}[latex=6cm,small]  
+\begin{tikzpicture}[scale=.5]
+\tkzDefPoints{0/0/O,3/0/I,4/3/P,6/-3/Q}
+\tkzDrawCircle(O,I)
+\tkzDefPointBy[projection= onto P--Q](O) \tkzGetPoint{A}
+\tkzDefPointBy[inversion = center O through I](A)
+\tkzGetPoint{A'}
+\tkzDefPointBy[inversion = center O through I](P)
+\tkzGetPoint{P'}
+\tkzDefCircle[diameter](O,A')\tkzGetPoint{o}
+\tkzDrawCircle[new](o,A')
+\tkzDrawLines[add=.25 and .25,red](P,Q)
+\tkzDrawLines[add=.25 and .25](O,A)
+\tkzDrawSegments(O,P)
+\tkzDrawPoints(A,P,O) \tkzDrawPoints[new](A',P')
+\end{tikzpicture}
+\end{tkzexample} 
+
+\subsubsection{\tkzname{Inversão de retas} ex 2}
+\begin{tkzexample}[latex=6cm,small]  
+\begin{tikzpicture}[scale=.8]
+\tkzDefPoints{0/0/O,3/0/I,3/2/P,3/-2/Q}
+\tkzDrawCircle(O,I)
+\tkzDefPointBy[projection= onto P--Q](O) \tkzGetPoint{A}
+\tkzDefPointBy[inversion = center O through I](A)
+\tkzGetPoint{A'}
+\tkzDefPointBy[inversion = center O through I](P)
+\tkzGetPoint{P'}
+\tkzDefCircle[diameter](O,A')\tkzGetPoint{o}
+\tkzDrawCircle[new](o,A')
+\tkzDrawLines[add=.25 and .25,red](P,Q)
+\tkzDrawLines[add=.25 and .25](O,A)
+\tkzDrawSegments(O,P)
+\tkzDrawPoints(A,P,O) \tkzDrawPoints[new](A',P')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Inversão de retas} ex 3}
+\begin{tkzexample}[latex=6cm,small]  
+\begin{tikzpicture}[scale=.8]
+\tkzDefPoints{0/0/O,3/0/I,2/1/P,2/-2/Q}
+\tkzDrawCircle(O,I)
+\tkzDefPointBy[projection= onto P--Q](O) \tkzGetPoint{A}
+\tkzDefPointBy[inversion = center O through I](A)
+\tkzGetPoint{A'}
+\tkzDefPointBy[inversion = center O through I](P)
+\tkzGetPoint{P'}
+\tkzDefCircle[diameter](O,A')
+\tkzDrawCircle[new](I,A')
+\tkzDrawLines[add=.25 and .75,red](P,Q)
+\tkzDrawLines[add=.25 and .25](O,A')
+\tkzDrawSegments(O,P')
+\tkzDrawPoints(A,P,O) \tkzDrawPoints[new](A',P')
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Inversão} de círculo e \tkzname{homotetia} }
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.7]
+\tkzDefPoints{0/0/O,3/2/A,2/1/P}
+\tkzDefLine[tangent from = O](A,P) \tkzGetPoints{T}{X}
+\tkzDefPointsBy[homothety = center O%
+                ratio 1.25](A,P,T){}
+\tkzInterCC(A,P)(A',P') \tkzGetPoints{C}{D}
+\tkzCalcLength(A,P)
+\tkzGetLength{rAP}
+\tkzDefPointOnCircle[R=center A angle 190 radius \rAP]
+\tkzGetPoint{M}
+\tkzDefPointBy[inversion = center O through C](M)
+\tkzGetPoint{M'}
+\tkzDrawCircles[new](A,P A',P')
+\tkzDrawCircle(O,C)
+\tkzDrawLines[add=0 and .5](O,T' O,A' O,M' O,P')
+\tkzDrawPoints(A,A',P,P',O,T,T',M,M')
+\tkzLabelPoints(O,T,T',M,M')
+\tkzLabelPoints[below](P,P')
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{\tkzname{Inversão} de triângulo em relação ao círculo inscrito}
+\begin{tkzexample}[latex=6cm,small] 
+\begin{tikzpicture}[scale=1]
+\tkzDefPoints{0/0/A,5/1/B,3/6/C}
+\tkzDefTriangleCenter[in](A,B,C) \tkzGetPoint{O} 
+\tkzDefPointBy[projection= onto A--C](O) \tkzGetPoint{b}
+\tkzDefPointBy[projection= onto A--C](O) \tkzGetPoint{b}
+\tkzDefPointBy[projection= onto B--C](O) \tkzGetPoint{a}
+\tkzDefPointBy[projection= onto A--B](O) \tkzGetPoint{c}
+\tkzDefPointsBy[inversion = center O through b](a,b,c)%
+                                             {Ia,Ib,Ic}
+\tkzDefMidPoint(O,Ia) \tkzGetPoint{Ja}
+\tkzDefMidPoint(O,Ib) \tkzGetPoint{Jb}
+\tkzDefMidPoint(O,Ic) \tkzGetPoint{Jc}
+\tkzInterCC(Ja,O)(Jb,O) \tkzGetPoints{O}{x}
+\tkzInterCC(Ja,O)(Jc,O) \tkzGetPoints{y}{O}
+\tkzInterCC(Jb,O)(Jc,O) \tkzGetPoints{O}{z}
+\tkzDrawPolygon(A,B,C)
+\tkzDrawCircle(O,b)\tkzDrawPoints(A,B,C,O)
+\tkzDrawCircles[dashed,gray](Ja,y Jb,x Jc,z)
+\tkzDrawArc[line width=1pt,orange,delta=0](Jb,x)(z)
+\tkzDrawArc[line width=1pt,orange,delta=0](Jc,z)(y)
+\tkzDrawArc[line width=1pt,orange,delta=0](Ja,y)(x)
+\tkzLabelPoint[below](A){$A$}\tkzLabelPoint[above](C){$C$}
+\tkzLabelPoint[right](B){$B$}\tkzLabelPoint[below](O){$O$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Inversão}: círculo ortogonal com círculo de inversão}
+O próprio círculo de inversão, círculos ortogonais a ele e retas que passam pelo centro de inversão são invariantes sob inversão. Se o círculo encontra o círculo de referência, esses pontos de interseção invariantes também estão no círculo inverso. Veja I e J na próxima figura.
+
+\begin{tkzexample}[latex=5cm,small]
+\begin{tikzpicture}[scale=1]
+\tkzDefPoint(0,0){O}\tkzDefPoint(1,0){A}
+\tkzDefPoint(-1.5,-1.5){z1} 
+\tkzDefPoint(1.5,-1.25){z2} 
+\tkzDefCircle[orthogonal through=z1 and z2](O,A)
+\tkzGetPoint{c} 
+\tkzDrawCircle[new](c,z1) 
+\tkzDefPointBy[inversion =  center O through A](z1)
+\tkzGetPoint{Z1} 
+\tkzInterCC(O,A)(c,z1) \tkzGetPoints{I}{J}
+\tkzDefPointBy[inversion =  center O through A](I)
+\tkzGetPoint{I'}
+\tkzDrawCircle(O,A)
+\tkzDrawPoints(O,A,z1,z2) 
+\tkzDrawPoints[new](c,Z1,I,J) 
+\tkzLabelPoints(O,A,z1,z2,c,Z1,I,J)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+
+Para um exemplo mais complexo veja \tkzname{Pappus} \ref{pappus}
+
+\subsubsection{\tkzname{Inversão negativa}}
+É uma inversão seguida de uma simetria de centro $O$
+\begin{tkzexample}[latex=5cm,small]  
+\begin{tikzpicture}[scale=1.5]
+  \tkzDefPoints{1/0/A,0/0/O}
+  \tkzDefPoint(-1.5,-1.5){z1}
+  \tkzDefPoint(0.35,-2){z2} 
+  \tkzDefPointBy[inversion negative = center O through A](z1)
+  \tkzGetPoint{Z1} 
+  \tkzDefPointBy[inversion negative = center O through A](z2)
+  \tkzGetPoint{Z2}
+  \tkzDrawCircle(O,A)  
+  \tkzDrawPoints[color=black, fill=red,size=4](Z1,Z2)    
+  \tkzDrawSegments(z1,Z1 z2,Z2)
+  \tkzDrawPoints[color=black, fill=red,size=4](O,z1,z2)
+  \tkzLabelPoints[font=\scriptsize](O,A,z1,z2,Z1,Z2)  
+\end{tikzpicture}
+\end{tkzexample} 
+
+
+\newpage
+\subsection{Transformação de múltiplos pontos; \tkzcname{tkzDefPointsBy} }
+Variante da macro anterior para definir múltiplas imagens.
+Você deve fornecer os nomes das imagens como argumentos, ou indicar que os nomes das imagens são formados a partir dos nomes dos antecedentes, deixando o argumento vazio. 
+
+\begin{tkzltxexample}[]
+\tkzDefPointsBy[translation= from A to A'](B,C){}
+\end{tkzltxexample}
+As imagens são $B'$ e $C'$.
+
+\begin{tkzltxexample}[]
+\tkzDefPointsBy[translation= from A to A'](B,C){D,E}
+\end{tkzltxexample}
+As imagens são $D$ e $E$.
+
+\begin{tkzltxexample}[]
+\tkzDefPointsBy[translation= from A to A'](B)
+\end{tkzltxexample}
+A imagem é $B'$.
+\begin{NewMacroBox}{tkzDefPointsBy}{\oarg{local opções}\parg{list of points}\marg{list of points}}%
+\begin{tabular}{lll}%
+argumentos &  exemplos  &                  \\ 
+\midrule
+\TAline{\parg{lista de pontos}\marg{lista de pts}}{(A,B)\{E,F\}}{$E$,$F$ imagens de $A$, $B$}   \\
+\bottomrule
+\end{tabular}
+
+\medskip
+Se a lista de imagens estiver vazia, então o nome da imagem é o nome do antecedente ao qual " ' " é adicionado.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções     &     & exemplos                         \\
+\midrule
+\TOline{translation = from \#1 to \#2}{}{[translation=from A to B](E)\{\}}
+\TOline{homothety = center \#1 ratio \#2}{}{[homothety=center A ratio .5](E)\{F\}}
+\TOline{reflection = over \#1--\#2}{}{[reflection=over A--B](E)\{F\}}
+\TOline{symmetry = center \#1}{}{[symmetry=center A](E)\{F\}}
+\TOline{projection = onto \#1--\#2}{}{[projection=onto A--B](E)\{F\}}
+\TOline{rotation = center \#1 angle \#2}{}{[rotation=center  angle 30](E)\{F\}}
+\TOline{rotation in rad = center \#1 angle \#2}{}{por exemplo angle pi/3}
+\TOline{rotation with nodes = center \#1 from \#2 to \#3}{}{[center O from A to B](E)\{F\}}
+\TOline{inversion = center \#1 through \#2}{}{[inversion = center O through A](E)\{F\}}
+\TOline{inversion negative = center \#1 through \#2}{}{...}
+\bottomrule
+\end{tabular}
+
+\medskip
+Os pontos são apenas definidos e não desenhados.
+\end{NewMacroBox}
+
+\subsubsection{\tkzname{Translação} de múltiplos pontos}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[>=latex] 
+ \tkzDefPoints{0/0/A,3/0/B,3/1/A',1/2/C}
+ \tkzDefPointsBy[translation= from A to A'](B,C){} 
+ \tkzDrawPolygon(A,B,C)
+ \tkzDrawPolygon[new](A',B',C')
+ \tkzDrawPoints(A,B,C)
+ \tkzDrawPoints[new](A',B',C') 
+ \tkzLabelPoints(A,B,A',B')  
+ \tkzLabelPoints[above](C,C')
+ \tkzDrawSegments[color = gray,->,
+              style=dashed](A,A' B,B' C,C') 
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{\tkzname{Simetria} de múltiplos pontos: um oval}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=0.4]
+  \tkzDefPoint(-4,0){I}
+  \tkzDefPoint(4,0){J}
+  \tkzDefPoint(0,0){O} 
+  \tkzInterCC(J,O)(O,J) \tkzGetPoints{L}{H}
+  \tkzInterCC(I,O)(O,I) \tkzGetPoints{K}{G} 
+  \tkzInterLL(I,K)(J,H) \tkzGetPoint{M}
+  \tkzInterLL(I,G)(J,L) \tkzGetPoint{N}
+  \tkzDefPointsBy[symmetry=center J](L,H){D,E} 
+  \tkzDefPointsBy[symmetry=center I](G,K){C,F}
+  \begin{scope}[line style/.style = {very thin,teal}]
+    \tkzDrawLines[add=1.5 and 1.5](I,K I,G J,H J,L) 
+    \tkzDrawLines[add=.5 and .5](I,J) 
+    \tkzDrawCircles(O,I I,O J,O) 
+    \tkzDrawArc[delta=0,orange](N,D)(C) 
+    \tkzDrawArc[delta=0,orange](M,F)(E) 
+    \tkzDrawArc[delta=0,orange](J,E)(D) 
+    \tkzDrawArc[delta=0,orange](I,C)(F) 
+  \end{scope}   
+\end{tikzpicture} 
+\end{tkzexample}
+
+\endinput

@@ -1,0 +1,34 @@
+\section{FAQ}
+
+\subsection{Erros mais comuns}
+ Por enquanto, estou me baseando nos meus próprios erros, porque tendo mudado a sintaxe várias vezes, cometi vários erros. Esta seção será expandida. Com a versão 4.05 novos problemas podem aparecer.
+
+\begin{itemize}\setlength{\itemsep}{10pt}
+  \item O erro que cometo com mais frequência é esquecer de colocar um "s" na macro usada para desenhar mais de um objeto: como \tkzcname{tkzDrawSegment(s)} ou \tkzcname{tkzDrawCircle(s)} ou como neste exemplo \tkzcname{tkzDrawPoint(A,B)} quando você precisa de \tkzcname{tkzDrawPoints(A,B)};
+
+  \item Não esqueça que desde a versão 4 a unidade é obrigatoriamente o "cm", portanto é necessário remover a unidade como aqui \tkzcname{tkzDrawCircle[R](O,3cm)} que se torna \tkzcname{tkzDrawCircle[R](O,3)}. As opções tradicionais do \tkzname{TikZ} mantêm suas unidades, exemplo \tkzname{below right = 12pt}, por outro lado escreveremos \tkzname{size=1.2} para posicionar um arco em \tkzcname{tkzMarkAngle};
+
+  \item O seguinte erro ainda acontece comigo de tempos em tempos. Um ponto que é criado tem seu nome entre parênteses, enquanto um ponto que é usado como opção ou como parâmetro tem seu nome entre chaves.
+
+  Exemplo \tkzcname{tkzGetPoint(A)} Ao definir um objeto, use chaves e não parênteses, então escreva: \tkzcname{tkzGetPoint\{A\}};
+
+  \item As mudanças na obtenção dos pontos de interseção entre retas e círculos às vezes trocam as soluções, isso leva ou a uma figura incorreta ou a um erro.
+
+  \item \tkzcname{tkzGetPoint\{A\}} no lugar de \tkzcname{tkzGetFirstPoint\{A\}}. Quando uma macro fornece dois pontos como resultados, ou recuperamos esses pontos usando \tkzcname{tkzGetPoints\{A\}\{B\}}, ou recuperamos apenas um dos dois pontos, usando \tkzcname{tkzGetFirstPoint\{A\}} ou
+  \tkzcname{tkzGetSecondPoint\{A\}}. Esses dois pontos podem ser usados com a referência \tkzname{tkzFirstPointResult} ou
+  \tkzname{tkzSecondPointResult}. É possível que um terceiro ponto seja fornecido como\ \tkzname{tkzPointResult};
+
+\item Misturar opções e argumentos; todas as macros que usam um círculo precisam conhecer o raio do círculo. Se o raio é fornecido por uma medida, então a opção inclui um \tkzname{R}.
+
+
+\item Os ângulos são fornecidos em graus, mais raramente em radianos.
+
+\item Se ocorrer um erro em um cálculo ao passar parâmetros, então é melhor fazer esses cálculos antes de chamar a macro.
+
+\item Não misture a sintaxe do \tkzNamePack{pgfmath} e \tkzNamePack{xfp}. Frequentemente escolhi \tkzNamePack{xfp}, mas se você preferir pgfmath, então faça seus cálculos antes de passar os parâmetros.
+
+ \item  Erro "dimension too large"  : Em alguns casos, este erro ocorre. Uma maneira de evitá-lo é usar a opção "\tkzname{veclen}". Quando esta opção é usada em um scope, a função "veclen" é substituída por uma função dependente do "xfp". Não use macros de interseção neste scope. Por exemplo, um erro ocorre se você usar a macro \tkzcname{tkzDrawArc}
+ com um ângulo muito pequeno. O erro é produzido pela biblioteca \NameLib{decoration} quando você deseja colocar uma marca em um arco. Mesmo que a marca esteja ausente, o erro ainda está presente.
+
+\end{itemize}
+\endinput

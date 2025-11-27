@@ -1,0 +1,300 @@
+\subsection{Colorindo um disco}
+Isto era possível com a macro \tkzcname{tkzDrawCircle}, mas o traçado do disco era obrigatório, não é mais o caso.
+
+\begin{NewMacroBox}{tkzFillCircle}{\oarg{opções locais}\parg{A,B}}%
+\begin{tabular}{lll}%
+opções             & padrão & definição                         \\
+\midrule
+\TOline{radius}  {radius}{dois pontos definem um raio}
+\TOline{R} {radius}{um ponto e a medida de um raio }
+\bottomrule
+\end{tabular}
+
+\medskip
+Você não precisa colocar \tkzname{radius} porque essa é a opção padrão. Claro, você tem que adicionar todos os estilos do \TIKZ\ para os traçados.
+\end{NewMacroBox}
+
+
+\subsubsection{Yin e Yang}
+\begin{tkzexample}[latex=8cm,small]
+  \begin{tikzpicture}[scale=.75]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(-4,0){A}
+    \tkzDefPoint(4,0){B}
+    \tkzDefPoint(-2,0){I}
+    \tkzDefPoint(2,0){J}
+    \tkzDrawSector[fill=teal](O,A)(B)
+    \tkzFillCircle[fill=white](J,B)
+    \tkzFillCircle[fill=teal](I,A)
+    \tkzDrawCircle(O,A)
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{De um sangaku}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+   \tkzDefPoint(0,0){B}  \tkzDefPoint(6,0){C}%
+   \tkzDefSquare(B,C)    \tkzGetPoints{D}{A}
+   \tkzClipPolygon(B,C,D,A)
+   \tkzDefMidPoint(A,D)  \tkzGetPoint{F}
+   \tkzDefMidPoint(B,C)  \tkzGetPoint{E}
+   \tkzDefMidPoint(B,D)  \tkzGetPoint{Q}
+   \tkzDefLine[tangent from = B](F,A)
+   \tkzGetPoints{H}{G}
+   \tkzInterLL(F,G)(C,D) \tkzGetPoint{J}
+   \tkzInterLL(A,J)(F,E) \tkzGetPoint{K}
+   \tkzDefPointBy[projection=onto B--A](K)
+   \tkzGetPoint{M}
+   \tkzDrawPolygon(A,B,C,D)
+   \tkzFillCircle[red!20](E,B)
+   \tkzFillCircle[blue!20](M,A)
+   \tkzFillCircle[green!20](K,Q)
+  \tkzDrawCircles(B,A M,A E,B K,Q)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Recorte e preenchimento parte I}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+\tkzDefPoints{0/0/A,4/0/B,2/2/O,3/4/X,4/1/Y,1/0/Z,
+              0/3/W,3/0/R,4/3/S,1/4/T,0/1/U}
+\tkzDefSquare(A,B)\tkzGetPoints{C}{D}
+\tkzDefPointWith[colinear normed=at X,K=1](O,X)
+ \tkzGetPoint{F}
+\begin{scope}
+  \tkzFillCircle[fill=teal!20](O,F)
+  \tkzFillPolygon[white](A,...,D)
+  \tkzClipPolygon(A,...,D)
+  \foreach \c/\t in {S/C,R/B,U/A,T/D}
+  {\tkzFillCircle[teal!20](\c,\t)}
+\end{scope}
+\foreach \c/\t in {X/C,Y/B,Z/A,W/D}
+{\tkzFillCircle[white](\c,\t)}
+  \foreach \c/\t in {S/C,R/B,U/A,T/D}
+  {\tkzFillCircle[teal!20](\c,\t)}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Recorte e preenchimento parte II}
+\begin{tkzexample}[latex=7cm, small]
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoints{0/0/A,8/0/B,8/8/C,0/8/D}
+\tkzDefMidPoint(A,B) \tkzGetPoint{F}
+\tkzDefMidPoint(B,C) \tkzGetPoint{E}
+\tkzDefMidPoint(D,B) \tkzGetPoint{I}
+\tkzDefMidPoint(I,B) \tkzGetPoint{a}
+\tkzInterLC(B,I)(B,C) \tkzGetSecondPoint{K}
+\tkzDefMidPoint(I,K) \tkzGetPoint{b}
+\begin{scope}
+  \tkzFillSector[fill=blue!10](B,C)(A)
+  \tkzDefMidPoint(A,B) \tkzGetPoint{x}
+  \tkzDrawSemiCircle[fill=white](x,B)
+  \tkzDefMidPoint(B,C) \tkzGetPoint{y}
+  \tkzDrawSemiCircle[fill=white](y,C)
+  \tkzClipCircle(E,B)
+  \tkzClipCircle(F,B)
+  \tkzFillCircle[fill=blue!10](B,A)
+\end{scope}
+\tkzDrawSemiCircle[thick](F,B)
+\tkzDrawSemiCircle[thick](E,C)
+\tkzDrawArc[thick](B,C)(A)
+\tkzDrawSegments[thick](A,B B,C)
+\tkzDrawPoints(A,B,C,E,F)
+\tkzLabelPoints[centered](a,b)
+\tkzLabelPoints(A,B,C,E,F)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Recorte e preenchimento parte III}
+
+\begin{tkzexample}[latex=7cm, small]
+\begin{tikzpicture}
+  \tkzDefPoint(0,0){A} \tkzDefPoint(1,0){B}
+  \tkzDefPoint(2,0){C} \tkzDefPoint(-3,0){a}
+  \tkzDefPoint(3,0){b}  \tkzDefPoint(0,3){c}
+  \tkzDefPoint(0,-3){d}
+\begin{scope}
+ \tkzClipPolygon(a,b,c,d)
+ \tkzFillCircle[teal!20](A,C)
+\end{scope}
+ \tkzFillCircle[white](A,B)
+ \tkzDrawCircle[color=red](A,C)
+ \tkzDrawCircle[color=red](A,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Colorindo um polígono}
+ \begin{NewMacroBox}{tkzFillPolygon}{\oarg{opções locais}\parg{lista de pontos}}%
+Você pode colorir desenhando o polígono, mas neste caso você colore o interior do polígono sem desenhá-lo.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+argumentos                & exemplo & explicação                         \\
+\midrule
+\TAline{\parg{pt1,pt2,\dots}}{\parg{A,B,\dots}}{}
+%\bottomrule
+ \end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{\tkzcname{tkzFillPolygon}}
+\begin{tkzexample}[latex=7cm, small]
+\begin{tikzpicture}[scale=.5]
+   \tkzDefPoint(0,0){C} \tkzDefPoint(4,0){A}
+   \tkzDefPoint(0,3){B}
+   \tkzDefSquare(B,A)      \tkzGetPoints{E}{F}
+   \tkzDefSquare(A,C)      \tkzGetPoints{G}{H}
+   \tkzDefSquare(C,B)       \tkzGetPoints{I}{J}
+   \tkzFillPolygon[color  =  orange!30   ](A,C,G,H)
+   \tkzFillPolygon[color  =  teal!40  ](C,B,I,J)
+   \tkzFillPolygon[color  =  purple!20](B,A,E,F)
+   \tkzDrawPolygon[line width  =  1pt](A,B,C)
+   \tkzDrawPolygon[line width  =  1pt](A,C,G,H)
+   \tkzDrawPolygon[line width  =  1pt](C,B,I,J)
+   \tkzDrawPolygon[line width  =  1pt](B,A,E,F)
+   \tkzLabelSegment[above](C,A){$a$}
+   \tkzLabelSegment[right](B,C){$b$}
+   \tkzLabelSegment[below left](B,A){$c$}
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{\tkzcname{tkzFillSector}}
+\tkzHandBomb\ Atenção: os argumentos variam de acordo com as opções.
+\begin{NewMacroBox}{tkzFillSector}{\oarg{opções locais}\parg{O,\dots}\parg{\dots}}%
+\begin{tabular}{lll}%
+opções          & padrão & definição      \\
+\midrule
+\TOline{towards}{towards}{$O$ é o centro e o arco de $A$ a $(OB)$}
+\TOline{rotate} {towards}{o arco começa de A e o ângulo determina seu comprimento }
+\TOline{R}{towards}{Damos o raio e dois ângulos}
+\TOline{R with nodes}{towards}{Damos o raio e dois pontos}
+\bottomrule
+\end{tabular}
+
+\medskip
+Claro, você tem que adicionar todos os estilos do \TIKZ\ para os traçados...
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & argumentos & exemplo                         \\
+\midrule
+\TOline{towards}{\parg{pt,pt}\parg{pt}}{\tkzcname{tkzFillSector(O,A)(B)}}
+\TOline{rotate} {\parg{pt,pt}\parg{an}}{\tkzcname{tkzFillSector[rotate,color=red](O,A)(90)}}
+\TOline{R}{\parg{pt,$r$}\parg{an,an}}{\tkzcname{tkzFillSector[R,color=blue](O,2)(30,90)}}
+\TOline{R with nodes}{\parg{pt,$r$}\parg{pt,pt}}{\tkzcname{tkzFillSector[R with nodes](O,2)(A,B)}}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{\tkzcname{tkzFillSector} e \tkzname{towards}}
+É inútil colocar \tkzname{towards} e você notará que os contornos não são desenhados, apenas a superfície é colorida.
+\begin{tkzexample}[latex=5.75cm,small]
+  \begin{tikzpicture}[scale=.6]
+  \tkzDefPoint(0,0){O}
+  \tkzDefPoint(-30:3){A}
+  \tkzDefPointBy[rotation = center O angle -60](A)
+  \tkzFillSector[fill=purple!20](O,A)(tkzPointResult)
+    \begin{scope}[shift={(-60:1)}]
+    \tkzDefPoint(0,0){O}
+    \tkzDefPoint(-30:3){A}
+    \tkzDefPointBy[rotation = center O angle -60](A)
+    \tkzGetPoint{A'}
+    \tkzFillSector[color=teal!40](O,A')(A)
+      \end{scope}
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{\tkzcname{tkzFillSector} e \tkzname{rotate}}
+\begin{tkzexample}[latex=5.75cm,small]
+\begin{tikzpicture}[scale=1.5]
+ \tkzDefPoint(0,0){O} \tkzDefPoint(2,2){A}
+ \tkzFillSector[rotate,color=purple!20](O,A)(30)
+ \tkzFillSector[rotate,color=teal!40](O,A)(-30)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Colorir um ângulo: \tkzcname{tkzFillAngle}}
+
+A operação mais simples
+\begin{NewMacroBox}{tkzFillAngle}{\oarg{opções locais}\parg{A,O,B}}%
+$O$ é o vértice do ângulo. $OA$ e $OB$ são os lados. Atenção: o ângulo é determinado pela ordem dos pontos.
+
+\medskip
+
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                        \\
+\midrule
+\TOline{size}{1}{esta opção determina o raio do setor angular colorido.}
+
+\bottomrule
+\end{tabular}
+
+\medskip
+Claro, você tem que adicionar todos os estilos do \TIKZ, como o uso de fill e shade...
+\end{NewMacroBox}
+
+\subsubsection{Exemplo com \tkzname{size}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+   \tkzInit
+   \tkzDefPoints{0/0/O,2.5/0/A,1.5/2/B}
+   \tkzFillAngle[size=2, fill=gray!10](A,O,B)
+   \tkzDrawLines(O,A O,B)
+   \tkzDrawPoints(O,A,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Alterando a ordem dos itens}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+   \tkzInit
+   \tkzDefPoints{0/0/O,2.5/0/A,1.5/2/B}
+   \tkzFillAngle[size=2,fill=gray!10](B,O,A)
+   \tkzDrawLines(O,A O,B)
+   \tkzDrawPoints(O,A,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+   \tkzInit
+   \tkzDefPoints{0/0/O,5/0/A,3/4/B}
+   % Don't forget {} to get, () to use
+   \tkzFillAngle[size=4,left color=white,
+                 right color=red!50](A,O,B)
+   \tkzDrawLines(O,A O,B)
+   \tkzDrawPoints(O,A,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\begin{NewMacroBox}{tkzFillAngles}{\oarg{opções locais}\parg{A,O,B}\parg{A',O',B'}etc.}%
+Com opções comuns, há uma macro para múltiplos ângulos.
+  \end{NewMacroBox}
+
+\subsubsection{Múltiplos ângulos}
+\begin{tkzexample}[latex=5cm,small]
+\begin{tikzpicture}[scale=0.5]
+  \tkzDefPoints{0/0/B,8/0/C,0/8/A,8/8/D}
+  \tkzDrawPolygon(B,C,D,A)
+  \tkzDefTriangle[equilateral](B,C) \tkzGetPoint{M}
+  \tkzInterLL(D,M)(A,B) \tkzGetPoint{N}
+  \tkzDefPointBy[rotation=center N angle -60](D)
+  \tkzGetPoint{L}
+  \tkzInterLL(N,L)(M,B)     \tkzGetPoint{P}
+  \tkzInterLL(M,C)(D,L)     \tkzGetPoint{Q}
+  \tkzDrawSegments(D,N N,L L,D B,M M,C)
+  \tkzDrawPoints(L,N,P,Q,M,A,D)
+  \tkzLabelPoints[left](N,P,Q)
+  \tkzLabelPoints[above](M,A,D)
+  \tkzLabelPoints(L,B,C)
+  \tkzMarkAngles(C,B,M B,M,C M,C,B D,L,N L,N,D N,D,L)
+  \tkzFillAngles[fill=red!20,opacity=.2](C,B,M%
+      B,M,C M,C,B D,L,N L,N,D N,D,L)
+\end{tikzpicture}
+\end{tkzexample}
+\endinput

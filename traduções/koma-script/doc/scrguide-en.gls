@@ -1,0 +1,758 @@
+\begin{thechangelog}
+
+  \item \Class{scrartcl}
+    \subitem v2.8p~\dotfill~\indexrm{48}, \indexrm{58}, \indexrm{72}, 
+		\indexrm{93}, \indexrm{96}, \indexrm{110}, 
+		\indexrm{121}, \indexrm{227}
+    \subitem v2.8q~\dotfill~\indexrm{33}, \indexrm{63}, \indexrm{82}, 
+		\indexrm{122}, \indexrm{128}, \indexrm{131}
+    \subitem v2.96a~\dotfill~\indexrm{45}, \indexrm{97}
+    \subitem v2.97c~\dotfill~\indexrm{58}, \indexrm{65}
+    \subitem v3.00~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{61--63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem v3.01a~\dotfill~\indexrm{23}, \indexrm{45}, \indexrm{142}, 
+		\indexrm{278}
+    \subitem v3.02~\dotfill~\indexrm{111}
+    \subitem v3.06~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem v3.07~\dotfill~\indexrm{51}, \indexrm{83}
+    \subitem v3.08~\dotfill~\indexrm{68, 69}, \indexrm{442, 443}
+    \subitem v3.09~\dotfill~\indexrm{118--121}
+    \subitem v3.10~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem v3.12~\dotfill~\indexrm{49, 50}, \indexrm{53--55}, 
+		\indexrm{58}, \indexrm{60}, \indexrm{64}, \indexrm{87}, 
+		\indexrm{89}, \indexrm{103}, \indexrm{133}, 
+		\indexrm{136}, \indexrm{172}, \indexrm{246}, 
+		\indexrm{281}, \indexrm{426}
+    \subitem v3.15~\dotfill~\indexrm{53}, \indexrm{65, 66}, 
+		\indexrm{130}, \indexrm{446, 447}, \indexrm{457, 458}, 
+		\indexrm{465}
+    \subitem v3.17~\dotfill~\indexrm{47}, \indexrm{99}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem v3.18~\dotfill~\indexrm{62}, \indexrm{64}, \indexrm{138}, 
+		\indexrm{447}
+    \subitem v3.19~\dotfill~\indexrm{445}, \indexrm{449}, \indexrm{463}
+    \subitem v3.20~\dotfill~\indexrm{128}, \indexrm{448, 449}, 
+		\indexrm{453}
+    \subitem v3.22~\dotfill~\indexrm{91, 92}
+    \subitem v3.23~\dotfill~\indexrm{83}
+    \subitem v3.24~\dotfill~\indexrm{445}, \indexrm{447}
+    \subitem v3.25~\dotfill~\indexrm{46}, \indexrm{57}, \indexrm{129}, 
+		\indexrm{446}, \indexrm{459}
+    \subitem v3.26~\dotfill~\indexrm{447}, \indexrm{450--452}
+    \subitem v3.27~\dotfill~\indexrm{91}, \indexrm{93}, \indexrm{458}, 
+		\indexrm{464--466}
+    \subitem v3.28~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem v3.33~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+    \subitem v3.36~\dotfill~\indexrm{83}, \indexrm{118}, \indexrm{226}, 
+		\indexrm{291}, \indexrm{441}
+    \subitem v3.39~\dotfill~\indexrm{48}, \indexrm{93}, \indexrm{106}, 
+		\indexrm{110}
+    \subitem v3.44~\dotfill~\indexrm{51}, \indexrm{110}
+    \subitem v3.46~\dotfill~\indexrm{118--121}
+  \item \Package{scrbase}
+    \subitem v3.05a~\dotfill~\indexrm{321}
+    \subitem v3.08~\dotfill~\indexrm{309}
+    \subitem v3.12~\dotfill~\indexrm{300}, \indexrm{305}, 
+		\indexrm{308--310}, \indexrm{312--314}, 
+		\indexrm{317, 318}
+    \subitem v3.15~\dotfill~\indexrm{301}, \indexrm{308, 309}
+    \subitem v3.18~\dotfill~\indexrm{301}
+    \subitem v3.19~\dotfill~\indexrm{312}
+    \subitem v3.20~\dotfill~\indexrm{302}, \indexrm{309}
+    \subitem v3.23~\dotfill~\indexrm{305}
+    \subitem v3.25~\dotfill~\indexrm{310}
+    \subitem v3.27~\dotfill~\indexrm{304, 305}, \indexrm{307}, 
+		\indexrm{315}, \indexrm{321--324}
+    \subitem v3.28~\dotfill~\indexrm{311--314}
+    \subitem v3.37~\dotfill~\indexrm{316}
+  \item \Class{scrbook}
+    \subitem v2.8o~\dotfill~\indexrm{101}
+    \subitem v2.8p~\dotfill~\indexrm{48}, \indexrm{58}, \indexrm{72}, 
+		\indexrm{93}, \indexrm{96}, \indexrm{105}, 
+		\indexrm{110}, \indexrm{121}, \indexrm{227}
+    \subitem v2.8q~\dotfill~\indexrm{33}, \indexrm{63}, \indexrm{82}, 
+		\indexrm{122}, \indexrm{128}, \indexrm{131}
+    \subitem v2.96a~\dotfill~\indexrm{45}, \indexrm{86}, \indexrm{90}, 
+		\indexrm{97}
+    \subitem v2.97c~\dotfill~\indexrm{58}, \indexrm{65}
+    \subitem v2.97e~\dotfill~\indexrm{84}
+    \subitem v3.00~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{62, 63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{85, 86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem v3.01a~\dotfill~\indexrm{23}, \indexrm{45}, \indexrm{142}, 
+		\indexrm{278}
+    \subitem v3.02~\dotfill~\indexrm{111}, \indexrm{458}
+    \subitem v3.06~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem v3.07~\dotfill~\indexrm{51}, \indexrm{83}
+    \subitem v3.08~\dotfill~\indexrm{68, 69}, \indexrm{442, 443}
+    \subitem v3.09~\dotfill~\indexrm{118--121}
+    \subitem v3.10~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem v3.12~\dotfill~\indexrm{49, 50}, \indexrm{53--55}, 
+		\indexrm{58}, \indexrm{60}, \indexrm{64}, \indexrm{87}, 
+		\indexrm{89}, \indexrm{103}, \indexrm{133}, 
+		\indexrm{136}, \indexrm{172}, \indexrm{246}, 
+		\indexrm{281}, \indexrm{426}
+    \subitem v3.15~\dotfill~\indexrm{50}, \indexrm{63}, 
+		\indexrm{65, 66}, \indexrm{98}, \indexrm{130}, 
+		\indexrm{446, 447}, \indexrm{457, 458}, \indexrm{465}
+    \subitem v3.17~\dotfill~\indexrm{47}, \indexrm{99, 100}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem v3.18~\dotfill~\indexrm{62}, \indexrm{64}, \indexrm{86}, 
+		\indexrm{138}, \indexrm{447}
+    \subitem v3.19~\dotfill~\indexrm{445}, \indexrm{449}, \indexrm{461}, 
+		\indexrm{463}
+    \subitem v3.20~\dotfill~\indexrm{128}, \indexrm{448, 449}, 
+		\indexrm{453}
+    \subitem v3.21~\dotfill~\indexrm{442}
+    \subitem v3.22~\dotfill~\indexrm{91, 92}
+    \subitem v3.23~\dotfill~\indexrm{83}
+    \subitem v3.24~\dotfill~\indexrm{445}, \indexrm{447}
+    \subitem v3.25~\dotfill~\indexrm{46}, \indexrm{57}, \indexrm{129}, 
+		\indexrm{446}, \indexrm{459}
+    \subitem v3.26~\dotfill~\indexrm{447}, \indexrm{450--452}
+    \subitem v3.27~\dotfill~\indexrm{91}, \indexrm{93}, \indexrm{458}, 
+		\indexrm{464--466}
+    \subitem v3.28~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem v3.33~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+    \subitem v3.36~\dotfill~\indexrm{83}, \indexrm{118}, \indexrm{226}, 
+		\indexrm{291}, \indexrm{441}
+    \subitem v3.39~\dotfill~\indexrm{48}, \indexrm{93}, \indexrm{106}, 
+		\indexrm{110}
+    \subitem v3.44~\dotfill~\indexrm{51}, \indexrm{110}
+    \subitem v3.46~\dotfill~\indexrm{118--121}
+  \item \Package{scrdate}
+    \subitem v3.05a~\dotfill~\indexrm{266--268}
+    \subitem v3.08b~\dotfill~\indexrm{269}
+    \subitem v3.13~\dotfill~\indexrm{269}
+  \item \Package{screxend}
+    \subitem v3.39~\dotfill~\indexrm{280}
+  \item \Package{scrextend}
+    \subitem v3.00~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem v3.01a~\dotfill~\indexrm{23}, \indexrm{45}, \indexrm{142}, 
+		\indexrm{278}
+    \subitem v3.02~\dotfill~\indexrm{292}
+    \subitem v3.10~\dotfill~\indexrm{292}
+    \subitem v3.12~\dotfill~\indexrm{49, 50}, \indexrm{53, 54}, 
+		\indexrm{172}, \indexrm{246}, \indexrm{281, 282}, 
+		\indexrm{285}, \indexrm{426}
+    \subitem v3.23~\dotfill~\indexrm{291}
+    \subitem v3.25~\dotfill~\indexrm{279}, \indexrm{283}
+    \subitem v3.28~\dotfill~\indexrm{286}
+    \subitem v3.33~\dotfill~\indexrm{81}
+    \subitem v3.36~\dotfill~\indexrm{83}, \indexrm{226}, \indexrm{291}, 
+		\indexrm{441}
+  \item \Package{scrlayer}
+    \subitem v3.12~\dotfill~\indexrm{384}
+    \subitem v3.16~\dotfill~\indexrm{389}, \indexrm{394}, \indexrm{397}, 
+		\indexrm{399}, \indexrm{409}, \indexrm{414}
+    \subitem v3.18~\dotfill~\indexrm{390, 391}, \indexrm{393, 394}, 
+		\indexrm{404}
+    \subitem v3.19~\dotfill~\indexrm{393}, \indexrm{395, 396}
+    \subitem v3.24~\dotfill~\indexrm{403}
+    \subitem v3.26~\dotfill~\indexrm{395}
+    \subitem v3.28~\dotfill~\indexrm{263}, \indexrm{411}, \indexrm{413}
+  \item \Package{scrlayer-notecolumn}
+    \subitem v0.1.2583~\dotfill~\indexrm{432}
+  \item \Package{scrlayer-scrpage}
+    \subitem v3.12~\dotfill~\indexrm{241}, \indexrm{414}
+    \subitem v3.14~\dotfill~\indexrm{249}, \indexrm{252}, \indexrm{254}, 
+		\indexrm{263}
+    \subitem v3.24~\dotfill~\indexrm{403}
+    \subitem v3.25~\dotfill~\indexrm{243}
+    \subitem v3.41~\dotfill~\indexrm{259}
+  \item \Package{scrletter}
+    \subitem v3.15~\dotfill~\indexrm{140}, \indexrm{470}
+    \subitem v3.17~\dotfill~\indexrm{172}, \indexrm{192, 193}
+    \subitem v3.19~\dotfill~\indexrm{159}, \indexrm{216}
+    \subitem v3.26~\dotfill~\indexrm{153}, \indexrm{155}
+    \subitem v3.27~\dotfill~\indexrm{153}, \indexrm{158}, \indexrm{185}, 
+		\indexrm{472}
+    \subitem v3.28~\dotfill~\indexrm{148}
+    \subitem v3.44~\dotfill~\indexrm{209}, \indexrm{227}
+    \subitem v3.48~\dotfill~\indexrm{211}
+  \item \Package{scrlfile}
+    \subitem v2.96~\dotfill~\indexrm{332}
+    \subitem v3.03~\dotfill~\indexrm{331}
+    \subitem v3.08~\dotfill~\indexrm{333, 334}
+    \subitem v3.09~\dotfill~\indexrm{328}
+    \subitem v3.12~\dotfill~\indexrm{333--335}
+    \subitem v3.32~\dotfill~\indexrm{327, 328}, \indexrm{332, 333}
+    \subitem v3.35~\dotfill~\indexrm{327}
+  \item \Package{scrlogo}
+    \subitem v3.36~\dotfill~\indexrm{296}
+  \item \Class{scrlttr2}
+    \subitem v2.9i~\dotfill~\indexrm{148}
+    \subitem v2.9t~\dotfill~\indexrm{142}, \indexrm{213}
+    \subitem v2.95~\dotfill~\indexrm{158}
+    \subitem v2.96~\dotfill~\indexrm{192}
+    \subitem v2.97~\dotfill~\indexrm{231}
+    \subitem v2.97c~\dotfill~\indexrm{176}, \indexrm{178}, 
+		\indexrm{183}, \indexrm{192, 193}, \indexrm{201}, 
+		\indexrm{205}
+    \subitem v2.97d~\dotfill~\indexrm{199}
+    \subitem v2.97e~\dotfill~\indexrm{173}, \indexrm{176--179}, 
+		\indexrm{212, 213}
+    \subitem v3.00~\dotfill~\indexrm{143}, \indexrm{219}, 
+		\indexrm{221--224}
+    \subitem v3.01~\dotfill~\indexrm{207, 208}
+    \subitem v3.01a~\dotfill~\indexrm{23}, \indexrm{45}, \indexrm{142}, 
+		\indexrm{278}
+    \subitem v3.02~\dotfill~\indexrm{227}, \indexrm{476}
+    \subitem v3.03~\dotfill~\indexrm{148}, \indexrm{192--197}
+    \subitem v3.04~\dotfill~\indexrm{230}, \indexrm{473}
+    \subitem v3.05~\dotfill~\indexrm{179}, \indexrm{214}
+    \subitem v3.06~\dotfill~\indexrm{225}
+    \subitem v3.07~\dotfill~\indexrm{170}, \indexrm{225}
+    \subitem v3.08~\dotfill~\indexrm{145, 146}, \indexrm{212}, 
+		\indexrm{215}, \indexrm{220}, \indexrm{476}
+    \subitem v3.09~\dotfill~\indexrm{200--202}, \indexrm{476}
+    \subitem v3.12~\dotfill~\indexrm{145}, \indexrm{172}, 
+		\indexrm{184, 185}, \indexrm{202}
+    \subitem v3.13~\dotfill~\indexrm{476}
+    \subitem v3.14~\dotfill~\indexrm{231}
+    \subitem v3.15~\dotfill~\indexrm{446}
+    \subitem v3.17~\dotfill~\indexrm{172}, \indexrm{192, 193}
+    \subitem v3.19~\dotfill~\indexrm{159}, \indexrm{216}
+    \subitem v3.23~\dotfill~\indexrm{225}
+    \subitem v3.25~\dotfill~\indexrm{143}, \indexrm{446}
+    \subitem v3.26~\dotfill~\indexrm{153}, \indexrm{155}
+    \subitem v3.27~\dotfill~\indexrm{153}, \indexrm{158}, \indexrm{185}, 
+		\indexrm{472}
+    \subitem v3.28~\dotfill~\indexrm{148}, \indexrm{215}
+    \subitem v3.33~\dotfill~\indexrm{170, 171}, \indexrm{224}
+    \subitem v3.39~\dotfill~\indexrm{169}, \indexrm{192}, \indexrm{194}, 
+		\indexrm{202}, \indexrm{205}, \indexrm{227}
+    \subitem v3.44~\dotfill~\indexrm{170, 171}, \indexrm{209}, 
+		\indexrm{227}
+    \subitem v3.48~\dotfill~\indexrm{211}
+  \item \Class{scrreprt}
+    \subitem v2.8o~\dotfill~\indexrm{101}
+    \subitem v2.8p~\dotfill~\indexrm{48}, \indexrm{58}, \indexrm{72}, 
+		\indexrm{93}, \indexrm{96}, \indexrm{105}, 
+		\indexrm{110}, \indexrm{121}, \indexrm{227}
+    \subitem v2.8q~\dotfill~\indexrm{33}, \indexrm{63}, \indexrm{82}, 
+		\indexrm{122}, \indexrm{128}, \indexrm{131}
+    \subitem v2.96a~\dotfill~\indexrm{45}, \indexrm{86}, \indexrm{90}, 
+		\indexrm{97}
+    \subitem v2.97c~\dotfill~\indexrm{58}, \indexrm{65}
+    \subitem v3.00~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{61--63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{85, 86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem v3.01a~\dotfill~\indexrm{23}, \indexrm{45}, \indexrm{142}, 
+		\indexrm{278}
+    \subitem v3.02~\dotfill~\indexrm{111}, \indexrm{458}
+    \subitem v3.06~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem v3.07~\dotfill~\indexrm{51}, \indexrm{83}
+    \subitem v3.08~\dotfill~\indexrm{68, 69}, \indexrm{442, 443}
+    \subitem v3.09~\dotfill~\indexrm{118--121}
+    \subitem v3.10~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem v3.12~\dotfill~\indexrm{49, 50}, \indexrm{53--55}, 
+		\indexrm{58}, \indexrm{60}, \indexrm{64}, \indexrm{87}, 
+		\indexrm{89}, \indexrm{103}, \indexrm{133}, 
+		\indexrm{136}, \indexrm{172}, \indexrm{246}, 
+		\indexrm{281}, \indexrm{426}
+    \subitem v3.15~\dotfill~\indexrm{50}, \indexrm{63}, 
+		\indexrm{65, 66}, \indexrm{98}, \indexrm{130}, 
+		\indexrm{446, 447}, \indexrm{457, 458}, \indexrm{465}
+    \subitem v3.17~\dotfill~\indexrm{47}, \indexrm{99, 100}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem v3.18~\dotfill~\indexrm{62}, \indexrm{64}, \indexrm{86}, 
+		\indexrm{138}, \indexrm{447}
+    \subitem v3.19~\dotfill~\indexrm{445}, \indexrm{449}, \indexrm{461}, 
+		\indexrm{463}
+    \subitem v3.20~\dotfill~\indexrm{128}, \indexrm{448, 449}, 
+		\indexrm{453}
+    \subitem v3.21~\dotfill~\indexrm{442}
+    \subitem v3.22~\dotfill~\indexrm{91, 92}
+    \subitem v3.23~\dotfill~\indexrm{83}
+    \subitem v3.24~\dotfill~\indexrm{445}, \indexrm{447}
+    \subitem v3.25~\dotfill~\indexrm{46}, \indexrm{57}, \indexrm{129}, 
+		\indexrm{446}, \indexrm{459}
+    \subitem v3.26~\dotfill~\indexrm{447}, \indexrm{450--452}
+    \subitem v3.27~\dotfill~\indexrm{91}, \indexrm{93}, \indexrm{458}, 
+		\indexrm{464--466}
+    \subitem v3.28~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem v3.33~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+    \subitem v3.36~\dotfill~\indexrm{83}, \indexrm{118}, \indexrm{226}, 
+		\indexrm{291}, \indexrm{441}
+    \subitem v3.39~\dotfill~\indexrm{48}, \indexrm{93}, \indexrm{106}, 
+		\indexrm{110}
+    \subitem v3.44~\dotfill~\indexrm{51}, \indexrm{110}
+    \subitem v3.46~\dotfill~\indexrm{118--121}
+  \item \Package{scrtime}
+    \subitem v3.05a~\dotfill~\indexrm{272}
+
+  \indexspace
+
+  \item \Package{tocbasic}
+    \subitem v3.01~\dotfill~\indexrm{347}
+    \subitem v3.06~\dotfill~\indexrm{367, 368}
+    \subitem v3.09~\dotfill~\indexrm{368}
+    \subitem v3.10~\dotfill~\indexrm{346}
+    \subitem v3.12~\dotfill~\indexrm{342}, \indexrm{346}, \indexrm{364}
+    \subitem v3.17~\dotfill~\indexrm{346}
+    \subitem v3.20~\dotfill~\indexrm{346}, \indexrm{348, 349}, 
+		\indexrm{352}, \indexrm{359}, \indexrm{361, 362}, 
+		\indexrm{364}, \indexrm{367}, \indexrm{369, 370}
+    \subitem v3.21~\dotfill~\indexrm{352}, \indexrm{358}, \indexrm{367}, 
+		\indexrm{369}
+    \subitem v3.25~\dotfill~\indexrm{370, 371}
+    \subitem v3.26~\dotfill~\indexrm{359}
+    \subitem v3.27~\dotfill~\indexrm{346}, \indexrm{351, 352}, 
+		\indexrm{354--356}, \indexrm{358--360}, \indexrm{368}
+    \subitem v3.28~\dotfill~\indexrm{337}, \indexrm{348}
+    \subitem v3.31~\dotfill~\indexrm{353}, \indexrm{355}
+    \subitem v3.35~\dotfill~\indexrm{368}
+    \subitem v3.39~\dotfill~\indexrm{354--356}
+    \subitem v3.42~\dotfill~\indexrm{377}
+    \subitem v3.46~\dotfill~\indexrm{373}, \indexrm{378}
+  \item \Package{typearea}
+    \subitem v3.00~\dotfill~\indexrm{21--24}, \indexrm{26, 27}, 
+		\indexrm{30}, \indexrm{32--34}, \indexrm{37}, 
+		\indexrm{44}, \indexrm{140, 141}, \indexrm{242}, 
+		\indexrm{277}, \indexrm{384, 385}, \indexrm{424}
+    \subitem v3.01b~\dotfill~\indexrm{22}, \indexrm{38}
+    \subitem v3.02c~\dotfill~\indexrm{37}
+    \subitem v3.05a~\dotfill~\indexrm{40}
+    \subitem v3.11~\dotfill~\indexrm{438}, \indexrm{440}
+    \subitem v3.12~\dotfill~\indexrm{30}, \indexrm{35}
+    \subitem v3.17~\dotfill~\indexrm{39}, \indexrm{437}
+    \subitem v3.18~\dotfill~\indexrm{439}
+    \subitem v3.20~\dotfill~\indexrm{40}
+    \subitem v3.22~\dotfill~\indexrm{38}
+
+  \indexspace
+
+  \item v0.1.2583
+    \subitem \Package{scrlayer-notecolumn}~\dotfill~\indexrm{432}
+  \item v2.8o
+    \subitem \Class{scrbook}~\dotfill~\indexrm{101}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{101}
+  \item v2.8p
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{48}, \indexrm{58}, 
+		\indexrm{72}, \indexrm{93}, \indexrm{96}, 
+		\indexrm{110}, \indexrm{121}, \indexrm{227}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{48}, \indexrm{58}, 
+		\indexrm{72}, \indexrm{93}, \indexrm{96}, 
+		\indexrm{105}, \indexrm{110}, \indexrm{121}, 
+		\indexrm{227}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{48}, \indexrm{58}, 
+		\indexrm{72}, \indexrm{93}, \indexrm{96}, 
+		\indexrm{105}, \indexrm{110}, \indexrm{121}, 
+		\indexrm{227}
+  \item v2.8q
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{33}, \indexrm{63}, 
+		\indexrm{82}, \indexrm{122}, \indexrm{128}, 
+		\indexrm{131}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{33}, \indexrm{63}, 
+		\indexrm{82}, \indexrm{122}, \indexrm{128}, 
+		\indexrm{131}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{33}, \indexrm{63}, 
+		\indexrm{82}, \indexrm{122}, \indexrm{128}, 
+		\indexrm{131}
+  \item v2.9i
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{148}
+  \item v2.9t
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{142}, \indexrm{213}
+  \item v2.95
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{158}
+  \item v2.96
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{332}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{192}
+  \item v2.96a
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{45}, \indexrm{97}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{45}, \indexrm{86}, 
+		\indexrm{90}, \indexrm{97}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{45}, \indexrm{86}, 
+		\indexrm{90}, \indexrm{97}
+  \item v2.97
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{231}
+  \item v2.97c
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{58}, \indexrm{65}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{58}, \indexrm{65}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{176}, \indexrm{178}, 
+		\indexrm{183}, \indexrm{192, 193}, \indexrm{201}, 
+		\indexrm{205}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{58}, \indexrm{65}
+  \item v2.97d
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{199}
+  \item v2.97e
+    \subitem \Class{scrbook}~\dotfill~\indexrm{84}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{173}, 
+		\indexrm{176--179}, \indexrm{212, 213}
+  \item v3.00
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{61--63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{62, 63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{85, 86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{21, 22}, 
+		\indexrm{44}, \indexrm{140, 141}, \indexrm{242}, 
+		\indexrm{277}, \indexrm{384, 385}, \indexrm{424}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{143}, \indexrm{219}, 
+		\indexrm{221--224}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{21, 22}, \indexrm{44}, 
+		\indexrm{46}, \indexrm{55}, \indexrm{61--63}, 
+		\indexrm{67}, \indexrm{70}, \indexrm{77}, 
+		\indexrm{79--81}, \indexrm{85, 86}, \indexrm{122, 123}, 
+		\indexrm{130, 131}, \indexrm{135}, \indexrm{137, 138}, 
+		\indexrm{140, 141}, \indexrm{242}, \indexrm{277}, 
+		\indexrm{384, 385}, \indexrm{424}
+    \subitem \Package{typearea}~\dotfill~\indexrm{21--24}, 
+		\indexrm{26, 27}, \indexrm{30}, \indexrm{32--34}, 
+		\indexrm{37}, \indexrm{44}, \indexrm{140, 141}, 
+		\indexrm{242}, \indexrm{277}, \indexrm{384, 385}, 
+		\indexrm{424}
+  \item v3.01
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{207, 208}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{347}
+  \item v3.01a
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{23}, \indexrm{45}, 
+		\indexrm{142}, \indexrm{278}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{23}, \indexrm{45}, 
+		\indexrm{142}, \indexrm{278}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{23}, \indexrm{45}, 
+		\indexrm{142}, \indexrm{278}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{23}, \indexrm{45}, 
+		\indexrm{142}, \indexrm{278}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{23}, \indexrm{45}, 
+		\indexrm{142}, \indexrm{278}
+  \item v3.01b
+    \subitem \Package{typearea}~\dotfill~\indexrm{22}, \indexrm{38}
+  \item v3.02
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{111}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{111}, \indexrm{458}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{292}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{227}, \indexrm{476}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{111}, \indexrm{458}
+  \item v3.02c
+    \subitem \Package{typearea}~\dotfill~\indexrm{37}
+  \item v3.03
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{331}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{148}, 
+		\indexrm{192--197}
+  \item v3.04
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{230}, \indexrm{473}
+  \item v3.05
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{179}, \indexrm{214}
+  \item v3.05a
+    \subitem \Package{scrbase}~\dotfill~\indexrm{321}
+    \subitem \Package{scrdate}~\dotfill~\indexrm{266--268}
+    \subitem \Package{scrtime}~\dotfill~\indexrm{272}
+    \subitem \Package{typearea}~\dotfill~\indexrm{40}
+  \item v3.06
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{225}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{83}, \indexrm{130--132}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{367, 368}
+  \item v3.07
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{51}, \indexrm{83}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{51}, \indexrm{83}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{170}, \indexrm{225}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{51}, \indexrm{83}
+  \item v3.08
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{68, 69}, 
+		\indexrm{442, 443}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{309}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{68, 69}, 
+		\indexrm{442, 443}
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{333, 334}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{145, 146}, 
+		\indexrm{212}, \indexrm{215}, \indexrm{220}, 
+		\indexrm{476}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{68, 69}, 
+		\indexrm{442, 443}
+  \item v3.08b
+    \subitem \Package{scrdate}~\dotfill~\indexrm{269}
+  \item v3.09
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{118--121}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{118--121}
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{328}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{200--202}, 
+		\indexrm{476}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{118--121}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{368}
+  \item v3.10
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{292}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{87, 88}, \indexrm{91}, 
+		\indexrm{106}, \indexrm{125}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{346}
+  \item v3.11
+    \subitem \Package{typearea}~\dotfill~\indexrm{438}, \indexrm{440}
+  \item v3.12
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{49, 50}, 
+		\indexrm{53--55}, \indexrm{58}, \indexrm{60}, 
+		\indexrm{64}, \indexrm{87}, \indexrm{89}, 
+		\indexrm{103}, \indexrm{133}, \indexrm{136}, 
+		\indexrm{172}, \indexrm{246}, \indexrm{281}, 
+		\indexrm{426}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{300}, \indexrm{305}, 
+		\indexrm{308--310}, \indexrm{312--314}, 
+		\indexrm{317, 318}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{49, 50}, 
+		\indexrm{53--55}, \indexrm{58}, \indexrm{60}, 
+		\indexrm{64}, \indexrm{87}, \indexrm{89}, 
+		\indexrm{103}, \indexrm{133}, \indexrm{136}, 
+		\indexrm{172}, \indexrm{246}, \indexrm{281}, 
+		\indexrm{426}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{49, 50}, 
+		\indexrm{53, 54}, \indexrm{172}, \indexrm{246}, 
+		\indexrm{281, 282}, \indexrm{285}, \indexrm{426}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{384}
+    \subitem \Package{scrlayer-scrpage}~\dotfill~\indexrm{241}, 
+		\indexrm{414}
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{333--335}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{145}, \indexrm{172}, 
+		\indexrm{184, 185}, \indexrm{202}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{49, 50}, 
+		\indexrm{53--55}, \indexrm{58}, \indexrm{60}, 
+		\indexrm{64}, \indexrm{87}, \indexrm{89}, 
+		\indexrm{103}, \indexrm{133}, \indexrm{136}, 
+		\indexrm{172}, \indexrm{246}, \indexrm{281}, 
+		\indexrm{426}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{342}, \indexrm{346}, 
+		\indexrm{364}
+    \subitem \Package{typearea}~\dotfill~\indexrm{30}, \indexrm{35}
+  \item v3.13
+    \subitem \Package{scrdate}~\dotfill~\indexrm{269}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{476}
+  \item v3.14
+    \subitem \Package{scrlayer-scrpage}~\dotfill~\indexrm{249}, 
+		\indexrm{252}, \indexrm{254}, \indexrm{263}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{231}
+  \item v3.15
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{53}, \indexrm{65, 66}, 
+		\indexrm{130}, \indexrm{446, 447}, \indexrm{457, 458}, 
+		\indexrm{465}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{301}, 
+		\indexrm{308, 309}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{50}, \indexrm{63}, 
+		\indexrm{65, 66}, \indexrm{98}, \indexrm{130}, 
+		\indexrm{446, 447}, \indexrm{457, 458}, \indexrm{465}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{140}, \indexrm{470}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{446}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{50}, \indexrm{63}, 
+		\indexrm{65, 66}, \indexrm{98}, \indexrm{130}, 
+		\indexrm{446, 447}, \indexrm{457, 458}, \indexrm{465}
+  \item v3.16
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{389}, \indexrm{394}, 
+		\indexrm{397}, \indexrm{399}, \indexrm{409}, 
+		\indexrm{414}
+  \item v3.17
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{47}, \indexrm{99}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{47}, \indexrm{99, 100}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{172}, 
+		\indexrm{192, 193}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{172}, 
+		\indexrm{192, 193}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{47}, \indexrm{99, 100}, 
+		\indexrm{445, 446}, \indexrm{458, 459}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{346}
+    \subitem \Package{typearea}~\dotfill~\indexrm{39}, \indexrm{437}
+  \item v3.18
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{62}, \indexrm{64}, 
+		\indexrm{138}, \indexrm{447}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{301}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{62}, \indexrm{64}, 
+		\indexrm{86}, \indexrm{138}, \indexrm{447}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{390, 391}, 
+		\indexrm{393, 394}, \indexrm{404}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{62}, \indexrm{64}, 
+		\indexrm{86}, \indexrm{138}, \indexrm{447}
+    \subitem \Package{typearea}~\dotfill~\indexrm{439}
+  \item v3.19
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{445}, \indexrm{449}, 
+		\indexrm{463}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{312}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{445}, \indexrm{449}, 
+		\indexrm{461}, \indexrm{463}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{393}, 
+		\indexrm{395, 396}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{159}, \indexrm{216}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{159}, \indexrm{216}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{445}, \indexrm{449}, 
+		\indexrm{461}, \indexrm{463}
+  \item v3.20
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{128}, 
+		\indexrm{448, 449}, \indexrm{453}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{302}, \indexrm{309}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{128}, \indexrm{448, 449}, 
+		\indexrm{453}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{128}, 
+		\indexrm{448, 449}, \indexrm{453}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{346}, 
+		\indexrm{348, 349}, \indexrm{352}, \indexrm{359}, 
+		\indexrm{361, 362}, \indexrm{364}, \indexrm{367}, 
+		\indexrm{369, 370}
+    \subitem \Package{typearea}~\dotfill~\indexrm{40}
+  \item v3.21
+    \subitem \Class{scrbook}~\dotfill~\indexrm{442}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{442}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{352}, \indexrm{358}, 
+		\indexrm{367}, \indexrm{369}
+  \item v3.22
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{91, 92}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{91, 92}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{91, 92}
+    \subitem \Package{typearea}~\dotfill~\indexrm{38}
+  \item v3.23
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{83}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{305}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{83}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{291}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{225}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{83}
+  \item v3.24
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{445}, \indexrm{447}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{445}, \indexrm{447}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{403}
+    \subitem \Package{scrlayer-scrpage}~\dotfill~\indexrm{403}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{445}, \indexrm{447}
+  \item v3.25
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{46}, \indexrm{57}, 
+		\indexrm{129}, \indexrm{446}, \indexrm{459}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{310}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{46}, \indexrm{57}, 
+		\indexrm{129}, \indexrm{446}, \indexrm{459}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{279}, \indexrm{283}
+    \subitem \Package{scrlayer-scrpage}~\dotfill~\indexrm{243}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{143}, \indexrm{446}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{46}, \indexrm{57}, 
+		\indexrm{129}, \indexrm{446}, \indexrm{459}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{370, 371}
+  \item v3.26
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{447}, 
+		\indexrm{450--452}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{447}, \indexrm{450--452}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{395}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{153}, \indexrm{155}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{153}, \indexrm{155}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{447}, 
+		\indexrm{450--452}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{359}
+  \item v3.27
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{91}, \indexrm{93}, 
+		\indexrm{458}, \indexrm{464--466}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{304, 305}, 
+		\indexrm{307}, \indexrm{315}, \indexrm{321--324}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{91}, \indexrm{93}, 
+		\indexrm{458}, \indexrm{464--466}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{153}, \indexrm{158}, 
+		\indexrm{185}, \indexrm{472}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{153}, \indexrm{158}, 
+		\indexrm{185}, \indexrm{472}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{91}, \indexrm{93}, 
+		\indexrm{458}, \indexrm{464--466}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{346}, 
+		\indexrm{351, 352}, \indexrm{354--356}, 
+		\indexrm{358--360}, \indexrm{368}
+  \item v3.28
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem \Package{scrbase}~\dotfill~\indexrm{311--314}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{286}
+    \subitem \Package{scrlayer}~\dotfill~\indexrm{263}, \indexrm{411}, 
+		\indexrm{413}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{148}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{148}, \indexrm{215}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{69}, \indexrm{103}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{337}, \indexrm{348}
+  \item v3.31
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{353}, \indexrm{355}
+  \item v3.32
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{327, 328}, 
+		\indexrm{332, 333}
+  \item v3.33
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{81}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{170, 171}, 
+		\indexrm{224}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{51, 52}, \indexrm{81}, 
+		\indexrm{108}, \indexrm{226}
+  \item v3.35
+    \subitem \Package{scrlfile}~\dotfill~\indexrm{327}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{368}
+  \item v3.36
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{83}, \indexrm{118}, 
+		\indexrm{226}, \indexrm{291}, \indexrm{441}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{83}, \indexrm{118}, 
+		\indexrm{226}, \indexrm{291}, \indexrm{441}
+    \subitem \Package{scrextend}~\dotfill~\indexrm{83}, \indexrm{226}, 
+		\indexrm{291}, \indexrm{441}
+    \subitem \Package{scrlogo}~\dotfill~\indexrm{296}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{83}, \indexrm{118}, 
+		\indexrm{226}, \indexrm{291}, \indexrm{441}
+  \item v3.37
+    \subitem \Package{scrbase}~\dotfill~\indexrm{316}
+  \item v3.39
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{48}, \indexrm{93}, 
+		\indexrm{106}, \indexrm{110}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{48}, \indexrm{93}, 
+		\indexrm{106}, \indexrm{110}
+    \subitem \Package{screxend}~\dotfill~\indexrm{280}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{169}, \indexrm{192}, 
+		\indexrm{194}, \indexrm{202}, \indexrm{205}, 
+		\indexrm{227}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{48}, \indexrm{93}, 
+		\indexrm{106}, \indexrm{110}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{354--356}
+  \item v3.41
+    \subitem \Package{scrlayer-scrpage}~\dotfill~\indexrm{259}
+  \item v3.42
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{377}
+  \item v3.44
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{51}, \indexrm{110}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{51}, \indexrm{110}
+    \subitem \Package{scrletter}~\dotfill~\indexrm{209}, \indexrm{227}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{170, 171}, 
+		\indexrm{209}, \indexrm{227}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{51}, \indexrm{110}
+  \item v3.46
+    \subitem \Class{scrartcl}~\dotfill~\indexrm{118--121}
+    \subitem \Class{scrbook}~\dotfill~\indexrm{118--121}
+    \subitem \Class{scrreprt}~\dotfill~\indexrm{118--121}
+    \subitem \Package{tocbasic}~\dotfill~\indexrm{373}, \indexrm{378}
+  \item v3.48
+    \subitem \Package{scrletter}~\dotfill~\indexrm{211}
+    \subitem \Class{scrlttr2}~\dotfill~\indexrm{211}
+\end{thechangelog}

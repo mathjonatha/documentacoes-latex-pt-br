@@ -1,0 +1,98 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Two-sided layout with the box construction of the classical nine-part division, after subtracting a binding correction}}{28}{figure.2.1}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Parameters that control the footnote layout}}{90}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Example: Figure beside description}}{132}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Example: Description centered beside figure}}{132}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example: Figure title top beside}}{133}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Example: Default caption}}{135}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Example: Caption with partially hanging indention}}{135}{figure.3.6}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Example: Caption with hanging indention and line break}}{135}{figure.3.7}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Example: Caption with indention in the second line}}{135}{figure.3.8}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Schematic of the pseudo-lengths for a letter}}{162}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces General structure of a letter document containing several individual letters}}{164}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces General structure of a single letter within a letter document}}{165}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Example: letter with recipient and salutation}}{169}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Example: letter with recipient, opening, text, and closing}}{170}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Example: letter with recipient, opening, text, closing, and postscript}}{171}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Example: letter with recipient, opening, text, closing, postscript, and distribution list}}{173}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Example: letter with recipient, opening, text, closing, postscript, distribution list, and enclosure}}{174}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Example: letter with address, salutation, text, closing phrase, postscript, enclosures, distribution list, and noxiously large font size}}{177}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces schematic display of the letterhead page outlining the most important commands and variables}}{183}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Example: letter with recipient, opening, text, closing, postscript, distribution list, enclosure, and hole-punch mark}}{185}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Example: letter with sender, recipient, opening, text, closing, postscript, distribution list, and enclosure}}{191}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Example: letter with sender, rule, recipient, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark}}{192}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Example: letter with extra sender information, rule, recipient, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark; standard vs. extended letterhead}}{196}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Example: letter with extra sender information, rule, recipient, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark; left- vs. right-aligned letterhead}}{197}{figure.4.15}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Example: letter with extra sender information, logo, rule, recipient, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark; left-aligned vs. right-aligned vs. centred sender information}}{199}{figure.4.16}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Example: letter with extended sender, logo, recipient, extra sender information, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark}}{208}{figure.4.17}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Example: letter with extended sender, logo, recipient, extra sender information, location, date, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark}}{212}{figure.4.18}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Example: letter with extended sender, logo, recipient, extra sender information, place, date, subject, opening, text, closing, signature, postscript, distribution list, enclosure, and hole-punch mark}}{216}{figure.4.19}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Example: letter with extended sender, logo, recipient, extra sender information, place, date, subject, opening, text, closing, modified signature, postscript, distribution list, enclosure, and hole-punch mark}}{219}{figure.4.20}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Example: letter with extended sender, logo, recipient, extra sender information, place, date, subject, opening, text, closing, modified signature, postscript, distribution list, enclosure, and hole-punch mark using an \File {lco} file}}{242}{figure.4.21}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Commands for setting the page header}}{257}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Commands for setting the page footer}}{260}{figure.5.2}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {15.1}{\ignorespaces Illustrations of some attributes of a TOC entry with the \PValue {dottedtocline} style}}{361}{figure.15.1}%
+\contentsline {figure}{\numberline {15.2}{\ignorespaces Illustrations of some attributes of a TOC entry with style \PValue {largetocline}}}{362}{figure.15.2}%
+\contentsline {figure}{\numberline {15.3}{\ignorespaces Illustrations of some attributes of a TOC entry with the \PValue {tocline} style}}{362}{figure.15.3}%
+\contentsline {figure}{\numberline {15.4}{\ignorespaces Illustration of some attributes of the \PValue {undottedtocline} style with the example of a chapter title}}{363}{figure.15.4}%
+\contentsline {figure}{\numberline {15.6}{\ignorespaces Example: Using \Macro {captionaboveof} inside another floating environment}}{388}{figure.15.6}%
+\contentsline {figure}{\numberline {15.5}{\ignorespaces Example: A rectangle}}{388}{figure.15.5}%
+\contentsline {figure}{\numberline {15.7}{\ignorespaces Example for \Package {tocbasic} without and with patch when using class \Class {book}}}{393}{figure.15.7}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {18.1}{\ignorespaces A sample page for the example in \autoref {cha:scrlayer-notecolumn}}}{448}{figure.18.1}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

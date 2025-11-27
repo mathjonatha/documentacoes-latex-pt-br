@@ -1,0 +1,35 @@
+\section{Instalação}
+
+\tkzname{\tkznameofpack} está no servidor da \tkzname{CTAN}\footnote{\tkzname{\tkznameofpack} faz parte do \NameDist{TeXLive} e \tkzname{tlmgr} permite instalá-los. Este pacote também faz parte do \NameDist{MiKTeX} no \NameSys{Windows}.}. Se você deseja testar uma versão beta, basta colocar os seguintes arquivos em uma pasta texmf que seu sistema possa encontrar.
+Você terá que verificar vários pontos:
+
+\begin{itemize}\setlength{\itemsep}{5pt}
+\item  A pasta \tkzname{\tkznameofpack} deve estar localizada em um caminho reconhecido pelo \tkzname{latex}.
+\item  O  \tkzname{\tkznameofpack} usa \tkzNamePack{xfp}.
+
+\item Você precisa ter \PGF\ instalado no seu computador. \tkzname{\tkznameofpack} usa várias bibliotecas do \TIKZ
+
+ \begin{tabular}{l}
+    angles,                         \\
+    arrows,                         \\
+    arrows.meta,                    \\
+    calc,                           \\
+    decorations,                    \\
+    decorations.markings,           \\
+    decorations.pathreplacing,      \\
+    decorations.shapes,             \\
+    decorations.text,               \\
+    decorations.pathmorphing,       \\
+    intersections,                  \\
+    math,                           \\
+    plotmarks,                      \\
+    positioning,                    \\
+    quotes,                         \\
+    shapes.misc,                    \\
+    through
+\end{tabular}
+
+\item Esta documentação e todos os exemplos foram obtidos com \tkzname{lualatex}, mas \tkzname{pdflatex} ou \tkzname{xelatex} devem ser adequados.
+\end{itemize}
+
+\endinput

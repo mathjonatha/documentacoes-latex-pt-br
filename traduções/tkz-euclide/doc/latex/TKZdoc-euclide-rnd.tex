@@ -1,0 +1,78 @@
+\section{Definição de ponto aleatório}
+%<--------------------------------------------------------------------------->
+%           points random
+%<--------------------------------------------------------------------------->
+No momento existem quatro possibilidades:
+\begin{enumerate}
+  \item ponto em um retângulo;
+  \item em um segmento;
+  \item em uma reta;
+  \item em um círculo.
+\end{enumerate}
+
+\subsection{Obtendo pontos aleatórios}
+Esta é a nova versão que substitui  \tkzcname{tkzGetRandPointOn}.
+\begin{NewMacroBox}{tkzDefRandPointOn}{\oarg{opções locais}}%
+{O resultado é um ponto com uma posição aleatória que pode ser nomeado com a macro \tkzcname{tkzGetPoint}. É possível usar \tkzname{tkzPointResult} se não for necessário reter os resultados.}
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                         \\
+\midrule
+\TOline{rectangle=pt1 and pt2}  {}{[rectangle=A and B]}
+\TOline{segment= pt1--pt2} {}{[segment=A--B]}
+\TOline{line=pt1--pt2}{}{[line=A--B]}
+\TOline{circle =center pt1 radius dim}{}{[circle = center A radius 2]}
+\TOline{circle through=center pt1 through pt2}{}{[circle through= center A through B]}
+\TOline{disk through=center pt1 through pt2}{}{[disk through=center A through B]}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Ponto aleatório em um retângulo}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,5/3/C}
+  \tkzDefRandPointOn[rectangle = A and C]
+  \tkzGetPoint{E}
+  \tkzDefRectangle(A,C)\tkzGetPoints{B}{D}
+  \tkzDrawPolygon[red](A,...,D)
+  \tkzDrawPoints(A,...,E)
+  \tkzLabelPoints(A,B)
+  \tkzLabelPoints[above](C,D,E)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Ponto aleatório em um segmento ou uma reta}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/A,5/2/C}
+  \tkzDefRandPointOn[segment = A--C]\tkzGetPoint{B}
+  \tkzDrawLine(A,C)
+  \tkzDrawPoints(A,C) \tkzDrawPoint[red](B)
+  \tkzLabelPoints(A,C) \tkzLabelPoints[red](B)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Ponto aleatório em um círculo ou um disco}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+\tkzDefPoints{3/2/A,1/1/B}
+\tkzCalcLength(A,B) \tkzGetLength{rAB}
+\tkzDefRandPointOn[circle = center A radius \rAB]
+\tkzGetPoint{C}
+\tkzDefRandPointOn[circle through= center A through B]
+\tkzGetPoint{D}
+\tkzDefRandPointOn[disk through=center A through B]
+\tkzGetPoint{E}
+\tkzDrawCircle(A,B)
+\tkzDrawPoints(A,B)
+\tkzLabelPoints(A,B)
+\tkzDrawPoints[red](C,D,E)
+\tkzLabelPoints[red,right](C,D,E)
+\end{tikzpicture}
+\end{tkzexample}
+
+\endinput

@@ -1,0 +1,6 @@
+    \begingroup\expandafter\expandafter\expandafter\endgroup
+    \expandafter\ifx\csname foo\endcsname\relax
+    ...
+    \else
+    ...
+    \fi

@@ -1,0 +1,504 @@
+\section{\tkzname{Interseções}}
+
+É possível determinar as coordenadas dos pontos de interseção entre duas retas, uma reta e um círculo, e dois círculos.
+
+Os comandos associados não têm argumentos opcionais e o usuário deve determinar por si mesmo a existência dos pontos de interseção.
+
+\subsection{Interseção de duas retas \tkzcname{tkzInterLL}}
+\begin{NewMacroBox}{tkzInterLL}{\parg{$A,B$}\parg{$C,D$}}%
+Define o ponto de interseção \tkzname{tkzPointResult} das duas retas $(AB)$ e $(CD)$. Os pontos conhecidos são fornecidos em pares (dois por reta) entre parênteses, e o ponto resultante pode ser recuperado com a macro \tkzcname{tkzDefPoint}.
+\end{NewMacroBox}
+
+\subsubsection{Exemplo de interseção entre duas retas}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[rotate=-45,scale=.75]
+  \tkzDefPoint(2,1){A}   
+  \tkzDefPoint(6,5){B}
+  \tkzDefPoint(3,6){C}   
+  \tkzDefPoint(5,2){D}
+  \tkzDrawLines(A,B C,D)
+  \tkzInterLL(A,B)(C,D)  
+     \tkzGetPoint{I}
+  \tkzDrawPoints[color=blue](A,B,C,D)
+   \tkzDrawPoint[color=red](I)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Interseção de uma reta e um círculo \tkzcname{tkzInterLC}}
+
+Como antes, a reta é definida por um par de pontos. O círculo
+ também é definido por um par:
+\begin{itemize}
+\item $(O,C)$ que é um par de pontos, o primeiro é o centro e o segundo é qualquer ponto no círculo.
+\item $(O,r)$ A medida $r$ é a medida do raio.
+\end{itemize}
+
+\begin{NewMacroBox}{tkzInterLC}{\oarg{opções}\parg{$A,B$}\parg{$O,C$} ou \parg{$O,r$} ou \parg{$O,C,D$}}%
+Portanto, os argumentos são dois pares. 
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções            & padrão & definição                         \\ 
+\midrule
+\TOline{N}         {N}    {(O,C) determina o círculo}
+\TOline{R}         {N}    {(O, 1 ) unidade 1 cm}
+\TOline{with nodes}{N}    {(O,C,D) CD é um raio}
+\TOline{common=pt} {}     {pt é ponto comum; tkzFirstPoint fornece o outro ponto}
+\TOline{near}      {}     {tkzFirstPoint é o ponto mais próximo do primeiro ponto da reta}
+\bottomrule
+\end{tabular}
+
+\medskip
+A macro define os pontos de interseção $I$ e $J$ da reta $(AB)$ e do círculo de centro $O$ com raio $r$ se existirem; caso contrário, um erro será relatado no arquivo |.log|. \tkzname{with nodes} evita que você calcule o raio que é o comprimento de $[CD]$.
+Se \tkzname{common} e \tkzname{near} não forem usados, então \tkzname{tkzFirstPoint} é o menor ângulo (ângulo com \tkzname{tkzSecondPoint} e o centro do círculo).
+\end{NewMacroBox}
+
+\begin{NewMacroBox}{tkzTestInterLC}{\parg{$O,A$}\parg{$O',B$}}%
+Portanto, os argumentos são dois pares que definem uma reta e um círculo com um centro e um ponto no círculo. Se houver uma interseção não vazia entre a reta e o círculo, então o teste \tkzcname{iftkzFlagLC} retorna verdadeiro.
+\end{NewMacroBox}
+
+\subsubsection{Teste de interseção reta-círculo}
+
+\begin{tkzexample}[latex=7cm,small]
+  \begin{tikzpicture}[scale=1]
+    \tkzDefPoints{% x   y   name
+                    3    /4    /I,
+                    3    /2    /P,
+                    0    /2    /La,
+                    8    /3    /Lb}
+  \tkzDrawCircle(I,P)
+  \foreach \i in {1,...,3}{%
+     \coordinate  (Lb) at (8,\i);
+     \tkzDrawLine(La,Lb)
+     \tkzTestInterLC(La,Lb)(I,P)
+      \iftkzFlagLC
+      \tkzInterLC(La,Lb)(I,P)  
+      \tkzGetPoints{a}{b}
+      \tkzDrawPoints(a,b)
+      \fi
+     }
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Interseção reta-círculo}
+
+No exemplo seguinte, o desenho do círculo usa dois pontos e a interseção da reta e do círculo usa dois pares de pontos. Vamos comparar os ângulos $\widehat{D,E,O}$ e $\widehat{E,D,O}$. Esses ângulos estão em direções opostas. \tkzname{tkzFirstPoint} é atribuído ao ponto que forma o ângulo com a menor medida (direção anti-horária). O ângulo anti-horário $\widehat{D,E,O}$ tem uma medida igual a $360\circ$ menos a medida de $\widehat{O,E,D}$.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+ \tkzInit[xmax=5,ymax=4]
+ \tkzDefPoint(1,1){O} 
+ \tkzDefPoint(-2,4){La} 
+ \tkzDefPoint(5,0){Lb} 
+ \tkzDefPoint(3,3){C}
+ \tkzInterLC(La,Lb)(O,C)  \tkzGetPoints{D}{E}  
+ \tkzMarkAngle[->,size=1.5](E,D,O)
+ \tkzDrawPolygons[new](O,D,E)
+ \tkzMarkAngle[->,size=1.5](D,E,O)
+ \tkzDrawCircle(O,C)
+ \tkzDrawPoints[color=teal](O,La,Lb,C)
+ \tkzDrawPoints[color=red](D,E)
+ \tkzDrawLine(La,Lb)
+ \tkzLabelPoints[above right](O,La,Lb,C,D,E)
+\end{tikzpicture} 
+\end{tkzexample}
+
+\subsubsection{Reta passando pelo centro opção \tkzname{common}}
+Este caso é especial. Você não pode comparar os ângulos. Neste caso, a opção \tkzname{near} deve ser usada. \tkzname{tkzFirstPoint} é atribuído ao ponto mais próximo do primeiro ponto dado para a reta. Aqui queremos que $A$ esteja mais próximo de $Lb$.
+
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}
+\tkzDefPoints{% x   y   name
+             0    /1    /D,
+             6    /0    /B,
+             3    /3    /O,
+             2    /2    /La,
+             5    /5    /Lb}
+  \tkzDrawCircle(O,D)
+  \tkzDrawLine(La,Lb)
+  \tkzInterLC[near](Lb,La)(O,D)  
+  \tkzGetFirstPoint{A}
+  \tkzDrawSegments(O,A)
+  \tkzDrawPoints(O,D,A,La,Lb)
+  \tkzLabelPoints(O,D,A,La,Lb)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Interseção reta-círculo com opção \tkzname{common}}
+Um caso especial que frequentemente encontramos, um ponto da reta está no círculo e estamos procurando o outro ponto comum.
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.5]
+ \tkzDefPoints{0/0/O,-5/0/A,2/-2/B,0/5/D}
+ \tkzInterLC[common=A](B,A)(O,D)
+ \tkzGetFirstPoint{C}
+ \tkzDrawPoints(O,A,B)
+ \tkzDrawCircle(O,A)
+ \tkzDrawLine(A,C)
+ \tkzDrawPoint(C)
+ \tkzLabelPoints(A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Ordem dos pontos na interseção reta-círculo}
+A ideia é comparar os ângulos formados com o primeiro ponto definidor da reta, um ponto resultante e o centro do círculo. O primeiro ponto é aquele que corresponde ao menor ângulo.
+
+Como você pode ver $\widehat{BCO} < \widehat{BEO}$. Para dizer a verdade, $\widehat{BEO}$ é anti-horário.
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.5]
+  \tkzDefPoints{0/0/O,5/1/A,2/2/B,3/1/D}
+  \tkzInterLC[common=A](B,D)(O,A) \tkzGetPoints{C}{E}
+  \tkzDrawPoints(O,A,B,D)
+  \tkzDrawCircle(O,A) \tkzDrawLine(E,C)
+  \tkzDrawSegments[dashed](B,O O,C)
+  \tkzMarkAngle[->,size=1.5](B,C,O)
+  \tkzDrawSegments[dashed](O,E)
+  \tkzMarkAngle[->,size=1.5](B,E,O)
+  \tkzDrawPoints(C,E)
+  \tkzLabelPoints[above](O,E)
+  \tkzLabelPoints[right](A,B,C,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Exemplo with \tkzcname{foreach}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=3,rotate=180]
+\tkzDefPoint(0,1){J} 
+\tkzDefPoint(0,0){O}
+\foreach \i in {0,-5,-10,...,-90}{
+ \tkzDefPoint({2.5*cos(\i*pi/180)},%
+   {1+2.5*sin(\i*pi/180)}){P}
+ \tkzInterLC[R](P,J)(O,1)\tkzGetPoints{N}{M}
+ \tkzDrawSegment[color=orange](J,N)
+ \tkzDrawPoints[red](N)} 
+\foreach \i in {-90,-95,...,-175,-180}{
+ \tkzDefPoint({2.5*cos(\i*pi/180)},%
+   {1+2.5*sin(\i*pi/180)}){P} 
+ \tkzInterLC[R](P,J)(O,1)\tkzGetPoints{N}{M}
+ \tkzDrawSegment[color=orange](J,M)
+ \tkzDrawPoints[red](M)}   
+\end{tikzpicture} 
+\end{tkzexample}
+
+\subsubsection{Interseção reta-círculo com opção \tkzname{near}}
+$D$ é o ponto mais próximo de $b$.
+
+\begin{tkzexample}[vbox,small]
+  \begin{tikzpicture}
+    \tkzDefPoints{0/0/A,12/0/C}
+    \tkzDefGoldenRatio(A,C)                          \tkzGetPoint{B}
+    \tkzDefMidPoint(A,C)                             \tkzGetPoint{O}
+    \tkzDefMidPoint(A,B)                             \tkzGetPoint{O_1}
+    \tkzDefMidPoint(B,C)                             \tkzGetPoint{O_2}
+    \tkzDefPointBy[rotation=center O_2 angle 90](C)  \tkzGetPoint{P}
+    \tkzDefPointBy[rotation=center O_1 angle 90](B)  \tkzGetPoint{Q}
+    \tkzDefPointBy[rotation=center B angle 90](C)    \tkzGetPoint{b}
+    \tkzInterLC[near](b,B)(O,A)                      \tkzGetFirstPoint{D}
+    \tkzInterCC(D,B)(O,C)                            \tkzGetPoints{V}{U}
+    \tkzDefPointBy[projection=onto U--V](O_1)        \tkzGetPoint{M}
+    \tkzDefPointBy[projection=onto U--V](O_2)        \tkzGetPoint{N}  
+    \tkzDrawPoints(A,B,C,O,O_1,O_2,D,U,V,M,N,b)
+    \tkzDrawSemiCircles[teal](O,C O_1,B O_2,C)
+    \tkzDrawSegments(A,C B,D U,V A,D C,D M,B B,N)
+    \tkzDrawArc(D,U)(V)
+    \tkzLabelPoints(A,B,C,O,O_1,O_2)
+    \tkzLabelPoints[above](D,U,V,M,N)
+  \end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Exemplo mais complexo de uma interseção reta-círculo}
+Figura de  \url{http://gogeometry.com/problem/p190_tangent_circle}
+
+\begin{tkzexample}[latex=6.5cm,small]
+\begin{tikzpicture}[scale=.75]
+ \tkzDefPoint(0,0){A}  
+ \tkzDefPoint(8,0){B}
+ \tkzDefMidPoint(A,B)             \tkzGetPoint{O}
+ \tkzDefMidPoint(O,B)             \tkzGetPoint{O'}
+ \tkzDefLine[tangent from=A](O',B)\tkzGetFirstPoint{E}
+ \tkzInterLC(A,E)(O,B)            \tkzGetFirstPoint{D}
+ \tkzDefPointBy[projection=onto A--B](D)  
+ \tkzGetPoint{F}
+ \tkzDrawCircles(O,B O',B)
+ \tkzDrawSegments(A,D A,B D,F) 
+ \tkzDrawSegments[color=red,line width=1pt,
+     opacity=.4](A,O F,B)
+ \tkzDrawPoints(A,B,O,O',E,D) 
+ \tkzMarkRightAngle(D,F,B)
+ \tkzLabelPoints[below right](A,B,O,O',E,D) 
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Círculo definido por um centro e uma medida, e casos especiais}
+Vejamos alguns casos especiais como retas tangentes ao círculo.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.5]
+ \tkzDefPoint(0,8){A}      \tkzDefPoint(8,0){B}
+ \tkzDefPoint(8,8){C}      \tkzDefPoint(4,4){D}
+ \tkzDefPoint(2,4){E}      \tkzDefPoint(4,2){F}
+ \tkzDefPoint(8,4){G}
+ \tkzInterLC(A,C)(D,G)     \tkzGetPoints{I1}{I2}
+ \tkzInterLC(B,C)(D,G)     \tkzGetPoints{J1}{J2}
+ \tkzInterLC[near](A,B)(D,G)  \tkzGetPoints{K1}{K2}
+ \tkzInterLC(E,F)(D,G)     \tkzGetPoints{E1}{E2}
+ \tkzDrawCircle(D,G)
+ \tkzDrawPoints[color=red](I1,J1,K1,K2,E1,E2)
+ \tkzDrawLines(A,B B,C A,C I2,J2 E1,E2)
+ \tkzDrawPoints[color=blue](A,...,F)
+ \tkzDrawPoints[color=red](I2,J2)
+ \tkzLabelPoints[left](B,D,E,F)
+ \tkzLabelPoints[below left](A,C)
+ \tkzLabelPoints[below=4pt](I1,K1,K2,E2)
+ \tkzLabelPoints[left](J1,E1)
+\end{tikzpicture}
+
+\end{tkzexample}
+
+\subsubsection{Cálculo do raio}
+ Com \tkzname{pgfmath} e \tkzcname{pgfmathsetmacro}
+
+A medida do raio pode ser o resultado de um cálculo que não é feito dentro da macro de interseção, mas antes.
+Um comprimento pode ser calculado de várias maneiras. É possível, claro,
+ usar o módulo \tkzname{pgfmath} e a macro \tkzcname{pgfmathsetmacro}. Em alguns casos, os resultados obtidos não são precisos o suficiente, portanto o seguinte cálculo $0.0002 \div 0.0001$ dá $1.98$ com pgfmath enquanto xfp dará $2$.
+
+Com \tkzname{xfp} e \tkzcname{fpeval}:
+
+\begin{tkzexample}[latex=7cm,small]
+  \begin{tikzpicture}
+  \tkzDefPoint(2,2){A}
+  \tkzDefPoint(5,4){B}
+  \tkzDefPoint(4,4){O}
+  \pgfmathsetmacro\tkzLen{\fpeval{0.0002/0.0001}}
+ % or \edef\tkzLen{\fpeval{0.0002/0.0001}}
+  \tkzInterLC[R](A,B)(O, \tkzLen)
+  \tkzGetPoints{I}{J}
+  \tkzDrawCircle(O,I)
+  \tkzDrawPoints[color=blue](A,B)
+  \tkzDrawPoints[color=red](I,J)
+  \tkzDrawLine(I,J)
+\end{tikzpicture}
+  \end{tkzexample}
+
+
+\subsubsection{Opção \code{with nodes}}
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}[scale=.75]
+\tkzDefPoints{0/0/A,4/0/B,1/1/D,2/0/E}
+\tkzDefTriangle[equilateral](A,B)
+\tkzGetPoint{C}
+\tkzInterLC[with nodes](D,E)(C,A,B)
+\tkzGetPoints{F}{G}
+\tkzDrawCircle(C,A)
+\tkzDrawPolygon(A,B,C)
+\tkzDrawPoints(A,...,G)
+\tkzDrawLine(F,G)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Interseção de dois círculos  \tkzcname{tkzInterCC}}
+
+O caso mais frequente é aquele de dois círculos definidos por seu centro e um ponto, mas como antes a opção \tkzname{R} permite usar as medidas dos raios.
+
+\begin{NewMacroBox}{tkzInterCC}{\oarg{opções}\parg{$O,A$}\parg{$O',A'$} ou \parg{$O,r$}\parg{$O',r'$} ou   \parg{$O,A,B$} \parg{$O',C,D$}}%
+\begin{tabular}{lll}%
+opções       & padrão & definição                         \\
+\midrule
+\TOline{N}   {N}    {$OA$ e $O'A'$ são raios, $O$ e $O'$ são os centros.}
+\TOline{R}   {N}    {$r$ e $r'$ são dimensões e medem os raios.}
+\TOline{with nodes} {N}  {em (A,A,C)(C,B,F) AC e BF fornecem os raios.}
+\TOline{common=pt}  {}   {pt é ponto comum; tkzFirstPoint fornece o outro ponto.}
+\bottomrule
+\end{tabular}
+
+\medskip
+Esta macro define o(s) ponto(s) de interseção $I$ e $J$ dos dois círculos de centros $O$ e $O'$. Se os dois círculos não tiverem um ponto em comum, então a macro termina com um erro que não é tratado. Se os centros são $O$ e $O'$ e as interseções são $A$ e $B$, então os ângulos $\widehat{O,A,O'}$ e $\widehat{O,B,O'}$ estão em direções opostas. \tkzname{tkzFirstPoint} é atribuído ao ponto que forma o ângulo \code{clockwise} (horário).
+\end{NewMacroBox}
+
+\begin{NewMacroBox}{tkzTestInterCC}{\parg{$O,A$}\parg{$O',B$}}%
+Portanto, os argumentos são dois pares que definem dois círculos com um centro e um ponto no círculo. Se houver uma interseção não vazia entre esses dois círculos, então o teste \tkzcname{iftkzFlagCC} retorna verdadeiro.
+\end{NewMacroBox}
+
+\subsubsection{Teste de interseção círculo-círculo}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.75]
+  \tkzDefPoints{% x   y   name
+                   0    /0    /A,
+                   2    /0    /B,
+                   4    /0    /I,
+                   1    /0    /P}
+\tkzDrawCircle(A,B)
+\foreach \i in {1,...,3}{%
+   \coordinate  (P) at (\i,0);
+\tkzDrawCircle[new](I,P)
+   \tkzTestInterCC(A,B)(I,P)
+    \iftkzFlagCC
+    \tkzInterCC(A,B)(I,P)  \tkzGetPoints{a}{b}
+    \tkzDrawPoints(a,b)
+    \fi}
+  \end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Interseção círculo-círculo com ponto \tkzname{common}.}
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.5]
+  \tkzDefPoints{0/0/O,5/-1/A,2/2/B}
+  \tkzDrawPoints(O,A,B)
+  \tkzDrawCircles(O,B A,B)
+  \tkzInterCC[common=B](O,B)(A,B)
+  \tkzGetFirstPoint{C}
+  \tkzDrawPoint(C)
+  \tkzLabelPoints[above](O,A,B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Interseção círculo-círculo ordem dos pontos.}
+A ideia é comparar os ângulos formados com o primeiro centro, um ponto resultante e o centro do segundo círculo. O primeiro ponto é aquele que corresponde ao menor ângulo.
+
+Como você pode ver $\widehat{ODB} < \widehat{OBE} $
+
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.5]
+  \pgfkeys{/pgf/number format/.cd,fixed relative,
+     precision=4}
+  \tkzDefPoints{0/0/O,5/-1/A,2/2/B,2/-1/C}
+  \tkzDrawPoints(O,A,B)
+  \tkzDrawCircles(O,A B,C)
+  \tkzInterCC(O,A)(B,C)\tkzGetPoints{D}{E}
+  \tkzDrawPoints(C,D,E)
+  \tkzLabelPoints(O,A,B,C)
+  \tkzLabelPoints[above](D,E) 
+  \tkzDrawSegments[cyan](D,O D,B)
+  \tkzMarkAngle[red,->,size=1.5](O,D,B)
+  \tkzFindAngle(O,D,B)   \tkzGetAngle{an}
+  \tkzLabelAngle(O,D,B){$ \pgfmathprintnumber{\an}$}
+  \tkzDrawSegments[cyan](E,O E,B)
+  \tkzMarkAngle[red,->,size=1.5](O,E,B)  
+  \tkzFindAngle(O,E,B)   \tkzGetAngle{an}
+  \tkzLabelAngle(O,E,B){$ \pgfmathprintnumber{\an}$}  
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Construção de um triângulo equilátero.}
+$\widehat{A,C,B}$ é um ângulo horário
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[trim left=-1cm,scale=.5]
+ \tkzDefPoint(1,1){A}
+ \tkzDefPoint(5,1){B}
+ \tkzInterCC(A,B)(B,A)\tkzGetPoints{C}{D}
+ \tkzDrawPoint[color=black](C)
+ \tkzDrawCircles(A,B B,A)
+ \tkzCompass[color=red](A,C)
+ \tkzCompass[color=red](B,C)
+ \tkzDrawPolygon(A,B,C)
+ \tkzMarkSegments[mark=s|](A,C B,C)
+ \tkzLabelPoints[](A,B)
+ \tkzLabelPoint[above](C){$C$}
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Trisseção de segmento}
+ A ideia aqui é dividir um segmento com uma régua e um compasso em três segmentos de comprimento igual.
+
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.6]
+ \tkzDefPoint(0,0){A}
+ \tkzDefPoint(3,2){B}
+ \tkzInterCC(A,B)(B,A)          \tkzGetSecondPoint{D}
+ \tkzInterCC(D,B)(B,A)          \tkzGetPoints{A}{C}
+ \tkzInterCC(D,B)(A,B)          \tkzGetPoints{E}{B}
+ \tkzInterLC[common=D](C,D)(E,D)\tkzGetFirstPoint{F}
+ \tkzInterLL(A,F)(B,C)          \tkzGetPoint{O}
+ \tkzInterLL(O,D)(A,B)          \tkzGetPoint{H}
+ \tkzInterLL(O,E)(A,B)          \tkzGetPoint{G}
+ \tkzDrawCircles(D,E A,B B,A E,A)
+ \tkzDrawSegments[](O,F O,B O,D O,E)
+ \tkzDrawPoints(A,...,H)
+ \tkzDrawSegments(A,B B,D A,D A,E E,F C,F B,C)
+ \tkzMarkSegments[mark=s|](A,G G,H H,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Com a opção \code{with nodes}}
+\begin{tkzexample}[latex=6cm,small]
+\begin{tikzpicture}[scale=.5]
+ \tkzDefPoints{0/0/A,0/5/B,5/0/C}
+ \tkzDefPoint(54:5){F}
+ \tkzInterCC[with nodes](A,A,C)(C,B,F)
+ \tkzGetPoints{a}{e}
+ \tkzInterCC(A,C)(a,e) \tkzGetFirstPoint{b}
+ \tkzInterCC(A,C)(b,a) \tkzGetFirstPoint{c}
+ \tkzInterCC(A,C)(c,b) \tkzGetFirstPoint{d}
+ \tkzDrawCircle[new](A,C)
+ \tkzDrawPoints(a,b,c,d,e)
+ \tkzDrawPolygon(a,b,c,d,e)
+ \foreach \vertex/\num in {a/36,b/108,c/180,
+                          d/252,e/324}{%
+ \tkzDrawPoint(\vertex)
+ \tkzLabelPoint[label=\num:$\vertex$](\vertex){}
+ \tkzDrawSegment(A,\vertex)
+ }
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Combinação de interseções}
+\begin{tkzexample}[latex=8cm,small]
+\begin{tikzpicture}[scale = .7]
+  \tkzDefPoint(2,2){A}
+  \tkzDefPoint(0,0){B}
+  \tkzDefPoint(-2,2){C}
+  \tkzDefPoint(0,4){D}
+  \tkzDefPoint(4,2){E}
+  \tkzCircumCenter(A,B,C)\tkzGetPoint{O}
+  \tkzInterCC[R](O,2)(D,2)\tkzGetPoints{M1}{M2}
+  \tkzInterCC(O,A)(D,O) \tkzGetPoints{1}{2}
+  \tkzInterLC(A,E)(B,M1)\tkzGetSecondPoint{M3}
+  \tkzInterLC(O,C)(M3,D)\tkzGetSecondPoint{L}
+  \tkzDrawSegments(C,L)
+  \tkzDrawPoints(A,B,C,D,E,M1,M2,M3,O,L)
+  \tkzDrawSegments(O,E)
+  \tkzDrawSegments[new](C,A D,B)
+  \tkzDrawPoint(O)
+  \tkzDrawCircles[new](M3,D B,M2 D,O)
+  \tkzDrawCircle(O,A)
+  \tkzLabelPoints[below right](A,B,C,D,E,M1,M2,M3,O,L)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\subsubsection{Teorema de Altshiller-Court}
+  As duas retas que unem os pontos de interseção de dois círculos ortogonais a um ponto em um dos círculos encontram o outro círculo em dois pontos diametralmente opostos. Altshiller p 176
+
+
+\begin{tkzexample}[vbox,small]
+\begin{tikzpicture}
+  \tkzDefPoints{0/0/P,5/0/Q,3/2/I}
+  \tkzDefCircle[orthogonal from=P](Q,I) 
+  \tkzGetFirstPoint{E}
+  \tkzDrawCircles(P,E Q,E)
+  \tkzInterCC[common=E](P,E)(Q,E) \tkzGetFirstPoint{F}
+  \tkzDefPointOnCircle[through =  center P angle 80 point E] 
+  \tkzGetPoint{A}
+  \tkzInterLC[common=E](A,E)(Q,E)  \tkzGetFirstPoint{C}
+  \tkzInterLL(A,F)(C,Q)  \tkzGetPoint{D}
+  \tkzDrawLines[add=0 and 1](P,Q)
+  \tkzDrawLines[add=0 and 2](A,E)
+  \tkzDrawSegments(P,E E,F F,C A,F C,D)
+  \tkzDrawPoints(P,Q,E,F,A,C,D)
+  \tkzLabelPoints(P,Q,F)
+  \tkzLabelPoints[above](E,A)
+  \tkzLabelPoints[left](D)
+  \tkzLabelPoints[above right](C)
+\end{tikzpicture}
+\end{tkzexample}
+
+
+\endinput

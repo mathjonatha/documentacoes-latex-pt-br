@@ -1,0 +1,85 @@
+\section{Usando o compasso}
+
+\subsection{Macro principal \tkzcname{tkzCompass}}
+\begin{NewMacroBox}{tkzCompass}{\oarg{opções locais}\parg{A,B}}%
+Esta macro permite deixar um traço de compasso, ou seja, um arco em um ponto designado. O centro deve ser indicado. Várias opções específicas modificarão a aparência do arco, bem como opções do TikZ, como estilo, cor, espessura da linha etc.
+
+Você pode definir o comprimento do arco com a opção |length| ou a opção |delta|.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                        \\
+\midrule
+\TOline{delta} {0 (graus)}{Aumenta o ângulo do arco simetricamente}
+\TOline{length}{1 (cm)}{Altera o comprimento (em cm)}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Opção \tkzname{length}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint(1,1){A}
+  \tkzDefPoint(6,1){B}
+  \tkzInterCC[R](A,4)(B,3)
+  \tkzGetPoints{C}{D}
+  \tkzDrawPoint(C)
+  \tkzCompass[length=1.5](A,C)
+  \tkzCompass(B,C)
+  \tkzDrawSegments(A,B A,C B,C)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsubsection{Opção \tkzname{delta}}
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}
+  \tkzDefPoint(0,0){A}
+  \tkzDefPoint(5,0){B}
+  \tkzInterCC[R](A,4)(B,3)
+  \tkzGetPoints{C}{D}
+  \tkzDrawPoints(A,B,C)
+  \tkzCompass[delta=20](A,C)
+  \tkzCompass[delta=20](B,C)
+  \tkzDrawPolygon(A,B,C)
+  \tkzMarkAngle(A,C,B)
+\end{tikzpicture}
+\end{tkzexample}
+
+\subsection{Construções múltiplas \tkzcname{tkzCompasss}}
+\begin{NewMacroBox}{tkzCompasss}{\oarg{opções locais}\parg{pt1,pt2 pt3,pt4,\dots}}%
+\tkzHandBomb\ Atenção: os argumentos são listas de dois pontos. Isso economiza algumas linhas de código.
+
+\medskip
+\begin{tabular}{lll}%
+\toprule
+opções             & padrão & definição                        \\
+\midrule
+\TOline{delta} {0}{Modifica o ângulo do arco aumentando-o simetricamente}
+\TOline{length}{1}{Altera o comprimento}
+\end{tabular}
+\end{NewMacroBox}
+
+\subsubsection{Uso de \tkzcname{tkzCompasss}} % (fold)
+\label{ssub:use_tkzcname_tkzcompasss}
+
+% subsubsection use_tkzcname_tkzcompasss (end)
+\begin{tkzexample}[latex=7cm,small]
+\begin{tikzpicture}[scale=.6]
+ \tkzDefPoint(2,2){A}  \tkzDefPoint(5,-2){B}
+ \tkzDefPoint(3,4){C}  \tkzDrawPoints(A,B)
+ \tkzDrawPoint[shape=cross out](C)
+ \tkzCompasss[new](A,B A,C B,C C,B)
+ \tkzShowLine[mediator,new,dashed,length = 2](A,B)
+ \tkzShowLine[parallel = through C,
+                     color=purple,length=2](A,B)
+ \tkzDefLine[mediator](A,B)
+  \tkzGetPoints{i}{j}
+ \tkzDefLine[parallel=through C](A,B)
+   \tkzGetPoint{D}
+ \tkzDrawLines[add=.6 and .6](C,D A,C B,D)
+ \tkzDrawLines(i,j) \tkzDrawPoints(A,B,C,i,j,D)
+ \tkzLabelPoints(A,B,C,i,j,D)
+\end{tikzpicture}
+\end{tkzexample}
+
+\endinput
