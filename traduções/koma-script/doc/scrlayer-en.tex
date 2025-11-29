@@ -27,554 +27,552 @@
                  [$Date: 2023-04-25 09:00:44 +0200 (Di, 25. Apr 2023) $
                   KOMA-Script guide (chapter:scrlayer)]
 
-\translator{Markus Kohm\and Karl Hagen}
+\translator{Tradução para Português Brasileiro}
 
-\chapter[{Defining Layers and Page Styles with \Package{scrlayer}}]
-  {Defining\ChangedAt{v3.12}{\Package{scrlayer}} Layers and Page Styles with
+\chapter[{Definindo Camadas e Estilos de Página com \Package{scrlayer}}]
+  {Definindo\ChangedAt{v3.12}{\Package{scrlayer}} Camadas e Estilos de Página com
 	\Package{scrlayer}}
 \labelbase{scrlayer}
 
 \BeginIndexGroup
 \BeginIndex{Package}{scrlayer}%
 \BeginIndex{}{layer}%
-Most users of graphics software are already familiar with the layer model for
-a page. Such a model is rather alien to \LaTeX{} itself, but some packages,
-like \Package{eso-pic} or \Package{textpos}, provide a kind of
-background or foreground layer. \Package{scrlayer} is another package that
-provides such background and foreground layers, but unlike the packages
-mentioned above, these layers are part of the page style. As a result, you can
-switch between different layers simply by switching the page style.
+A maioria dos usuários de software gráfico já está familiarizada com o modelo de camadas
+para uma página. Tal modelo é bastante estranho ao próprio \LaTeX{}, mas alguns pacotes,
+como \Package{eso-pic} ou \Package{textpos}, fornecem uma espécie de
+camada de fundo ou primeiro plano. \Package{scrlayer} é outro pacote que
+fornece tais camadas de fundo e primeiro plano, mas ao contrário dos pacotes
+mencionados acima, essas camadas fazem parte do estilo de página. Como resultado, você pode
+mudar entre diferentes camadas simplesmente alternando o estilo de página.
 
-To do so, the package also supports a low-level interface for defining page
-styles that are based on a stack or list of layers, for adding layers to such
-a layer stack, either at the top or the bottom, or before or after a specific
-layer, and for removing individual layers and duplicates from a stack. In a
-nutshell, the page style interface of \Package{scrlayer} provides commands to
-define page styles based on a stack of layers and to manage those stacks.
+Para fazer isso, o pacote também suporta uma interface de baixo nível para definir estilos de página
+baseados em uma pilha ou lista de camadas, para adicionar camadas a tal
+pilha de camadas, seja no topo ou na base, ou antes ou após uma camada específica,
+e para remover camadas individuais e duplicatas de uma pilha. Em resumo,
+a interface de estilo de página de \Package{scrlayer} fornece comandos para
+definir estilos de página baseados em uma pilha de camadas e para gerenciar essas pilhas.
 
-Nevertheless, using the layers directly is recommended for advanced users
-only. Interfaces for beginners and average users are provided by additional
-packages that in turn load \Package{scrlayer}. See
-\autoref{cha:scrlayer-scrpage} in \autoref{part:forAuthors} of this
-\iffree{manual}{book}.
+No entanto, o uso direto de camadas é recomendado apenas
+para usuários avançados. Interfaces para usuários iniciantes e médios são fornecidas por pacotes adicionais
+que por sua vez carregam \Package{scrlayer}. Consulte
+\autoref{cha:scrlayer-scrpage} em \autoref{part:forAuthors} deste
+\iffree{manual}{livro}.
 
 
 \LoadCommonFile{options} % \section{Early or Late Selection of Options}
 
-\section{Generic Information}
+\section{Informações Genéricas}
 \seclabel{generic.information}
 
-The package needs some generic information about the class being used. Class
-authors can help \Package{scrlayer} by providing the appropriate information.
-Otherwise the package will try to determine this information for itself. This
-works, for example, for the standard and the \KOMAScript{} classes. It may
-work with other classes, or it may fail in whole or in part.
+O pacote precisa de algumas informações genéricas sobre a classe sendo usada. Autores de classe
+podem ajudar \Package{scrlayer} fornecendo as informações apropriadas.
+Caso contrário, o pacote tentará determinar essas informações por si mesmo. Isto
+funciona, por exemplo, para as classes padrão e \KOMAScript{}. Pode
+funcionar com outras classes, ou pode falhar total ou parcialmente.
 
-This section describes some of the information that class authors can provide.
-Normally, users should not have to worry about it.
+Esta seção descreve algumas das informações que autores de classe podem fornecer.
+Normalmente, os usuários não precisam se preocupar com isso.
 
 \begin{Declaration}
-  \Macro{if@chapter}\ \PName{then code}\ \textMacro{else}\ %
-  \PName{else code}\ \textMacro{fi}%
+  \Macro{if@chapter}\ \PName{código então}\ \textMacro{else}\ %
+  \PName{código senão}\ \textMacro{fi}%
 \end{Declaration}
-If \Macro{if@chapter} is defined and corresponds to
-\Macro{iftrue}\IndexCmd{iftrue}, \Package{scrlayer} takes the chapter level
-into account when, for example, processing the
-\DescRef{\LabelBase.option.automark} option. If it is defined but is not
-\Macro{iftrue}, \Package{scrlayer} handles only the
-\DescRef{maincls.cmd.part}, \DescRef{maincls.cmd.section},
+Se \Macro{if@chapter} é definido e corresponde a
+\Macro{iftrue}\IndexCmd{iftrue}, \Package{scrlayer} leva em conta o nível de capítulo
+ao processar, por exemplo, a opção
+\DescRef{\LabelBase.option.automark}. Se for definido mas não for
+\Macro{iftrue}, \Package{scrlayer} trata apenas as
+unidades de seção \DescRef{maincls.cmd.part}, \DescRef{maincls.cmd.section},
 \DescRef{maincls.cmd.subsection}, \Macro{sub\dots subsection},
 \DescRef{maincls.cmd.paragraph}, \DescRef{maincls.cmd.subparagraph},
-\Macro{sub\dots subparagraph} sectioning units. If the macro is undefined,
-\Package{scrlayer} searches for \DescRef{maincls.cmd.chapter}. If
-\DescRef{maincls.cmd.chapter} is defined and does not correspond to
-\Macro{relax}, \Package{scrlayer} defines \Macro{if@chapter} to
-\Macro{iftrue}. Otherwise \Macro{if@chapter} becomes
+\Macro{sub\dots subparagraph}. Se a macro não for definida,
+\Package{scrlayer} procura por \DescRef{maincls.cmd.chapter}. Se
+\DescRef{maincls.cmd.chapter} é definido e não corresponde a
+\Macro{relax}, \Package{scrlayer} define \Macro{if@chapter} como
+\Macro{iftrue}. Caso contrário, \Macro{if@chapter} torna-se
 \Macro{iffalse}\IndexCmd{iffalse}.%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{if@mainmatter}\ \PName{then code}\ %
-  \textMacro{else}\ \PName{else code}\ \textMacro{fi}%
+  \Macro{if@mainmatter}\ \PName{código então}\ %
+  \textMacro{else}\ \PName{código senão}\ \textMacro{fi}%
 \end{Declaration}
-Classes like \Class{book} or \Class{scrbook} provide
+Classes como \Class{book} ou \Class{scrbook} fornecem
 \DescRef{maincls.cmd.frontmatter}\IndexCmd{frontmatter},
-\DescRef{maincls.cmd.mainmatter}\IndexCmd{mainmatter}, and
-\DescRef{maincls.cmd.backmatter}\IndexCmd{backmatter} to switch between the
-front, main, and end parts of a book. Typically, these classes also use
-\Macro{if@mainmatter} internally to decide whether the current text is part of
-the main body of the document or not. Classes like \Class{report} and
-\Class{article} have no \DescRef{maincls.cmd.frontmatter},
-\DescRef{maincls.cmd.mainmatter}, or \DescRef{maincls.cmd.backmatter} and
-therefore also lack \Macro{if@mainmatter}.
+\DescRef{maincls.cmd.mainmatter}\IndexCmd{mainmatter}, e
+\DescRef{maincls.cmd.backmatter}\IndexCmd{backmatter} para alternar entre as
+partes frontal, principal e final de um livro. Normalmente, essas classes também usam
+\Macro{if@mainmatter} internamente para decidir se o texto atual é parte
+do corpo principal do documento ou não. Classes como \Class{report} e
+\Class{article} não possuem \DescRef{maincls.cmd.frontmatter},
+\DescRef{maincls.cmd.mainmatter}, ou \DescRef{maincls.cmd.backmatter} e
+portanto também carecem de \Macro{if@mainmatter}.
 
-It is easier for \Package{scrlayer} to avoid constantly testing for the
-existence of these commands to decide whether to work in the main matter or
-not, and instead to use  \Macro{if@mainmatter}\IndexCmd{iftrue} with classes
-like \Class{report} and \Class{article}. So if \Macro{if@mainmatter} is not
-defined, \Package{scrlayer} defines it as a synonym for \Macro{iftrue}.
+É mais fácil para \Package{scrlayer} evitar constantemente testar a
+existência desses comandos para decidir se deve trabalhar na parte principal ou
+não, e em vez disso usar \Macro{if@mainmatter}\IndexCmd{iftrue} com classes
+como \Class{report} e \Class{article}. Assim, se \Macro{if@mainmatter} não for
+definido, \Package{scrlayer} o define como um sinônimo para \Macro{iftrue}.
 
-Some classes, however, define \DescRef{maincls.cmd.frontmatter},
-\DescRef{maincls.cmd.mainmatter}, or \DescRef{maincls.cmd.backmatter} but not
-\Macro{if@mainmatter}. In this case, \Package{scrlayer} also defines
-\Macro{if@mainmatter} to be \Macro{iftrue} and it extends definition of
-\DescRef{maincls.cmd.frontmatter}, \DescRef{maincls.cmd.mainmatter}, and
-\DescRef{maincls.cmd.backmatter} to set \Macro{if@mainmatter} properly.
-However, if there are other, comparable commands for switching between
-different document parts. \Package{scrlayer} will not recognize them, does not
-test for them, and therefore cannot extend them appropriately. In this case,
-\Package{scrlayer} needs help of the class author to set \Macro{if@mainmatter}
-correctly.%
+Algumas classes, no entanto, definem \DescRef{maincls.cmd.frontmatter},
+\DescRef{maincls.cmd.mainmatter}, ou \DescRef{maincls.cmd.backmatter} mas não
+\Macro{if@mainmatter}. Neste caso, \Package{scrlayer} também define
+\Macro{if@mainmatter} como \Macro{iftrue} e estende a definição de
+\DescRef{maincls.cmd.frontmatter}, \DescRef{maincls.cmd.mainmatter}, e
+\DescRef{maincls.cmd.backmatter} para definir \Macro{if@mainmatter} corretamente.
+No entanto, se houver outros comandos comparáveis para alternar entre
+diferentes partes do documento, \Package{scrlayer} não os reconhecerá, não
+testará por eles e, portanto, não poderá estendê-los adequadamente. Neste caso,
+\Package{scrlayer} precisa da ajuda do autor da classe para definir \Macro{if@mainmatter}
+corretamente.%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{DeclareSectionNumberDepth}\Parameter{level name}%
-                                   \Parameter{level depth}
+  \Macro{DeclareSectionNumberDepth}\Parameter{nome do nível}%
+                                   \Parameter{profundidade do nível}
 \end{Declaration}
-Generally each section level is assigned an integer number indicating its
-depth in the document structure. \LaTeX{} needs this to manage the hierarchy
-of the section levels. But normally these values are known only to the
-particular class that defines the section commands. This class then uses the
-appropriate numbers inside the corresponding commands.
+Geralmente, cada nível de seção recebe um número inteiro indicando sua
+profundidade na estrutura do documento. \LaTeX{} precisa disso para gerenciar a hierarquia
+dos níveis de seção. Mas normalmente esses valores são conhecidos apenas pela
+classe particular que define os comandos de seção. Essa classe então usa os
+números apropriados dentro dos comandos correspondentes.
 
-The \Package{scrlayer} package also needs information about the section
-hierarchy. With the help of \Macro{DeclareSectionNumberDepth}, you can map the
-name of a heading level to a corresponding \PName{level depth}. For example,
-for the standard \Class{book} class, the \PName{level name}s would be
+O pacote \Package{scrlayer} também precisa de informações sobre a
+hierarquia de seções. Com a ajuda de \Macro{DeclareSectionNumberDepth}, você pode mapear o
+nome de um nível de título para uma \PName{profundidade de nível} correspondente. Por exemplo,
+para a classe padrão \Class{book}, os \PName{nomes de nível}s seriam
 \PValue{part}, \PValue{chapter}, \PValue{section}, \PValue{subsection},
-\PValue{subsubsection}, \PValue{paragraph}, and \PValue{subparagraph}, and the
-corresponding \PName{level depth}s would be -1, 0, 1, 2, 3, 4, and 5.
+\PValue{subsubsection}, \PValue{paragraph}, e \PValue{subparagraph}, e as
+\PName{profundidades de nível}s correspondentes seriam -1, 0, 1, 2, 3, 4, e 5.
 
-The \Package{scrlayer} package tries to determine the \PName{level depth}s on
-its own while loading and again during \Macro{begin}\PParameter{document}. But
-if this fails, for example because you use completely different sectioning
-commands, you can define the relationship explicitly with
+O pacote \Package{scrlayer} tenta determinar as \PName{profundidades de nível}s por
+conta própria ao carregar e novamente durante \Macro{begin}\PParameter{document}. Mas
+se isso falhar, por exemplo porque você usa comandos de secionamento completamente diferentes,
+você pode definir o relacionamento explicitamente com
 \Macro{DeclareSectionNumberDepth}.%
 \EndIndexGroup
 
 
-\section{Declaring Layers}
+\section{Declarando Camadas}
 \seclabel{layers}
 
-A layer is an abstract model of a page. Unlike a real, physical sheet of
-paper, this page is completely transparent. Typically, multiple layers are
-stacked atop one another and opaque material on one layer hides material on
-the layers below. The stack of layers is then merged to form the physical
-page. The \Package{scrlayer} package provides two such stacks for each page: a
-background stack and a foreground stack. The background stack is printed
-beneath the normal page content, while the foreground stack is printed above
-it. The normal page content is therefore a kind of a dividing layer between
-the two layer stacks.
+Uma camada é um modelo abstrato de uma página. Ao contrário de uma folha real
+de papel, essa página é completamente transparente. Normalmente, várias camadas são
+empilhadas uma sobre a outra e material opaco em uma camada oculta material em
+as camadas abaixo. A pilha de camadas é então mesclada para formar a
+página física. O pacote \Package{scrlayer} fornece duas pilhas para cada página: uma
+pilha de fundo e uma pilha de primeiro plano. A pilha de fundo é impressa
+sob o conteúdo normal da página, enquanto a pilha de primeiro plano é impressa acima
+dela. O conteúdo normal da página é, portanto, uma espécie de camada divisória entre
+as duas pilhas de camadas.
 
-A layer has several attributes that can be understood as answers to some basic
-questions:
+Uma camada tem vários atributos que podem ser entendidos como respostas a algumas
+questões básicas:
 \iffree{\begin{description}}{%
     \begingroup
     \RedeclareSectionCommand[beforeskip=.5\baselineskip plus .25\baselineskip
     minus .1\baselineskip]{paragraph}%
     \renewcommand*\item[4][]{\paragraph*{#3{#4}#1}}%
   }%
-\item[Does the layer belong to the foreground or the background?]%
-  \leavevmode\textnote{foreground or background}\hskip 0pt
-  Background layers are output before the normal content of the page.
-  Therefore they appear behind or beneath the normal content of the page.
-  Foreground layers are then output after the normal content. Therefore they
-  appear on top of the normal content of the page. By default, a layer is both
-  a background layer \emph{and} a foreground layer and therefore is printed
-  twice. Usually it makes sense to limit the layer explicitly to either the
-  foreground or the background.
-\item[What is the position of the layer?]%
-  \leavevmode\textnote{horizontal and vertical position}\hskip 0pt
-  To answer this question, there are attributes to define the layer's 
-  horizontal and vertical position.
-\item[How big is the layer?\textnote{horizontal and vertical size}]%
-  As with the position, there are also attributes to define the width and
-  height of a layer. Thus a layer can be smaller or larger than the paper
-  and it can be placed at different positions on the paper.
-\item[How are the horizontal and vertical positions measured?]%
-  \leavevmode\textnote{alignment}\hskip 0pt
-  This question is answered by the alignment attribute. The horizontal 
-  position can be measured from the left edge of the paper to the left edge of
-  the layer, to the centre of the layer, to the right edge of the layer. 
-  Similarly, the vertical position can be measured from the top edge of the
-  paper to the top edge of the layer, the centre of the layer, or the bottom
-  edge of the layer.
-\item[Is the layer intended for text or picture output?]%
-  \leavevmode\textnote{text or	picture}\hskip 0pt
-  This question is closely related to the position. For example, users often
-  expect the origin for a picture to be at the lower left corner of the layer.
-  But this would not be suitable for text output. Therefore the origin of a 
-  text layer is the height of a standard text line below the top left corner 
-  of the layer. Picture layers, on the other hand, create a
-  \Environment{picture}\IndexEnv{picture} environment in which additional
-  positioning commands are available.
-\item[Should the layer be printed on left or right pages?]%
-  \leavevmode\textnote{left or right page}\hskip 0pt
-  By default a layer will be printed on all pages. Note that \LaTeX{} treats
-  even pages as left-side pages and odd pages as right-side pages, but in
-  one-sided printing, only right-hand pages exist regardless of the page
-  number.
-\item[Should the layer be printed in one-sided or two-sided mode?]%
-  \leavevmode\textnote{one-sided or two-sided}\hskip 0pt
-  By default a layer will be printed in both one-sided and two-sided
-  printing. Nonetheless, a layer that is restricted to even pages will never
-  be printed in one-sided printing and therefore is not a one-sided layer.
-\item[Should the layer be printed on float pages or normal pages?]%
-  \leavevmode\textnote{float page or normal page}\hskip 0pt
-  \LaTeX{} produces float pages for objects from environments like tables or 
-  figures if they are allowed to appear on a page without normal page contents
-  (see option \PValue{p} for \Environment{figure} or \Environment{table}). In 
-  effect, the entire page is allowed to float within the document. Normal
-  pages in this sense are all pages that are not float pages. Normal pages can
-  also contain floats at the top, in the middle, or at the bottom of the page.
-  Very large floats can give the impression of being page floats, while in 
-  reality they are floating environments placed at the top of a normal page.
-\item[What are the contents of the layer?]%
-  \leavevmode\textnote{contents}\hskip 0pt
-  The corresponding attribute simply contains what should be printed whenever
-  the layer is output.
+\item[A camada pertence ao primeiro plano ou ao fundo?]%
+  \leavevmode\textnote{primeiro plano ou fundo}\hskip 0pt
+  Camadas de fundo são produzidas antes do conteúdo normal da página.
+  Portanto, elas aparecem atrás ou sob o conteúdo normal da página.
+  Camadas de primeiro plano são então produzidas após o conteúdo normal. Portanto, elas
+  aparecem no topo do conteúdo normal da página. Por padrão, uma camada é
+  \emph{e} uma camada de fundo \emph{e} uma camada de primeiro plano e, portanto, é impressa
+  duas vezes. Geralmente faz sentido limitar a camada explicitamente a
+  ou o primeiro plano ou o fundo.
+\item[Qual é a posição da camada?]%
+  \leavevmode\textnote{posição horizontal e vertical}\hskip 0pt
+  Para responder a essa pergunta, há atributos para definir a
+  posição horizontal e vertical da camada.
+\item[Qual é o tamanho da camada?\textnote{tamanho horizontal e vertical}]%
+  Como acontece com a posição, também há atributos para definir a largura e a
+  altura de uma camada. Assim, uma camada pode ser menor ou maior que o papel
+  e pode ser colocada em diferentes posições no papel.
+\item[Como as posições horizontal e vertical são medidas?]%
+  \leavevmode\textnote{alinhamento}\hskip 0pt
+  Essa pergunta é respondida pelo atributo de alinhamento. A
+  posição horizontal pode ser medida da borda esquerda do papel para a borda esquerda da
+  camada, para o centro da camada, ou para a borda direita da camada.
+  Da mesma forma, a posição vertical pode ser medida da borda superior do
+  papel para a borda superior da camada, o centro da camada, ou a borda
+  inferior da camada.
+\item[A camada é destinada à saída de texto ou de imagens?]%
+  \leavevmode\textnote{texto ou imagem}\hskip 0pt
+  Essa pergunta está intimamente relacionada à posição. Por exemplo, os usuários geralmente
+  esperam que a origem de uma imagem esteja no canto inferior esquerdo da camada.
+  Mas isso não seria adequado para saída de texto. Portanto, a origem de uma
+  camada de texto é a altura de uma linha de texto padrão abaixo do canto superior esquerdo
+  da camada. Camadas de imagem, por outro lado, criam um ambiente
+  \Environment{picture}\IndexEnv{picture} no qual comandos de
+  posicionamento adicionais estão disponíveis.
+\item[A camada deve ser impressa em páginas à esquerda ou à direita?]%
+  \leavevmode\textnote{página à esquerda ou à direita}\hskip 0pt
+  Por padrão, uma camada será impressa em todas as páginas. Observe que \LaTeX{} trata
+  páginas pares como páginas do lado esquerdo e páginas ímpares como páginas do lado direito, mas em
+  impressão unilateral, apenas páginas do lado direito existem independentemente do número da página.
+\item[A camada deve ser impressa em modo unilateral ou bilateral?]%
+  \leavevmode\textnote{unilateral ou bilateral}\hskip 0pt
+  Por padrão, uma camada será impressa em impressão
+  unilateral e bilateral. No entanto, uma camada que está restrita a páginas pares nunca
+  será impressa em impressão unilateral e, portanto, não é uma camada unilateral.
+\item[A camada deve ser impressa em páginas flutuantes ou normais?]%
+  \leavevmode\textnote{página flutuante ou página normal}\hskip 0pt
+  \LaTeX{} produz páginas flutuantes para objetos de ambientes como tabelas ou
+  figuras se forem permitidas aparecer em uma página sem conteúdo normal da página
+  (consulte a opção \PValue{p} para \Environment{figure} ou \Environment{table}). Em
+  efeito, a página inteira pode flutuar dentro do documento. Páginas
+  normais neste sentido são todas as páginas que não são páginas flutuantes. Páginas normais podem
+  também conter flutuações no topo, no meio ou na base da página.
+  Flutuações muito grandes podem dar a impressão de serem páginas flutuantes, enquanto em
+  realidade são ambientes flutuantes colocados no topo de uma página normal.
+\item[Qual é o conteúdo da camada?]%
+  \leavevmode\textnote{conteúdo}\hskip 0pt
+  O atributo correspondente simplesmente contém o que deve ser impresso sempre
+  que a camada é produzida.
 \iffree{\end{description}}{%
   \endgroup\par\bigskip\noindent\ignorespaces
 }%
-These eight questions immediately give rise to a number of attributes. Later
-\iffree{in this guide}, we will describe additional attributes. However, they
-are only defined for convenience and can be expressed by a combination of
-these primary attributes.
+Essas oito questões imediatamente dão origem a vários atributos. Mais tarde
+\iffree{neste guia}, descreveremos atributos adicionais. No entanto, eles
+são definidos apenas por conveniência e podem ser expressos por uma combinação de
+esses atributos primários.
 
 
 \begin{Declaration}
-  \Macro{DeclareLayer}\OParameter{option list}\Parameter{layer name}%
-  \Macro{DeclareNewLayer}\OParameter{option list}\Parameter{layer name}%
-  \Macro{ProvideLayer}\OParameter{option list}\Parameter{layer name}%
-  \Macro{RedeclareLayer}\OParameter{option list}\Parameter{layer name}%
-  \Macro{ModifyLayer}\OParameter{option list}\Parameter{layer name}
+  \Macro{DeclareLayer}\OParameter{lista de opções}\Parameter{nome da camada}%
+  \Macro{DeclareNewLayer}\OParameter{lista de opções}\Parameter{nome da camada}%
+  \Macro{ProvideLayer}\OParameter{lista de opções}\Parameter{nome da camada}%
+  \Macro{RedeclareLayer}\OParameter{lista de opções}\Parameter{nome da camada}%
+  \Macro{ModifyLayer}\OParameter{lista de opções}\Parameter{nome da camada}
 \end{Declaration}
-These commands can be used to define layers. The \PName{layer name} must be
-fully expandable and should expand to ASCII letters only. Some additional
-characters are accepted, but their use is only recommended for advanced users.
+Esses comandos podem ser usados para definir camadas. O \PName{nome da camada} deve ser
+totalmente expansível e deve expandir apenas para letras ASCII. Alguns caracteres
+adicionais são aceitos, mas seu uso é recomendado apenas para usuários avançados.
 
-The \Macro{DeclareLayer} command does not care whether or not a layer with the
-given \PName{layer name} already exists. It will under all circumstances
-define the layer with the attributes specified in the \PName{option list}. An
-\PName{option} can be either a key or a key followed by an equal sign and
-a value. Multiple options are separated by commas. To use a comma or a white
-space within the value of an option, you must put the value inside curly
-brackets. See \autoref{tab:scrlayer.layerkeys} for more information on keys,
-values, and the corresponding attributes.
+O comando \Macro{DeclareLayer} não se importa se uma camada com o
+\PName{nome da camada} fornecido já existe ou não. Sob todas as circunstâncias,
+definirá a camada com os atributos especificados na \PName{lista de opções}. Uma
+\PName{opção} pode ser uma chave ou uma chave seguida por um sinal de igualdade e
+um valor. Múltiplas opções são separadas por vírgulas. Para usar uma vírgula ou um
+espaço em branco dentro do valor de uma opção, você deve colocar o valor dentro de chaves.
+Consulte \autoref{tab:scrlayer.layerkeys} para mais informações sobre chaves,
+valores e os atributos correspondentes.
 
-Unlike \Macro{DeclareLayer}, \Macro{DeclareNewLayer} reports an error if a 
-layer with the same \PName{layer name} already exists. This prevents the user
-from accidentally using the same \PName{layer name} more than once. This 
-is especially useful when classes or packages also define layers internally.
+Ao contrário de \Macro{DeclareLayer}, \Macro{DeclareNewLayer} relata um erro se uma
+camada com o mesmo \PName{nome da camada} já existe. Isso previne que o usuário
+use acidentalmente o mesmo \PName{nome da camada} mais de uma vez. Isto
+é especialmente útil quando classes ou pacotes também definem camadas internamente.
 
-In contrast, \Macro{ProvideLayer} only defines a layer if there is no layer 
-with the same name already. If the name is in use for another layer, the new 
-definition is ignored. Therefore this command has the meaning, \emph{define
-	the layer only if it does not already exist.}
+Em contraste, \Macro{ProvideLayer} apenas define uma camada se não houver camada
+com o mesmo nome já. Se o nome está em uso para outra camada, a nova
+definição é ignorada. Portanto, esse comando tem o significado, \emph{definir
+	a camada apenas se ela ainda não existir.}
 
-If you want to redefine an existing layer, you can use \Macro{RedeclareLayer} 
-or \Macro{ModifyLayer}. With \Macro{RedeclareLayer}, the layer is first reset
-to the default settings and then completely redefined via the specified 
-options list. In contrast, \Macro{ModifyLayer} does not reset the layer.
-Only those attributes which are explicitly set in the \PName{option list} will
-be changed. Applying either command to a previously undefined \PName{layer 
-	name} results in an error.
+Se você quiser redefinir uma camada existente, pode usar \Macro{RedeclareLayer}
+ou \Macro{ModifyLayer}. Com \Macro{RedeclareLayer}, a camada é primeiro redefinida
+para as configurações padrão e depois completamente redefinida através da
+lista de opções especificada. Em contraste, \Macro{ModifyLayer} não redefine a camada.
+Apenas aqueles atributos que estão explicitamente definidos na \PName{lista de opções} serão
+alterados. Aplicar qualquer comando a um \PName{nome de camada}
+previamente indefinido resulta em um erro.
 
 \begin{desclist}
   \desccaption{%
-    Options for defining page layers and the meaning of the
-    corresponding layer attribute\label{tab:scrlayer.layerkeys}%
+    Opções para definir camadas de página e o significado do
+    atributo de camada correspondente\label{tab:scrlayer.layerkeys}%
   }{%
-    Options for defining layers (\emph{continued})%
+    Opções para definir camadas (\emph{continuação})%
   }%
   \entry{%
     \ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{addcontents}{Code}}{%
-    The specified \PName{code} will be appended to the current value of the
-    \Option{contents} attribute, so the new content will appear at the end of
-    the existing content. For more information about the handling of 
-    \PName{code} see the \Option{contents} option.%
+    \OptionVName{addcontents}{Código}}{%
+    O \PName{código} especificado será anexado ao valor atual do
+    atributo \Option{contents}, então o novo conteúdo aparecerá no final do
+    conteúdo existente. Para mais informações sobre o tratamento de
+    \PName{código}, consulte a opção \Option{contents}.%
   }%
   \entry{%
     \ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{addheight}{additional height}}{%
-    The current value of the \Option{height} attribute will be increased by 
-    the value of this option. You can use the same kind of values as for
+    \OptionVName{addheight}{altura adicional}}{%
+    O valor atual do atributo \Option{height} será aumentado pelo
+    valor desta opção. Você pode usar o mesmo tipo de valores que para
     \Option{height}.%
   }%
   \entry{%
     \ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{addhoffset}{additional horizontal offset}}{%
-    The current value of the \Option{hoffset} attribute will be increased by 
-    the value of this option. You can use the same kind of values as for
+    \OptionVName{addhoffset}{deslocamento horizontal adicional}}{%
+    O valor atual do atributo \Option{hoffset} será aumentado pelo
+    valor desta opção. Você pode usar o mesmo tipo de valores que para
     \Option{hoffset}.%
   }%
   \entry{%
     \ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{addvoffset}{additional vertical offset}}{%
-    The current value of the \Option{voffset} attribute will be increased by 
-    the value of this option. You can use the same kind of values as for
+    \OptionVName{addvoffset}{deslocamento vertical adicional}}{%
+    O valor atual do atributo \Option{voffset} será aumentado pelo
+    valor desta opção. Você pode usar o mesmo tipo de valores que para
     \Option{voffset}.%
   }%
   \entry{%
     \ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{addwidth}{additional width}}{%
-    The current value of the \Option{width} attribute will be increased by 
-    the value of this option. You can use the same kind of values as for
+    \OptionVName{addwidth}{largura adicional}}{%
+    O valor atual do atributo \Option{width} será aumentado pelo
+    valor desta opção. Você pode usar o mesmo tipo de valores que para
     \Option{width}.%
   }%
-  \nentry{\KOption{align}{\PName{alignment characters}}}{%
-    The \PName{alignment characters} define the desired alignment of the
-    layer. Each \PName{alignment character} determines how the \PName{length}
-    of either the \Option{hoffset} or the \Option{voffset} option is 
-    interpreted. Multiple \PName{alignment character}s can be used together 
-    (without spaces or commas) and are evaluated in the order they occur. 
-    Macros are not permitted in the value of the option. Valid 
-    \PName{alignment character}s are:
+  \nentry{\KOption{align}{\PName{caracteres de alinhamento}}}{%
+    Os \PName{caracteres de alinhamento} definem o alinhamento desejado da
+    camada. Cada \PName{caractere de alinhamento} determina como o \PName{comprimento}
+    de \Option{hoffset} ou da opção \Option{voffset} é
+    interpretado. Múltiplos \PName{caracteres de alinhamento}s podem ser usados juntos
+    (sem espaços ou vírgulas) e são avaliados na ordem em que ocorrem.
+    Macros não são permitidas no valor da opção. Os \PName{caracteres de alinhamento}s válidos são:
     \begin{description}
-    \item[\PValue{b} --] align the layer at its bottom edge; the value of
-      \Option{voffset} is the distance from the top edge of the paper to the
-      bottom of the layer.
-    \item[\PValue{c} --] align the layer at its centre; the values of
-      \Option{voffset} and \Option{hoffset} are interpreted as the distance
-      from the top left corner of the paper to the centre of the layer.
-    \item[\PValue{l} --] align the layer at its left edge; the value of
-      \Option{hoffset} is interpreted as the distance from the left edge of
-      the paper to the left edge of the layer.
-    \item[\PValue{r} --] align the layer at its right edge; the value of
-      \Option{hoffset} is interpreted as the distance from the left edge of
-      the paper to the right edge of the layer.
-    \item[\PValue{t} --] align the layer at its top edge; the value of
-      \Option{voffset} is interpreted as the distance from the top edge of the
-      paper to the top edge of the layer.
+    \item[\PValue{b} --] alinhar a camada em sua borda inferior; o valor de
+      \Option{voffset} é a distância da borda superior do papel para a
+      base da camada.
+    \item[\PValue{c} --] alinhar a camada em seu centro; os valores de
+      \Option{voffset} e \Option{hoffset} são interpretados como a distância
+      do canto superior esquerdo do papel para o centro da camada.
+    \item[\PValue{l} --] alinhar a camada em sua borda esquerda; o valor de
+      \Option{hoffset} é interpretado como a distância da borda esquerda do
+      papel para a borda esquerda da camada.
+    \item[\PValue{r} --] alinhar a camada em sua borda direita; o valor de
+      \Option{hoffset} é interpretado como a distância da borda esquerda do
+      papel para a borda direita da camada.
+    \item[\PValue{t} --] alinhar a camada em sua borda superior; o valor de
+      \Option{voffset} é interpretado como a distância da borda superior do
+      papel para a borda superior da camada.
     \end{description}%
   }%
   \entry{\KOption{area}{%
       \Parameter{hoffset}\Parameter{voffset}%
       \Parameter{width}\Parameter{height}}}{%
-    This composite option sets the primary attributes
-    \OptionValue{hoffset}{horizontal offset}, \OptionValue{voffset}{vertical
-      offset}, \OptionValue{width}{width}, \OptionValue{height}{height}.%
+    Esta opção composta define os atributos primários
+    \OptionValue{hoffset}{deslocamento horizontal}, \OptionValue{voffset}{deslocamento
+      vertical}, \OptionValue{width}{largura}, \OptionValue{height}{altura}.%
   }%
   \entry{\ChangedAt{v3.18}{\Package{scrlayer}}%
     \Option{backandforeground}}{%
-    This option removes the restriction of a layer to the foreground or the
-    background. In general, this option makes little sense, but it is provided
-    for the sake of a complete user interface. This option does not expect or
-    allow a value.%
+    Esta opção remove a restrição de uma camada ao primeiro plano ou
+    fundo. Em geral, essa opção faz pouco sentido, mas é fornecida
+    para completar uma interface de usuário completa. Esta opção não espera nem
+    permite um valor.%
   }%
   \entry{\Option{background}}{%
-    This option displays the layer in the background only. The default is to
-    display layers in both the background and the foreground. This option does
-    not expect or allow a value.%
+    Esta opção exibe a camada apenas no fundo. O padrão é
+    exibir camadas em fundo e primeiro plano. Esta opção não
+    espera nem permite um valor.%
   }%
   \entry{\Option{bottommargin}}{%
-    This composite option sets the primary attributes \Option{hoffset},
-    \Option{voffset}, \Option{width}, \Option{height}, and \Option{align} so
-    that the layer spans the paper horizontally from the left edge to the
-    right and vertically from immediately beneath the footer to the bottom
-    edge of the paper.%
+    Esta opção composta define os atributos primários \Option{hoffset},
+    \Option{voffset}, \Option{width}, \Option{height}, e \Option{align} para
+    que a camada se estenda pelo papel horizontalmente da borda esquerda para a
+    direita e verticalmente imediatamente abaixo do rodapé até a borda
+    inferior do papel.%
   }%
-  \entry{\KOption{clone}{\PName{layer name}}}{%
-    This composite option sets all primary attributes of the layer to the same
-    values as the primary attributes of the layer with the given \PName{layer
-      name}. See the notes on the \PName{layer name} at the beginning of the
-    explanation for \Macro{DeclareLayer}. The layer to be cloned must also
-    already exist.%
+  \entry{\KOption{clone}{\PName{nome da camada}}}{%
+    Esta opção composta define todos os atributos primários da camada com os mesmos
+    valores que os atributos primários da camada com o \PName{nome da camada}
+    fornecido. Consulte as notas sobre \PName{nome da camada} no início da
+    explicação para \Macro{DeclareLayer}. A camada a ser clonada também deve
+    já existir.%
   }%
-  \entry{\KOption{contents}{\PName{code}}}{%
-    The specified \PName{code} will be expanded whenever the layer is printed.
-    This \PName{code} defines what you see for the layer. No tests are made to
-    see if the code is valid. Errors in the \PName{code} can therefore lead to
-    multiple error messages on each page that prints the layer.%
+  \entry{\KOption{contents}{\PName{código}}}{%
+    O \PName{código} especificado será expandido sempre que a camada for impressa.
+    Este \PName{código} define o que você vê para a camada. Nenhum teste é feito para
+    ver se o código é válido. Erros no \PName{código} podem, portanto, levar a
+    múltiplas mensagens de erro em cada página que imprime a camada.%
   }%
   \entry{\Option{evenpage}}{%
-    This option causes the layer to appear on even pages only, unlike the
-    default, where a layer will appear on both even and odd pages. Since even
-    pages only appear in two-sided printing, this option implies
-    \Option{twoside}. This option does not expect or allow a value.%
+    Esta opção faz com que a camada apareça apenas em páginas pares, ao contrário do
+    padrão, onde uma camada aparecerá em páginas pares e ímpares. Como páginas
+    pares aparecem apenas em impressão bilateral, esta opção implica
+    \Option{twoside}. Esta opção não espera nem permite um valor.%
   }%
   \entry{\ChangedAt{v3.18}{\Package{scrlayer}}%
     \Option{everypage}}{%
-    This option is a combination of \Option{oddorevenpage} and
-    \Option{floatornonfloatpage}. This option does not expect or allow a
-    value.%
+    Esta opção é uma combinação de \Option{oddorevenpage} e
+    \Option{floatornonfloatpage}. Esta opção não espera nem permite um
+    valor.%
   }%
   \entry{\Option{everyside}}{%
-    This option removes any restriction of the layer to one-sided or two-sided
-    printing. This is the default setting. This option does not expect or
-    allow a value.%
+    Esta opção remove qualquer restrição de camada à impressão unilateral ou bilateral.
+    Esta é a configuração padrão. Esta opção não espera nem
+    permite um valor.%
   }%
   \entry{\ChangedAt{v3.18}{\Package{scrlayer}}%
     \Option{floatornonfloatpage}}{%
-    This option removes any restriction of the layer to float or non-float
-    pages and restores the default setting. This option does not expect or
-    allow a value.%
+    Esta opção remove qualquer restrição de camada a páginas flutuantes ou não flutuantes
+    e restaura a configuração padrão. Esta opção não espera nem
+    permite um valor.%
   }%
   \entry{\Option{floatpage}}{%
-    This option restricts the layer to appearing on float pages only. The
-    default setting is for layers to appear on both float and non-float pages.
-    This option does not expect or allow a value.%
+    Esta opção restringe a camada a aparecer apenas em páginas flutuantes. A
+    configuração padrão é para camadas aparecerem em páginas flutuantes e não flutuantes.
+    Esta opção não espera nem permite um valor.%
   }%
   \entry{\Option{foot}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the page footer over the width of the text area. This option does
-    not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pelo rodapé da página sobre a largura da área de texto. Esta opção não
+    espera nem permite um valor.%
   }%
   \entry{\Option{footskip}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the vertical distance between the text area and the page footer over
-    the width of the text area. Note, however, that although the height of
-    this area depends on \Length{footskip}, it is not the same. This option
-    does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela distância vertical entre a área de texto e o rodapé da página sobre
+    a largura da área de texto. Observe, porém, que embora a altura de
+    esta área dependa de \Length{footskip}, não é o mesmo. Esta opção
+    não espera nem permite um valor.%
   }%
   \entry{\Option{foreground}}{%
-    This option displays the layer in the foreground only. The default is to
-    display layers in both the background and the foreground. The option does
-    not expect or allow a value.%
+    Esta opção exibe a camada apenas no primeiro plano. O padrão é
+    exibir camadas em fundo e primeiro plano. A opção não
+    espera nem permite um valor.%
   }%
   \entry{\Option{head}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the vertical area of the page header for the width of the text area.
-    The height corresponds to the length \Length{headheight}. This option does
-    not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela área vertical do cabeçalho da página para a largura da área de texto.
+    A altura corresponde ao comprimento \Length{headheight}. Esta opção não
+    espera nem permite um valor.%
   }%
   \entry{\Option{headsep}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the vertical distance between the page header and the text area for
-    the width of the text area. The height corresponds to the length
-    \Length{headsep}. This option does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela distância vertical entre o cabeçalho da página e a área de texto para
+    a largura da área de texto. A altura corresponde ao comprimento
+    \Length{headsep}. Esta opção não espera nem permite um valor.%
   }%
-  \entry{\KOption{height}{\PName{length}}}{%
-    Sets the height of the layer. Note that the \PName{length} can be a
-    \LaTeX{} length declared with \Macro{newlength}, a \TeX{} length declared
-    with \Macro{newdimen} or \Macro{newskip}, a length value like 10\,pt, or a
-    dimensional expression using +, -, /, *, (, and ). For more information
-    about valid dimensional expressions see \cite[section~3.5]{manual:eTeX}.%
+  \entry{\KOption{height}{\PName{comprimento}}}{%
+    Define a altura da camada. Observe que o \PName{comprimento} pode ser
+    um comprimento \LaTeX{} declarado com \Macro{newlength}, um comprimento \TeX{} declarado
+    com \Macro{newdimen} ou \Macro{newskip}, um valor de comprimento como 10\,pt, ou uma
+    expressão dimensional usando +, -, /, *, (, e ). Para mais informações
+    sobre expressões dimensionais válidas, consulte \cite[section~3.5]{manual:eTeX}.%
   }%
-  \entry{\KOption{hoffset}{\PName{length}}}{%
-    Sets the distance of the layer from the left edge of the paper. How the
-    distance is measured depends on the \Option{align} option. See the
-    \Option{height} option for more information about valid expressions for
-    \PName{length}.%
+  \entry{\KOption{hoffset}{\PName{comprimento}}}{%
+    Define a distância da camada da borda esquerda do papel. Como a
+    distância é medida depende da opção \Option{align}. Consulte a
+    opção \Option{height} para mais informações sobre expressões válidas para
+    \PName{comprimento}.%
   }%
   \entry{\Option{innermargin}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the inner margin, from the edge of the page to the edge of the text
-    area and from the top to the bottom of the page. In one-sided printing,
-    the inner margin corresponds to the left margin. This option does not
-    expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela margem interna, da borda da página até a borda da área de texto
+    e do topo até a base da página. Em impressão unilateral,
+    a margem interna corresponde à margem esquerda. Esta opção não
+    espera nem permite um valor.%
   }%
   \entry{\Option{leftmargin}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the left margin, from the left edge of the paper to the left edge of
-    the text area and from the top of the paper to the bottom. This option
-    does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela margem esquerda, da borda esquerda do papel até a borda esquerda da
+    área de texto e do topo do papel para baixo. Esta opção
+    não espera nem permite um valor.%
   }%
   \entry{\ChangedAt{v3.19}{\Package{scrlayer}}%
-    \OptionVName{mode}{mode}}{%
-    This primary option defines the \PName{mode} in which the layer's content
-    is output. The default is \OptionValue{mode}{text}. The baseline of the
-    first text line is placed the height of one standard text line below the
-    top edge of the layer, so the text is usually neatly aligned with the top
-    of the layer. In \PValue{picture} \PName{mode}, on the other hand, the
-    layer spans a \Environment{picture} environment with the origin at the
-    bottom left corner of the layer. The \PValue{raw} \PName{mode} is also
-    also defined. By default it corresponds to \PValue{text} \PName{mode}.
-    Changing\textnote{Attention!} the \PName{mode} of a layer usually results
-    the contents shifting. Furthermore, the \PValue{picture} \PName{mode}
-    provides additional commands that result in errors with another
-    \PName{mode}. Therefore it usually makes no sense to change the
-    \PName{mode} of a layer after its initial declaration!%
+    \OptionVName{mode}{modo}}{%
+    Esta opção primária define o \PName{modo} em que o conteúdo da camada é
+    produzido. O padrão é \OptionValue{mode}{text}. A linha de base da
+    primeira linha de texto é colocada na altura de uma linha de texto padrão abaixo da
+    borda superior da camada, para que o texto geralmente seja bem alinhado com o topo
+    da camada. Em \PValue{picture} \PName{modo}, por outro lado, a
+    camada ocupa um ambiente \Environment{picture} com a origem no
+    canto inferior esquerdo da camada. O \PValue{raw} \PName{modo} também
+    está definido. Por padrão corresponde ao \PValue{text} \PName{modo}.
+    Alterar\textnote{Atenção!} o \PName{modo} de uma camada geralmente resulta
+    em deslocamento de conteúdo. Além disso, o \PValue{picture} \PName{modo}
+    fornece comandos adicionais que resultam em erros com outro
+    \PName{modo}. Portanto, geralmente não faz sentido alterar o
+    \PName{modo} de uma camada após sua declaração inicial!%
   }%
   \entry{\Option{nonfloatpage}}{%
-    This option restricts the layer to pages that are not float pages. The
-    default is for the layer to appear on both float and non-float pages. This
-    option does not expect or allow a value.%
+    Esta opção restringe a camada a páginas que não são páginas flutuantes. O
+    padrão é para a camada aparecer em páginas flutuantes e não flutuantes. Esta
+    opção não espera nem permite um valor.%
   }%
   \entry{\ChangedAt{v3.18}{\Package{scrlayer}}%
     \Option{oddorevenpage}}{%
-    This option removes any restriction of the layer to odd or even pages,
-    restoring the default behaviour that the layer should appear on both odd
-    and even pages. The option does not expect or allow a value.%
+    Esta opção remove qualquer restrição de camada a páginas ímpares ou pares,
+    restaurando o comportamento padrão que a camada deve aparecer em páginas
+    pares e ímpares. A opção não espera nem permite um valor.%
   }%
   \entry{\Option{oddpage}}{%
-    This option restricts the layer to odd pages only. The default is for
-    layers to appear on both odd pages and on even pages. Note that in
-    one-sided printing, all pages are odd, regardless of the page number. This
-    option does not expect or allow a value.%
+    Esta opção restringe a camada apenas a páginas ímpares. O padrão é para
+    camadas aparecerem em páginas pares e ímpares. Observe que em
+    impressão unilateral, todas as páginas são ímpares, independentemente do número da página. Esta
+    opção não espera nem permite um valor.%
   }%
   \entry{\Option{oneside}}{%
-    This option restricts the layer to one-sided printing only. The default is
-    for layers to appear in both one-sided and two-sided printing. This option
-    does not expect or allow a value.%
+    Esta opção restringe a camada apenas a impressão unilateral. O padrão é
+    para camadas aparecerem em impressão unilateral e bilateral. Esta opção
+    não espera nem permite um valor.%
   }%
   \entry{\Option{outermargin}}{%
-    The composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the outer margin of the page, from the top to the bottom of the
-    paper. The outer margin corresponds to the right margin in one-sided
-    printing. This option does not expect or allow a value.%
+    A opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela margem externa da página, do topo até a base do
+    papel. A margem externa corresponde à margem direita em
+    impressão unilateral. Esta opção não espera nem permite um valor.%
   }%
   \entry{\Option{page}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the the whole paper. This option does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pelo papel inteiro. Esta opção não espera nem permite um valor.%
   }%
   \entry{\ChangedAt{v3.16}{\Package{scrlayer}}%
-    \OptionVName{pretocontents}{code}}{%
-    The value of \PName{code} is prefixed the current value of the
-    \Option{contents} attribute, so the new content will appear before the
-    existing content. For more information about the handling of \PName{code},
-    see the \Option{contents} option.%
+    \OptionVName{pretocontents}{código}}{%
+    O valor de \PName{código} é adicionado como prefixo ao valor atual do
+    atributo \Option{contents}, para que o novo conteúdo apareça antes do
+    conteúdo existente. Para mais informações sobre o tratamento de \PName{código},
+    consulte a opção \Option{contents}.%
   }%
   \entry{\Option{rightmargin}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the right margin, from the right edge of the text area to the right
-    edge of the paper and from the top to the bottom edge of the paper. This
-    option does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela margem direita, da borda direita da área de texto até a borda
+    direita do papel e do topo até a borda inferior do papel. Esta
+    opção não espera nem permite um valor.%
   }%
   \entry{\Option{textarea}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the entire text area. This option does not expect or allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda por toda a área de texto. Esta opção não espera nem permite um valor.%
   }%
   \entry{\Option{topmargin}}{%
-    This composite option sets \Option{hoffset}, \Option{voffset},
-    \Option{width}, \Option{height}, and \Option{align} so that the layer
-    spans the vertical distance between the top edge of the paper to the
-    header for the entire width of the paper. This option does not expect or
-    allow a value.%
+    Esta opção composta define \Option{hoffset}, \Option{voffset},
+    \Option{width}, \Option{height}, e \Option{align} para que a camada
+    se estenda pela distância vertical da borda superior do papel até o
+    cabeçalho por toda a largura do papel. Esta opção não espera nem
+    permite um valor.%
   }%
   \entry{\Option{twoside}}{%
-    This option restricts the layer to two-sided printing. The default is for
-    layers to appear in both one-sided and two-sided printing. This option
-    does not expect or allow a value.%
+    Esta opção restringe a camada à impressão bilateral. O padrão é para
+    camadas aparecerem em impressão unilateral e bilateral. Esta opção
+    não espera nem permite um valor.%
   }%
   \entry{\ChangedAt{v3.18}{\Package{scrlayer}}%
     \Option{unrestricted}}{%
-    This option removes all output restrictions. It is a combination of
-    \Option{backandforeground}, \Option{everyside}, and
-    \Option{floatornonfloatpage}. This option does not expect or allow a
-    value.%
+    Esta opção remove todas as restrições de saída. É uma combinação de
+    \Option{backandforeground}, \Option{everyside}, e
+    \Option{floatornonfloatpage}. Esta opção não espera nem permite um
+    valor.%
   }%
-  \entry{\KOption{voffset}{\PName{length}}}{%
-    Sets the distance of the layer from the top of the paper. How the distance
-    is measured depends on the \Option{align} option. See the \Option{height}
-    option for more information about valid expressions for \PName{length}.%
+  \entry{\KOption{voffset}{\PName{comprimento}}}{%
+    Define a distância da camada do topo do papel. Como a distância
+    é medida depende da opção \Option{align}. Consulte a
+    opção \Option{height} para mais informações sobre expressões válidas para \PName{comprimento}.%
   }%
-  \entry{\KOption{width}{\PName{length}}}{%
-    Sets the width of the layer. See the \Option{height} option for more
-    information about valid expressions for \PName{length}.%
+  \entry{\KOption{width}{\PName{comprimento}}}{%
+    Define a largura da camada. Consulte a opção \Option{height} para mais
+    informações sobre expressões válidas para \PName{comprimento}.%
   }%
 \end{desclist}
 %
@@ -582,12 +580,12 @@ be changed. Applying either command to a previously undefined \PName{layer
 
 
 \begin{Declaration}
-  \Macro{ModifyLayers}\OParameter{option list}\Parameter{layer list}
+  \Macro{ModifyLayers}\OParameter{lista de opções}\Parameter{lista de camadas}
 \end{Declaration}
-This\ChangedAt{v3.26}{\Package{scrlayer}} command executes
-\DescRef{\LabelBase.cmd.ModifyLayer} with the given \PName{option list} for
-all layers of the comma-separated layer list. Therefore the option can be used
-to change attributes of several layers simultaneously.%
+Este\ChangedAt{v3.26}{\Package{scrlayer}} comando executa
+\DescRef{\LabelBase.cmd.ModifyLayer} com a \PName{lista de opções} fornecida para
+todas as camadas da lista de camadas separada por vírgulas. Portanto, a opção pode ser usada
+para alterar atributos de várias camadas simultaneamente.%
 \EndIndexGroup
 
 
@@ -599,81 +597,81 @@ to change attributes of several layers simultaneously.%
   \Macro{layerwidth}%
   \Macro{layerheight}%
 \end{Declaration}
-These commands are only valid in the \PName{code} specified with
-\Option{contents}, \Option{addcontents}, or \Option{pretocontents}. In this
-case, they contain the layer's actual alignment, position, and dimensions that
-will be used for the output. However, this is not necessarily the actual
-dimensions of the layer's contents, e.\,g., if the contents are oversized or
-do not fill the layer completely.
+Esses comandos são válidos apenas no \PName{código} especificado com
+\Option{contents}, \Option{addcontents}, ou \Option{pretocontents}. Neste
+caso, eles contêm o alinhamento real da camada, posição e dimensões que
+serão usadas para a saída. No entanto, isso não é necessariamente a
+dimensão real do conteúdo da camada, por exemplo, se o conteúdo for supersizado ou
+não preencher a camada completamente.
 
-The primary layer attribute \PValue{align} is mapped to
-\Macro{layerhalign}\ChangedAt{v3.19}{\Package{scrlayer}} and
-\Macro{layervalign}. The horizontal values \PValue{l} and \PValue{r} are
-copied to \Macro{layerhalign}. The vertical values \PValue{t} and \PValue{b}
-are copied to \Macro{layervalign}. The value \PValue{c}, which is both 
-horizontal and vertical, is copied to both commands. If there are several
-conflicting values for \PValue{align}, only the last one is copied. Thus the
-resulting \Macro{layerhalign} is either \PValue{l}, \PValue{c}, or \PValue{r},
-and the resulting \Macro{layervalign} is either \PValue{t}, \PValue{c}, or
+O atributo de camada primária \PValue{align} é mapeado para
+\Macro{layerhalign}\ChangedAt{v3.19}{\Package{scrlayer}} e
+\Macro{layervalign}. Os valores horizontais \PValue{l} e \PValue{r} são
+copiados para \Macro{layerhalign}. Os valores verticais \PValue{t} e \PValue{b}
+são copiados para \Macro{layervalign}. O valor \PValue{c}, que é tanto
+horizontal quanto vertical, é copiado para ambos os comandos. Se houver vários
+valores conflitantes para \PValue{align}, apenas o último é copiado. Assim, o
+\Macro{layerhalign} resultante é \PValue{l}, \PValue{c}, ou \PValue{r},
+e o \Macro{layervalign} resultante é \PValue{t}, \PValue{c}, ou
 \PValue{b}.
 
-Redefining\textnote{Attention!} these instructions to change the values stored
-in them is not permitted, as it would lead to unpredictable results.%
+Redefinir\textnote{Atenção!} essas instruções para alterar os valores armazenados
+nelas não é permitido, pois levaria a resultados imprevisíveis.%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{LenToUnit}\Parameter{length}
+  \Macro{LenToUnit}\Parameter{comprimento}
 \end{Declaration}
-This\ChangedAt{v3.19}{\Package{scrlayer}} command originally came from
-\Package{eso-pic}\IndexPackage{eso-pic}~2.0f. It converts lengths into
-multiples of \Length{unit length} and can therefore be used everywhere \LaTeX{}
-expects \Environment{picture} coordinates or \Length{unit length}-dependent
-values. For more information, see \cite{package:eso-pic} and the descriptions
-of \Macro{putUR}, \Macro{putLL}, and \Macro{putLR} below. If the command is 
-already defined, e.\,g., by loading \Package{eso-pic} before
-\Package{scrlayer}, the package does not define it again.%
+Este\ChangedAt{v3.19}{\Package{scrlayer}} comando originalmente veio de
+\Package{eso-pic}\IndexPackage{eso-pic}~2.0f. Converte comprimentos em
+múltiplos de \Length{unit length} e pode, portanto, ser usado em qualquer lugar que \LaTeX{}
+espera coordenadas \Environment{picture} ou valores dependentes de
+\Length{unit length}. Para mais informações, consulte \cite{package:eso-pic} e as descrições
+de \Macro{putUR}, \Macro{putLL}, e \Macro{putLR} abaixo. Se o comando já
+for definido, por exemplo, ao carregar \Package{eso-pic} antes de
+\Package{scrlayer}, o pacote não o define novamente.%
 \iffalse% Umbruchkorrekturtext
 \par
-It should be noted at this point that using package
-\Package{picture}\IndexPackage{picture}\important{\Package{picture}} (see
-\cite{package:picture}) supersedes \Macro{LenToUnit} more or less. The package
-extends environment \Environment{picture} and the picture commands so that you
-can use \LaTeX{} lengths directly for coordinates.%
+Deve-se notar neste ponto que usar o pacote
+\Package{picture}\IndexPackage{picture}\important{\Package{picture}} (consulte
+\cite{package:picture}) substitui \Macro{LenToUnit} mais ou menos. O pacote
+estende o ambiente \Environment{picture} e os comandos de imagem para que você
+possa usar comprimentos \LaTeX{} diretamente para coordenadas.%
 \fi
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{putUL}\Parameter{content}%
-  \Macro{putUR}\Parameter{content}%
-  \Macro{putLL}\Parameter{content}%
-  \Macro{putLR}\Parameter{content}%
-  \Macro{putC}\Parameter{content}
+  \Macro{putUL}\Parameter{conteúdo}%
+  \Macro{putUR}\Parameter{conteúdo}%
+  \Macro{putLL}\Parameter{conteúdo}%
+  \Macro{putLR}\Parameter{conteúdo}%
+  \Macro{putC}\Parameter{conteúdo}
 \end{Declaration}
-You\ChangedAt{v3.19}{\Package{scrlayer}} can use these commands inside the
-value of \PValue{contents} layer option if the layer is declared with
-\OptionValue{mode}{picture}. In this case, \Macro{putUL} places the
-\PName{content} relative to the upper left corner of the layer and therefore
-is the same as
+Você\ChangedAt{v3.19}{\Package{scrlayer}} pode usar esses comandos dentro do
+valor da opção de camada \PValue{contents} se a camada for declarada com
+\OptionValue{mode}{picture}. Neste caso, \Macro{putUL} coloca o
+\PName{conteúdo} relativo ao canto superior esquerdo da camada e, portanto,
+é o mesmo que
 \lstinline[breaklines=false]|\put(0,\LenToUnit{\layerheight})|. \Macro{putUR}
-places the \PName{content} relative to the upper right corner of the layer and
-therefore is the same as
+coloca o \PName{conteúdo} relativo ao canto superior direito da camada e
+portanto é o mesmo que
 \lstinline[breaklines=false]
 |\put(\LenToUnit{\layerwidth},\LenToUnit{\layerheight})|.
-\Macro{putLL} places the \PName{content} relative to the lower left corner of
-the layer and therefore is the same as
-\lstinline[breaklines=false]|\put(0,0)|. \Macro{putLR} places the
-\PName{content} relative to the lower right corner and therefore is the same
-as \lstinline[breaklines=false]|\put(\LenToUnit{\layerwidth},0)|. Last but
-not least, \Macro{putC} places the \PName{content} relative to the centre of
-the layer.%
+\Macro{putLL} coloca o \PName{conteúdo} relativo ao canto inferior esquerdo da
+camada e portanto é o mesmo que
+\lstinline[breaklines=false]|\put(0,0)|. \Macro{putLR} coloca o
+\PName{conteúdo} relativo ao canto inferior direito e portanto é o mesmo
+que \lstinline[breaklines=false]|\put(\LenToUnit{\layerwidth},0)|. Por fim,
+\Macro{putC} coloca o \PName{conteúdo} relativo ao centro da
+camada.%
 \begin{Example}
-  You want to determine exactly how accurately
-  \OptionValueRef{typearea}{DIV}{classic} sets the height of the text area to
-  the width of the page size. You declare a layer that both borders the text
-  area and places a circle with a diameter of the paper width in the centre of
-  the text area:
+  Você quer determinar exatamente com que precisão
+  \OptionValueRef{typearea}{DIV}{classic} define a altura da área de texto para
+  a largura do tamanho da página. Você declara uma camada que tanto bordeja a
+  área de texto quanto coloca um círculo com um diâmetro da largura do papel no centro da
+  área de texto:
 \begin{lstcode}
   \documentclass[DIV=classic]{scrartcl}
   \usepackage{pict2e}
@@ -694,62 +692,62 @@ the layer.%
   \null
   \end{document}
 \end{lstcode}
-  You will notice that \Package{typearea}'s mapping to an integer \PName{DIV}
-  value is very accurate in this example.
+  Você notará que o mapeamento de \Package{typearea} para um valor inteiro \PName{DIV}
+  é muito preciso neste exemplo.
 \end{Example}
-Incidentally, you will find more information about late medieval book-page
-canon sketched in the example in \autoref{sec:typearea.circleConstruction},
+Aliás, você encontrará mais informações sobre o cânone de página de livro medieval tardio
+esboçado no exemplo em \autoref{sec:typearea.circleConstruction},
 \autopageref{sec:typearea.circleConstruction}.
 
-The \Macro{DeclareNewPageStyleByLayers}\IndexCmd{DeclareNewPageStyleByLayers}
-command just used in the example defines a new page style using the newly
-declared layer. It will be explained in \autoref{sec:scrlayer.pagestyles},
+O \Macro{DeclareNewPageStyleByLayers}\IndexCmd{DeclareNewPageStyleByLayers}
+comando que foi usado no exemplo define um novo estilo de página usando a camada
+recém-declarada. Será explicado em \autoref{sec:scrlayer.pagestyles},
 \DescPageRef{scrlayer.cmd.DeclareNewPageStyleByLayers}.%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{GetLayerContents}\Parameter{layer~name}
+  \Macro{GetLayerContents}\Parameter{nome~da~camada}
 \end{Declaration}
-This\ChangedAt{v3.16}{\Package{scrlayer}} command returns the whole contents
-of a layer. It is important to note\textnote{Attention!} that using this
-command inside the \PName{code} of the layer attributes \Option{contents},
-\Option{addcontents}, or \Option{pretocontents} can result in
-infinite recursion when referencing the contents of the current layer. You
-are responsible for avoiding such situations!%
+Este\ChangedAt{v3.16}{\Package{scrlayer}} comando retorna todo o conteúdo
+de uma camada. É importante observar\textnote{Atenção!} que usar este
+comando dentro do \PName{código} dos atributos de camada \Option{contents},
+\Option{addcontents}, ou \Option{pretocontents} pode resultar em
+recursão infinita ao referenciar o conteúdo da camada atual. Você
+é responsável por evitar essas situações!%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{IfLayerExists}\Parameter{layer~name}
-                       \Parameter{then-code}\Parameter{else-code}
+  \Macro{IfLayerExists}\Parameter{nome~da~camada}
+                       \Parameter{código-então}\Parameter{código-senão}
 \end{Declaration}
-This command can be used to execute code depending on whether or not a layer
-with the specified \PName{layer name} exists. If the layer exists, the
-\PName{then-code} will be executed; otherwise, the \PName{else-code} will be
-executed. Note that the command cannot really test whether a layer exists.
-Instead it uses a heuristic which will never yield a false negative but which,
-in extreme cases, could yield a false positive.
+Este comando pode ser usado para executar código dependendo de se uma camada
+com o \PName{nome da camada} especificado existe ou não. Se a camada existir, o
+\PName{código-então} será executado; caso contrário, o \PName{código-senão} será
+executado. Observe que o comando não pode realmente testar se uma camada existe.
+Em vez disso, ele usa uma heurística que nunca produzirá um falso negativo, mas que,
+em casos extremos, poderia produzir um falso positivo.
 \iffalse% Umbruchvarianten
-Nevertheless, if the test yields a false positive, something has gone wrong.
-For example, this could indicate an incompatible package or that the user is
-doing something he or she should not.%
+Não obstante, se o teste produzir um falso positivo, algo deu errado.
+Por exemplo, isso poderia indicar um pacote incompatível ou que o usuário está
+fazendo algo que não deveria.%
 \else
-False positives indicate a problem, such as the use of an incompatible package
-or a bad choice of internal macro names by the user.
+Falsos positivos indicam um problema, como o uso de um pacote incompatível
+ou uma má escolha de nomes de macro internos pelo usuário.
 \fi
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{DestroyLayer}\Parameter{layer~name}
+  \Macro{DestroyLayer}\Parameter{nome~da~camada}
 \end{Declaration}
-If a layer with the given \PName{layer name} exists, all macros belonging to
-it will be set to \Macro{relax}. In page styles already defined with
-\Package{scrlayer}, such destroyed layers are ignored. Destroyed layers can be
-redefined using \DescRef{\LabelBase.cmd.DeclareNewLayer} or
-\DescRef{\LabelBase.cmd.ProvideLayer}, but they can no longer be changed using
-\DescRef{\LabelBase.cmd.RedeclareLayer} or
+Se uma camada com o \PName{nome da camada} fornecido existir, todas as macros a ela
+pertencentes serão definidas como \Macro{relax}. Em estilos de página já definidos com
+\Package{scrlayer}, essas camadas destruídas são ignoradas. Camadas destruídas podem ser
+redefinidas usando \DescRef{\LabelBase.cmd.DeclareNewLayer} ou
+\DescRef{\LabelBase.cmd.ProvideLayer}, mas não podem mais ser alteradas usando
+\DescRef{\LabelBase.cmd.RedeclareLayer} ou
 \DescRef{\LabelBase.cmd.ModifyLayer}.%
 \iffalse % See the note at the beginning of the end user interface section
 \par
@@ -764,26 +762,26 @@ that interface.%
 
 
 \begin{Declaration}
-  \OptionVName{draft}{simple switch}
+  \OptionVName{draft}{simples comutador}
   \Macro{layercontentsmeasure}%
 \end{Declaration}
-The \KOMAScript{} option \Option{draft} can be used to active the draft mode
-of \Package{scrlayer}. The draft mode uses the \Macro{layercontentsmeasure}
-command to print a ruler at each layer edge, of which the top and left one is
-labelled in centimetres and the right and bottom one in inches. The rulers are
-drawn behind the content of each layer. This command can also be used as
-exclusive content of a layer.%
+A opção \KOMAScript{} \Option{draft} pode ser usada para ativar o modo rascunho
+de \Package{scrlayer}. O modo rascunho usa o comando
+\Macro{layercontentsmeasure} para imprimir uma régua em cada borda da camada, sendo que a
+superior e a esquerda são marcadas em centímetros e a direita e a inferior em polegadas. As réguas são
+desenham atrás do conteúdo de cada camada. Este comando também pode ser usado como
+conteúdo exclusivo de uma camada.%
 \EndIndexGroup
 
 
-\section{Declaring and Managing Page Styles}
+\section{Declarando e Gerenciando Estilos de Página}
 \seclabel{pagestyles}
 
 \BeginIndexGroup
 \BeginIndex{}{page>style}%
-We now understand how to define and manage layers, but so far we do not know 
-how they are used. The possibly surprising answer is, with page styles. In
-\LaTeX{}, page styles usually define headers and footers of the page.
+Agora entendemos como definir e gerenciar camadas, mas até agora não sabemos
+como elas são usadas. A resposta possivelmente surpreendente é: com estilos de página. Em
+\LaTeX{}, estilos de página geralmente definem cabeçalhos e rodapés da página.
 
 The header and footer of odd or right-hand pages\textnote{even or odd page}
 are printed on pages with odd page numbers in two-sided printing or on all

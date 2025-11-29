@@ -18,8 +18,8 @@
 % This work consists of all files listed in MANIFEST.md.
 % ======================================================================
 %
-% Chapter about scraddr of the KOMA-Script guide
-% Maintained by Jens-Uwe Morawski (with help from Markus Kohm)
+% Capítulo sobre scraddr do guia KOMA-Script
+% Mantido por Jens-Uwe Morawski (com ajuda de Markus Kohm)
 %
 % ======================================================================
 
@@ -29,31 +29,31 @@
 \translator{Jens-Uwe Morawski\and Gernot Hassenpflug\and Markus Kohm\and Karl
   Hagen}
 
-\chapter{Accessing Address Files with \Package{scraddr}}%
+\chapter{Acessando Arquivos de Endereços com \Package{scraddr}}%
 \labelbase{scraddr}%
 \BeginIndexGroup
 \BeginIndex{Package}{scraddr}
 
-The \Package{scraddr} package is a small extension to \KOMAScript{}'s letter
-class and letter package. Its goal is to make access to the data in address
-files easier and more flexible.
+O pacote \Package{scraddr} é uma pequena extensão da classe de carta e do
+pacote de carta do \KOMAScript{}. Seu objetivo é tornar o acesso aos dados em
+arquivos de endereços mais fácil e flexível.
 
-\section{Overview}\seclabel{overview}
-Basically, the package provides a new loading mechanism for address files
-consisting of \DescRef{\LabelBase.cmd.adrentry} and the newer
-\DescRef{\LabelBase.cmd.addrentry} format entries, as described in
-\autoref{cha:scrlttr2} starting on \DescPageRef{scrlttr2.cmd.adrentry}.
+\section{Visão Geral}\seclabel{overview}
+Basicamente, o pacote fornece um novo mecanismo de carregamento para arquivos de
+endereços consistindo de entradas nos formatos \DescRef{\LabelBase.cmd.adrentry}
+e o mais novo \DescRef{\LabelBase.cmd.addrentry}, conforme descrito em
+\autoref{cha:scrlttr2} a partir de \DescPageRef{scrlttr2.cmd.adrentry}.
 
 \begin{Declaration}
-\Macro{InputAddressFile}\Parameter{file name}
+\Macro{InputAddressFile}\Parameter{nome do arquivo}
 \end{Declaration}%
-The \Macro{InputAddressFile} command is the main command of \Package{scraddr}.
-It reads the content of the address file\Index{address>file} given as its
-parameter. If the file is not found, an error message is issued.
+O comando \Macro{InputAddressFile} é o comando principal do \Package{scraddr}.
+Ele lê o conteúdo do arquivo de endereços\Index{endereço>arquivo} fornecido como
+seu parâmetro. Se o arquivo não for encontrado, uma mensagem de erro é emitida.
 
-For each entry in this address file, the command generates a set of
-macros to access the data. For large address files, this will require
-a lot of \TeX{} memory.
+Para cada entrada neste arquivo de endereços, o comando gera um conjunto de
+macros para acessar os dados. Para arquivos de endereços grandes, isto exigirá
+muita memória do \TeX{}.
 %
 \EndIndexGroup
 
@@ -69,11 +69,11 @@ a lot of \TeX{} memory.
   \Macro{adrchar}\Parameter{initial}%
   \Macro{addrchar}\Parameter{initial}%
 \end{Declaration}%
-The structure of the address entries in the address file was discussed in
-detail in \autoref{sec:scrlttr2.addressFile}, starting on
-\DescPageRef{scrlttr2.cmd.adrentry}. The subdivision of the address file with
-the help of \Macro{adrchar} or \Macro{addrchar}, also discussed there, has no
-meaning for \Package{scraddr} and is simply ignored by the package.%
+A estrutura das entradas de endereço no arquivo de endereços foi discutida em
+detalhes em \autoref{sec:scrlttr2.addressFile}, começando em
+\DescPageRef{scrlttr2.cmd.adrentry}. A subdivisão do arquivo de endereços com
+a ajuda de \Macro{adrchar} ou \Macro{addrchar}, também discutida lá, não tem
+significado para \Package{scraddr} e é simplesmente ignorada pelo pacote.%
 \EndIndexGroup
 
 \begin{Declaration}
@@ -88,25 +88,25 @@ meaning for \Package{scraddr} and is simply ignored by the package.%
   \Macro{FreeIII}\Parameter{key}%
   \Macro{FreeIV}\Parameter{key}
 \end{Declaration}%
-These commands give access to data of your address file. The last parameter,
-that is, parameter 8 for the \DescRef{\LabelBase.cmd.adrentry} entry and
-parameter 9 for the \DescRef{\LabelBase.cmd.addrentry} entry, is the
-identifier of an entry, thus the \PName{key} has to be unique and non-empty.
-To guarantee safe functioning, you should use only ASCII letters in the
-\PName{key}.
+Estes comandos fornecem acesso aos dados do seu arquivo de endereços. O último
+parâmetro, ou seja, o parâmetro 8 para a entrada \DescRef{\LabelBase.cmd.adrentry}
+e o parâmetro 9 para a entrada \DescRef{\LabelBase.cmd.addrentry}, é o
+identificador de uma entrada, assim a \PName{chave} tem que ser única e não vazia.
+Para garantir o funcionamento seguro, você deve usar apenas letras ASCII na
+\PName{chave}.
 
-Furthermore, if the file contains more than one entry with the same
-\PName{key} name, the last occurrence will be used.%
+Além disso, se o arquivo contiver mais de uma entrada com o mesmo
+nome \PName{chave}, a última ocorrência será usada.%
 %
 \EndIndexGroup
 
 
-\section{Usage}\seclabel{usage}
+\section{Uso}\seclabel{usage}
 \BeginIndexGroup
 \BeginIndex[indexother]{Cmd}{addrentry}%
 \BeginIndex[indexother]{Cmd}{adrentry}%
-To use the package, we need a valid address file.  For example, the file
-\File{lotr.adr} contains the following entries:
+Para usar o pacote, precisamos de um arquivo de endereços válido. Por exemplo, o arquivo
+\File{lotr.adr} contém as seguintes entradas:
 \begin{lstcode}
   \addrentry{Baggins}{Frodo}%
             {The Hill\\ Bag End/Hobbiton in the Shire}{}%
@@ -122,14 +122,14 @@ To use the package, we need a valid address file.  For example, the file
             {The Master of Wood, Water and Hill}{TOM}
 \end{lstcode}
 
-The fourth parameter, the telephone number, has been left blank, since there
-are no phones in Middle Earth. And as you can see, blank fields are possible.
-On the other hand, you cannot simply omit an argument altogether.
+O quarto parâmetro, o número de telefone, foi deixado em branco, pois não há
+telefones na Terra-Média. E como você pode ver, campos em branco são possíveis.
+Por outro lado, você não pode simplesmente omitir um argumento completamente.
 
 \BeginIndexGroup
 \BeginIndex[indexother]{Cmd}{InputAddressFile}
-With the \Macro{InputAddressFile} command described above, we read the address
-file into our letter document:
+Com o comando \Macro{InputAddressFile} descrito acima, lemos o arquivo de
+endereços para o nosso documento de carta:
 \begin{lstcode}
   \InputAddressFile{lotr}
 \end{lstcode}
@@ -145,9 +145,9 @@ file into our letter document:
 \BeginIndex[indexother]{Cmd}{FreeIII}%
 \BeginIndex[indexother]{Cmd}{FreeIV}%
 \BeginIndex[indexother]{Cmd}{Comment}%
-With the help of the commands introduced in this chapter we can now write a
-letter to old \textsc{Tom Bombadil}, in which we ask him if he can remember
-two companions from olden times.
+Com a ajuda dos comandos introduzidos neste capítulo podemos agora escrever uma
+carta para o velho \textsc{Tom Bombadil}, na qual pedimos a ele se ele consegue
+lembrar de dois companheiros de tempos idos.
 \begin{lstcode}
   \begin{letter}{\Name{TOM}\\\Address{TOM}}
      \opening{Dear \FirstName{TOM} \LastName{TOM},}
@@ -170,36 +170,36 @@ two companions from olden times.
                 and the leaves' laughter!''}
   \end{letter}
 \end{lstcode}
-You can also produce the combination of \Macro{FirstName}\Parameter{key} and
-\Macro{LastName}\Parameter{key} used in the \DescRef{scrlttr2.cmd.opening} of
-this letter with \Macro{Name}\PParameter{key}.
+Você também pode produzir a combinação de \Macro{FirstName}\Parameter{chave} e
+\Macro{LastName}\Parameter{chave} usada em \DescRef{scrlttr2.cmd.opening} de
+esta carta com \Macro{Name}\PParameter{chave}.
 
-You can use the fifth and sixth parameters of the
-\DescRef{\LabelBase.cmd.adrentry} or \DescRef{\LabelBase.cmd.adrentry} for any
-purpose you wish. You can access them with the \Macro{FreeI} and
-\Macro{FreeII} commands. In this example, the fifth parameter contains the
-name of the most important person in the life of the person in the entry. The
-sixth contains the person's favourite thing. The seventh parameter is a
-comment or in general also a free parameter. You can access it with the
-\Macro{Comment} or \Macro{FreeIII} commands. \Macro{FreeIV} is only valid for
-\DescRef{\LabelBase.cmd.addrentry} entries. For
-\DescRef{\LabelBase.cmd.adrentry} entries, it results in an error. You can
-find more details in the next section.
+Você pode usar o quinto e sexto parâmetros de
+\DescRef{\LabelBase.cmd.adrentry} ou \DescRef{\LabelBase.cmd.adrentry} para qualquer
+propósito que desejar. Você pode acessá-los com os comandos \Macro{FreeI} e
+\Macro{FreeII}. Neste exemplo, o quinto parâmetro contém o
+nome da pessoa mais importante na vida da pessoa na entrada. O
+sexto contém a coisa favorita da pessoa. O sétimo parâmetro é um
+comentário ou em geral também um parâmetro livre. Você pode acessá-lo com os
+comandos \Macro{Comment} ou \Macro{FreeIII}. \Macro{FreeIV} é válido apenas para
+entradas \DescRef{\LabelBase.cmd.addrentry}. Para
+entradas \DescRef{\LabelBase.cmd.adrentry}, resulta em um erro. Você pode
+encontrar mais detalhes na próxima seção.
 %
 \EndIndexGroup
 \EndIndexGroup
 
 
-\section{Package Warning Options}
+\section{Opções de Aviso do Pacote}
 
-As mentioned above, you cannot use the \Macro{FreeIV} command with
-\DescRef{\LabelBase.cmd.adrentry} entries. However, you can configure how
-\Package{scraddr} reacts in such a situation by package options.
-Note\textnote{Attention!} that this package does not support the extended
-options interface with \DescRef{maincls.cmd.KOMAoptions} and
-\DescRef{maincls.cmd.KOMAoption}. You should therefore specify the options
-either as global options in \DescRef{maincls.cmd.documentclass} or as local
-options in \DescRef{maincls.cmd.usepackage}
+Como mencionado acima, você não pode usar o comando \Macro{FreeIV} com
+entradas \DescRef{\LabelBase.cmd.adrentry}. No entanto, você pode configurar
+como \Package{scraddr} reage em tal situação por opções do pacote.
+Observe\textnote{Atenção!} que este pacote não suporta a interface de
+opções estendida com \DescRef{maincls.cmd.KOMAoptions} e
+\DescRef{maincls.cmd.KOMAoption}. Você deve especificar as opções
+como opções globais em \DescRef{maincls.cmd.documentclass} ou como opções locais
+em \DescRef{maincls.cmd.usepackage}
 
 
 \begin{Declaration}
@@ -208,22 +208,22 @@ options in \DescRef{maincls.cmd.usepackage}
   \Option{adrFreeIVwarn}%
   \Option{adrFreeIVstop}%
 \end{Declaration}%
-These four options let you choose from four different reactions, ranging
-from \emph{ignore} to \emph{abort}, if \Macro{FreeIV} is used
-within an \DescRef{\LabelBase.cmd.adrentry} entry.
+Estas quatro opções permitem que você escolha entre quatro reações diferentes,
+variando de \emph{ignorar} a \emph{abortar}, se \Macro{FreeIV} é usado
+dentro de uma entrada \DescRef{\LabelBase.cmd.adrentry}.
 
 \begin{labeling}[~--]{\Option{adrFreeIVempty}}
-\item[\Option{adrFreeIVempty}] 
-        the command \Macro{FreeIV} will be ignored
-\item[\Option{adrFreeIVshow}] 
-        the warning ``(entry FreeIV undefined at \PName{key})'' will be
-        written in the text
+\item[\Option{adrFreeIVempty}]
+        o comando \Macro{FreeIV} será ignorado
+\item[\Option{adrFreeIVshow}]
+        o aviso ``(entrada FreeIV não definida em \PName{chave})'' será
+        escrito no texto
 \item[\Option{adrFreeIVwarn}]
-        a warning is written in the logfile
+        um aviso é escrito no arquivo de log
 \item[\Option{adrFreeIVstop}]
-        the \LaTeX{} run will abort with an error message
+        a execução do \LaTeX{} será abortada com uma mensagem de erro
 \end{labeling}
-The default setting is \Option{adrFreeIVshow}.%
+A configuração padrão é \Option{adrFreeIVshow}.%
 \EndIndexGroup
 %
 \EndIndexGroup

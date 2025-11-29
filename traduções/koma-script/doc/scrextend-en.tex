@@ -18,8 +18,8 @@
 % This work consists of all files listed in MANIFEST.md.
 % ======================================================================
 %
-% Package scrextend for Document Writers
-% Maintained by Markus Kohm
+% Pacote scrextend para Autores de Documentos
+% Mantido por Markus Kohm
 %
 % ======================================================================
 
@@ -29,61 +29,61 @@
 \translator{Markus Kohm\and Karl Hagen}
 
 \chapter[{\KOMAScript{} Features for Other Classes with \Package{scrextend}}]
-  {Using Basic Features of the \KOMAScript{} Classes in Other Classes with the
-    \Package{scrextend} Package}
+  {Usando Funcionalidades Básicas das Classes \KOMAScript{} em Outras Classes com o
+    Pacote \Package{scrextend}}
 \labelbase{scrextend}
 \BeginIndexGroup%
 \BeginIndex{Package}{scrextend}%
 
-There are some features that are common to all \KOMAScript{} classes. This
-applies not only to the \Class{scrbook}, \Class{scrreprt}, and
-\Class{scrartcl} classes, which are intended to replace the standard classes
-\Class{book}, \Class{report}, and \Class{article}, but also to a large extend
-the \KOMAScript{} class \Class{scrlttr2}, the successor to \Class{scrlettr},
-which is intended for letters. These basic features, which can be found in the
-classes mentioned above, are also provided by package \Package{scrextend} from
-\KOMAScript{} version~3.00 onward. This\textnote{Attention!} package should
-not be used with \KOMAScript{} classes. It is intended for use with other
-classes only. If you attempt to load the package with a \KOMAScript{} class,
-\Package{scrextend} will detect this and reject loading it with a warning
-message.
+Existem algumas funcionalidades que são comuns a todas as classes \KOMAScript{}. Isto
+se aplica não apenas às classes \Class{scrbook}, \Class{scrreprt} e
+\Class{scrartcl}, que se destinam a substituir as classes padrão
+\Class{book}, \Class{report} e \Class{article}, mas também, em grande medida,
+à classe \KOMAScript{} \Class{scrlttr2}, sucessora de \Class{scrlettr},
+que se destina a cartas. Estas funcionalidades básicas, que podem ser encontradas nas
+classes mencionadas acima, também são fornecidas pelo pacote \Package{scrextend} a partir
+da versão~3.00 do \KOMAScript{}. Este\textnote{Atenção!} pacote
+não deve ser usado com classes \KOMAScript{}. Ele foi projetado apenas para uso com outras
+classes. Se você tentar carregar o pacote com uma classe \KOMAScript{},
+\Package{scrextend} detectará isto e rejeitará o carregamento com uma
+mensagem de aviso.
 
-The fact that \hyperref[cha:scrlttr2]{\Package{scrletter}}%
-\IndexPackage{scrletter} can be used not only with \KOMAScript{} classes but
-also with the standard classes is partly due to \Package{scrextend}. If
-\hyperref[cha:scrlttr2]{\Package{scrletter}} detects that it is not being used
-with a \KOMAScript{} class, it automatically loads \Package{scrextend}. Doing
-so makes all required \KOMAScript{} classes available.
+O fato de que \hyperref[cha:scrlttr2]{\Package{scrletter}}%
+\IndexPackage{scrletter} possa ser usado não apenas com classes \KOMAScript{} mas
+também com as classes padrão é em parte devido ao \Package{scrextend}. Se
+\hyperref[cha:scrlttr2]{\Package{scrletter}} detecta que não está sendo usado
+com uma classe \KOMAScript{}, ele carrega automaticamente \Package{scrextend}. Ao
+fazer isso, todas as classes \KOMAScript{} necessárias ficam disponíveis.
 
-Of course, there is no guarantee that \Package{scrextend} will work with all
-classes. The package has been designed primarily to extend the standard
-classes and those derived from them. In any case, before you use
-\Package{scrextend}, you should first make sure that the class you are using
-does not already provide the feature you need.
+Naturalmente, não há garantia de que \Package{scrextend} funcionará com todas as
+classes. O pacote foi projetado principalmente para estender as classes padrão
+e aquelas derivadas delas. Em qualquer caso, antes de usar
+\Package{scrextend}, você deve primeiro certificar-se de que a classe que está usando
+não já fornece a funcionalidade que você precisa.
 
-In addition to the features described in this chapter, there are a few more
-that are primarily intended for authors of classes and packages. These can be
-found in \autoref{cha:scrbase}, starting on \autopageref{cha:scrbase}. The 
-\hyperref[cha:scrbase]{\Package{scrbase}}%
+Além das funcionalidades descritas neste capítulo, existem mais algumas
+que se destinam principalmente aos autores de classes e pacotes. Estas podem ser
+encontradas em \autoref{cha:scrbase}, a partir de \autopageref{cha:scrbase}. O
+pacote \hyperref[cha:scrbase]{\Package{scrbase}}%
 \important{\hyperref[cha:scrbase]{\Package{scrbase}}}\IndexPackage{scrbase}
-package documented there is used by all \KOMAScript{} classes and the
-\Package{scrextend} package.
+documentado lá é usado por todas as classes \KOMAScript{} e pelo
+pacote \Package{scrextend}.
 
-All \KOMAScript{} classes and the \Package{scrextend} package also load the
-\hyperref[cha:scrlfile]{\Package{scrlfile}}%
+Todas as classes \KOMAScript{} e o pacote \Package{scrextend} também carregam o
+pacote \hyperref[cha:scrlfile]{\Package{scrlfile}}%
 \important{\hyperref[cha:scrlfile]{\Package{scrlfile}}}\IndexPackage{scrlfile}
-package described in \autoref{cha:scrlfile} starting on
-\autopageref{cha:scrlfile}. Therefore the features of this package are also
-available when using \Package{scrextend}.
+descrito em \autoref{cha:scrlfile} a partir de
+\autopageref{cha:scrlfile}. Portanto, as funcionalidades deste pacote também estão
+disponíveis ao usar \Package{scrextend}.
 
 \iftrue % Umbruchkorrekturtext
-In contrast, only the \KOMAScript{} classes \Class{scrbook}, \Class{scrreprt},
-and \Class{scrartcl} load the \hyperref[cha:tocbasic]{\Package{tocbasic}}
-package (see \autoref{cha:tocbasic} starting on \autopageref{cha:tocbasic}),
-which is designed for authors of classes and packages. For this reason, the
-features defined there are found only in those classes and not in
-\Package{scrextend}. Of course you can still use
-\hyperref[cha:tocbasic]{\Package{tocbasic}} together with
+Em contraste, apenas as classes \KOMAScript{} \Class{scrbook}, \Class{scrreprt}
+e \Class{scrartcl} carregam o pacote \hyperref[cha:tocbasic]{\Package{tocbasic}}
+(veja \autoref{cha:tocbasic} a partir de \autopageref{cha:tocbasic}),
+que foi projetado para autores de classes e pacotes. Por esta razão, as
+funcionalidades definidas lá são encontradas apenas nessas classes e não em
+\Package{scrextend}. Naturalmente, você ainda pode usar
+\hyperref[cha:tocbasic]{\Package{tocbasic}} junto com
 \Package{scrextend}.%
 \fi
 
@@ -92,98 +92,98 @@ features defined there are found only in those classes and not in
 \LoadCommonFile{compatibility}% \section{Compatibility with Earlier Versions of \KOMAScript}
 
 
-\section{Optional, Extended Features}
+\section{Funcionalidades Opcionais e Estendidas}
 \seclabel{optionalFeatures}
 
-The \Package{scrextend} package provides some optional, extended features.
-These features are not available by default but can be activated. These
-features are optional because, for example, they may conflict with features of
-the standard classes of other commonly used packages.
+O pacote \Package{scrextend} fornece algumas funcionalidades opcionais e estendidas.
+Estas funcionalidades não estão disponíveis por padrão, mas podem ser ativadas. Estas
+funcionalidades são opcionais porque, por exemplo, podem estar em conflito com funcionalidades
+das classes padrão ou de outros pacotes comumente usados.
 
 \begin{Declaration}
   \OptionVName{extendedfeature}{feature}
 \end{Declaration}
-With this option, you can activate an extended \PName{feature} of
-\Package{scrextend}. This option is available only while loading
-\Package{scrextend}. You must therefore specify this option in the optional
-argument of \DescRef{\LabelBase.cmd.usepackage}\PParameter{scrextend}. %
+Com esta opção, você pode ativar uma \PName{funcionalidade} estendida do
+\Package{scrextend}. Esta opção está disponível apenas durante o carregamento
+do \Package{scrextend}. Você deve, portanto, especificar esta opção no argumento
+opcional de \DescRef{\LabelBase.cmd.usepackage}\PParameter{scrextend}. %
 \iffree{%
-  An overview of all available features is shown in
+  Uma visão geral de todas as funcionalidades disponíveis é mostrada em
   \autoref{tab:scrextend.optionalFeatures}.
 
   \begin{table}
-    \caption[{Available extended features of
-      \Package{scrextend}}]{Overview of the optional extended
-      features of \Package{scrextend}}
+    \caption[{Funcionalidades estendidas disponíveis de
+      \Package{scrextend}}]{Visão geral das
+      funcionalidades estendidas opcionais do \Package{scrextend}}
     \label{tab:scrextend.optionalFeatures}
     \begin{desctabular}
       \entry{\PName{title}}{%
-        title pages have the additional features of the \KOMAScript{} classes;
-        this applies not only to the commands for the title page but also to
-        the \DescRef{\LabelBase.option.titlepage} option (see
-        \autoref{sec:scrextend.titlepage}, from
+        páginas de título têm as funcionalidades adicionais das classes \KOMAScript{};
+        isto se aplica não apenas aos comandos para a página de título, mas também à
+        opção \DescRef{\LabelBase.option.titlepage} (veja
+        \autoref{sec:scrextend.titlepage}, de
         \autopageref{sec:scrextend.titlepage})%
       }%
     \end{desctabular}
   \end{table}
 }{%
   \par%
-  Currently the only available extended \PName{feature} is 
+  Atualmente, a única \PName{funcionalidade} estendida disponível é
   \PValue{title}\IndexOption[indexmain]{extendedfeature~=\textKValue{title}}%
     \important{\OptionValue{extendedfeature}{title}}.
-  This \PName{feature} gives title pages the features of the \KOMAScript{}
-  classes, as described in \autoref{sec:scrextend.titlepage} starting on
+  Esta \PName{funcionalidade} oferece às páginas de título as funcionalidades das classes \KOMAScript{},
+  conforme descrito em \autoref{sec:scrextend.titlepage} a partir de
   \autopageref{sec:scrextend.titlepage}.%
 }%
 %
 \EndIndexGroup
 
 
-\LoadCommonFile{draftmode}% \section{Draft Mode}
+\LoadCommonFile{draftmode}% \section{Modo Rascunho}
 
 \LoadCommonFile{fontsize}%
 
-\LoadCommonFile{textmarkup}% \section{Text Markup}
+\LoadCommonFile{textmarkup}% \section{Marcação de Texto}
 
-\LoadCommonFile{titles}% \section{Document Title Pages}
+\LoadCommonFile{titles}% \section{Páginas de Título do Documento}
 
-\LoadCommonFile{oddorevenpage}% \section{Detection of Odd and Even Pages}
+\LoadCommonFile{oddorevenpage}% \section{Detecção de Páginas Pares e Ímpares}
 
-\section{Choosing a Predefined Page Style}
+\section{Escolhendo um Estilo de Página Predefinido}
 \seclabel{pagestyle}
 
-One of the basic features of a document is the page
-style\Index[indexmain]{page>style}. In \LaTeX{}, the page style primarily
-determines the content of headers and footers. The \Package{scrextend} package
-does not define any page styles itself. Instead it uses the page styles of the
-\LaTeX{} kernel.
+Uma das funcionalidades básicas de um documento é o estilo
+de página\Index[indexmain]{página>estilo}. Em \LaTeX{}, o estilo de página determina principalmente
+o conteúdo de cabeçalhos e rodapés. O pacote \Package{scrextend}
+não define nenhum estilo de página por si mesmo. Em vez disso, usa os estilos de página do
+núcleo \LaTeX{}.
 
 
 \begin{Declaration}
   \Macro{titlepagestyle}
 \end{Declaration}%
-\Index{title>page style}%
-On some pages \DescRef{maincls.cmd.thispagestyle}\IndexCmd{thispagestyle}
-automatically selects a different page style. Currently, \Package{scrextend}
-only does this for title pages, and only if
-\OptionValueRef{\LabelBase}{extendedfeature}{title} has been used (see
+\Index{título>estilo de página}%
+Em algumas páginas \DescRef{maincls.cmd.thispagestyle}\IndexCmd{thispagestyle}
+seleciona automaticamente um estilo de página diferente. Atualmente, \Package{scrextend}
+faz isto apenas para páginas de título, e somente se
+\OptionValueRef{\LabelBase}{extendedfeature}{title} tenha sido usado (veja
 \autoref{sec:scrextend.optionalFeatures},
-\DescPageRef{scrextend.option.extendedfeature}). In this case the page style
-specified in \DescRef{maincls.cmd.thispagestyle} will be used. The default for
-\DescRef{maincls.cmd.thispagestyle} is
-\PageStyle{plain}\IndexPagestyle{plain}. This page style is defined by the
-\LaTeX{} kernel, so it should always be available.%
+\DescPageRef{scrextend.option.extendedfeature}). Neste caso, o estilo de página
+especificado em \DescRef{maincls.cmd.thispagestyle} será utilizado. O padrão para
+\DescRef{maincls.cmd.thispagestyle} é
+\PageStyle{plain}\IndexPagestyle{plain}. Este estilo de página é definido pelo
+núcleo \LaTeX{}, portanto deve estar sempre disponível.%
 \EndIndexGroup
 
-\LoadCommonFile{interleafpage}% \section{Interleaf Pages}
+\LoadCommonFile{interleafpage}% \section{Páginas Intercaladas}
 
-\LoadCommonFile{footnotes}% \section{Footnotes}
+\LoadCommonFile{footnotes}% \section{Notas de Rodapé}
 
-\LoadCommonFile{dictum}% \section{Dicta}
+\LoadCommonFile{dictum}% \section{Máximas}
 
-\LoadCommonFile{lists}% \section{Lists}
+\LoadCommonFile{lists}% \section{Listas}
 
-\LoadCommonFile{marginpar}% \section{Margin Notes}
+\LoadCommonFile{marginpar}% \section{Notas Marginais}
 %
 \EndIndexGroup
 

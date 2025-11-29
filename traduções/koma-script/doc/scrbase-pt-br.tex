@@ -1,0 +1,369 @@
+% ======================================================================
+% scrbase-pt-br.tex
+% Copyright (c) Markus Kohm, 2002-2022
+%
+% This file is part of the LaTeX2e KOMA-Script bundle.
+%
+% This work may be distributed and/or modified under the conditions of
+% the LaTeX Project Public License, version 1.3c of the license.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2005/12/01 or later and of this work.
+%
+% This work has the LPPL maintenance status "author-maintained".
+%
+% The Current Maintainer and author of this work is Markus Kohm.
+%
+% This work consists of all files listed in MANIFEST.md.
+% ======================================================================
+%
+% Pacote scrbase para Autores de Pacotes e Classes
+% Mantido por Markus Kohm
+%
+% ======================================================================
+
+\KOMAProvidesFile{scrbase-pt-br.tex}
+                 [$Date: 2022-07-17 11:19:00 +0200 (So, 17. Jul 2022) $
+                  KOMA-Script package scrbase]
+\translator{Markus Kohm\and Melvin Hendrix\and Karl Hagen}
+
+\chapter{Funcionalidades Básicas no Pacote \Package{scrbase}}
+\labelbase{scrbase}
+\BeginIndexGroup
+\BeginIndex{Package}{scrbase}%
+
+O pacote \Package{scrbase} fornece funcionalidades básicas destinadas ao uso de autores de pacotes e classes. Seu uso não é limitado apenas a classes invólucro que por sua vez carregam uma classe \KOMAScript{}. Autores de classes que de outra forma não têm nada a ver com \KOMAScript{} também podem se beneficiar da funcionalidade do \Package{scrbase}.
+
+\section{Carregando o Pacote}
+\seclabel{loadit}
+
+Enquanto usuários carregam pacotes com \Macro{usepackage}, autores de pacotes ou classes devem usar \Macro{RequirePackage}\IndexCmd{RequirePackage}. Autores de pacotes invólucro também podem usar \Macro{RequirePackageWithOptions}. O comando \Macro{RequirePackage} tem o mesmo argumento opcional para opções de pacote que \Macro{usepackage}. Em contraste, \Macro{RequirePackageWithOptions} não tem um argumento opcional, mas passa para este pacote todas as opções que foram fornecidas anteriormente ao carregar o pacote ou classe invólucro. Veja \cite{latex:clsguide} para mais informações sobre estes comandos.
+
+O pacote \Package{scrbase} precisa da funcionalidade do pacote \Package{keyval}\IndexPackage{keyval} internamente. Isto também pode ser fornecido pelo pacote \Package{xkeyval}. Se necessário, \Package{scrbase} mesmo carrega \Package{keyval}.
+
+O pacote \Package{keyval} permite que você defina chaves e atribua valores a elas. As opções fornecidas por \Package{scrbase} também usam sintaxe \Package{keyval}: \PName{chave}\texttt{=}\PName{valor}.
+
+
+\section{Chaves como Atributos de Famílias e seus Membros}
+\seclabel{keyvalue}
+
+Como já mencionado em \autoref{sec:scrbase.loadit}, \Package{scrbase} usa o pacote \Package{keyval} para definir chaves e seus valores. Porém, \Package{scrbase} estende esta funcionalidade. Enquanto com \Package{keyval} uma chave pertence apenas a uma família, \Package{scrbase} também reconhece membros da família. Uma chave pode, portanto, pertencer tanto a uma família quanto a um ou mais membros da família. Além disso, você pode atribuir um valor à chave de um membro da família, à chave de uma família, ou às chaves de todos os membros da família.
+
+\begin{Declaration}
+  \Macro{DefineFamily}\Parameter{família}%
+  \Macro{DefineFamilyMember}\OParameter{membro}\Parameter{família}%
+\end{Declaration}
+\Package{scrbase} precisa conhecer os membros de uma família por várias razões. Portanto, você deve primeiro definir uma nova família usando \Macro{DefineFamily}, que produz uma lista de membros vazia. Se a família já tiver sido definida, nada acontece. Portanto, uma lista de membros existente não será sobrescrita.
+
+A seguir, você pode adicionar um novo membro à família usando \Macro{DefineFamilyMember}. Se a família não existir, isso resultará em uma mensagem de erro. Se o membro já existir, nada acontece. Se o \PName{membro} opcional for omitido, o valor padrão ``\texttt{.}\Macro{@currname}\texttt{.}\Macro{@currext}'' é usado. Enquanto a classe ou pacote está sendo carregado, \Macro{@currname} e \Macro{@currext} juntos representam o nome do arquivo da classe ou pacote.
+
+Teoricamente, é possível definir um membro sem um nome usando um argumento \PName{membro} opcional vazio. Mas isto é o mesmo que a família em si. Você deve usar apenas letras e dígitos para o nome \PName{família}, e o primeiro caractere de \PName{membro} deve ser algo diferente, de preferência um ponto. Caso contrário, pode acontecer que os membros de uma família conflitem com os membros de outras famílias.
+
+\Package{scrbase} atribui a família ``\PValue{KOMA}'' a si mesmo e adiciona o membro ``\PValue{.scrbase.sty}''. Os valores ``\PValue{KOMA}'' e ``\PValue{KOMAarg}'' são reservados para \KOMAScript{}. Se você está criando um conjunto de pacotes, você deve usar o nome do conjunto como \PName{família} e o nome de cada pacote como \PName{membro} dessa \PName{família}.
+%
+\begin{Example}
+  Suponha que você está escrevendo um conjunto chamado ``açougueiro mestre''. Dentro desse conjunto, você tem os pacotes \File{salami.sty}, \File{mettwurst.sty}, e \File{kielbasa.sty}. Portanto, você decide usar o nome de família ``\PValue{açougueiro}'' e adiciona as linhas
+\begin{lstcode}
+  \DefineFamily{açougueiro}
+  \DefineFamilyMember{açougueiro}
+\end{lstcode}
+  para cada um dos arquivos de pacote. Ao carregar os três pacotes, isso irá adicionar os membros ``\PValue{.salami.sty}'', ``\PValue{.mettwurst.sty}'', e ``\PValue{.kielbasa.sty}'' à família ``\PValue{açougueiro}''. Após carregar todos os três pacotes, todos os três membros serão definidos.
+\end{Example}
+%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{DefineFamilyKey}\OParameter{membro}\Parameter{família}%
+                         \Parameter{chave}%
+                         \OParameter{padrão}\Parameter{ação}%
+  \Macro{FamilyKeyState}%
+  \Macro{FamilyKeyStateUnknown}%
+  \Macro{FamilyKeyStateProcessed}%
+  \Macro{FamilyKeyStateUnknownValue}%
+  \Macro{FamilyKeyStateNeedValue}
+\end{Declaration}
+O comando \Macro{DefineFamilyKey} define uma \PName{chave}. Se você especificar um \PName{membro}, a \PName{chave} torna-se um atributo desse membro na \PName{família} dada. Se você não especificar um \PName{membro}, o membro ``\texttt{.}\Macro{@currname}\texttt{.}\Macro{@currext}'' é assumido. Se você posteriormente atribuir um valor à \PName{chave}, a \PName{ação} será executada e o valor feito um argumento de \PName{ação}. Dentro de \PName{ação}, ``\lstinline{#1}'' representa esse valor. Se você omitir o valor, o \PName{padrão} é usado em seu lugar. Se você não especificar um \PName{padrão}, a \PName{chave} sempre requer que você passe um valor explícito.
+
+%\begin{Explain}
+  \phantomsection\label{explain:scrbase.macro.DefineFamilyKey}%
+  Ultimamente,
+\begin{lstcode}[escapeinside=`']
+  \DefineFamilyKey[`\PName{membro}']{`\PName{família}'}{`\PName{chave}'}
+                  [`\PName{padrão}']{`\PName{ação}'}
+\end{lstcode}
+  resulta em uma chamada para
+\begin{lstcode}[moretexcs={define@key},escapeinside=`']
+  \define@key{`\PName{família\,membro}'}{`\PName{chave}'}
+             [`\PName{padrão}']{`\PName{ação estendida}'}
+\end{lstcode}
+  onde \Macro{define@key} é fornecido pelo pacote \Package{keyval}\IndexPackage{keyval} (veja \cite{package:keyval}). Porém, existem algumas precauções adicionais tomadas com a chamada para \Macro{define@key}, e a \PName{ação} será estendida para incluir essas precauções.
+%\end{Explain}
+
+O sucesso\ChangedAt{v3.12}{\Package{scrbase}} ou fracasso ao executar a \PName{ação} deve ser reportado de volta ao \Package{scrbase} através de \Macro{FamilyKeyState} para que o pacote mesmo possa tomar ações adicionais conforme necessário. Isto poderia ser, por exemplo, uma mensagem de erro ou simplesmente um aviso de uma opção desconhecida. Você não deve reportar erros diretamente!
+
+O estado padrão de \PName{ação} antes da execução é \Macro{FamilyKeyStateUnknown}. Isto indica que não se sabe se a chave pode ser processada com sucesso ou não. Se este estado permanecer inalterado após a \PName{ação} ter sido executada, \Package{scrbase} escreve uma mensagem para o arquivo \File{log} e assume que o estado é \Macro{FamilyKeyStateProcessed}.
+
+O estado \Macro{FamilyKeyStateProcessed} indica que a chave e o valor atribuído a ela foram processados com sucesso e tudo está OK. Você pode alternar para este estado chamando \Macro{FamilyKeyStateProcessed} em si.
+
+O estado \Macro{FamilyKeyStateUnknownValue} indica que a chave foi processada, mas o valor passado a ela era desconhecido ou não permitido. Por exemplo, \hyperref[cha:typearea]{\Package{typearea}} relata esta condição se você tentar definir a opção \DescRef{typearea.option.twoside} para \PValue{desconhecido}. Você pode definir este estado simplesmente chamando \Macro{FamilyKeyStateUnknownValue}.
+
+O estado \Macro{FamilyKeyStateNeedValue} indica que a chave não pôde ser processada porque espera um valor, mas foi chamada sem tal valor. Este estado é definido automaticamente se você usar uma chave que não tenha um valor \PName{padrão} sem atribuir um valor. Teoricamente, você poderia definir este estado explicitamente com \Macro{FamilyKeyStateNeedValue}, mas você não deveria precisar defini-lo você mesmo.
+
+Além disso, você pode definir condições de erro adicionais redefinindo \Macro{FamilyKeyState} com uma mensagem de texto curta. Geralmente, porém, os quatro estados predefinidos devem ser suficientes.
+
+\begin{Example}
+  Suponha que cada um dos três pacotes do exemplo anterior deve ter uma chave chamada \PValue{frios}. Quando usada, uma chave deve ser definida em cada um dos pacotes. Para o pacote \Package{salami}, por exemplo, isto pode parecer assim:
+\begin{lstcode}
+  \newif\if@salami@frios
+  \DefineFamilyKey{açougueiro}%
+                  {frios}[true]{%
+    \expandafter\let\expandafter\if@salami@frios
+    \csname if#1\endcsname
+    \FamilyKeyStateProcessed
+  }
+\end{lstcode}
+  Quando chamada, o valor será portanto ou \PValue{true} ou \PValue{false}. Este exemplo não testa valores ilegais. Em vez disso, sempre é reportado que a chave foi processada completamente e corretamente. Se a chave for usada posteriormente, um dos valores permitidos, ou nenhum valor, deve ser usado. No segundo caso, o valor padrão \PName{true} será usado.
+
+  As definições para os outros pacotes são quase idênticas. Apenas a string ``\texttt{salami}'' tem que ser substituída.
+\end{Example}
+%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{RelaxFamilyKey}\OParameter{membro}\Parameter{família}%
+  \Parameter{chave}
+\end{Declaration}
+Se\ChangedAt{v3.15}{\Package{scrbase}} uma \PName{chave} foi previamente definida como um \PName{membro} de uma \PName{família}, essa definição será cancelada. Posteriormente a \PName{chave} não será mais definida para este \PName{membro} da \PName{família}. Você pode usar \Macro{RelaxFamilyKey} para uma \PName{chave} que não está definida para este \PName{membro} da \PName{família}.
+
+Se você não especificar um \PName{membro}, então o membro ``\texttt{.}\Macro{@currname}\texttt{.}\Macro{@currext}'' é assumido, assim como com \DescRef{\LabelBase.cmd.DefineFamilyKey}. Porém, \Macro{RelaxFamilyKey} é apenas raramente usada ao carregar um pacote em vez de em tempo de execução. Portanto o \PName{membro} deve geralmente ser especificado explicitamente também.%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{FamilyProcessOptions}\OParameter{membro}\Parameter{família}
+\end{Declaration}
+Em essência, estender chaves de famílias para ambas as famílias e membros da família significa que tanto chaves quanto pares chave-valor podem ser usados como opções normais de classe ou pacote. O comando \Macro{FamilyProcessOptions} é uma extensão de \Macro{ProcessOption*} do núcleo \LaTeX{} (veja \cite{latex:clsguide}), que processa não apenas opções declaradas com \Macro{DeclareOption}, mas também todas as chaves do membro dado. Se você omitir o argumento opcional \PName{membro}, o membro ``\texttt{.}\Macro{@currname}\texttt{.}\Macro{@currext}'' é usado.
+
+Uma característica que merece destaque é que as chaves que estão presas não a um membro da família, mas a uma família têm um membro da família vazio. Tais chaves são definidas antes das chaves dos membros.
+\begin{Example}
+  Se, nos pacotes do exemplo anterior, você adicionar a linha
+\begin{lstcode}
+  \FamilyProcessOptions{açougueiro}
+\end{lstcode}
+  depois de definir a chave, você pode especificar a opção \Option{frios} ao carregar o pacote. Se você especificar a opção globalmente em \Macro{documentclass}, a opção será passada automaticamente para todos os três pacotes se forem carregados posteriormente.
+\end{Example}
+Observe\textnote{Atenção!} que pacotes sempre processam opções globais antes das opções locais. Enquanto opções globais desconhecidas resultam em uma entrada no arquivo \File{log} e a opção sendo ignorada, opções locais desconhecidas resultam em uma mensagem de erro.
+
+Você pode pensar em \Macro{FamilyProcessOptions} como uma extensão de \Macro{ProcessOption*} ou do mecanismo \PName{chave=valor} do \Package{keyval}. Ultimamente, com a ajuda de \Macro{FamilyProcessOptions}, pares \PName{chave=valor} se tornam opções.%
+
+Como com\textnote{Atenção!} \Macro{ProcessOptions}, \Macro{FamilyProcessOptions} não deve ser usada ao executar código de opções. Em particular, você não pode carregar pacotes ao processar opções.%
+%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{BeforeFamilyProcessOptions}\OParameter{membro}\Parameter{família}%
+                                    \Parameter{código}%
+\end{Declaration}
+Autores\ChangedAt{v3.18}{\Package{scrbase}} de classes invólucro em particular às vezes precisam de um gancho para executar \PName{código} antes de \DescRef{\LabelBase.cmd.FamilyProcessOptions}. O pacote \Package{scrbase} fornece tal gancho, e você pode adicionar \PName{código} a ele com \Macro{BeforeFamilyProcessOptions}. Os parâmetros \PName{membro} e \PName{família} são os mesmos de \DescRef{\LabelBase.cmd.FamilyProcessOptions}. Porém, você também pode adicionar \PName{código} ao gancho para famílias ou membros que ainda não foram definidos.
+
+Note que o gancho de um membro da família é automaticamente deletado após ser executado. Mas se você usar um \PName{membro} vazio, este gancho\Index{gancho} será executado para cada membro da \PName{família} e não será deletado.
+
+\begin{Example}
+  Você está escrevendo um pacote \Package{salsichadefumada} que carrega \Package{mettwurst}. Mas você não quer ser capaz de definir a opção \Option{frio} com este pacote. Então você usa \Macro{BeforeFamilyProcessOptions} para desativar essa opção antes de carregar o pacote:
+\begin{lstcode}
+  \RequirePackage{scrbase}
+  \BeforeFamilyProcessOptions[.mettwurst.sty]{açougueiro}{%
+    \RelaxFamilyKey[.mettwurst.sty]{açougueiro}{frio}%
+  }
+  \RequirePackageWithOptions{mettwurst}
+\end{lstcode}
+  Se um usuário tentar carregar seu pacote com a opção \Option{frio}, o pacote \Package{mettwurst} lançará um erro de opção indefinida. Se \Option{frio} é usado como uma opção global, o pacote \Package{mettwurst} a ignorará. Mas as configurações padrão dentro de \Package{mettwurst}, por exemplo usando \DescRef{\LabelBase.cmd.FamilyExecuteOptions} antes de \DescRef{\LabelBase.cmd.FamilyProcessOptions} não são afetadas. É claro, você também pode inserir seu próprio padrão para \Package{salsichadefumada} via \Macro{BeforeFamilyProcessOptions} em \Package{mettwurst}.
+\end{Example}
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{FamilyExecuteOptions}\OParameter{membro}\Parameter{família}%
+  \Parameter{lista de opções}
+\end{Declaration}
+Este comando é uma extensão de \Macro{ExecuteOptions} do núcleo \LaTeX{} (veja \cite{latex:clsguide}). O comando processa não apenas opções definidas com \Macro{DeclareOption} mas também todas as chaves da \PName{família} dada. Se você omitir o argumento opcional \Macro{membro}, ``\texttt{.}\Macro{@currname}\texttt{.}\Macro{@currext}'' é usado.
+
+Uma característica que merece destaque é que as chaves que estão presas não a um membro da família, mas a uma família têm um membro da família vazio. Tais chaves são definidas antes das chaves dos membros.
+\begin{Example}
+  Suponha que a opção \Option{frios} deve ser definida por padrão nos exemplos anteriores. Neste caso, apenas a linha
+\begin{lstcode}
+  \FamilyExecuteOptions{açougueiro}{frios}
+\end{lstcode}
+  tem que ser adicionada.
+\end{Example}
+
+Se\ChangedAt{v3.20}{\Package{scrbase}} você chamar \Macro{FamilyExecuteOptions} com uma opção desconhecida dentro da \PName{lista de opções}, você receberá um erro. Uma exceção a esta regra ocorre quando o \PName{membro} tem uma opção chamada \Option{@else@}. Neste caso, a opção \Option{@else@} será usada em vez da desconhecida. O valor passado para a opção \Option{@else@} é a opção desconhecida com o valor especificado na chamada. \KOMAScript{} mesmo usa este recurso, por exemplo dentro da definição de comandos de seção, para avaliar a opção de estilo antes de todos os outros atributos.
+
+Você também pode usar este comando dentro do código executado ao processar a opção.%
+%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{FamilyOptions}\Parameter{família}\Parameter{lista de opções}%
+\end{Declaration}
+Diferentemente de opções normais definidas com \Macro{DeclareOption}, as \PName{chaves} também podem ser definidas após carregar uma classe ou pacote. Para fazer isto, você chama \Macro{FamilyOptions}. A \PName{lista de opções} tem a forma
+\begin{flushleft}\vskip\dp\strutbox\begin{tabular}{l}
+    \PName{chave}\texttt{=}\PName{valor}\texttt{,}%
+    \PName{chave}\texttt{=}\PName{valor}\dots
+\end{tabular}\vskip\dp\strutbox\end{flushleft}
+após o qual a atribuição de valor pode ser omitida para \PName{chaves} que têm um padrão definido.
+
+O comando define as chaves de todos os membros da família especificada. Se uma \PName{chave} também existir como um atributo da família em si, então a chave da família é definida primeiro, seguida pelas chaves dos membros na ordem em que foram definidas. Se uma dada \PName{chave} não existir, nem para a família nem para nenhum membro da família, então \Macro{FamilyOptions} lançará um erro. Um erro também ocorre se uma \PName{chave} existe para alguns membros, mas cada um desses membros retorna um erro através de \DescRef{\LabelBase.cmd.FamilyKeyState}.
+\begin{Example}
+  Você estende seu projeto de açougueiro com um pacote \Package{saladadesalsichas}. Se este pacote foi carregado, todos os pacotes de salsichas devem gerar frios:
+\begin{lstcode}
+  \ProvidesPackage{saladadesalsichas}%
+                  [2008/05/06 pacote sem sentido]
+  \DefineFamily{açougueiro}
+  \DefineFamilyMember{açougueiro}
+  \FamilyProcessOptions{açougueiro}\relax
+  \FamilyOptions{açougueiro}{frios}
+\end{lstcode}
+  Se nenhum pacote de salsichas foi carregado ainda, a opção indefinida \Option{frios} leva a uma mensagem de erro. Você pode evitar isto definindo uma chave correspondente para o pacote antes da última linha do código acima:
+\begin{lstcode}
+  \DefineFamilyKey{açougueiro}%
+                  {frios}[true]{}%
+\end{lstcode}
+  Porém, pacotes de salsichas carregados após \Package{saladadesalsichas} ainda não produzem frios. Você pode corrigir isto substituindo o comando anterior por:
+\begin{lstcode}
+  \AtBeginDocument{%
+    \DefineFamiyKey[.saladadesalsichas.sty]%
+                   {açougueiro}%
+                   {frios}[true]{}%
+  }
+  \DefineFamilyKey{açougueiro}%
+                  {frios}[true]{%
+    \AtBeginDocument{\FamilyOptions{açougueiro}%
+                                   {frios=#1}}%
+  }%
+\end{lstcode}
+  Assim, a opção é definida durante \Macro{begin}\PParameter{document} para que não funcione mais para o pacote \Package{saladadesalsichas}. Porque \Macro{@currname} e \Macro{@currext} não contêm mais o nome do arquivo do pacote, você deve usar o argumento opcional de \DescRef{\LabelBase.cmd.DefineFamilyKey}.
+
+  Mas até que esta redefinição seja realizada, ele usa uma definição que executa a opção novamente para a família e todos os seus membros durante \Macro{begin}\PParameter{document}, definindo-a para outros pacotes de salsichas. O atraso na execução de \Macro{FamilyOptions} é crucial aqui. Por um lado, ele inclui apenas os pacotes carregados depois. Por outro lado, ele garante que sua própria opção \Option{frios} já foi redefinida. Isto evita recursão infinita.
+\end{Example}
+
+Como\ChangedAt{v3.27}{\Package{scrbase}} \DescRef{\LabelBase.cmd.FamilyExecuteOptions}, \Macro{FamilyOptions} oferece manipulação especial para uma opção chamada \Option{@else@}\important{\Option{@else@}}. Se um membro da família tem tal opção, ela será executada sempre que uma opção na \PName{lista de opções} não for reconhecida pelo membro. Se a família mesmo define uma opção \Option{@else@}, ela será chamada apenas se nem a família nem nenhum de seus membros conseguiu processar totalmente a opção dada executando \DescRef{\LabelBase.cmd.FamilyKeyStateProcessed}.%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{FamilyOption}\Parameter{família}%
+                      \Parameter{opção}\Parameter{lista de valores}%
+\end{Declaration}
+Além de opções que têm valores mutuamente exclusivos, podem haver opções que podem tomar múltiplos valores ao mesmo tempo. Para usar \DescRef{\LabelBase.cmd.FamilyOptions} para esse tipo de opção, seria necessário invocar a mesma opção várias vezes com diferentes atribuições de valor. Em vez disso, você pode facilmente atribuir uma lista inteira de valores a uma única \PName{opção} usando \Macro{FamilyOption}. A \PName{lista de valores} é uma lista de valores separados por vírgula, também conhecida como \emph{csv}:
+%\begin{flushleft}\begin{tabular}{l}
+    \PName{valor}\texttt{,}\PName{valor}\dots
+%\end{tabular}\end{flushleft}
+Note neste contexto que você pode usar uma vírgula em um valor colocando o valor entre chaves. A outra funcionalidade deste comando é a mesma descrita anteriormente para \DescRef{\LabelBase.cmd.FamilyOptions}.
+\begin{Example}
+  O pacote \Package{saladadesalsichas} deve ter uma opção adicional para adicionar ingredientes. Cada um dos ingredientes define uma chave, como foi feito anteriormente para os frios.
+\begin{lstcode}
+  \newif\if@saladcom@cebolas
+  \newif\if@saladcom@picles
+  \newif\if@saladcom@pimentas
+  \DefineFamilyKey{açougueiro}{ingrediente}{%
+    \csname @saladcom@#1true\endcsname
+  }
+\end{lstcode}
+  Aqui os três ingredientes ``cebolas'', ``picles'' e ``pimentas'' foram definidos. Não há mensagem de erro para ingredientes desconhecidos.
+
+  Para uma salada com cebolas e picles, você pode usar
+\begin{lstcode}
+  \FamilyOptions{açougueiro}{%
+    ingrediente=cebolas,ingrediente=picles}
+\end{lstcode}
+  ou simplesmente
+\begin{lstcode}
+  \FamilyOption{açougueiro}
+               {ingrediente}{cebolas,picles}
+\end{lstcode}
+\end{Example}
+
+Uma\ChangedAt{v3.27}{\Package{scrbase}} opção \Option{@else@} é processada da mesma maneira que com \DescRef{\LabelBase.cmd.FamilyOptions}.%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{AtEndOfFamilyOptions}\Parameter{ação}%
+  \Macro{AtEndOfFamilyOptions*}\Parameter{ação}%
+\end{Declaration}
+Às vezes\ChangedAt{v3.12}{\Package{scrbase}} é útil atrasar a execução de uma \PName{ação} que faz parte de uma atribuição de valor a uma chave até que todas as atribuições dentro de uma \DescRef{\LabelBase.cmd.FamilyProcessOptions}\IndexCmd{FamilyProcessOptions}, \DescRef{\LabelBase.cmd.FamilyExecuteOptions}\IndexCmd{FamilyExecuteOptions}, \DescRef{\LabelBase.cmd.FamilyOptions}\IndexCmd{FamilyOptions}, ou \DescRef{\LabelBase.cmd.FamilyOption}\IndexCmd{FamilyOptions} estejam terminadas. Você pode fazer isto usando \Macro{AtEndOfFamilyOptions} ou sua variante com asterisco\ChangedAt{v3.23}{\Package{scrbase}} dentro de uma definição de opção. Porém, reportar estados de falha de \PName{ação} não é possível com este comando, nem deve ser usado fora de uma definição de opção.
+
+As duas variantes diferem no caso de definições de opções aninhadas, quando executar uma opção requer mais chamadas de opção. Neste caso, todas as ações especificadas por \Macro{AtEndOfFamilyOptions} serão executadas quando a chamada de opção mais interna retornar. Em contraste, as ações de \Macro{AtEndOfFamilyOptions*} não são executadas até que a chamada de opção mais externa retorne. Porém,\textnote{Atenção!} a ordem das ações de ambos os comandos é deliberadamente indefinida! Não é garantido que a ação solicitada primeiro será executada primeiro, nem o contrário.%
+\EndIndexGroup
+
+
+\begin{Declaration}
+  \Macro{FamilyBoolKey}\OParameter{membro}\Parameter{família}%
+                       \Parameter{chave}\Parameter{nome da chave}%
+  \Macro{FamilySetBool}\Parameter{família}%
+                       \Parameter{chave}\Parameter{nome da chave}\Parameter{valor}
+\end{Declaration}
+Chaves booleanas foram usadas várias vezes nos exemplos anteriores. No exemplo com a opção \Option{frios}, o usuário teve que atribuir ou \PValue{true} ou \PValue{false} como um valor. Não houve mensagem de erro se o usuário fornecesse o valor errado. Porque chaves booleanas são um caso de uso comum, você pode facilmente defini-las com \Package{scrbase} usando \Macro{FamilyBoolKey}. Os argumentos \PName{membro}, \PName{família}, e \PName{chave} são os mesmos que os usados por \DescRef{\LabelBase.cmd.DefineFamilyKey} (veja \DescPageRef{scrbase.cmd.DefineFamilyKey}). O \PName{nome da chave} é o nome da chave sem o prefixo \Macro{if}. Se uma chave com este nome ainda não existir, \Macro{FamilyBoolKey} a definirá e a inicializará para \PName{false}. Internamente, \Macro{FamilyBooKey} usa \Macro{FamilySetBool} como a \PName{ação} de \DescRef{\LabelBase.cmd.DefineFamilyKey}. O \PName{padrão} para tal opção é sempre \PValue{true}.
+
+\Macro{FamilySetBool}, por outro lado, aceita \PValue{on} e \PValue{yes}, além de \PName{true}, para ativar a chave, e \PName{off} e \PName{no}, além de \PName{false}, para desativá-la. Valores desconhecidos resultarão em uma chamada para \DescRef{\LabelBase.cmd.FamilyUnknownKeyValue} com os argumentos \PName{família}, \PName{chave}, e \PName{valor}, que define \DescRef{\LabelBase.cmd.FamilyKeyState} de acordo. Como resultado, uma mensagem de erro sobre uma atribuição de valor desconhecido é impressa se necessário (veja também \DescPageRef{scrbase.cmd.FamilyUnknownKeyValue} e \DescPageRef{scrbase.cmd.FamilyKeyState}).
+\begin{Example}
+  A chave \Option{frios} deve ser definida de forma mais robusta nos pacotes de salsichas. Além disso, todos os pacotes de salsichas devem usar a mesma chave, de modo que ou todos os pacotes de salsichas produzam frios ou nenhum.
+\begin{lstcode}
+  \FamilyBoolKey{açougueiro}{frios}%
+                         {@frios}
+\end{lstcode}
+  Um teste de se devem produzir frios seria assim:
+\begin{lstcode}
+  \if@frios
+     ...
+  \else
+     ...
+  \fi
+\end{lstcode}
+  Isto seria o mesmo em todos os três pacotes de salsichas, definindo o atributo ``frios'' como uma opção de família:
+\begin{lstcode}[moretexcs={define@key}]
+  \@ifundefined{if@frios}{%
+    \expandafter\newif\csname if@frios\endcsname
+  }{}%
+  \DefineFamilyKey[]{açougueiro}{frios}[true]{%
+    \FamilySetBool{açougueiro}{frios}%
+                           {@frios}%
+                           {#1}%
+  }
+\end{lstcode}
+  ou mais curto:
+\begin{lstcode}
+  \FamilyBoolKey[]{açougueiro}{frios}%
+                           {@frios}
+\end{lstcode}
+  aproveitando o tratamento de membros de família vazia em oposição a omitir o argumento opcional explicado em \autopageref{explain:scrbase.macro.DefineFamilyKey}, que se aplica não apenas a \DescRef{\LabelBase.cmd.DefineFamilyKey} mas também para \Macro{FamilyBoolKey}.
+
+  Desde que \DescRef{\LabelBase.cmd.FamilyKeyState} já seja definido por \Macro{FamilySetBool}, você pode verificar seu status com a ajuda de \DescRef{\LabelBase.cmd.DefineFamilyKey}. Por exemplo, no primeiro caso você poderia adicionar um teste de equivalência para \Macro{FamilySetBool} para executar ações adicionais dependendo de se \Macro{FamilySetBool} obteve sucesso ou não:
+  \begin{lstcode}
+    \ifx\FamilyKeyState\FamilyKeyStateProcessed
+        ...
+    \else
+        ...
+    \fi
+  \end{lstcode}
+  Observe\textnote{Atenção!} que é essencial executar o teste com \Macro{ifx} neste ponto. Testes totalmente expansivos como \Macro{ifstr} devem ser evitados aqui. Dependendo do estado atual e do estado de comparação, eles podem levar a diferentes mensagens de erro, bem como resultados incorretos.
+\end{Example}%
+\EndIndexGroup
+
+\begin{Declaration}
+  \Macro{FamilyInverseBoolKey}\OParameter{membro}\Parameter{família}
+                              \Parameter{chave}\Parameter{nome da chave}
+  \Macro{FamilySetInverseBool}\Parameter{família}
+                              \Parameter{chave}\Parameter{nome da chave}
+                              \Parameter{valor}
+\end{Declaration}
+Estes\ChangedAt{v3.27}{\Package{scrbase}} dois comandos diferem de \DescRef{\LabelBase.cmd.FamilyBoolKey} e \DescRef{\LabelBase.cmd.FamilySetBool}, respectivamente, apenas em que a lógica é invertida. Isto significa que os valores \PValue{true}, \PValue{yes}, e \PValue{on} definem a chave booleana dada por \PName{nome da chave} para \Macro{iffalse} e portanto a desativam. Os valores \PValue{false}, \PValue{no}, e \PValue{off} definem a chave booleana para \Macro{iftrue} e portanto a ativam.%
+\EndIndexGroup
+
+\end{content>

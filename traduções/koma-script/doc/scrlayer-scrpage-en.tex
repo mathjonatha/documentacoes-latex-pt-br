@@ -27,84 +27,82 @@
                   KOMA-Script guide (chapter: scrlayer-scrpage)]
 \translator{Markus Kohm\and Jana Schubert\and Jens Hühne\and Karl Hagen}
 
-\chapter[{Headers and Footers with \Package{scrlayer-scrpage}}]
-  {Headers\ChangedAt{v3.12}{\Package{scrlayer-scrpage}} and
-  Footers with \Package{scrlayer-scrpage}}
+\chapter[{Cabeçalhos e Rodapés com \Package{scrlayer-scrpage}}]
+  {Cabeçalhos\ChangedAt{v3.12}{\Package{scrlayer-scrpage}} e
+  Rodapés com \Package{scrlayer-scrpage}}
 \labelbase{scrlayer-scrpage}
 %
 \BeginIndexGroup
 \BeginIndex{Package}{scrlayer-scrpage}%
 \begin{Explain}
-  Until version 3.11b of \KOMAScript, the \Package{scrpage2}%
-  \IndexPackage[indexmain]{scrpage2}\important{\Package{scrpage2}} package was
-  the recommended way to customise headers and footers beyond the options
-  provided by the \PageStyle{headings}, \PageStyle{myheadings},
-  \PageStyle{plain}, and \PageStyle{empty} page styles of the \KOMAScript{}
-  classes.
+  Até a versão 3.11b do \KOMAScript, o pacote \Package{scrpage2}%
+  \IndexPackage[indexmain]{scrpage2}\important{\Package{scrpage2}} era
+  a forma recomendada de personalizar cabeçalhos e rodapés além das opções
+  fornecidas pelos estilos de página \PageStyle{headings}, \PageStyle{myheadings},
+  \PageStyle{plain}, e \PageStyle{empty} das classes \KOMAScript{}.
   \iffalse%
-  The still older \Package{scrpage}\IndexPackage{scrpage} package was marked
-  obsolete in 2001 and removed from the regular \KOMAScript{} distribution in
-  2013.\par
+  O pacote ainda mais antigo \Package{scrpage}\IndexPackage{scrpage} foi
+  marcado como obsoleto em 2001 e removido da distribuição regular do \KOMAScript{}
+  em 2013.\par
   \fi%
-  Since 2013, the \hyperref[cha:scrlayer]{\Package{scrlayer}}%
+  Desde 2013, o pacote \hyperref[cha:scrlayer]{\Package{scrlayer}}%
   \important{\hyperref[cha:scrlayer]{\Package{scrlayer}}}%
-  \IndexPackage{scrlayer} package has been included as a basic module of
-  \KOMAScript. This package provides a layer model and a new page-style model
-  based upon it. However, the package's interface is almost too flexible and
-  consequently not easy for the average user to comprehend. For more
-  information about this interface, see \autoref{cha:scrlayer} in
-  \autoref{part:forExperts}. However, a few of the options that are actually
-  part of \Package{scrlayer}, and which are therefore taken up again in that
-  chapter, are also documented here because they are required to use
-  \Package{scrlayer-scrpage}.
+  \IndexPackage{scrlayer} foi incluído como um módulo básico do
+  \KOMAScript. Este pacote fornece um modelo de camadas e um novo modelo
+  de estilo de página baseado nele. Porém, a interface do pacote é quase
+  demasiado flexível e, consequentemente, não é fácil para o usuário médio
+  compreendê-la. Para mais informações sobre esta interface, consulte
+  \autoref{cha:scrlayer} em \autoref{part:forExperts}. Contudo, algumas das
+  opções que são na verdade parte do \Package{scrlayer}, e que por isso são
+  retomadas novamente naquele capítulo, também estão documentadas aqui porque
+  são necessárias para usar \Package{scrlayer-scrpage}.
 
-  Many users are already familiar with the commands from \Package{scrpage2}.
-  For this reason, \Package{scrlayer-scrpage} provides a method for
-  manipulating headers and footers which is based on \Package{scrlayer}, is
-  largely compatible with \Package{scrpage2}, and at the same time greatly
-  expands the user interface. If you are already familiar with
-  \Package{scrpage2} and refrain from direct calls to its internal commands,
-  you can usually use \Package{scrlayer-scrpage} as a drop-in replacement.
-  This also applies to most examples using \Package{scrpage2} found in
-  \LaTeX{} books or on the Internet.%
+  Muitos usuários já estão familiarizados com os comandos do \Package{scrpage2}.
+  Por esta razão, \Package{scrlayer-scrpage} fornece um método para
+  manipular cabeçalhos e rodapés que é baseado em \Package{scrlayer}, é
+  amplamente compatível com \Package{scrpage2}, e ao mesmo tempo expande
+  significativamente a interface do usuário. Se você já está familiarizado com
+  \Package{scrpage2} e se abstém de chamar diretamente seus comandos internos,
+  você pode normalmente usar \Package{scrlayer-scrpage} como um substituto
+  direto. Isto também se aplica à maioria dos exemplos que usam \Package{scrpage2}
+  encontrados em livros \LaTeX{} ou na Internet.%
   \iffalse%
-    \iffree{}{\par With the release of this book, \Package{scrlayer-scrpage}
-      for \KOMAScript{} is recommended as the tool of choice when it comes to
-      changing the predefined page styles. Using the obsolete package
-      \Package{scrpage2}\IndexPackage[indexmain]{scrpage2}%
-      \important{\Package{scrpage2}} is now deprecated. Therefore, the
-      commands for this outdated package are no longer part of this book. If
-      you encounter older documents that still use \Package{scrpage2},
-      consider switching to \Package{scrlayer-scrpage}. Notwithstanding, this
-      chapter does contain some hints for using \Package{scrpage2}.}%
+    \iffree{}{\par Com o lançamento deste livro, \Package{scrlayer-scrpage}
+      para \KOMAScript{} é recomendado como a ferramenta de escolha quando se
+      trata de alterar os estilos de página predefinidos. O uso do pacote
+      obsoleto \Package{scrpage2}\IndexPackage[indexmain]{scrpage2}%
+      \important{\Package{scrpage2}} agora é obsoleto. Portanto, os
+      comandos para este pacote desatualizado não fazem mais parte deste livro.
+      Se você encontrar documentos mais antigos que ainda usam \Package{scrpage2},
+      considere mudar para \Package{scrlayer-scrpage}. Não obstante, este
+      capítulo contém algumas dicas para usar \Package{scrpage2}.}%
   \fi
 \end{Explain}
 
-In addition to \Package{scrlayer-scrpage}\iffree{ or \Package{scrpage2}}{},
-you could also use \Package{fancyhdr}\IndexPackage{fancyhdr} (see
-\cite{package:fancyhdr}) to configure the headers and footers of pages.
-However, this package has no support for several \KOMAScript{} features,
-for example the element scheme (see \DescRef{\LabelBase.cmd.setkomafont},
-\DescRef{\LabelBase.cmd.addtokomafont}, and
-\DescRef{\LabelBase.cmd.usekomafont} in \autoref{sec:maincls.textmarkup},
-\DescPageRef{maincls.cmd.setkomafont}) or the configurable numbering format
-for dynamic headers (see the \DescRef{maincls.option.numbers} option and,
-for example, \DescRef{\LabelBase.cmd.chaptermarkformat} in
-\autoref{sec:maincls.structure}, \DescPageRef{maincls.option.numbers} and
-\DescPageRef{maincls.cmd.chaptermarkformat}). Hence, if you are using a
-\KOMAScript{} class, you should use the new \Package{scrlayer-scrpage}
-package. \iffree{If you have problems, you can still use
-\Package{scrpage2}.}{\ignorespaces} Of course, you can also use
-\Package{scrlayer-scrpage} with other classes, such as the standard \LaTeX{}
-ones.
+Além de \Package{scrlayer-scrpage}\iffree{ ou \Package{scrpage2}}{},
+você também poderia usar \Package{fancyhdr}\IndexPackage{fancyhdr} (veja
+\cite{package:fancyhdr}) para configurar os cabeçalhos e rodapés das páginas.
+Porém, este pacote não tem suporte para várias características \KOMAScript{},
+por exemplo o esquema de elementos (veja \DescRef{\LabelBase.cmd.setkomafont},
+\DescRef{\LabelBase.cmd.addtokomafont}, e
+\DescRef{\LabelBase.cmd.usekomafont} em \autoref{sec:maincls.textmarkup},
+\DescPageRef{maincls.cmd.setkomafont}) ou o formato de numeração configurável
+para cabeçalhos dinâmicos (veja a opção \DescRef{maincls.option.numbers} e,
+por exemplo, \DescRef{\LabelBase.cmd.chaptermarkformat} em
+\autoref{sec:maincls.structure}, \DescPageRef{maincls.option.numbers} e
+\DescPageRef{maincls.cmd.chaptermarkformat}). Por esta razão, se você está
+usando uma classe \KOMAScript{}, deve usar o novo pacote
+\Package{scrlayer-scrpage}. \iffree{Se você tiver problemas, ainda pode usar
+\Package{scrpage2}.}{\ignorespaces} Naturalmente, você também pode usar
+\Package{scrlayer-scrpage} com outras classes, como as padrões do \LaTeX{}.
 
-Apart from the features described in this chapter, \Package{scrlayer-scrpage}
-provides several more functions that are likely only of interest to a very
-small number of users and therefore are described in
-\autoref{cha:scrlayer-scrpage-experts} of \autoref{part:forExperts}, starting
-at \autopageref{cha:scrlayer-scrpage-experts}. Nevertheless, if the options
-described in \autoref{part:forAuthors} are insufficient for your purposes, you
-should examine \autoref{cha:scrlayer-scrpage-experts}.
+Além das características descritas neste capítulo, \Package{scrlayer-scrpage}
+fornece várias funções adicionais que provavelmente só interessam a um número
+muito pequeno de usuários e, portanto, estão descritas em
+\autoref{cha:scrlayer-scrpage-experts} de \autoref{part:forExperts}, começando
+em \autopageref{cha:scrlayer-scrpage-experts}. Não obstante, se as opções
+descritas em \autoref{part:forAuthors} forem insuficientes para seus propósitos,
+você deve examinar \autoref{cha:scrlayer-scrpage-experts}.
 
 \LoadCommonFile{options} % \section{Early or late Selection of Options}
 
@@ -112,19 +110,19 @@ should examine \autoref{cha:scrlayer-scrpage-experts}.
 
 \LoadCommonFile{textmarkup} % \section{Text Markup}
 
-\section{Using Predefined Page Styles}
+\section{Usando Estilos de Página Predefinidos}
 \seclabel{predefined.pagestyles}
 
-The easiest way to create custom headers and footers with
-\Package{scrlayer-scrpage} is to use one of the predefined page styles.
+A forma mais fácil de criar cabeçalhos e rodapés personalizados com
+\Package{scrlayer-scrpage} é usar um dos estilos de página predefinidos.
 %
 \iffalse % Umbruchoptimierung
-  This section introduces the page styles defined by the
-  \Package{scrlayer-scrpage} package as it loads. It also explains the
-  commands that you can use to create basic settings for these page
-  styles. You can find further options, commands, and background information
-  in the following sections and in
-  \autoref{sec:scrlayer-scrpage-experts.pagestyle.pairs} in
+  Esta seção introduz os estilos de página definidos pelo
+  pacote \Package{scrlayer-scrpage} quando ele é carregado. Também explica os
+  comandos que você pode usar para criar configurações básicas para estes estilos
+  de página. Você pode encontrar opções adicionais, comandos e informações
+  de contexto nas seções seguintes e em
+  \autoref{sec:scrlayer-scrpage-experts.pagestyle.pairs} em
   \autoref{part:forExperts}.%
 \fi
 
@@ -132,36 +130,36 @@ The easiest way to create custom headers and footers with
   \PageStyle{scrheadings}%
   \PageStyle{plain.scrheadings}
 \end{Declaration}
-The \Package{scrlayer-scrpage} package provides two page styles that you can
-reconfigure to your liking. The first page style is
-\PageStyle{scrheadings}\important{\PageStyle{scrheadings}}, which is intended
-as a page style with running heads. Its defaults are similar to the page style
-\PageStyle{headings}\IndexPagestyle{headings} of the standard \LaTeX{} or
-\KOMAScript{} classes. You can configure exactly what appears in the header or
-footer with the commands and options described below.
+O pacote \Package{scrlayer-scrpage} fornece dois estilos de página que você pode
+reconfigurar ao seu gosto. O primeiro estilo de página é
+\PageStyle{scrheadings}\important{\PageStyle{scrheadings}}, que se destina
+a ser um estilo de página com cabeçalhos correntes. Seus padrões são similares
+ao estilo de página \PageStyle{headings}\IndexPagestyle{headings} das classes
+padrão \LaTeX{} ou \KOMAScript{}. Você pode configurar exatamente o que aparece
+no cabeçalho ou rodapé com os comandos e opções descritos abaixo.
 
-The second page style is \PageStyle{plain.scrheadings}%
-\important{\PageStyle{plain.scrheadings}}, which is intended to be a style
-with no running head. Its defaults resemble those of the
-\PageStyle{plain}\IndexPagestyle{plain} page style of the standard or
-\KOMAScript{} classes. You can configure exactly what appears in the header or
-footer with the commands and options described below.
+O segundo estilo de página é \PageStyle{plain.scrheadings}%
+\important{\PageStyle{plain.scrheadings}}, que se destina a ser um estilo
+sem cabeçalho corrente. Seus padrões se assemelham aos do
+estilo de página \PageStyle{plain}\IndexPagestyle{plain} das classes padrão ou
+\KOMAScript{}. Você pode configurar exatamente o que aparece no cabeçalho ou
+rodapé com os comandos e opções descritos abaixo.
 
-You could, of course, configure \PageStyle{scrheadings} to be a page style
-without a running head and \PageStyle{plain.scrheadings} to be a page style
-with a running head. It is, however, advisable to adhere to the conventions
-mentioned above. The two page styles mutually influence one another. Once you
-apply one of these page styles, \PageStyle{scrheadings} will become accessible
-as \PageStyle{headings}\important{\PageStyle{headings}}%
-\IndexPagestyle{headings} and the page style \PageStyle{plain.scrheadings}
-will become accessible as \PageStyle{plain}\important{\PageStyle{plain}}%
-\IndexPagestyle{plain}. Thus, if you use a class or package that automatically
-switches between \PageStyle{headings} and \PageStyle{plain}, you only need to
-select \PageStyle{scrheadings} or \PageStyle{plain.scrheadings} once. Direct
-patches to the corresponding classes or packages are not necessary. This pair
-of page styles can thus serve as a drop-in replacement for
-\PageStyle{headings} and \PageStyle{plain}. If you need more such pairs,
-please refer to \autoref{sec:scrlayer-scrpage-experts.pagestyle.pairs} in
+Naturalmente, você poderia configurar \PageStyle{scrheadings} para ser um estilo
+de página sem cabeçalho corrente e \PageStyle{plain.scrheadings} para ser um estilo
+de página com cabeçalho corrente. É, contudo, aconselhável seguir as convenções
+mencionadas acima. Os dois estilos de página se influenciam mutuamente. Uma vez que
+você aplique um desses estilos de página, \PageStyle{scrheadings} ficará acessível
+como \PageStyle{headings}\important{\PageStyle{headings}}%
+\IndexPagestyle{headings} e o estilo de página \PageStyle{plain.scrheadings}
+ficará acessível como \PageStyle{plain}\important{\PageStyle{plain}}%
+\IndexPagestyle{plain}. Assim, se você usar uma classe ou pacote que mude
+automaticamente entre \PageStyle{headings} e \PageStyle{plain}, você apenas
+precisa selecionar \PageStyle{scrheadings} ou \PageStyle{plain.scrheadings} uma vez.
+Patches diretos às classes ou pacotes correspondentes não são necessários. Este par
+de estilos de página pode servir como uma substituição direta para
+\PageStyle{headings} e \PageStyle{plain}. Se você precisar de mais esses pares,
+consulte \autoref{sec:scrlayer-scrpage-experts.pagestyle.pairs} em
 \autoref{part:forExperts}.%
 \EndIndexGroup
 
@@ -180,56 +178,55 @@ please refer to \autoref{sec:scrlayer-scrpage-experts.pagestyle.pairs} in
   \Macro{rohead}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-You can set the contents of the header for the
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} and
-\DescRef{\LabelBase.pagestyle.scrheadings} page styles with these commands.
-The optional argument sets the content of an element of the
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} page style, while the
-mandatory argument sets the content of the corresponding element of the
-\DescRef{\LabelBase.pagestyle.scrheadings} page style.
+Você pode definir o conteúdo do cabeçalho para os estilos de página
+\DescRef{\LabelBase.pagestyle.plain.scrheadings} e
+\DescRef{\LabelBase.pagestyle.scrheadings} com estes comandos.
+O argumento opcional define o conteúdo de um elemento do
+estilo de página \DescRef{\LabelBase.pagestyle.plain.scrheadings}, enquanto o
+argumento obrigatório define o conteúdo do elemento correspondente do
+estilo de página \DescRef{\LabelBase.pagestyle.scrheadings}.
 
-The contents of even\,---\,or left-hand\,---\,pages\textnote{left-hand pages}
-can be set with \Macro{lehead}, \Macro{cehead}, and \Macro{rehead}. The
-``\texttt{e}'' appearing as the second letter of the commands' names stands
-for ``\emph{even}''.
+O conteúdo de páginas pares\,---\,ou de mão\,---\,esquerda\textnote{páginas de mão esquerda}
+pode ser definido com \Macro{lehead}, \Macro{cehead}, e \Macro{rehead}. O
+``\texttt{e}'' que aparece como a segunda letra dos nomes dos comandos significa
+``\emph{even}'' (par).
 
-The contents of odd\,---\,or right-hand\,---\,pages\textnote{right-hand pages}
-can be set with \Macro{lohead}, \Macro{cohead}, and \Macro{rohead}. The
-``\texttt{o}'' appearing as the second letter of the commands' names stands
-for ``\emph{odd}''.
+O conteúdo de páginas ímpares\,---\,ou de mão\,---\,direita\textnote{páginas de mão direita}
+pode ser definido com \Macro{lohead}, \Macro{cohead}, e \Macro{rohead}. O
+``\texttt{o}'' que aparece como a segunda letra dos nomes dos comandos significa
+``\emph{odd}'' (ímpar).
 
-Note\textnote{Attention!} that in one-sided printing, only right-hand pages
-exist, and \LaTeX{} designates these as odd pages regardless of their page
-number.
+Observe\textnote{Atenção!} que em impressão unilateral, apenas páginas de mão direita
+existem, e \LaTeX{} as designa como páginas ímpares independentemente do número da página.
 
-Each header consists of a left-aligned\textnote{left aligned} element that can
-be set with \Macro{lehead} or \Macro{lohead}. The ``\texttt{l}'' appearing as
-the first letter of the commands' names stands for ``\emph{left aligned}''.
+Cada cabeçalho consiste de um elemento alinhado à\textnote{alinhado à esquerda} esquerda que pode
+ser definido com \Macro{lehead} ou \Macro{lohead}. O ``\texttt{l}'' que aparece como
+a primeira letra dos nomes dos comandos significa ``\emph{left}'' (esquerda).
 
-Similarly, each header has a centred\textnote{centred} element that can be set
-with \Macro{cehead} or \Macro{cohead}. The ``\texttt{c}'' appearing as the
-first letter of the command' names stands for ``\emph{centred}''.
+Similarmente, cada cabeçalho tem um elemento centralizado\textnote{centralizado} que pode ser definido
+com \Macro{cehead} ou \Macro{cohead}. O ``\texttt{c}'' que aparece como a
+primeira letra dos nomes dos comandos significa ``\emph{centred}'' (centralizado).
 
-Likewise, each header has a right-aligned\textnote{right aligned} element that
-can be set with \Macro{rehead} or \Macro{rohead}. The ``\texttt{r}'' appearing
-as the first letter of the commands' names stands for ``\emph{right
-aligned}''.
+Similarmente, cada cabeçalho tem um elemento alinhado à\textnote{alinhado à direita} direita que
+pode ser definido com \Macro{rehead} ou \Macro{rohead}. O ``\texttt{r}'' que aparece
+como a primeira letra dos nomes dos comandos significa ``\emph{right
+aligned}'' (alinhado à direita).
 
 \BeginIndexGroup
 \BeginIndex{FontElement}{pagehead}\LabelFontElement{pagehead}%
 \BeginIndex{FontElement}{pageheadfoot}\LabelFontElement{pageheadfoot}%
-These elements do not have individual font attributes that you can
-change using the commands \DescRef{\LabelBase.cmd.setkomafont} and
-\DescRef{\LabelBase.cmd.addtokomafont} (see \autoref{sec:maincls.textmarkup},
-\DescPageRef{maincls.cmd.setkomafont}). Instead, they use an element named
-\FontElement{pagehead}. Before this element is applied, the
-\FontElement{pageheadfoot} element will also be applied. See
-\autoref{tab:scrlayer-scrpage.fontelements} for the defaults of these
-elements.%
+Estes elementos não possuem atributos individuais de fonte que você possa
+alterar usando os comandos \DescRef{\LabelBase.cmd.setkomafont} e
+\DescRef{\LabelBase.cmd.addtokomafont} (veja \autoref{sec:maincls.textmarkup},
+\DescPageRef{maincls.cmd.setkomafont}). Em vez disso, eles usam um elemento
+nomeado \FontElement{pagehead}. Antes deste elemento ser aplicado, o
+elemento \FontElement{pageheadfoot} também será aplicado. Veja
+\autoref{tab:scrlayer-scrpage.fontelements} para os padrões destes
+elementos.%
 \EndIndexGroup
 
-The meaning of each command for headers in two-sided printing is illustrated
-in \autoref{fig:scrlayer-scrpage.head}.%
+O significado de cada comando para cabeçalhos em impressão bilateral é ilustrado
+em \autoref{fig:scrlayer-scrpage.head}.%
 %
 \begin{figure}[tp]
   \centering
@@ -340,16 +337,16 @@ in \autoref{fig:scrlayer-scrpage.head}.%
           5mm+2.5\baselineskip\relax}}
    }%
   \end{picture}
-  \caption[Commands for setting the page header]%
-          {The meaning of the commands for setting the contents of page headers
-          shown on a two-page schematic}
+  \caption[Comandos para definir o cabeçalho da página]%
+          {O significado dos comandos para definir o conteúdo dos cabeçalhos
+          mostrado em um esquema de duas páginas}
   \label{fig:scrlayer-scrpage.head}
 \end{figure}
 %
 \begin{Example}
-  Suppose you're writing a short article and you want the author's name to
-  appear on the left side of the page and the article's title to appear
-  right. You can write, for example:
+  Suponha que você esteja escrevendo um artigo curto e queira que o nome do autor
+  apareça no lado esquerdo da página e o título do artigo apareça
+  à direita. Você pode escrever, por exemplo:
 \begin{lstcode}
   \documentclass{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -362,41 +359,41 @@ in \autoref{fig:scrlayer-scrpage.head}.%
   \maketitle
   \end{document}
 \end{lstcode}
-  But what happens? On the first page there's only a page number in the
-  footer, while the header remains empty!
+  Mas o que acontece? Na primeira página há apenas um número de página no
+  rodapé, enquanto o cabeçalho permanece vazio!
 
-  The explanation is simple: The \Class{scrartcl} class, like the default
-  \Class{article} class, switches to the \PageStyle{plain} page style for the
-  page which contains the title. After the command
-  \DescRef{maincls.cmd.pagestyle}\PParameter{scrheadings} in the preamble of
-  our example, this actually refers to the
-  \DescRef{\LabelBase.pagestyle.plain.scrheadings} page style. The default for
-  this page style when using a \KOMAScript{} class is an empty page header and
-  a page number in the footer. In the example, the optional arguments of
-  \Macro{lohead} and \Macro{rohead} are omitted, so the
-  \DescRef{\LabelBase.pagestyle.plain.scrheadings} page style remains
-  unchanged and the result for the first page is actually correct.
+  A explicação é simples: A classe \Class{scrartcl}, como a classe padrão
+  \Class{article}, muda para o estilo de página \PageStyle{plain} para a
+  página que contém o título. Após o comando
+  \DescRef{maincls.cmd.pagestyle}\PParameter{scrheadings} no preâmbulo do
+  nosso exemplo, isto na verdade se refere ao
+  estilo de página \DescRef{\LabelBase.pagestyle.plain.scrheadings}. O padrão para
+  este estilo de página quando usando uma classe \KOMAScript{} é um cabeçalho de página vazio e
+  um número de página no rodapé. No exemplo, os argumentos opcionais de
+  \Macro{lohead} e \Macro{rohead} são omitidos, portanto o
+  estilo de página \DescRef{\LabelBase.pagestyle.plain.scrheadings} permanece
+  inalterado e o resultado para a primeira página é na verdade correto.
 
-  The explicit use of \DescRef{maincls.cmd.pagestyle}\PParameter{scrheadings}
-  is not even necessary. The package already executes this command itself when
-  loading, so it automatically sets the page style to
-  \DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}. This
-  also changes not only the page style
-  \DescRef{maincls.pagestyle.headings}\IndexPagestyle{headings} automatically
-  to \DescRef{\LabelBase.pagestyle.scrheadings}, but also
-  \DescRef{maincls.pagestyle.plain}\IndexPagestyle{plain} to
+  O uso explícito de \DescRef{maincls.cmd.pagestyle}\PParameter{scrheadings}
+  nem sequer é necessário. O pacote já executa este comando por si mesmo quando
+  carregado, então ele define automaticamente o estilo de página para
+  \DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}. Isto
+  também muda não apenas o estilo de página
+  \DescRef{maincls.pagestyle.headings}\IndexPagestyle{headings} automaticamente
+  para \DescRef{\LabelBase.pagestyle.scrheadings}, mas também
+  \DescRef{maincls.pagestyle.plain}\IndexPagestyle{plain} para
   \DescRef{\LabelBase.pagestyle.plain.scrheadings}%
   \IndexPagestyle{plain.scrheadings}.
-  
-  Now add enough text to the example after \DescRef{maincls.cmd.maketitle} 
-  so that a second page is printed. You can simply add
-  \Macro{usepackage}\PParameter{lipsum}\IndexPackage{lipsum} to the document
-  preamble and \Macro{lipsum}\IndexCmd{lipsum} below
-  \DescRef{maincls.cmd.maketitle}. You will see that the header of the second
-  page now contains the author and the document title as we wanted.
 
-  For comparison, you should also add the optional argument to
-  \Macro{lohead} and \Macro{rohead}. Change the example as follows:
+  Agora adicione texto suficiente ao exemplo após \DescRef{maincls.cmd.maketitle}
+  para que uma segunda página seja impressa. Você pode simplesmente adicionar
+  \Macro{usepackage}\PParameter{lipsum}\IndexPackage{lipsum} ao preâmbulo do
+  documento e \Macro{lipsum}\IndexCmd{lipsum} abaixo
+  \DescRef{maincls.cmd.maketitle}. Você verá que o cabeçalho da segunda
+  página agora contém o autor e o título do documento como desejávamos.
+
+  Para comparação, você também deve adicionar o argumento opcional para
+  \Macro{lohead} e \Macro{rohead}. Altere o exemplo como segue:
 \begin{lstcode}
   \documentclass{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -410,28 +407,28 @@ in \autoref{fig:scrlayer-scrpage.head}.%
   \maketitle
   \end{document}
 \end{lstcode}
-  Now you have a header on the first page just above the title itself.
-  That is because you have reconfigured page style
-  \DescRef{\LabelBase.pagestyle.plain.scrheadings} with the two optional
-  arguments. As you probably appreciate, it would be better to leave this page
-  style unchanged, as a running head above the document title is rather
-  annoying.
+  Agora você tem um cabeçalho na primeira página logo acima do próprio título.
+  Isto é porque você reconfigurou o estilo de página
+  \DescRef{\LabelBase.pagestyle.plain.scrheadings} com os dois argumentos
+  opcionais. Como você provavelmente aprecia, seria melhor deixar este estilo de página
+  inalterado, já que um cabeçalho corrente acima do título do documento é
+  bastante incômodo.
   
-  By the way, as an alternative to configuring
-  \DescRef{\LabelBase.pagestyle.plain.scrheadings} you could, if you were
-  using a \KOMAScript{} class, have changed the page style for pages that
-  contain title headers. See \DescRef{maincls.cmd.titlepagestyle}%
+  A propósito, como uma alternativa para configurar
+  \DescRef{\LabelBase.pagestyle.plain.scrheadings} você poderia, se estivesse
+  usando uma classe \KOMAScript{}, ter alterado o estilo de página para páginas que
+  contêm cabeçalhos de título. Veja \DescRef{maincls.cmd.titlepagestyle}%
   \important{\DescRef{maincls.cmd.titlepagestyle}}%
-  \IndexCmd{titlepagestyle} in \autoref{sec:maincls.pagestyle},
+  \IndexCmd{titlepagestyle} em \autoref{sec:maincls.pagestyle},
   \DescPageRef{maincls.cmd.titlepagestyle}.
 \end{Example}
 
-Note\textnote{Attention!} that you should never put a section
-heading or section number directly into the header using one of these
-commands. Because of the asynchronous way that \TeX{} lays out and outputs
-pages, doing so can easily result in the wrong number or heading text in the
-running head. Instead you should use the mark mechanism, ideally in
-conjunction with the procedures explained in the next section.%
+Observe\textnote{Atenção!} que você nunca deve colocar um título de seção
+ou número de seção diretamente no cabeçalho usando um desses
+comandos. Devido à forma assincronizada como \TeX{} apresenta e produz
+páginas, fazer assim pode facilmente resultar no número errado ou texto de título no
+cabeçalho corrente. Em vez disso, você deve usar o mecanismo de marca, idealmente em
+conjunto com os procedimentos explicados na próxima seção.%
 \EndIndexGroup
 
 \begin{Declaration}
@@ -448,19 +445,19 @@ conjunction with the procedures explained in the next section.%
   \Macro{rohead*}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-The starred versions\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} of the
-previously described commands differ from the ordinary versions only if you
-omit the optional argument \PName{plain.scrheadings content}. In this case,
-the version without the star does not change the contents of
-\DescRef{\LabelBase.pagestyle.plain.scrheadings}. The starred version, on the
-other hand, uses the mandatory argument \PName{scrheading content}
-for \DescRef{\LabelBase.pagestyle.plain.scrheadings} as well. So if both
-arguments should be the same, you can simply use the starred version with only
-the mandatory argument.%
+As versões com asterisco\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} dos
+comandos previamente descritos diferem das versões ordinárias apenas se você
+omite o argumento opcional \PName{plain.scrheadings content}. Neste caso,
+a versão sem asterisco não altera o conteúdo de
+\DescRef{\LabelBase.pagestyle.plain.scrheadings}. A versão com asterisco, por outro lado,
+usa o argumento obrigatório \PName{scrheading content}
+para \DescRef{\LabelBase.pagestyle.plain.scrheadings} também. Então se ambos
+argumentos devem ser iguais, você pode simplesmente usar a versão com asterisco com apenas
+o argumento obrigatório.%
 
 \begin{Example}
-  You can shorten the previous example using the starred versions of
-  \DescRef{\LabelBase.cmd.lohead} and \DescRef{\LabelBase.cmd.rohead}:
+  Você pode encurtar o exemplo anterior usando as versões com asterisco de
+  \DescRef{\LabelBase.cmd.lohead} e \DescRef{\LabelBase.cmd.rohead}:
 \begin{lstcode}
   \documentclass{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -491,57 +488,56 @@ the mandatory argument.%
   \Macro{rofoot}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-You can define the contents of the footer for
-\DescRef{\LabelBase.pagestyle.scrheadings} and
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} with these commands. The
-optional argument defines the content of an element of
-\DescRef{\LabelBase.pagestyle.plain.scrheadings}, while the mandatory argument
-sets the content of the corresponding element of
+Você pode definir o conteúdo do rodapé para os estilos de página
+\DescRef{\LabelBase.pagestyle.scrheadings} e
+\DescRef{\LabelBase.pagestyle.plain.scrheadings} com estes comandos. O
+argumento opcional define o conteúdo de um elemento de
+\DescRef{\LabelBase.pagestyle.plain.scrheadings}, enquanto o argumento obrigatório
+define o conteúdo do elemento correspondente de
 \DescRef{\LabelBase.pagestyle.scrheadings}.
 
-The contents of even\,---\,or left-hand\,---\,pages\textnote{left-hand page}
-are set with \Macro{lefoot}, \Macro{cefoot}, and \Macro{refoot}. The
-``\texttt{e}'' appearing as the second letter of the commands' names stands
-for ``\emph{even}''.
+O conteúdo de páginas pares\,---\,ou de mão\,---\,esquerda\textnote{página de mão esquerda}
+é definido com \Macro{lefoot}, \Macro{cefoot}, e \Macro{refoot}. O
+``\texttt{e}'' que aparece como a segunda letra dos nomes dos comandos significa
+``\emph{even}'' (par).
 
-The contents of odd\,---\,or right-hand\,---\,pages\textnote{right-hand page}
-are set with \Macro{lofoot}, \Macro{cofoot}, and \Macro{rofoot}. The
-``\texttt{o}'' appearing as the second letter of the commands' names stands
-for ``\emph{odd}''.
+O conteúdo de páginas ímpares\,---\,ou de mão\,---\,direita\textnote{página de mão direita}
+é definido com \Macro{lofoot}, \Macro{cofoot}, e \Macro{rofoot}. O
+``\texttt{o}'' que aparece como a segunda letra dos nomes dos comandos significa
+``\emph{odd}'' (ímpar).
 
-Note\textnote{Attention!} that in one-sided printing, only right-hand pages
-exist, and \LaTeX{} designates these as odd pages regardless of their page
-number.
+Observe\textnote{Atenção!} que em impressão unilateral, apenas páginas de mão direita
+existem, e \LaTeX{} as designa como páginas ímpares independentemente do número da página.
 
-Each footer consists of a left-aligned\textnote{left aligned} element that can
-be set with \Macro{lefoot} or \Macro{lofoot}. The ``\texttt{l}'' appearing as
-the first letter of the commands' names stands for ``\emph{left aligned}''.
+Cada rodapé consiste de um elemento alinhado à\textnote{alinhado à esquerda} esquerda que pode
+ser definido com \Macro{lefoot} ou \Macro{lofoot}. O ``\texttt{l}'' que aparece como
+a primeira letra dos nomes dos comandos significa ``\emph{left}'' (esquerda).
 
-Similarly, each footer has a centred\textnote{centred} element that can be set
-with \Macro{cefoot} or \Macro{cofoot}. The ``\texttt{c}'' in the first letter
-of the command' names stands for ``\emph{centred}''.
+Similarmente, cada rodapé tem um elemento centralizado\textnote{centralizado} que pode ser definido
+com \Macro{cefoot} ou \Macro{cofoot}. O ``\texttt{c}'' na primeira letra
+dos nomes dos comandos significa ``\emph{centred}'' (centralizado).
 
-Likewise, each footer has a right-aligned\textnote{right aligned} element that
-can be set with \Macro{refoot} or \Macro{rofoot}. The ``\texttt{r}'' in the
-first letter of the commands' names stands for ``\emph{right aligned}''.
+Similarmente, cada rodapé tem um elemento alinhado à\textnote{alinhado à direita} direita que
+pode ser definido com \Macro{refoot} ou \Macro{rofoot}. O ``\texttt{r}'' na
+primeira letra dos nomes dos comandos significa ``\emph{right aligned}'' (alinhado à direita).
 
 \BeginIndexGroup
 \BeginIndex{FontElement}{pagefoot}\LabelFontElement{pagefoot}%
 \BeginIndex{FontElement}{pageheadfoot}\LabelFontElement[foot]{pageheadfoot}%
-However, these elements do not have individual font attributes that can be
-changed with the \DescRef{\LabelBase.cmd.setkomafont} and
-\DescRef{\LabelBase.cmd.addtokomafont} commands (see
+Entretanto, estes elementos não possuem atributos individuais de fonte que possam ser
+alterados com os comandos \DescRef{\LabelBase.cmd.setkomafont} e
+\DescRef{\LabelBase.cmd.addtokomafont} (veja
 \autoref{sec:maincls.textmarkup}, \DescPageRef{maincls.cmd.setkomafont}).
-Instead, they use an element named
-\FontElement{pagefoot}\important{\FontElement{pagefoot}}. Before this element
-is applied, the font element
-\FontElement{pageheadfoot}\important{\FontElement{pageheadfoot}} is also
-applied. See \autoref{tab:scrlayer-scrpage.fontelements} for the defaults of
-the fonts of these elements.%
+Em vez disso, eles usam um elemento nomeado
+\FontElement{pagefoot}\important{\FontElement{pagefoot}}. Antes deste elemento
+ser aplicado, o elemento de fonte
+\FontElement{pageheadfoot}\important{\FontElement{pageheadfoot}} também é
+aplicado. Veja \autoref{tab:scrlayer-scrpage.fontelements} para os padrões das
+fontes destes elementos.%
 \EndIndexGroup
 
-The meaning of each command for footers in two-sided printing is illustrated
-in \autoref{fig:scrlayer-scrpage.foot}.%
+O significado de cada comando para rodapés em impressão bilateral é ilustrado
+em \autoref{fig:scrlayer-scrpage.foot}.%
 %
 \begin{figure}[bp]
   \centering
@@ -644,16 +640,16 @@ in \autoref{fig:scrlayer-scrpage.foot}.%
       \put(\dimexpr .45\textwidth-4em\relax,25mm){\vector(0,-1){15mm}}%
     }%
   \end{picture}
-  \caption[Commands for setting the page footer]%
-          {The meaning of the commands for setting the contents of page
-            footers shown on a two-page schematic}%
+  \caption[Comandos para definir o rodapé da página]%
+          {O significado dos comandos para definir o conteúdo do
+            rodapé mostrado em um esquema de duas páginas}%
   \label{fig:scrlayer-scrpage.foot}
 \end{figure}
 %
 \begin{Example}
-  Let's return to the example of the short article. Let's say you want to
-  specify the publisher in the left side of the footer. You would change the
-  example above to:
+  Vamos retornar ao exemplo do artigo curto. Digamos que você queira
+  especificar o editor no lado esquerdo do rodapé. Você alteraria o
+  exemplo acima para:
 \begin{lstcode}
   \documentclass{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -668,51 +664,51 @@ in \autoref{fig:scrlayer-scrpage.foot}.%
   \lipsum
   \end{document}
 \end{lstcode}
-  Once again the publisher is not printed on the first page with the title.
-  The reason is the same as in the example with
-  \DescRef{\LabelBase.cmd.lohead} above. And the solution for getting the
-  publisher on the first page is similar:
+  Uma vez mais, o editor não é impresso na primeira página com o título.
+  A razão é a mesma do exemplo com
+  \DescRef{\LabelBase.cmd.lohead} acima. E a solução para colocar o
+  editor na primeira página é similar:
 \begin{lstcode}
   \lofoot[Smart Alec Publishing]
          {Smart Alec Publishing}
 \end{lstcode}
-  Now you decide\textnote{font change}\important{\FontElement{pageheadfoot}}%
-  \IndexFontElement{pageheadfoot} that the header and footer should use an
-  upright but smaller font in place of the default slanted font:
+  Agora você decide\textnote{mudança de fonte}\important{\FontElement{pageheadfoot}}%
+  \IndexFontElement{pageheadfoot} que o cabeçalho e rodapé devem usar uma
+  fonte reta mas menor no lugar da fonte inclinada padrão:
 \begin{lstcode}
   \setkomafont{pageheadfoot}{\small}
 \end{lstcode}
-  In addition, the header, but not the footer, should be bold:
+  Além disso, o cabeçalho, mas não o rodapé, deve ser em negrito:
 \begin{lstcode}
   \setkomafont{pagehead}{\bfseries}
 \end{lstcode}
-  It is important\textnote{Attention!} that this command does not occur until
-  after \Package{scrpage-scrlayer} has been loaded because the \KOMAScript{}
-  class defines \DescRef{\LabelBase.fontelement.pagehead} as an alias for 
-  \DescRef{\LabelBase.fontelement.pageheadfoot}. Only by loading
-  \Package{scrpage-scrlayer} will \DescRef{\LabelBase.fontelement.pagehead}
-  become an element independent of
+  É importante\textnote{Atenção!} que este comando não ocorra até
+  depois que \Package{scrpage-scrlayer} tenha sido carregado porque a classe
+  \KOMAScript{} define \DescRef{\LabelBase.fontelement.pagehead} como um apelido para
+  \DescRef{\LabelBase.fontelement.pageheadfoot}. Apenas ao carregar
+  \Package{scrpage-scrlayer}, \DescRef{\LabelBase.fontelement.pagehead}
+  se tornará um elemento independente de
   \DescRef{\LabelBase.fontelement.pageheadfoot}.
 
-  Now add one more \Macro{lipsum} and the
-  \Option{twoside}\IndexOption{twoside}\important{\Option{twoside}} option
-  when   loading \Class{scrartcl}. First of all, you will see the page number
-  moves from the centre to the outer margin of the page footer, due to the
-  changed defaults of \DescRef{\LabelBase.pagestyle.scrheadings} and
-  \DescRef{\LabelBase.pagestyle.plain.scrheadings} for two-sided printing with
-  a \KOMAScript{} class.
+  Agora adicione um \Macro{lipsum} a mais e a opção
+  \Option{twoside}\IndexOption{twoside}\important{\Option{twoside}}
+  ao carregar \Class{scrartcl}. Primeiro de tudo, você verá o número da página
+  se mover do centro para a margem externa do rodapé da página, devido aos
+  padrões alterados de \DescRef{\LabelBase.pagestyle.scrheadings} e
+  \DescRef{\LabelBase.pagestyle.plain.scrheadings} para impressão bilateral com
+  uma classe \KOMAScript{}.
 
-  Simultaneously, the author, document title, and publisher will vanish from
-  page~2. They only appear on page~3. That's because we've only used
-  commands for odd pages. You can recognise this by the ``\texttt{o}'' in the
-  second position of the command names.
+  Simultaneamente, o autor, título do documento, e editor desaparecerão da
+  página~2. Eles aparecem apenas na página~3. Isto é porque apenas usamos
+  comandos para páginas ímpares. Você pode reconhecer isto pelo ``\texttt{o}'' na
+  segunda posição dos nomes dos comandos.
 
-  Now, we could simply copy those commands and replace the ``\texttt{o}'' with
-  an ``\texttt{e}'' to define the contents of \emph{even} pages. But with
-  two-sided printing, it makes more sense to use mirror-inverted elements,
-  i.\,e. the left element of an even page should become the right element of
-  the odd page and visa versa. To achieve this, we also replace the first
-  letter ``\texttt{l}'' with ``\texttt{r}'':
+  Agora, poderíamos simplesmente copiar aqueles comandos e trocar o ``\texttt{o}'' com
+  um ``\texttt{e}'' para definir o conteúdo de páginas \emph{pares}. Mas com
+  impressão bilateral, faz mais sentido usar elementos espelhados-invertidos,
+  i.\,e. o elemento esquerdo de uma página par deve se tornar o elemento direito da
+  página ímpar e vice-versa. Para alcançar isto, também trocamos a primeira
+  letra ``\texttt{l}'' com ``\texttt{r}'':
 \begin{lstcode}
   \documentclass[twoside]{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -734,16 +730,16 @@ in \autoref{fig:scrlayer-scrpage.foot}.%
 \end{lstcode}
 \end{Example}
 %
-Since it is a bit cumbersome to define left and right pages separately in
-cases such as the previous example, a simpler solution for this common case is
-introduced below.
+Como é um pouco incômodo definir páginas esquerda e direita separadamente em
+casos como no exemplo anterior, uma solução mais simples para este caso comum é
+introduzida abaixo.
 
-Allow me once again an important note:\textnote{Attention!} you should
-never put a section heading or section number directly into the footer using
-one of these commands. Because of the asynchronous way that \TeX{} lays out and
-outputs pages, doing so can easily result in the wrong number or heading text
-in the running head. Instead you should use the mark mechanism, ideally in
-conjunction with the procedures explained in the next section.%
+Permita-me uma vez mais uma nota importante:\textnote{Atenção!} você nunca deve
+colocar um título de seção ou número de seção diretamente no rodapé usando
+um desses comandos. Devido à forma assincronizada como \TeX{} apresenta e produz
+páginas, fazer assim pode facilmente resultar no número errado ou texto de título
+no cabeçalho corrente. Em vez disso, você deve usar o mecanismo de marca, idealmente em
+conjunto com os procedimentos explicados na próxima seção.%
 \EndIndexGroup
 
 
@@ -761,19 +757,18 @@ conjunction with the procedures explained in the next section.%
   \Macro{rofoot*}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-The starred versions\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} of the
-previously described commands differ only if you omit the optional argument
-\OParameter{plain.scrheadings content}. In this case, the version without the
-star does not change the contents of
-\DescRef{\LabelBase.pagestyle.plain.scrheadings}. The starred version, on the
-other hand, uses the mandatory argument \PName{scrheading content} for
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} as well. So if both arguments
-should be the same, you can simply use the starred version with just the
-mandatory argument.%
+As versões com asterisco\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} dos
+comandos previamente descritos diferem apenas se você omite o argumento opcional
+\OParameter{plain.scrheadings content}. Neste caso, a versão sem asterisco não altera
+o conteúdo de \DescRef{\LabelBase.pagestyle.plain.scrheadings}. A versão com asterisco, por outro lado,
+usa o argumento obrigatório \PName{scrheading content} para
+\DescRef{\LabelBase.pagestyle.plain.scrheadings} também. Então se ambos argumentos
+devem ser iguais, você pode simplesmente usar a versão com asterisco com apenas
+o argumento obrigatório.%
 
 \begin{Example}
-  You can shorten the previous example using the star versions of
-  \DescRef{\LabelBase.cmd.lofoot} and \DescRef{\LabelBase.cmd.refoot}:
+  Você pode encurtar o exemplo anterior usando as versões com asterisco de
+  \DescRef{\LabelBase.cmd.lofoot} e \DescRef{\LabelBase.cmd.refoot}:
 \begin{lstcode}
   \documentclass[twoside]{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -811,28 +806,28 @@ mandatory argument.%
   \Macro{ifoot}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-To configure the headers and footers for two-sided printing with the
-previously described commands, you would have to configure the left and right
-sides separately from one another. In most cases, however, the left and right
-sides are more or less symmetrical. An item that appears on the left of an
-even page should appear on the right of an odd page and vice versa. Centred
-elements are usually centred on both sides.
+Para configurar os cabeçalhos e rodapés para impressão bilateral com os
+comandos previamente descritos, você teria que configurar os lados esquerdo e direito
+separadamente um do outro. Na maioria dos casos, porém, os lados esquerdo e direito
+são mais ou menos simétricos. Um item que aparece no lado esquerdo de uma
+página par deve aparecer no lado direito de uma página ímpar e vice-versa. Elementos
+centralizados geralmente estão centralizados em ambos os lados.
 
-To simplify the definition of such symmetric page styles,
-\Package{scrlayer-scrpage} has shortcuts. The \Macro{ohead} command
-corresponds to a call to both \DescRef{\LabelBase.cmd.lehead} and
-\DescRef{\LabelBase.cmd.rohead}. The \Macro{chead} command corresponds to a
-call to both \DescRef{\LabelBase.cmd.cehead} and
-\DescRef{\LabelBase.cmd.cohead}. And the \Macro{ihead} command corresponds to
-a call to both \DescRef{\LabelBase.cmd.rehead} and
-\DescRef{\LabelBase.cmd.lohead}. The same applies to the equivalent commands
-for the page footer. An outline of these relationships can also be found in
-\autoref{fig:scrlayer-scrpage.head} on \autopageref{fig:scrlayer-scrpage.head}
-and \autoref{fig:scrlayer-scrpage.foot} on
+Para simplificar a definição de tais estilos de página simétricos,
+\Package{scrlayer-scrpage} tem atalhos. O comando \Macro{ohead}
+corresponde a uma chamada tanto para \DescRef{\LabelBase.cmd.lehead} como para
+\DescRef{\LabelBase.cmd.rohead}. O comando \Macro{chead} corresponde a uma
+chamada tanto para \DescRef{\LabelBase.cmd.cehead} como para
+\DescRef{\LabelBase.cmd.cohead}. E o comando \Macro{ihead} corresponde a
+uma chamada tanto para \DescRef{\LabelBase.cmd.rehead} como para
+\DescRef{\LabelBase.cmd.lohead}. O mesmo aplica-se aos comandos equivalentes
+para o rodapé da página. Um esboço destas relações também pode ser encontrado em
+\autoref{fig:scrlayer-scrpage.head} em \autopageref{fig:scrlayer-scrpage.head}
+e \autoref{fig:scrlayer-scrpage.foot} em
 \autopageref{fig:scrlayer-scrpage.foot}.
 %
 \begin{Example}
-  You can simplify the previous example using the new commands:
+  Você pode simplificar o exemplo anterior usando os novos comandos:
 \begin{lstcode}
   \documentclass[twoside]{scrartcl}
   \usepackage{scrlayer-scrpage}
@@ -849,21 +844,21 @@ and \autoref{fig:scrlayer-scrpage.foot} on
   \end{document}
 \end{lstcode}
 \iffalse%
-  As you can see, you can use half the number of commands but get the same
-  result. %
+  Como você pode ver, você pode usar metade do número de comandos mas obter o mesmo
+  resultado. %
 \fi%
 \end{Example}%
-Because one-sided printing treats all pages as odd pages, these commands are
-synonymous with the corresponding right-side commands when in one-sided mode.
-Therefore in most cases you will only need these six commands instead of the
-twelve described before.
+Porque a impressão unilateral trata todas as páginas como páginas ímpares, estes comandos são
+sinônimos dos comandos correspondentes do lado direito quando em modo unilateral.
+Portanto, na maioria dos casos, você precisará apenas destes seis comandos em vez dos
+doze descritos antes.
 
-Allow me once again an important note:\textnote{Attention!} you should never
-put a section heading or section number directly into the footer using one of
-these commands. Because of the asynchronous way that \TeX{} lays out and
-outputs pages, doing so can easily result in the wrong number or heading text
-in the running head. Instead you should use the mark mechanism, ideally in
-conjunction with the procedures explained in the next section.%
+Permita-me uma vez mais uma nota importante:\textnote{Atenção!} você nunca deve
+colocar um título de seção ou número de seção diretamente no rodapé usando um desses
+comandos. Devido à forma assincronizada como \TeX{} apresenta e produz
+páginas, fazer assim pode facilmente resultar no número errado ou texto de título
+no cabeçalho corrente. Em vez disso, você deve usar o mecanismo de marca, idealmente em
+conjunto com os procedimentos explicados na próxima seção.%
 \EndIndexGroup
 
 
@@ -881,18 +876,18 @@ conjunction with the procedures explained in the next section.%
   \Macro{ifoot*}\OParameter{plain.scrheadings content}%
                 \Parameter{scrheadings content}
 \end{Declaration}
-The previously described commands also have starred
-versions\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} that differ only if you
-omit the optional argument \OParameter{plain.scrheadings content}. In this
-case, the version without a star does not change the content of
-\DescRef{\LabelBase.pagestyle.plain.scrheadings}. The version with the star,
-on the other hand, also uses the mandatory argument \PName{scrheadings
-content} for \DescRef{\LabelBase.pagestyle.plain.scrheadings}. So if both
-arguments should be the same, you can simply use the starred version with only
-the mandatory argument.%
+Os comandos previamente descritos também têm versões com asterisco
+\ChangedAt{v3.14}{\Package{scrlayer-scrpage}} que diferem apenas se você
+omite o argumento opcional \OParameter{plain.scrheadings content}. Neste
+caso, a versão sem asterisco não altera o conteúdo de
+\DescRef{\LabelBase.pagestyle.plain.scrheadings}. A versão com asterisco,
+por outro lado, também usa o argumento obrigatório \PName{scrheadings
+content} para \DescRef{\LabelBase.pagestyle.plain.scrheadings}. Então se ambos
+argumentos devem ser iguais, você pode simplesmente usar a versão com asterisco com apenas
+o argumento obrigatório.%
 
 \begin{Example}
-  You can shorten the previous example using the star version of
+  Você pode encurtar o exemplo anterior usando a versão com asterisco de
   \DescRef{\LabelBase.cmd.ifoot}:
 \begin{lstcode}
   \documentclass[twoside]{scrartcl}
@@ -917,71 +912,69 @@ the mandatory argument.%
 \end{Declaration}
 \BeginIndex{Option}{pagestyleset~=KOMA-Script}%
 \BeginIndex{Option}{pagestyleset~=standard}%
-The examples above refer several times to the default settings of the page
-styles \DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}
-and \DescRef{\LabelBase.pagestyle.plain.scrheadings}%
-\IndexPagestyle{plain.scrheadings}. In fact, \Package{scrlayer-scrpage}
-currently provides two different defaults for these page styles. You can
-select them manually with the \Option{pagestyleset} option.
+Os exemplos acima referem-se várias vezes às configurações padrão dos estilos de página
+\DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}
+e \DescRef{\LabelBase.pagestyle.plain.scrheadings}%
+\IndexPagestyle{plain.scrheadings}. De fato, \Package{scrlayer-scrpage}
+atualmente fornece dois padrões diferentes para estes estilos de página. Você pode
+selecioná-los manualmente com a opção \Option{pagestyleset}.
 
-The 
-\PValue{KOMA-Script}\important{\OptionValue{pagestyleset}{KOMA-Script}}
-\PName{setting} selects the defaults, which are also set automatically if the
-option is not specified and a \KOMAScript{} class is detected. In two-sided
-printing, \DescRef{\LabelBase.pagestyle.scrheadings} uses outer-aligned
-running heads in the header and outer-aligned page numbers in the footer.
-In one-sided printing, the running head will be printed in the
-middle of the header and the page number in the middle of the footer. Upper-
-and lower-case letters are used in the automatic running heads as they
-actually appear in the sectioning headings. This corresponds to the
+A configuração \PValue{KOMA-Script}\important{\OptionValue{pagestyleset}{KOMA-Script}}
+seleciona os padrões, que também são definidos automaticamente se a
+opção não for especificada e uma classe \KOMAScript{} for detectada. Em impressão bilateral,
+\DescRef{\LabelBase.pagestyle.scrheadings} usa cabeçalhos correntes alinhados
+externamente no cabeçalho e números de página alinhados externamente no rodapé.
+Em impressão unilateral, o cabeçalho corrente será impresso no
+meio do cabeçalho e o número de página no meio do rodapé. Letras maiúsculas
+e minúsculas são usadas nos cabeçalhos correntes automáticos como
+aparecem nos títulos de seção. Isto corresponde à opção
 \OptionValueRef{\LabelBase}{markcase}{used}\IndexOption{markcase~=used}%
-\important{\OptionValueRef{\LabelBase}{markcase}{used}} option. The
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} page style has no running
-heads, but the page numbers are printed in the same manner.
+\important{\OptionValueRef{\LabelBase}{markcase}{used}}. O
+estilo de página \DescRef{\LabelBase.pagestyle.plain.scrheadings} não tem cabeçalhos
+correntes, mas os números de página são impressos da mesma forma.
 
-However, if the \hyperref[cha:scrlttr2]{\Class{scrlttr2}}%
+Entretanto, se a classe \hyperref[cha:scrlttr2]{\Class{scrlttr2}}%
 \important{\hyperref[cha:scrlttr2]{\Class{scrlttr2}}}%
-\IndexClass{scrlttr2} class is detected, the default settings are based on the
-page styles of that class. See \autoref{sec:scrlttr2.pagestyle}, 
+\IndexClass{scrlttr2} for detectada, as configurações padrão são baseadas nos
+estilos de página daquela classe. Veja \autoref{sec:scrlttr2.pagestyle},
 \autopageref{sec:scrlttr2.pagestyle}.
 
-The 
-\PValue{standard}\important{\OptionValue{pagestyleset}{standard}}
-\PName{setting} selects defaults that match the page styles of the standard
-classes. This is also activated automatically if the option has not been
-specified and no \KOMAScript{} class is detected. In this case, for two-sided
-printing \DescRef{\LabelBase.pagestyle.scrheadings} uses running heads
-inner-aligned in the header, and the page numbers will be printed\,---\,also
-in the header\,---\,outer-aligned. One-sided printing uses the same settings,
-but since only right-hand pages exist in this mode, the running head will
-always be left-aligned and the page number right-aligned. The automatic
-running heads\,---\,despite considerable typographic objections\,---\,are
-converted to capital letters, as they would be with
+A configuração \PValue{standard}\important{\OptionValue{pagestyleset}{standard}}
+seleciona padrões que correspondem aos estilos de página das classes
+padrão. Isto também é ativado automaticamente se a opção não tiver sido
+especificada e nenhuma classe \KOMAScript{} for detectada. Neste caso, para impressão bilateral,
+\DescRef{\LabelBase.pagestyle.scrheadings} usa cabeçalhos correntes
+alinhados internamente no cabeçalho, e os números de página serão impressos\,---\,também
+no cabeçalho\,---\,alinhados externamente. A impressão unilateral usa as mesmas configurações,
+mas como apenas páginas de mão direita existem neste modo, o cabeçalho corrente sempre
+será alinhado à esquerda e o número de página alinhado à direita. Os cabeçalhos
+correntes automáticos\,---\,apesar de objeções tipográficas consideráveis\,---\,são
+convertidos em letras maiúsculas, como seria com a opção
 \OptionValueRef{\LabelBase}{markcase}{upper}\IndexOption{markcase~=upper}%
-\important{\OptionValueRef{\LabelBase}{markcase}{upper}}. In one-sided
-printing, the \DescRef{\LabelBase.pagestyle.plain.scrheadings} page style
-differs considerably from \DescRef{\LabelBase.pagestyle.scrheadings} because
-the page number is printed in the middle of the footer.
-Unlike\textnote{\KOMAScript{} vs. standard classes} the \PageStyle{plain} page
-style in the standard classes,
-\DescRef{\LabelBase.pagestyle.plain.scrheadings} omits the page number in
-two-sided printing. The standard classes print the page number in the middle
-of the footer, which does not match the rest of the page styles in two-sided
-printing.
+\important{\OptionValueRef{\LabelBase}{markcase}{upper}}. Em impressão unilateral,
+o estilo de página \DescRef{\LabelBase.pagestyle.plain.scrheadings}
+difere consideravelmente de \DescRef{\LabelBase.pagestyle.scrheadings} porque
+o número de página é impresso no meio do rodapé.
+Diferentemente\textnote{\KOMAScript{} vs. classes padrão} do estilo de página \PageStyle{plain}
+nas classes padrão,
+\DescRef{\LabelBase.pagestyle.plain.scrheadings} omite o número de página em
+impressão bilateral. As classes padrão imprimem o número de página no meio
+do rodapé, o que não corresponde ao resto dos estilos de página em impressão
+bilateral.
 \iffalse % Umbruchkorrekturtext
-  If you want the page number back
+  Se você quiser o número de página de volta
 \begin{lstcode}
   \cfoot[\pagemark]{}
 \end{lstcode}
-  will restore it. %
+  vai restaurá-lo. %
 \fi%
-The running head is omitted in \DescRef{\LabelBase.pagestyle.plain.scrheadings}.
+O cabeçalho corrente é omitido em \DescRef{\LabelBase.pagestyle.plain.scrheadings}.
 
-Note\textnote{Attention!} that using this option activates the
-\DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}%
-\important{\DescRef{\LabelBase.pagestyle.scrheadings}} page style.
+Observe\textnote{Atenção!} que usar esta opção ativa o
+estilo de página \DescRef{\LabelBase.pagestyle.scrheadings}\IndexPagestyle{scrheadings}%
+\important{\DescRef{\LabelBase.pagestyle.scrheadings}}.
 \iffalse% Umbruchkorrektur
-  This also applies if you use the option within the document.%
+  Isto também se aplica se você usar a opção dentro do documento.%
 \fi
 %
 \EndIndexGroup
@@ -993,82 +986,82 @@ Note\textnote{Attention!} that using this option activates the
   \OptionVName{headwidth}{width\textup{:}offset\textup{:}offset}%
   \OptionVName{footwidth}{width\textup{:}offset\textup{:}offset}
 \end{Declaration}
-By default the header\Index{header>width} and footer\Index{footer>width} are
-as wide as the type area. However, you can change this using these
-\KOMAScript{} options. The value \PName{width} is the desired width of the
-header or footer. The \PName{offset} defines how far the header or footer
-should be moved towards the outer\,---\,in one-sided printing to the
-right\,---\,margin. All three\ChangedAt{v3.14}{\Package{scrlayer-scrpage}}
-values are optional and can be omitted. If you omit a value, you can also omit
-the associated colon to the left of it. If only one \PName{offset} is
-specified, it is used for both odd and even pages. Otherwise, the first
-\PName{offset} is used for odd and the second \PName{offset} for even pages in
-two-sided mode. If you only use one value without a colon, this will be the
+Por padrão, o cabeçalho\Index{cabeçalho>largura} e rodapé\Index{rodapé>largura} são
+tão largos quanto a área de texto. Entretanto, você pode mudar isto usando estas
+opções \KOMAScript{}. O valor \PName{width} é a largura desejada do
+cabeçalho ou rodapé. O \PName{offset} define até onde o cabeçalho ou rodapé
+deve ser movido em direção à margem externa\,---\,em impressão unilateral para a
+direita\,---. Todos os três\ChangedAt{v3.14}{\Package{scrlayer-scrpage}}
+valores são opcionais e podem ser omitidos. Se você omite um valor, você também pode omitir
+o dois-pontos associado à sua esquerda. Se apenas um \PName{offset} for
+especificado, é usado para páginas pares e ímpares. Caso contrário, o primeiro
+\PName{offset} é usado para páginas ímpares e o segundo \PName{offset} para páginas pares em
+modo bilateral. Se você usar apenas um valor sem dois-pontos, este será o
 \PName{width}.
 
-For both the \PName{width} and the \PName{offset} you can use any valid length
-value, \LaTeX{} length, \TeX{} dimension, or \TeX{} skip. In addition, you can
-use an \eTeX{} dimension expression with the basic arithmetic operations
-\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, and parentheses. See
-\cite[section~3.5]{manual:eTeX} for more information on such expressions. See
-\autoref{sec:scrlayer-scrpage.options} for more information on using a
-\LaTeX{} length as an option value. The \PName{width} can also be one of the
-symbolic values shown in \autoref{tab:scrlayer-scrpage.symbolic.values}.
+Para ambos \PName{width} e o \PName{offset} você pode usar qualquer valor de comprimento válido,
+comprimento \LaTeX{}, dimensão \TeX{}, ou espaço \TeX{}. Além disso, você pode
+usar uma expressão de dimensão \eTeX{} com as operações aritméticas básicas
+\texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, e parênteses. Veja
+\cite[section~3.5]{manual:eTeX} para mais informações sobre tais expressões. Veja
+\autoref{sec:scrlayer-scrpage.options} para mais informações sobre usar um
+comprimento \LaTeX{} como um valor de opção. O \PName{width} também pode ser um dos
+valores simbólicos mostrados em \autoref{tab:scrlayer-scrpage.symbolic.values}.
 
-By default the header and the footer are the width of the text area. The
-default \PName{offset} depends on the selected \PName{width}. One-sided
-printing typically uses half the difference between \PName{width} and the
-width of the text area. This centres the header horizontally above the text
-area. Two-sided printing, on the other hand, uses only a third of the
-difference between \PName{width} and the width of the text area. However, if
-\PName{width} is the width of the whole text area and the marginal note
-column, the default \PName{offset} will be zero. If this is too complicated
-for you, you should simply specify the desired \PName{offset} yourself.
+Por padrão, o cabeçalho e o rodapé são a largura da área de texto. O padrão
+\PName{offset} depende da \PName{width} selecionada. A impressão unilateral
+típicamente usa metade da diferença entre \PName{width} e a
+largura da área de texto. Isto centraliza o cabeçalho horizontalmente acima da área de
+texto. A impressão bilateral, por outro lado, usa apenas um terço da
+diferença entre \PName{width} e a largura da área de texto. Entretanto, se
+\PName{width} for a largura de toda a área de texto e da coluna de notas
+marginais, o padrão \PName{offset} será zero. Se isto é muito complicado
+para você, deve simplesmente especificar o \PName{offset} desejado você mesmo.
 %
 \begin{table}
   \centering
-  \caption[Symbolic values for the \Option{headwidth} and \Option{footwidth}
-  options]{Available symbolic values for the \PName{width} value of options
-    \Option{headwidth} and \Option{footwidth}}
+  \caption[Valores simbólicos para as opções \Option{headwidth} e \Option{footwidth}
+  ]{Valores simbólicos disponíveis para o valor \PName{width} das opções
+    \Option{headwidth} e \Option{footwidth}}
   \label{tab:scrlayer-scrpage.symbolic.values}
   \begin{desctabular}
     \entry{\PValue{foot}}{%
-      the current width of the footer%
+      a largura atual do rodapé%
     }%
     \entry{\PValue{footbotline}}{%
-      the current length of the horizontal line below the footer%
+      o comprimento atual da linha horizontal abaixo do rodapé%
     }%
     \entry{\PValue{footsepline}}{%
-      the current length of the horizontal line above the footer%
+      o comprimento atual da linha horizontal acima do rodapé%
     } \entry{\PValue{head}}{%
-      the current width of the header%
+      a largura atual do cabeçalho%
     }%
     \entry{\PValue{headsepline}}{%
-      the current length of the horizontal line below the header%
+      o comprimento atual da linha horizontal abaixo do cabeçalho%
     }%
     \entry{\PValue{headtopline}}{%
-      the current length of the horizontal line above the header%
+      o comprimento atual da linha horizontal acima do cabeçalho%
     }%
     \entry{\PValue{marginpar}}{%
-      the width of the marginal note column including the distance
-      between the text area and the marginal note column%
+      a largura da coluna de notas marginais incluindo a distância
+      entre a área de texto e a coluna de notas marginais%
     }%
     \entry{\PValue{page}}{%
-      the width of the page taking into account any binding correction defined
-      with the help of the \Package{typearea} package (see the
-      \DescRef{typearea.option.BCOR} option in
+      a largura da página levando em conta qualquer correção de encadernação definida
+      com a ajuda do pacote \Package{typearea} (veja a
+      opção \DescRef{typearea.option.BCOR} em
       \autoref{sec:typearea.typearea}, \DescPageRef{typearea.option.BCOR})%
     }%
     \entry{\PValue{paper}}{%
-      the width of the paper without considering any binding correction%
+      a largura do papel sem considerar nenhuma correção de encadernação%
     }%
     \entry{\PValue{text}}{%
-      the width of the text area%
+      a largura da área de texto%
     }%
     \entry{\PValue{textwithmarginpar}}{%
-      the width of the text area including the marginal note column and
-      the distance between the two (Note: only in this case is
-      the default for \PName{offset} zero)%
+      a largura da área de texto incluindo a coluna de notas marginais e
+      a distância entre as duas (Nota: apenas neste caso o
+      padrão para \PName{offset} é zero)%
     }%
   \end{desctabular}
 \end{table}
