@@ -1558,6 +1558,28 @@
   \providecaptionname{slovak}\wwwname{URL}%
   \providecaptionname{slovak}\bankname{Bankov\'{e} spojenie}%
   \g@addnumerical@date{slovak}{\number\day.\,\number\month.\,\number\year}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\yourrefname{Sua ref.}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\yourmailname{Sua carta de}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\myrefname{Nossa ref.}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\customername{No. do cliente}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\invoicename{No. da fatura}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\subjectname{Assunto}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\ccname{C\'opia para}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\enclname{Anexo}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\headtoname{Para}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\headfromname{De}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\datename{Data}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\pagename{P\'agina}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\phonename{Telefone}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\mobilephonename{Celular}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\faxname{Fax}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\emailname{E-mail}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\wwwname{URL}%
+  \providecaptionname{brazilian,brazil,portuges,portuguese}\bankname{Conta banc\'aria}%
+  \g@addnumerical@date{brazilian}{\number\day/\number\month/\number\year}%
+  \g@addnumerical@date{brazil}{\number\day/\number\month/\number\year}%
+  \g@addnumerical@date{portuges}{\number\day/\number\month/\number\year}%
+  \g@addnumerical@date{portuguese}{\number\day/\number\month/\number\year}%
 %    \end{macrocode}
 % Last but not least the activation has to be done.
 % \changes{v2.2c}{1995/03/20}{missing \texttt{\quotechar=} added after
@@ -1747,6 +1769,26 @@
         \@nameuse{captionsslovak}%
         \@nameuse{extrasslovak}%
         \@nameuse{dateslovak}%
+    \fi\fi
+    \ifx\l@brazilian\undefined\else\ifnum\language=\l@brazilian
+        \@nameuse{captionsbrazilian}%
+        \@nameuse{extrasbrazilian}%
+        \@nameuse{datebrazilian}%
+    \fi\fi
+    \ifx\l@brazil\undefined\else\ifnum\language=\l@brazil
+        \@nameuse{captionsbrazil}%
+        \@nameuse{extrasbrazil}%
+        \@nameuse{datebrazil}%
+    \fi\fi
+    \ifx\l@portuges\undefined\else\ifnum\language=\l@portuges
+        \@nameuse{captionsportuges}%
+        \@nameuse{extrasportuges}%
+        \@nameuse{dateportuges}%
+    \fi\fi
+    \ifx\l@portuguese\undefined\else\ifnum\language=\l@portuguese
+        \@nameuse{captionsportuguese}%
+        \@nameuse{extrasportuguese}%
+        \@nameuse{dateportuguese}%
     \fi\fi
   \else
     \edef\@tempa{nohyphenation}%

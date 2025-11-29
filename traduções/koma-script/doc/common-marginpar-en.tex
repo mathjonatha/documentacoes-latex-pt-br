@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,92 +28,91 @@
                   KOMA-Script guide (common paragraphs)]
 \translator{Gernot Hassenpflug\and Markus Kohm\and Karl Hagen}
 
-\section{Marginal Notes}
+\section{Notas Marginais}
 \seclabel{marginNotes}%
 \BeginIndexGroup
-\BeginIndex{}{marginal notes}%
+\BeginIndex{}{notas marginais}%
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.marginNotes}
-  applies equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.marginNotes}, you can skip ahead to
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.marginNotes}
+  aplicam-se igualmente a este capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.marginNotes}, pode pular para
   \autoref{sec:\ThisCommonLabelBase.marginNotes.next},
   \autopageref{sec:\ThisCommonLabelBase.marginNotes.next}.%
 }
 
-In addition to the text area, which normally fills the type area, documents
-often contain a column for marginalia. You can set marginal notes in this 
-area.
+Além da área de texto, que normalmente preenche a área de tipos, os documentos
+frequentemente contêm uma coluna para marginália. Você pode colocar notas
+marginais nesta área.
 \IfThisCommonLabelBase{scrlttr2}{%
-  In letters, however, marginal notes are unusual and should be used 
-  sparingly.%
+  Em cartas, no entanto, notas marginais são incomuns e devem ser usadas
+  com moderação.%
 }{%
-  This \iffree{guide}{book} makes frequent use of them.%
+  Este \iffree{guia}{livro} faz uso frequente delas.%
 }%
 
 
 \begin{Declaration}
-  \Macro{marginpar}\OParameter{margin note left}\Parameter{margin note}%
-  \Macro{marginline}\Parameter{margin note}
+  \Macro{marginpar}\OParameter{nota marginal esquerda}\Parameter{nota marginal}%
+  \Macro{marginline}\Parameter{nota marginal}
 \end{Declaration}%
-Marginal notes\Index[indexmain]{marginal notes} in {\LaTeX} are usually
-inserted with the \Macro{marginpar} command. They are placed in the outer
-margin. One-sided documents use the right border. Although you can specify a
-different marginal note for \Macro{marginpar} in case it winds up in the left
-margin, marginal notes are always fully justified. However, experience has
-shown that many users prefer left- or right-justified marginal notes
-instead. For this purpose, {\KOMAScript} offers the \Macro{marginline}
-command.
+Notas marginais\Index[indexmain]{notas marginais} em {\LaTeX} são normalmente
+inseridas com o comando \Macro{marginpar}. Elas são colocadas na margem
+externa. Documentos de um lado usam a borda direita. Embora você possa especificar
+uma nota marginal diferente para \Macro{marginpar} caso ela termine na margem
+esquerda, as notas marginais são sempre totalmente justificadas. No entanto, a experiência
+mostrou que muitos usuários preferem notas marginais alinhadas à esquerda ou à direita.
+Para este propósito, {\KOMAScript} oferece o comando \Macro{marginline}.
 
 \IfThisCommonFirstRun{%
   \iftrue%
 }{%
-  For a detailed example, see
-  \autoref{sec:\ThisCommonFirstLabelBase.marginNotes} at
+  Para um exemplo detalhado, veja
+  \autoref{sec:\ThisCommonFirstLabelBase.marginNotes} em
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.marginline}.%
   \csname iffalse\endcsname%
 }%
   \begin{Example}
     \phantomsection\xmpllabel{cmd.marginline}%
-    In some parts of this \iffree{guide}{book}, the class name
-    \Class{scrartcl} can be found in the margin. You can produce this with:%
+    Em algumas partes deste \iffree{guia}{livro}, o nome da classe
+    \Class{scrartcl} pode ser encontrado na margem. Você pode produzir isso com:%
     \iffalse% Umbruchkorrekturtext
-      \footnote{Actually, instead of \Macro{texttt}, a semantic markup
-        was used. To avoid confusion, this has been replaced in the example.}%
+      \footnote{Na verdade, em vez de \Macro{texttt}, uma marcação semântica
+        foi usada. Para evitar confusão, isso foi substituído no exemplo.}%
     \fi
 \begin{lstcode}
   \marginline{\texttt{scrartcl}}
 \end{lstcode}
 
-  Instead of \Macro{marginline} you could have used \Macro{marginpar}. In fact
-  the first command is implemented internally as:
+  Em vez de \Macro{marginline} você poderia ter usado \Macro{marginpar}. Na verdade,
+  o primeiro comando é implementado internamente como:
 \begin{lstcode}
   \marginpar[\raggedleft\texttt{scrartcl}]
     {\raggedright\texttt{scrartcl}}
 \end{lstcode}
-  Thus \Macro{marginline} is really just a shorthand notation for the
-  code above.%
+  Assim, \Macro{marginline} é realmente apenas uma notação abreviada para o
+  código acima.%
 \end{Example}%
 \fi
 
-Advanced users\textnote{Attention!} will find notes about difficulties that
-can arise using \Macro{marginpar} in \autoref{sec:maincls-experts.addInfos}%
-\iffree{}{, on \DescPageRef{maincls-experts.cmd.marginpar}}. These remarks
-also apply to \Macro{marginline}. In addition,
-\autoref{cha:scrlayer-notecolumn} introduces a package that you can use to
-create note columns with their own page breaks.%
+Usuários avançados\textnote{Atenção!} encontrarão notas sobre dificuldades que
+podem surgir ao usar \Macro{marginpar} em \autoref{sec:maincls-experts.addInfos}%
+\iffree{}{, em \DescPageRef{maincls-experts.cmd.marginpar}}. Essas observações
+também se aplicam a \Macro{marginline}. Além disso,
+\autoref{cha:scrlayer-notecolumn} introduz um pacote que você pode usar para
+criar colunas de notas com suas próprias quebras de página.%
 \iffalse% Umbruchkorrektur
-  \ However, the
+  \ No entanto, o pacote
   \hyperref[cha:scrlayer-notecolumn]{\Package{scrlayer-notecolumn}}%
-  \IndexPackage{scrlayer-notecolumn} package is more a proof of concept than a
-  finished package.%
+  \IndexPackage{scrlayer-notecolumn} é mais uma prova de conceito do que um
+  pacote finalizado.%
 \fi%
 %
 \EndIndexGroup
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8

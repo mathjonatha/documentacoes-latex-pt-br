@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -29,50 +29,49 @@
 \translator{Gernot Hassenpflug\and Markus Kohm\and Krickette Murabayashi\and
   Karl Hagen}
 
-\section{Lists}
+\section{Listas}
 \seclabel{lists}%
 \BeginIndexGroup
 \BeginIndex{}{lists}%
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.lists} applies
-  equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.lists}, you can skip ahead to
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.lists} aplicam-se
+  igualmente a este capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.lists}, pode pular para
   \autoref{sec:\ThisCommonLabelBase.lists.next},
   \autopageref{sec:\ThisCommonLabelBase.lists.next}.%
   \IfThisCommonLabelBaseOneOf{scrextend,scrlttr2}{ %
     \IfThisCommonLabelBase{scrlttr2}{%
-      The \Package{scrletter}\OnlyAt{\Package{scrletter}} package does not
-      define any list environments itself but leaves them to the class
-      used. If this is not a \KOMAScript{} class, it will load
+      O pacote \Package{scrletter}\OnlyAt{\Package{scrletter}} não
+      define nenhum ambiente de lista por si mesmo, mas os deixa para a classe
+      utilizada. Se esta não for uma classe \KOMAScript{}, ele carregará
       \hyperref[cha:scrextend]{\Package{scrextend}}\IndexPackage{scrextend}%
       \important{\hyperref[cha:scrextend]{\Package{scrextend}}}. %
     }{}%
-    However, the \Package{scrextend} package only defines the
-    \DescRef{\ThisCommonLabelBase.env.labeling},
-    \DescRef{\ThisCommonLabelBase.env.addmargin}, and
-    \DescRef{\ThisCommonLabelBase.env.addmargin*} environments. All other list
-    environments are left to the responsibility of the class used.%
+    No entanto, o pacote \Package{scrextend} define apenas os
+    ambientes \DescRef{\ThisCommonLabelBase.env.labeling},
+    \DescRef{\ThisCommonLabelBase.env.addmargin} e
+    \DescRef{\ThisCommonLabelBase.env.addmargin*}. Todos os outros ambientes
+    de lista ficam sob responsabilidade da classe utilizada.%
   }{}%
 }
 
 \IfThisCommonLabelBase{scrextend}{}{%
-  Both {\LaTeX} and the standard classes\textnote{\KOMAScript{} vs. standard
-    classes} offer different environments for lists. Naturally, {\KOMAScript}
-  also offers all these environments, though slightly modified or extended in
-  some cases. In general, all lists\,---\,even those of different
-  kinds\,---\,can be nested up to four levels deep. From a typographical view,
-  anything more would make no sense, as lists of more than three levels cannot
-  easily be apprehended. In such cases, I recommend\textnote{Hint!} that you
-  split a large list into several smaller ones.%
+  Tanto o {\LaTeX} quanto as classes padrão\textnote{\KOMAScript{} vs. classes
+    padrão} oferecem diferentes ambientes para listas. Naturalmente, o {\KOMAScript}
+  também oferece todos esses ambientes, embora ligeiramente modificados ou estendidos em
+  alguns casos. Em geral, todas as listas\,---\,mesmo aquelas de diferentes
+  tipos\,---\,podem ser aninhadas até quatro níveis de profundidade. Do ponto de vista
+  tipográfico, qualquer coisa além disso não faria sentido, pois listas de mais de três níveis
+  não podem ser facilmente compreendidas. Nesses casos, recomendo\textnote{Dica!} que você
+  divida uma lista grande em várias listas menores.%
 }
 
 \IfThisCommonFirstRun{}{%
-  Because lists are standard elements of \LaTeX{}, examples have been omitted
-  in this section. Nevertheless, you can find examples either in
+  Como listas são elementos padrão do \LaTeX{}, exemplos foram omitidos
+  nesta seção. No entanto, você pode encontrar exemplos em
   \autoref{sec:\ThisCommonFirstLabelBase.lists},
-  \autopageref{sec:\ThisCommonFirstLabelBase.lists} or in any \LaTeX{}
-  tutorial.%
+  \autopageref{sec:\ThisCommonFirstLabelBase.lists} ou em qualquer tutorial de \LaTeX{}.%
 }
 
 \IfThisCommonLabelBase{scrextend}{\iffalse}{\csname iftrue\endcsname}
@@ -89,122 +88,122 @@
     \Macro{labelitemiv}
   \end{Declaration}%
   \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}%
-  The simplest form of a list is the itemized list\textnote{itemized list},
+  A forma mais simples de uma lista é a lista não ordenada\textnote{lista não ordenada},
   \Environment{itemize}. %
   \iffalse % Umbruckoptimierungstext
-  The users of a certain disliked word processing package often refer to this
-  form of a list as \emph{bullet points}. Presumably, they cannot imagine
-  that, depending on the level, a symbol other than a large dot could be used
-  to introduce each point. %
+  Os usuários de um certo pacote de processamento de texto desprezado frequentemente se referem a
+  esta forma de lista como \emph{marcadores}. Presumivelmente, eles não podem imaginar
+  que, dependendo do nível, um símbolo diferente de um grande ponto pode ser usado
+  para introduzir cada item. %
   \fi%
-  Depending on the level, \KOMAScript{} classes use the following marks:
-  ``{\labelitemi}'', ``{\labelitemii}'', ``{\labelitemiii}'', and
-  ``{\labelitemiv}''. The definition of these symbols is specified in the
-  macros \Macro{labelitemi}, \Macro{labelitemii}, \Macro{labelitemiii}, and
-  \Macro{labelitemiv}, all of which you can redefine using
+  Dependendo do nível, as classes \KOMAScript{} usam as seguintes marcas:
+  ``{\labelitemi}'', ``{\labelitemii}'', ``{\labelitemiii}'' e
+  ``{\labelitemiv}''. A definição desses símbolos é especificada nos
+  comandos \Macro{labelitemi}, \Macro{labelitemii}, \Macro{labelitemiii} e
+  \Macro{labelitemiv}, todos os quais você pode redefinir usando
   \Macro{renewcommand}.
   \BeginIndex{FontElement}{itemizelabel}\LabelFontElement{itemizelabel}%
   \BeginIndex{FontElement}{labelitemi}\LabelFontElement{labelitemi}%
   \BeginIndex{FontElement}{labelitemii}\LabelFontElement{labelitemii}%
   \BeginIndex{FontElement}{labelitemiii}\LabelFontElement{labelitemiii}%
   \BeginIndex{FontElement}{labelitemiv}\LabelFontElement{labelitemiv}%
-  With the \KOMAScript{} classes the
-  fonts\Index{font>style}\ChangedAt{v3.33}{\Class{scrbook}\and
-    \Class{scrreprt}\and \Class{scrartcl}} used to format the symbols for the
-  different levels can be changed using
-  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (see
+  Com as classes \KOMAScript{}, as
+  fontes\Index{fonte>estilo}\ChangedAt{v3.33}{\Class{scrbook}\and
+    \Class{scrreprt}\and \Class{scrartcl}} usadas para formatar os símbolos dos
+  diferentes níveis podem ser alteradas usando
+  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
   \autoref{sec:\ThisCommonLabelBase.textmarkup},
-  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) for the elements
+  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) para os elementos
   \FontElement{labelitemi}\important{\FontElement{labelitemi}},
   \FontElement{labelitemii}\important{\FontElement{labelitemii}},
-  \FontElement{labelitemiii}\important{\FontElement{labelitemiii}} and
-  \FontElement{labelitemiv}\important{\FontElement{labelitemiv}}. By default
-  these all use the font setting for element
-  \FontElement{itemizelabel}\important{\FontElement{itemizelabel}}. Only
-  element \FontElement{labelitemii} additionally uses \Macro{bfseries}. The
-  default of \FontElement{itemizelabel} itself is \Macro{normalfont}.%
+  \FontElement{labelitemiii}\important{\FontElement{labelitemiii}} e
+  \FontElement{labelitemiv}\important{\FontElement{labelitemiv}}. Por padrão,
+  todos usam a configuração de fonte para o elemento
+  \FontElement{itemizelabel}\important{\FontElement{itemizelabel}}. Apenas o
+  elemento \FontElement{labelitemii} usa adicionalmente \Macro{bfseries}. O
+  padrão de \FontElement{itemizelabel} em si é \Macro{normalfont}.%
   \EndIndex{FontElement}{labelitemiv}%
   \EndIndex{FontElement}{labelitemiii}%
   \EndIndex{FontElement}{labelitemii}%
   \EndIndex{FontElement}{labelitemi}%
   \EndIndex{FontElement}{itemizelabel}
-  Every item is introduced with \Macro{item}.%
+  Cada item é introduzido com \Macro{item}.%
   \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{env.itemize}%
-      You have a simple list which is nested in several levels. You write,
-      for example:
+      Você tem uma lista simples que está aninhada em vários níveis. Você escreve,
+      por exemplo:
 \begin{lstcode}
-  \minisec{Vehicles in the game}
+  \minisec{Veículos no jogo}
   \begin{itemize}
-    \item aeroplanes
+    \item aviões
     \begin{itemize}
-      \item biplane
-      \item transport planes
+      \item biplano
+      \item aviões de transporte
       \begin{itemize}
-        \item single-engine
+        \item monomotor
         \begin{itemize}
-          \item jet propelled
-          \item propeller driven
+          \item a jato
+          \item a hélice
         \end{itemize}
-        \item twin-engine
+        \item bimotor
         \begin{itemize}
-	      \item jet propelled
-		  \item propeller driven
+	      \item a jato
+		  \item a hélice
 		\end{itemize}
       \end{itemize}
-      \item helicopters
+      \item helicópteros
     \end{itemize}
-    \item motorcycles
-    \item automobiles
+    \item motocicletas
+    \item automóveis
     \begin{itemize}
-      \item racing cars
-      \item passenger cars
-      \item lorries
+      \item carros de corrida
+      \item carros de passeio
+      \item caminhões
     \end{itemize}
-    \item bicycles
+    \item bicicletas
   \end{itemize}
 \end{lstcode}
-      As output you get:
+      Como saída você obtém:
       \begin{ShowOutput}[\baselineskip]
-        \minisec{Vehicles in the game}
+        \minisec{Veículos no jogo}
         \begin{itemize}
-        \item aeroplanes
+        \item aviões
           \begin{itemize}
-          \item biplanes
-          \item transport planes
+          \item biplanos
+          \item aviões de transporte
             \begin{itemize}
-            \item single-engine
+            \item monomotor
               \begin{itemize}
-              \item jet-propelled
-              \item propeller-driven
+              \item a jato
+              \item a hélice
               \end{itemize}
-            \item twin-engine
+            \item bimotor
               \begin{itemize}
-              \item jet propelled
-              \item propeller driven
+              \item a jato
+              \item a hélice
               \end{itemize}
             \end{itemize}
-          \item helicopters
+          \item helicópteros
           \end{itemize}
-        \item motorcycles
+        \item motocicletas
           % \begin{itemize}
           % \item historically accurate
           % \item futuristic, not real
           % \end{itemize}
-        \item automobiles
+        \item automóveis
           \begin{itemize}
-          \item racing cars
-          \item passenger cars
-          \item lorries
+          \item carros de corrida
+          \item carros de passeio
+          \item caminhões
           \end{itemize}
-        \item bicycles
+        \item bicicletas
         \end{itemize}
       \end{ShowOutput}
     \end{Example}
   \fi
-  % 
+  %
   \EndIndexGroup
 
 
@@ -224,116 +223,116 @@
     \Macro{labelenumiii}%
     \Macro{labelenumiv}
   \end{Declaration}%
-  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}The numbered
-  list\textnote{numbered list} is also very common and already provided by the
-  {\LaTeX} kernel. The numbering\Index{numbering} differs according to the
-  level, with Arabic numbers, small letters, small Roman numerals, and capital
-  letters, respectively. The style of numbering is defined with the macros
-  \Macro{theenumi} down to \Macro{theenumiv}. The output format is determined
-  by the macros \Macro{labelenumi} to \Macro{labelenumiv}. While the small
-  letter of the second level is followed by a right parenthesis, the values of
-  all other levels are followed by a dot.
+  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}A lista
+  numerada\textnote{lista numerada} também é muito comum e já é fornecida pelo
+  núcleo do {\LaTeX}. A numeração\Index{numeração} difere de acordo com o
+  nível, com números arábicos, letras minúsculas, algarismos romanos minúsculos e letras
+  maiúsculas, respectivamente. O estilo de numeração é definido com os comandos
+  \Macro{theenumi} até \Macro{theenumiv}. O formato de saída é determinado
+  pelos comandos \Macro{labelenumi} até \Macro{labelenumiv}. Enquanto a letra
+  minúscula do segundo nível é seguida por um parêntese direito, os valores de
+  todos os outros níveis são seguidos por um ponto.
   \BeginIndex{FontElement}{enumeratelabel}\LabelFontElement{enumeratelabel}%
   \BeginIndex{FontElement}{labelenumi}\LabelFontElement{labelenumi}%
   \BeginIndex{FontElement}{labelenumii}\LabelFontElement{labelenumii}%
   \BeginIndex{FontElement}{labelenumiii}\LabelFontElement{labelenumiii}%
   \BeginIndex{FontElement}{labelenumiv}\LabelFontElement{labelenumiv}%
-  With the \KOMAScript{} classes the
-  fonts\Index{font>style}\IfThisCommonLabelBase{scrlttr2}{\ChangedAt{v3.44}{\Class{scrlttr2}\and
+  Com as classes \KOMAScript{}, as
+  fontes\Index{fonte>estilo}\IfThisCommonLabelBase{scrlttr2}{\ChangedAt{v3.44}{\Class{scrlttr2}\and
       \Package{scrletter}}}{\ChangedAt{v3.44}{\Class{scrbook}\and
-      \Class{scrreprt}\and \Class{scrartcl}}} used to format the numbers
-  respective labels for the different levels can be changed using
-  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (see
+      \Class{scrreprt}\and \Class{scrartcl}}} usadas para formatar os números
+  respectivos rótulos para os diferentes níveis podem ser alteradas usando
+  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
   \autoref{sec:\ThisCommonLabelBase.textmarkup},
-  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) for the elements
+  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) para os elementos
   \FontElement{labelenumi}\important{\FontElement{labelenumi}},
-  \FontElement{labelenumii}\important{\FontElement{labelenumii}} and
-  \FontElement{labelenumiii}\important{\FontElement{labelenumiii}} and
-  \FontElement{labelenumiv}\important{\FontElement{labelenumiv}}. By default
-  these all use the font setting for element
-  \FontElement{enumeratelabel}\important{\FontElement{enumeratelabel}}. The
-  default of \FontElement{enumeratelabel} itself is empty, which means no
-  change of the current font.%
+  \FontElement{labelenumii}\important{\FontElement{labelenumii}} e
+  \FontElement{labelenumiii}\important{\FontElement{labelenumiii}} e
+  \FontElement{labelenumiv}\important{\FontElement{labelenumiv}}. Por padrão,
+  todos usam a configuração de fonte para o elemento
+  \FontElement{enumeratelabel}\important{\FontElement{enumeratelabel}}. O
+  padrão de \FontElement{enumeratelabel} em si é vazio, o que significa que não há
+  mudança da fonte atual.%
   \EndIndex{FontElement}{labelenumiv}%
   \EndIndex{FontElement}{labelenumiii}%
   \EndIndex{FontElement}{labelenumii}%
   \EndIndex{FontElement}{labelenumi}%
-  \EndIndex{FontElement}{enumeratelabel} Every item is introduced with
+  \EndIndex{FontElement}{enumeratelabel} Cada item é introduzido com
   \Macro{item}.%
   \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{env.enumerate}%
-      Let's shorten the previous example and replace the
-      \DescRef{\ThisCommonLabelBase.env.itemize} environment by an
-      \Environment{enumerate} environment:
+      Vamos encurtar o exemplo anterior e substituir o
+      ambiente \DescRef{\ThisCommonLabelBase.env.itemize} por um
+      ambiente \Environment{enumerate}:
       \begin{ShowOutput}[\baselineskip]
-        \minisec{Vehicles in the game}
+        \minisec{Veículos no jogo}
         \begin{enumerate}
-        \item aeroplanes
+        \item aviões
           \begin{enumerate}
-          \item biplanes
-          \item transport planes
+          \item biplanos
+          \item aviões de transporte
             \begin{enumerate}
-            \item single-engine
+            \item monomotor
               \begin{enumerate}
-              \item jet-propelled\label{xmp:maincls.jets}
-              \item propeller-driven
+              \item a jato\label{xmp:maincls.jets}
+              \item a hélice
               \end{enumerate}
-            \item twin-engine
+            \item bimotor
             \end{enumerate}
-          % \item helicopters
+          % \item helicópteros
           \end{enumerate}
-          \item motorcycles
+          \item motocicletas
           \begin{enumerate}
-             \item historically accurate
-             \item futuristic, not real
+             \item historicamente precisos
+             \item futuristas, não reais
           \end{enumerate}
-        %\item automobiles
+        %\item automóveis
         %  \begin{enumerate}
-        %  \item racing cars
-        %  \item private cars
-        %  \item lorries
+        %  \item carros de corrida
+        %  \item carros particulares
+        %  \item caminhões
         %  \end{enumerate}
-        %\item bicycles
+        %\item bicicletas
         \end{enumerate}
       \end{ShowOutput}
-      Within the list, you can set labels in the normal way with 
-      \Macro{label} and then reference then with \Macro{ref}.
-      In the example above, a label was set after the jet-propelled,
-      single-engine transport planes with
-      ``\Macro{label}\PParameter{xmp:jets}''. The \Macro{ref} value is then
+      Dentro da lista, você pode definir rótulos da maneira normal com
+      \Macro{label} e então referenciá-los com \Macro{ref}.
+      No exemplo acima, um rótulo foi definido após os aviões de transporte
+      monomotor a jato com
+      ``\Macro{label}\PParameter{xmp:jets}''. O valor de \Macro{ref} é então
       ``\ref{xmp:maincls.jets}''.
     \end{Example}
   \fi%
-  % 
+  %
   \EndIndexGroup
 
 
   \begin{Declaration}
     \begin{Environment}{description}\labelsuffix[description]
       \begin{Body}
-        \Macro{item}\OParameter{keyword} \dots
+        \Macro{item}\OParameter{palavra-chave} \dots
         \BodyDots
       \end{Body}
     \end{Environment}
   \end{Declaration}%
-  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}Another list
-  form is the description list\textnote{description list}. It primarily serves
-  to describe individual items or keywords. The item itself is specified as an
-  optional parameter in \Macro{item}. %
+  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}Outra forma de
+  lista é a lista de descrição\textnote{lista de descrição}. Ela serve principalmente para
+  descrever itens ou palavras-chave individuais. O próprio item é especificado como um
+  parâmetro opcional em \Macro{item}. %
   \BeginIndex{FontElement}{descriptionlabel}%
   \LabelFontElement{descriptionlabel}%
-  The font\Index{font>style}\ChangedAt{v2.8p}{%
+  A fonte\Index{fonte>estilo}\ChangedAt{v2.8p}{%
     \Class{scrbook}\and \Class{scrreprt}\and \Class{scrartcl}}%
-  \ used to format the keyword can be changed with the
-  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} commands (see
+  \ usada para formatar a palavra-chave pode ser alterada com os comandos
+  \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+  \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
   \autoref{sec:\ThisCommonLabelBase.textmarkup},
-  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) for the 
-  \FontElement{descriptionlabel}\important{\FontElement{descriptionlabel}}
-  element (see \autoref{tab:\ThisCommonLabelBase.fontelements},
-  \autopageref{tab:\ThisCommonLabelBase.fontelements}). The default is
+  \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) para o
+  elemento \FontElement{descriptionlabel}\important{\FontElement{descriptionlabel}}
+  (veja \autoref{tab:\ThisCommonLabelBase.fontelements},
+  \autopageref{tab:\ThisCommonLabelBase.fontelements}). O padrão é
   \IfThisCommonLabelBase{maincls}{%
     \ChangedAt{v3.39}{\Class{scrbook}\and \Class{scrreprt}\and
       \Class{scrartcl}}%
@@ -351,67 +350,67 @@
   \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{env.description}%
-      You want the keywords to be printed bold and in the normal font instead 
-      of bold and sans serif. Using
+      Você quer que as palavras-chave sejam impressas em negrito e na fonte normal em vez de
+      negrito e sem serifa. Usando
 \begin{lstcode}
   \setkomafont{descriptionlabel}{\normalfont\bfseries}
 \end{lstcode}
-      you redefine the font accordingly.
+      você redefine a fonte adequadamente.
 
-      An example for a description list is the output of the page styles
-      listed in \autoref{sec:maincls.pagestyle}. The (abbreviated) source is:
+      Um exemplo de lista de descrição é a saída dos estilos de página
+      listados em \autoref{sec:maincls.pagestyle}. O código (abreviado) é:
 \begin{lstcode}
   \begin{description}
-    \item[empty] is the page style without any header or footer.
-    \item[plain] is the page style without headings.
-    \item[headings] is the page style with running headings.
-    \item[myheadings] is the page style for manual headings.
+    \item[empty] é o estilo de página sem cabeçalho ou rodapé.
+    \item[plain] é o estilo de página sem títulos correntes.
+    \item[headings] é o estilo de página com títulos correntes.
+    \item[myheadings] é o estilo de página para títulos manuais.
   \end{description}
 \end{lstcode}
-      This gives:
+      Isso produz:
       \begin{ShowOutput}
         \begin{description}
-        \item[empty] is the page style without any header or footer.
-        \item[plain] is the page style without headings.
-        \item[headings] is the page style with running headings.
-        \item[myheadings] is the page style for manual headings.
+        \item[empty] é o estilo de página sem cabeçalho ou rodapé.
+        \item[plain] é o estilo de página sem títulos correntes.
+        \item[headings] é o estilo de página com títulos correntes.
+        \item[myheadings] é o estilo de página para títulos manuais.
         \end{description}
       \end{ShowOutput}
     \end{Example}
   \fi%
-  % 
+  %
   \EndIndexGroup%
 \fi
 
 \begin{Declaration}
-  \begin{Environment}{labeling}\OParameter{delimiter}
-    \Parameter{widest pattern}
+  \begin{Environment}{labeling}\OParameter{delimitador}
+    \Parameter{padrão mais largo}
     \labelsuffix[labeling]
     \begin{Body}
-      \Macro{item}\OParameter{keyword}\dots
+      \Macro{item}\OParameter{palavra-chave}\dots
       \BodyDots
     \end{Body}
   \end{Environment}
 \end{Declaration}%
-Another form of description list\textnote{alternative description list} is
-only available in the {\KOMAScript} classes%
-\IfThisCommonLabelBase{scrextend}{ and \Package{scrextend} }{%
-  \IfThisCommonLabelBase{scrlttr2}{ and
+Outra forma de lista de descrição\textnote{lista de descrição alternativa} está
+disponível apenas nas classes {\KOMAScript}%
+\IfThisCommonLabelBase{scrextend}{ e no \Package{scrextend} }{%
+  \IfThisCommonLabelBase{scrlttr2}{ e no
     \hyperref[cha:scrextend]{\Package{scrextend}}}{}%
 }%
-: the \Environment{labeling} environment. Unlike
+: o ambiente \Environment{labeling}. Ao contrário do
 \IfThisCommonLabelBase{scrextend}{%
   \DescRef{\ThisCommonFirstLabelBase.env.description}%
 }{%
-  the \DescRef{\ThisCommonLabelBase.env.description} described above%
-}, you can specify a pattern for \Environment{labeling} whose length
-determines the indentation of all items. Furthermore, you can put an optional
-\PName{delimiter} between the item and its description. %
+  \DescRef{\ThisCommonLabelBase.env.description} descrito acima%
+}, você pode especificar um padrão para \Environment{labeling} cujo comprimento
+determina a indentação de todos os itens. Além disso, você pode colocar um
+\PName{delimitador} opcional entre o item e sua descrição. %
 \BeginIndexGroup
 \BeginIndex{FontElement}{labelinglabel}\LabelFontElement{labelinglabel}%
 \BeginIndex{FontElement}{labelingseparator}%
 \LabelFontElement{labelingseparator}%
-The font\Index{font>style}%
+A fonte\Index{fonte>estilo}%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.02}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -423,65 +422,65 @@ The font\Index{font>style}%
       \ChangedAt{v3.02}{\Package{scrextend}}%
     }{\InternalCommonFileUsageError}%
   }%
-} used to format the item and the separator can be changed with the 
-\DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} commands (see
+} usada para formatar o item e o separador pode ser alterada com os comandos
+\DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
-\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) for the element
-\FontElement{labelinglabel} and \FontElement{labelingseparator} (see
+\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}) para os elementos
+\FontElement{labelinglabel} e \FontElement{labelingseparator} (veja
 \autoref{tab:\ThisCommonLabelBase.fontelements},
 \autopageref{tab:\ThisCommonLabelBase.fontelements}).
 \IfThisCommonFirstRun{\iftrue}{\par\csname iffalse\endcsname}
   \begin{Example}
     \phantomsection\xmpllabel{env.labeling}%
     \IfThisCommonLabelBase{scrextend}{%
-      A small example of a list like this can be written as follows:%
+      Um pequeno exemplo de uma lista como esta pode ser escrito da seguinte forma:%
     }{%
-      Slightly changing the example from the
-      \DescRef{\ThisCommonLabelBase.env.description} environment, we could
-      write the following:%
+      Alterando ligeiramente o exemplo do
+      ambiente \DescRef{\ThisCommonLabelBase.env.description}, poderíamos
+      escrever o seguinte:%
     }%
 \begin{lstcode}
   \setkomafont{labelinglabel}{\ttfamily}
   \setkomafont{labelingseparator}{\normalfont}
   \begin{labeling}[~--]{myheadings}
     \item[empty]
-      Page style without header or footer
+      Estilo de página sem cabeçalho ou rodapé
     \item[plain]
-      Page style for chapter beginnings without headings
+      Estilo de página para início de capítulos sem títulos
     \item[headings]
-      Page style for running headings
+      Estilo de página para títulos correntes
     \item[myheadings]
-      Page style for manual headings
+      Estilo de página para títulos manuais
   \end{labeling}
 \end{lstcode}
-    The result is this:
+    O resultado é este:
     \begin{ShowOutput}
       \setkomafont{labelinglabel}{\ttfamily}
       \setkomafont{labelingseparator}{\normalfont}
       \begin{labeling}[~--]{myheadings}
       \item[empty]
-        Page style without header or footer
+        Estilo de página sem cabeçalho ou rodapé
       \item[plain]
-        Page style for chapter beginnings without headings
+        Estilo de página para início de capítulos sem títulos
       \item[headings]
-        Page style for running headings
+        Estilo de página para títulos correntes
       \item[myheadings]
-        Page style for manual headings
+        Estilo de página para títulos manuais
       \end{labeling}
     \end{ShowOutput}
-    As this example shows, you can set a font-changing command in the usual
-    way. But if you do not want the font of the separator to be changed in the
-    same way as the font of the label, you have to set the font of the
-    separator as well.
+    Como este exemplo mostra, você pode definir um comando de mudança de fonte da maneira
+    usual. Mas se você não quer que a fonte do separador seja alterada da
+    mesma forma que a fonte do rótulo, você tem que definir a fonte do
+    separador também.
   \end{Example}
 \fi%
 \EndIndexGroup
-Originally, this environment was implemented for things like ``Premise,
-Evidence, Proof'', or ``Given, Find, Solution'' that are often used in
-lecture handouts.  These days, however, the environment has very different
-applications. For example, the environment for examples in this guide was
-defined with the \Environment{labeling} environment.%
+Originalmente, este ambiente foi implementado para coisas como ``Premissa,
+Evidência, Prova'', ou ``Dado, Encontrar, Solução'' que são frequentemente usadas em
+apostilas de aulas. Atualmente, no entanto, o ambiente tem aplicações muito diferentes.
+Por exemplo, o ambiente para exemplos neste guia foi
+definido com o ambiente \Environment{labeling}.%
 %
 \EndIndexGroup
 
@@ -490,26 +489,26 @@ defined with the \Environment{labeling} environment.%
   \begin{Declaration}
     \begin{Environment}{verse}\end{Environment}
   \end{Declaration}%
-  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{} The
-  \Environment{verse} environment\textnote{verse} is not normally perceived
-  as a list environment because you do not work with \Macro{item} commands.
-  Instead, fixed line breaks are used within the \Environment{flushleft}
-  environment. Internally, however, both the standard classes as well as
-  {\KOMAScript} implement it as a list environment.
+  \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{} O
+  ambiente \Environment{verse}\textnote{verso} normalmente não é percebido
+  como um ambiente de lista porque você não trabalha com comandos \Macro{item}.
+  Em vez disso, quebras de linha fixas são usadas dentro do ambiente \Environment{flushleft}.
+  Internamente, no entanto, tanto as classes padrão quanto o
+  {\KOMAScript} implementam-no como um ambiente de lista.
 
-  In general, the \Environment{verse} environment is used for
-  poetry\Index{poetry}.  Lines are indented both left and right. Individual
-  lines of verse are ended by a fixed line break: \verb|\\|. Verses are set as
-  paragraphs, separated by an empty line. Often also
-  \Macro{medskip}\IndexCmd{medskip} or \Macro{bigskip}\IndexCmd{bigskip} is
-  used instead. To avoid a page break at the end of a line of verse you can,
-  as usual, insert \verb|\\*| instead of \verb|\\|.
+  Em geral, o ambiente \Environment{verse} é usado para
+  poesia\Index{poesia}. As linhas são indentadas tanto à esquerda quanto à direita. Linhas
+  individuais de verso são terminadas por uma quebra de linha fixa: \verb|\\|. Os versos são compostos como
+  parágrafos, separados por uma linha vazia. Frequentemente também
+  \Macro{medskip}\IndexCmd{medskip} ou \Macro{bigskip}\IndexCmd{bigskip} é
+  usado em vez disso. Para evitar uma quebra de página no final de uma linha de verso você pode,
+  como de costume, inserir \verb|\\*| em vez de \verb|\\|.
   \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{env.verse}%
       \iffalse
-        As an example, the first lines of ``Little Red Riding Hood and the
-        Wolf'' by Roald Dahl:
+        Como exemplo, as primeiras linhas de ``Chapeuzinho Vermelho e o
+        Lobo'' de Roald Dahl:
 \begin{lstcode}
   \begin{verse}
     As soon as Wolf began to feel\\*
@@ -520,7 +519,7 @@ defined with the \Environment{labeling} environment.%
     And Wolfie said, `May I come in?'
   \end{verse}
 \end{lstcode}
-        The result is as follows:
+        O resultado é o seguinte:
         \begin{ShowOutput}
           \begin{verse}
             As soon as Wolf began to feel\\*
@@ -532,12 +531,12 @@ defined with the \Environment{labeling} environment.%
           \end{verse}
         \end{ShowOutput}
       \else
-        As an example, Emma Lazarus's sonnet from the pedestal of Liberty
-        Enlightening the World\footnote{The lines from Roald Dahl's poem
-          ``Little Red Riding Hood and the Wolf'', which was used in former
-          releases, has been replaced, because in these times certain
-          politicians around the world really seem to need ``The New
-          Colossus'' as urgent reminder.}:
+        Como exemplo, o soneto de Emma Lazarus do pedestal da Liberdade
+        Iluminando o Mundo\footnote{As linhas do poema de Roald Dahl
+          ``Chapeuzinho Vermelho e o Lobo'', que foram usadas em versões
+          anteriores, foram substituídas, porque nestes tempos certos
+          políticos ao redor do mundo realmente parecem precisar de ``O Novo
+          Colosso'' como lembrete urgente.}:
 \begin{lstcode}
   \begin{verse}
     Not like the brazen giant of Greek fame\\*
@@ -556,7 +555,7 @@ defined with the \Environment{labeling} environment.%
     I lift my lamp beside the golden door.''
   \end{verse}
 \end{lstcode}
-        The result is as follows:
+        O resultado é o seguinte:
         \begin{ShowOutput}
           \begin{verse}
             Not like the brazen giant of Greek fame\\*
@@ -576,42 +575,42 @@ defined with the \Environment{labeling} environment.%
           \end{verse}
         \end{ShowOutput}
       \fi
-      However, if you have very long lines of verse where a line 
-      break occurs within a line of verse:
+      No entanto, se você tiver linhas de verso muito longas onde uma quebra de linha
+      ocorre dentro de uma linha de verso:
 \begin{lstcode}
   \begin{verse}
-    Both the philosopher and the house-owner
-    always have something to repair.\\*
+    Tanto o filósofo quanto o proprietário
+    sempre têm algo para consertar.\\*
     \bigskip
-    Don't trust a man, my son, who tells you
-    that he has never lied.
+    Não confie em um homem, meu filho, que lhe diz
+    que nunca mentiu.
   \end{verse}
 \end{lstcode}
       \begin{ShowOutput}
         \begin{verse}
-    	  Both the philosopher and the house-owner always have something to
-          repair.\\
-          \bigskip Don't trust a man, my son, who tells you that he has never
-          lied.
+    	  Tanto o filósofo quanto o proprietário sempre têm algo para
+          consertar.\\
+          \bigskip Não confie em um homem, meu filho, que lhe diz que nunca
+          mentiu.
         \end{verse}
       \end{ShowOutput}
-      in this case \verb|\\*| can not prevent a page break occurring within a
-      verse at such a line break. To prevent such a page break, a change of
-      \Macro{interlinepenalty}\IndexCmd{interlinepenalty} would have to be
-      inserted at the beginning of the environment:
+      neste caso \verb|\\*| não pode impedir que uma quebra de página ocorra dentro de um
+      verso em tal quebra de linha. Para evitar tal quebra de página, uma mudança de
+      \Macro{interlinepenalty}\IndexCmd{interlinepenalty} teria que ser
+      inserida no início do ambiente:
 \begin{lstcode}
   \begin{verse}\interlinepenalty 10000
-    Both the philosopher and the house-owner
-    always have something to repair.\\
+    Tanto o filósofo quanto o proprietário
+    sempre têm algo para consertar.\\
     \bigskip
-    Don't trust a man, my son, who tells you
-    that he has never lied.
+    Não confie em um homem, meu filho, que lhe diz
+    que nunca mentiu.
   \end{verse}
 \end{lstcode}
       \iftrue% Umbruchkorrekturtext
-        Here are two sayings that should always be considered when confronted
-        with seemingly strange questions about {\LaTeX} or its accompanying
-        explanations:
+        Aqui estão dois ditados que devem sempre ser considerados quando confrontados
+        com perguntas aparentemente estranhas sobre {\LaTeX} ou suas explicações
+        acompanhantes:
 \begin{lstcode}
   \begin{verse}
     A little learning is a dangerous thing.\\*
@@ -632,168 +631,167 @@ defined with the \Environment{labeling} environment.%
           \end{verse}
         \end{ShowOutput}
       \fi
-      Incidentally, \Macro{bigskip} was used in these examples to separate two
-      sayings.
+      Aliás, \Macro{bigskip} foi usado nestes exemplos para separar dois
+      ditados.
     \end{Example}
   \fi
-  % 
+  %
   \EndIndexGroup
 
   \iffalse% Umbruchkorrekturvarianten
     \begin{Declaration}
   	  \begin{Environment}{quote}\end{Environment}
   	\end{Declaration}%
-  	\IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}This is
-  	internally also a list environment\textnote{block quote with paragraph
-  	spacing} and can be found both in the standard classes and in
-  	{\KOMAScript}. The content of the environment is set fully justified.
-    The environment is often used to format longer quotes\Index{quotes}.
-    Paragraphs within the environment are distinguished with vertical space.%
+  	\IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}Este é
+  	internamente também um ambiente de lista\textnote{citação em bloco com espaçamento
+  	de parágrafo} e pode ser encontrado tanto nas classes padrão quanto no
+  	{\KOMAScript}. O conteúdo do ambiente é composto totalmente justificado.
+    O ambiente é frequentemente usado para formatar citações\Index{citações} mais longas.
+    Parágrafos dentro do ambiente são distinguidos com espaço vertical.%
     \EndIndexGroup
-  
+
     \begin{Declaration}
       \begin{Environment}{quotation}\end{Environment}
     \end{Declaration}%
-    \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}This
-    environment\textnote{block quote with paragraph indent} is comparable to
-    \DescRef{\ThisCommonLabelBase.env.quote}. While
-    \DescRef{\ThisCommonLabelBase.env.quote} paragraphs are indicated by
-    vertical spacing, \Environment{quotation} indents the first line of each
-    paragraph horizontally. This also applies to the first paragraph of a
-    \Environment{quotation} environment. If you want to prevent the
-    indentation there, you must precede it with the
-    \Macro{noindent}\IndexCmd{noindent} command.%
+    \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{}Este
+    ambiente\textnote{citação em bloco com indentação de parágrafo} é comparável ao
+    \DescRef{\ThisCommonLabelBase.env.quote}. Enquanto
+    os parágrafos do \DescRef{\ThisCommonLabelBase.env.quote} são indicados por
+    espaçamento vertical, \Environment{quotation} indenta a primeira linha de cada
+    parágrafo horizontalmente. Isso também se aplica ao primeiro parágrafo de um
+    ambiente \Environment{quotation}. Se você quiser evitar a
+    indentação lá, você deve precedê-lo com o
+    comando \Macro{noindent}\IndexCmd{noindent}.%
   \else
     \begin{Declaration}
       \begin{Environment}{quote}\end{Environment}
       \begin{Environment}{quotation}\end{Environment}
     \end{Declaration}%
-    \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{} These two
-    environments\textnote{block quotes} are also set internally as list
-    environments and can be found in both the standard and the {\KOMAScript}
-    classes. Both environments use justified text which is indented on both
-    the left and the right side. Often they are used to separate longer
-    quotations\Index{quotations} from the main text. The difference between
-    the two lies in in the manner in which paragraphs are typeset. While
-    \Environment{quote} paragraphs are distinguished by vertical space, in
-    \Environment{quotation} paragraphs, the first line is indented. This also
-    applies to the first line of a \Environment{quotation}
-    environment% Umbruchkorrektur
+    \IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{} Estes dois
+    ambientes\textnote{citações em bloco} também são definidos internamente como ambientes de
+    lista e podem ser encontrados tanto nas classes padrão quanto nas classes {\KOMAScript}.
+    Ambos os ambientes usam texto justificado que é indentado tanto à
+    esquerda quanto à direita. Frequentemente eles são usados para separar
+    citações\Index{citações} mais longas do texto principal. A diferença entre
+    os dois está na maneira em que os parágrafos são compostos. Enquanto
+    os parágrafos do \Environment{quote} são distinguidos por espaço vertical, nos
+    parágrafos do \Environment{quotation}, a primeira linha é indentada. Isso também
+    se aplica à primeira linha de um ambiente \Environment{quotation}% Umbruchkorrektur
     \IfThisCommonLabelBase{maincls}{%
-      , unless it is preceded by \Macro{noindent}\IndexCmd{noindent}.%
+      , a menos que seja precedido por \Macro{noindent}\IndexCmd{noindent}.%
     }{%
       \IfThisCommonLabelBase{scrlttr2}{%
-        . If you want to prevent the indentation there, you must precede it
-        with the \Macro{noindent} command\IndexCmd{noindent}.%
+        . Se você quiser evitar a indentação lá, você deve precedê-la
+        com o comando \Macro{noindent}\IndexCmd{noindent}.%
       }{\InternalCommonFileUsageError}%
     }%
   \fi % Umbruchkorrekturvarianten
   \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{env.quote}%
-      You want to highlight a short anecdote. You write the following
-      \Environment{quotation} environment for this:% 
+      Você quer destacar uma pequena anedota. Você escreve o seguinte
+      ambiente \Environment{quotation} para isso:%
 \begin{lstcode}
-  A small example for a short anecdote:
+  Um pequeno exemplo de uma curta anedota:
   \begin{quotation}
-    The old year was turning brown; the West Wind was
-    calling;
-        
-    Tom caught the beechen leaf in the forest falling.
-    ``I've caught the happy day blown me by the breezes!
-    Why wait till morrow-year? I'll take it when me pleases.
-    This I'll mend my boat and journey as it chances
-    west down the withy-stream, following my fancies!''
-    
-    Little Bird sat on twig. ``Whillo, Tom! I heed you.
-    I've a guess, I've a guess where your fancies lead you.
-    Shall I go, shall I go, bring him word to meet you?''
+    O velho ano estava ficando marrom; o Vento Oeste estava
+    chamando;
+
+    Tom pegou a folha de faia caindo na floresta.
+    ``Peguei o dia feliz que as brisas me sopraram!
+    Por que esperar até o próximo ano? Vou pegá-lo quando me agradar.
+    Assim vou consertar meu barco e viajar conforme o acaso
+    oeste abaixo do riacho de salgueiros, seguindo minhas fantasias!''
+
+    Passarinho sentou no galho. ``Opa, Tom! Eu te ouço.
+    Tenho um palpite, tenho um palpite de onde suas fantasias te levam.
+    Devo ir, devo ir, levar-lhe uma mensagem para te encontrar?''
   \end{quotation}
 \end{lstcode}
-      The result is:
+      O resultado é:
       \begin{ShowOutput}
-        A small example for a short anecdote:
+        Um pequeno exemplo de uma curta anedota:
         \begin{quotation}
-          The old year was turning brown; the West Wind was
-          calling;
+          O velho ano estava ficando marrom; o Vento Oeste estava
+          chamando;
 
-          Tom caught the beechen leaf in the forest falling.
-          ``I've caught the happy day blown me by the breezes!
-          Why wait till morrow-year? I'll take it when me pleases.
-          This I'll mend my boat and journey as it chances
-          west down the withy-stream, following my fancies!''
+          Tom pegou a folha de faia caindo na floresta.
+          ``Peguei o dia feliz que as brisas me sopraram!
+          Por que esperar até o próximo ano? Vou pegá-lo quando me agradar.
+          Assim vou consertar meu barco e viajar conforme o acaso
+          oeste abaixo do riacho de salgueiros, seguindo minhas fantasias!''
 
-          Little Bird sat on twig. ``Whillo, Tom! I heed you.
-          I've a guess, I've a guess where your fancies lead you.
-          Shall I go, shall I go, bring him word to meet you?''
+          Passarinho sentou no galho. ``Opa, Tom! Eu te ouço.
+          Tenho um palpite, tenho um palpite de onde suas fantasias te levam.
+          Devo ir, devo ir, levar-lhe uma mensagem para te encontrar?''
         \end{quotation}
       \end{ShowOutput}
-      % 
-      Using a \Environment{quote} environment instead you get:
-      % 
+      %
+      Usando um ambiente \Environment{quote} em vez disso você obtém:
+      %
       \begin{ShowOutput}
-        A small example for a short anecdote:
+        Um pequeno exemplo de uma curta anedota:
         \begin{quote}\setlength{\parskip}{4pt plus 2pt minus 2pt}
-          The old year was turning brown; the West Wind was
-          calling;
+          O velho ano estava ficando marrom; o Vento Oeste estava
+          chamando;
 
-          Tom caught the beechen leaf in the forest falling.
-          ``I've caught the happy day blown me by the breezes!
-          Why wait till morrow-year? I'll take it when me pleases.
-          This I'll mend my boat and journey as it chances
-          west down the withy-stream, following my fancies!''
+          Tom pegou a folha de faia caindo na floresta.
+          ``Peguei o dia feliz que as brisas me sopraram!
+          Por que esperar até o próximo ano? Vou pegá-lo quando me agradar.
+          Assim vou consertar meu barco e viajar conforme o acaso
+          oeste abaixo do riacho de salgueiros, seguindo minhas fantasias!''
 
-          Little Bird sat on twig. ``Whillo, Tom! I heed you.
-          I've a guess, I've a guess where your fancies lead you.
-          Shall I go, shall I go, bring him word to meet you?''
+          Passarinho sentou no galho. ``Opa, Tom! Eu te ouço.
+          Tenho um palpite, tenho um palpite de onde suas fantasias te levam.
+          Devo ir, devo ir, levar-lhe uma mensagem para te encontrar?''
         \end{quote}
       \end{ShowOutput}
-      % 
+      %
     \end{Example}
   \fi
-  % 
+  %
   \EndIndexGroup
 \fi
 
 \begin{Declaration}
   \begin{Environment}{addmargin}
-                     \OParameter{left indentation}\Parameter{indentation}
+                     \OParameter{indentação esquerda}\Parameter{indentação}
   \end{Environment}
   \begin{Environment}{addmargin*}
-                     \OParameter{inner indentation}\Parameter{indentation}
+                     \OParameter{indentação interna}\Parameter{indentação}
   \end{Environment}
 \end{Declaration}
-Like \IfThisCommonLabelBase{scrextend}{%
-  \DescRef{\ThisCommonFirstLabelBase.env.quote} and
-  \DescRef{\ThisCommonFirstLabelBase.env.quotation}, which are available in
-  the standard and the \KOMAScript{} classes}{%
-  \DescRef{\ThisCommonLabelBase.env.quote} and
+Como \IfThisCommonLabelBase{scrextend}{%
+  \DescRef{\ThisCommonFirstLabelBase.env.quote} e
+  \DescRef{\ThisCommonFirstLabelBase.env.quotation}, que estão disponíveis nas
+  classes padrão e nas classes \KOMAScript{}}{%
+  \DescRef{\ThisCommonLabelBase.env.quote} e
   \DescRef{\ThisCommonLabelBase.env.quotation}%
-}, the \Environment{addmargin} environment changes the margin\Index{margin}.
-However, unlike the first two environments, \Environment{addmargin} lets the
-user change the width of the indentation. Apart from this change, this
-environment does not change the indentation of the first line nor the vertical
-spacing between paragraphs.
+}, o ambiente \Environment{addmargin} altera a margem\Index{margem}.
+No entanto, ao contrário dos dois primeiros ambientes, \Environment{addmargin} permite que o
+usuário altere a largura da indentação. Além dessa mudança, este
+ambiente não altera a indentação da primeira linha nem o
+espaçamento vertical entre parágrafos.
 
-If only the obligatory argument \PName{indentation} is given, both the left
-and right margin are expanded by this value. If the optional argument
-\PName{left indentation} is given as well, then the value \PName{left
-  indentation} is used for the left margin instead of \PName{indentation}.
+Se apenas o argumento obrigatório \PName{indentação} for fornecido, tanto a margem
+esquerda quanto a direita são expandidas por este valor. Se o argumento opcional
+\PName{indentação esquerda} for fornecido também, então o valor \PName{indentação
+  esquerda} é usado para a margem esquerda em vez de \PName{indentação}.
 
-The starred variant \Environment{addmargin*}%
-\important{\Environment{addmargin*}} differs from the normal version only in
-the two-sided mode. Furthermore, the difference only occurs if the optional
-argument \PName{inner indentation} is used. In this case, the value of
-\PName{inner indentation} is added to the normal inner indentation. For
-right-hand pages this is the left margin; for left-hand pages, the right
-margin. Then the value of \PName{indentation} determines the width of the
-opposite margin.
+A variante com asterisco \Environment{addmargin*}%
+\important{\Environment{addmargin*}} difere da versão normal apenas no
+modo de duas faces. Além disso, a diferença só ocorre se o argumento
+opcional \PName{indentação interna} for usado. Neste caso, o valor de
+\PName{indentação interna} é adicionado à indentação interna normal. Para
+páginas da direita esta é a margem esquerda; para páginas da esquerda, a margem
+direita. Então o valor de \PName{indentação} determina a largura da
+margem oposta.
 
-Both versions of this environment allow negative values for all parameters.
+Ambas as versões deste ambiente permitem valores negativos para todos os parâmetros.
 \IfThisCommonLabelBase{scrextend}{%
-  The environment then protrudes into the margin accordingly.%
+  O ambiente então se estende para a margem adequadamente.%
 }{%
-  This can be done so that the environment protrudes into the margin.%
+  Isso pode ser feito de modo que o ambiente se estenda para a margem.%
 }%
 \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}
   \begin{Example}
@@ -809,8 +807,8 @@ Both versions of this environment allow negative values for all parameters.
     \end{addmargin*}%
   }
 \end{lstcode}
-    If you now put your source code in such an environment, it will show
-    up as:
+    Se você agora colocar seu código fonte em tal ambiente, ele aparecerá
+    como:
     \begin{ShowOutput}
       \newenvironment{SourceCodeFrame}{%
         \begin{addmargin*}[1em]{-1em}%
@@ -821,7 +819,7 @@ Both versions of this environment allow negative values for all parameters.
           \end{minipage}%
         \end{addmargin*}%
       }
-      You define the following environment:
+      Você define o seguinte ambiente:
       \begin{SourceCodeFrame}
 \begin{lstcode}
 \newenvironment{\SourceCodeFrame}{%
@@ -835,47 +833,47 @@ Both versions of this environment allow negative values for all parameters.
 }
 \end{lstcode}
       \end{SourceCodeFrame}
-      This may be feasible or not. In any case, it shows the usage of this
-      environment.
+      Isso pode ser viável ou não. De qualquer forma, mostra o uso deste
+      ambiente.
     \end{ShowOutput}
-    The optional argument of the \Environment{addmargin*} environment
-    makes sure that the inner margin is extended by 1\Unit{em}. In turn
-    the outer margin is decreased by 1\Unit{em}. The result is a shift
-    by 1\Unit{em} to the outside.  Instead of \PValue{1em}, you can of
-    course use a length, for example, \PValue{2\Macro{parindent}}.
+    O argumento opcional do ambiente \Environment{addmargin*}
+    garante que a margem interna seja estendida em 1\Unit{em}. Por sua vez,
+    a margem externa é diminuída em 1\Unit{em}. O resultado é um deslocamento
+    de 1\Unit{em} para fora. Em vez de \PValue{1em}, você pode
+    usar um comprimento, por exemplo, \PValue{2\Macro{parindent}}.
   \end{Example}
 \fi%
 
-Whether a page is going to be on the left or right side of the book cannot be
-determined reliably on the first {\LaTeX} run. For details please refer to
-the explanation of the commands
+Se uma página vai estar no lado esquerdo ou direito do livro não pode ser
+determinado de forma confiável na primeira execução do {\LaTeX}. Para detalhes, consulte
+a explicação dos comandos
 \DescRef{\ThisCommonLabelBase.cmd.Ifthispageodd}
 (\autoref{sec:\ThisCommonLabelBase.oddOrEven},
-\DescPageRef{\ThisCommonLabelBase.cmd.Ifthispageodd}) and
+\DescPageRef{\ThisCommonLabelBase.cmd.Ifthispageodd}) e
 \iffree{\Macro{ifthispagewasodd}}{%
   \DescRef{maincls-experts.cmd.ifthispagewasodd}}
 (\autoref{sec:maincls-experts.addInfos}\iffree{}{,
 \DescPageRef{maincls-experts.cmd.Ifthispageodd}}).
 \IfThisCommonLabelBase{scrlttr2}{}{%
 \begin{Explain}
-  The interplay of environments such as lists and paragraphs gives rise to
-  frequent questions. Therefore, you can find further explanation in the
-  description of the \Option{parskip} option in
+  A interação de ambientes como listas e parágrafos gera
+  perguntas frequentes. Portanto, você pode encontrar explicações adicionais na
+  descrição da opção \Option{parskip} em
   \autoref{sec:maincls-experts.addInfos}\iffree{}{,
-  \DescPageRef{maincls-experts.option.parskip}. Also in the expert section, in
+  \DescPageRef{maincls-experts.option.parskip}. Também na seção de especialistas, em
   \autoref{sec:maincls-experts.addInfos},
-  \DescPageRef{maincls-experts.env.addmargin*}, you can find additional
-  information about page breaks inside \Environment{addmargin*}}.%
+  \DescPageRef{maincls-experts.env.addmargin*}, você pode encontrar informações
+  adicionais sobre quebras de página dentro de \Environment{addmargin*}}.%
 \end{Explain}}%
 %
 \EndIndexGroup
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

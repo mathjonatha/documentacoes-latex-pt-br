@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,113 +28,117 @@
                   KOMA-Script guide (common paragraphs: fontsize)]
 \translator{Markus Kohm\and Krickette Murabayashi\and Karl Hagen}
 
-\section{Choosing the Document Font Size}
+\section{Escolhendo o Tamanho da Fonte do Documento}
 \seclabel{fontOptions}%
 \BeginIndexGroup
 \BeginIndex{}{font>size}%
 
 \IfThisCommonFirstRun{%
-  The main font and its size are central elements in the design of a document.
-  As stated in \autoref{cha:typearea}, the division of the page into the text
-  area and the margins fundamentally depends on them. The main font is the one
-  that is used for most of the text in a document. All variations, whether in
-  shape, thickness, slant, or size, are related to the main font.%
+  A fonte principal e seu tamanho são elementos centrais no design de um
+  documento. Como afirmado no \autoref{cha:typearea}, a divisão da página
+  entre a área de texto e as margens depende fundamentalmente deles. A fonte
+  principal é aquela usada para a maior parte do texto em um documento. Todas
+  as variações, seja em forma, espessura, inclinação ou tamanho, são
+  relacionadas à fonte principal.%
 }{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.fontOptions}
-  applies equally to
+  A informação na \autoref{sec:\ThisCommonFirstLabelBase.fontOptions}
+  aplica-se igualmente a
   \IfThisCommonLabelBase{scrlttr2}{\Class{scrlttr2}\OnlyAt{scrlttr2}}%
-  {this chapter}. \IfThisCommonLabelBase{scrlttr2}{By contrast, the
-    \Package{scrletter} package by itself does not offer font-size selection
-    but depends completely on the class you use.}{} So if you have already
-  read and understood \autoref{sec:\ThisCommonFirstLabelBase.fontOptions}, you
-  can \IfThisCommonLabelBase{scrlttr2}{continue to
-    \autopageref{sec:\ThisCommonLabelBase.fontOptions.end} at the end of this
-    section. If you use \Package{scrletter}, you can }{}%
-  skip directly to \autoref{sec:\ThisCommonLabelBase.fontOptions.next},
+  {este capítulo}. \IfThisCommonLabelBase{scrlttr2}{Por outro lado, o
+    pacote \Package{scrletter} por si só não oferece seleção de tamanho de
+    fonte, mas depende completamente da classe que você usa.}{} Portanto, se
+  você já leu e entendeu a \autoref{sec:\ThisCommonFirstLabelBase.fontOptions},
+  você pode \IfThisCommonLabelBase{scrlttr2}{continuar na
+    \autopageref{sec:\ThisCommonLabelBase.fontOptions.end} no final desta
+    seção. Se você usa \Package{scrletter}, você pode }{}%
+  pular diretamente para a \autoref{sec:\ThisCommonLabelBase.fontOptions.next},
   \autopageref{sec:\ThisCommonLabelBase.fontOptions.next}.%
 }
 
 \begin{Declaration}
-  \OptionVName{fontsize}{size}
+  \OptionVName{fontsize}{tamanho}
 \end{Declaration}
-While\IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{%
-  \textnote{\KOMAScript{} vs. standard classes}} the standard classes support
-only a very limited number of font sizes,
-\IfThisCommonLabelBase{scrlttr2}{\Class{scrlttr2}}{\KOMAScript} provides the
-ability to specify any \PName{size} for the main font. You can also use any
-known \TeX unit as a unit for the \PName{size}. If the \PName{size} is
-specified without a unit, it is assumed to be \PValue{pt}.\iffree{}{ The exact
-  procedure for setting the font size is documented for experts and interested
-  users in \autoref{sec:maincls-experts.addInfos},
+Enquanto\IfThisCommonLabelBase{scrlttr2}{\OnlyAt{\Class{scrlttr2}}}{%
+  \textnote{\KOMAScript{} vs. classes padrão}} as classes padrão suportam
+apenas um número muito limitado de tamanhos de fonte,
+\IfThisCommonLabelBase{scrlttr2}{\Class{scrlttr2}}{\KOMAScript} fornece a
+habilidade de especificar qualquer \PName{tamanho} para a fonte principal.
+Você também pode usar qualquer unidade \TeX{} conhecida como unidade para o
+\PName{tamanho}. Se o \PName{tamanho} for especificado sem uma unidade,
+assume-se que seja \PValue{pt}.\iffree{}{ O procedimento exato para
+  configurar o tamanho da fonte está documentado para especialistas e usuários
+  interessados na \autoref{sec:maincls-experts.addInfos},
   \DescPageRef{maincls-experts.option.fontsize}.}
 
-If you set the option within the document, the main font size and the
-dependent font sizes of the commands \Macro{tiny}, \Macro{scriptsize},
+Se você definir a opção dentro do documento, o tamanho da fonte principal e os
+tamanhos de fonte dependentes dos comandos \Macro{tiny}, \Macro{scriptsize},
 \Macro{footnotesize}, \Macro{small}, \Macro{normalsize}, \Macro{large},
-\Macro{Large}, \Macro{LARGE}, \Macro{huge} and \Macro{Huge} are changed.  This
-can be useful, for example, if you want %
-\IfThisCommonLabelBase{scrlttr2}{another letter }{the appendix }%
-to be set in a smaller font size.
+\Macro{Large}, \Macro{LARGE}, \Macro{huge} e \Macro{Huge} são alterados. Isso
+pode ser útil, por exemplo, se você quiser %
+\IfThisCommonLabelBase{scrlttr2}{outra carta }{o apêndice }%
+configurada em um tamanho de fonte menor.
 
-Note\textnote{Attention!} that using this option after
-\IfThisCommonLabelBase{scrextend}{potentially loading
+Observe\textnote{Atenção!} que usar esta opção após
+\IfThisCommonLabelBase{scrextend}{potencialmente carregar
   \hyperref[cha:typearea]{\Package{typearea}}\IndexPackage{typearea}%
-  \important{\hyperref[cha:typearea]{\Package{typearea}}}}{loading the class}
-does not automatically recalculate the type area and margins (see
+  \important{\hyperref[cha:typearea]{\Package{typearea}}}}{carregar a classe}
+não recalcula automaticamente a área de texto e as margens (veja
 \DescRef{typearea.cmd.recalctypearea}\IndexCmd{recalctypearea},
 \autoref{sec:typearea.typearea},
-\DescPageRef{typearea.cmd.recalctypearea}). However, if this recalculation is
-performed, it will be based on the current main font size. The effects of
-changing the main font size upon other loaded packages or the class used
-depends on these packages and on the class.  \IfThisCommonLabelBase{maincls}{%
-  This means that you can encounter errors which are not the fault of
-  \KOMAScript, and even the \KOMAScript{} classes themselves do not
-  recalculate all lengths if the main font size changes after loading the
-  class.%
+\DescPageRef{typearea.cmd.recalctypearea}). No entanto, se este recálculo for
+executado, ele será baseado no tamanho atual da fonte principal. Os efeitos da
+mudança do tamanho da fonte principal sobre outros pacotes carregados ou a
+classe usada dependem desses pacotes e da classe.
+\IfThisCommonLabelBase{maincls}{%
+  Isso significa que você pode encontrar erros que não são culpa do
+  \KOMAScript, e mesmo as próprias classes \KOMAScript{} não recalculam todos
+  os comprimentos se o tamanho da fonte principal mudar após o carregamento da
+  classe.%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
-    You can encounter errors which are not the fault of \KOMAScript{}, and
-    further, the \Class{scrlttr2} class itself does not recalculate all
-    lengths if the main font size changes after loading the class.%
+    Você pode encontrar erros que não são culpa do \KOMAScript{}, e além
+    disso, a própria classe \Class{scrlttr2} não recalcula todos os
+    comprimentos se o tamanho da fonte principal mudar após o carregamento da
+    classe.%
   }{%
-    This means that you can encounter errors which are not the fault of
+    Isso significa que você pode encontrar erros que não são culpa do
     \KOMAScript{}.%
   }%
 }%
 
-This\textnote{Attention!} option should by no means be misinterpreted as a
-substitute for \Macro{fontsize} (see \cite{latex:fntguide}). Also, you should
-not use it in place of one of the font size commands that are relative to the
-main font, from \Macro{tiny} to \Macro{Huge}. The use within a paragraph is
-therefore also explicitly prohibited.
+Esta\textnote{Atenção!} opção de modo algum deve ser interpretada como um
+substituto para \Macro{fontsize} (veja \cite{latex:fntguide}). Além disso,
+você não deve usá-la no lugar de um dos comandos de tamanho de fonte que são
+relativos à fonte principal, de \Macro{tiny} a \Macro{Huge}. O uso dentro de
+um parágrafo é, portanto, explicitamente proibido.
 \IfThisCommonLabelBase{scrlttr2}{%
-  For \Class{scrlttr2} the default is \OptionValue{fontsize}{12pt}.
+  Para \Class{scrlttr2} o padrão é \OptionValue{fontsize}{12pt}.
 
   \begin{Example}
     \phantomsection\label{sec:\ThisCommonLabelBase.fontOptions.end}%
-    Suppose the organization in the sample letter is the \emph{``Friends of
-      Noxious Font Sizes''}, for which reason it should be set in 14\Unit{pt}
-    instead of 12\Unit{pt}. You can achieve this by making a small change to
-    the first line:%
+    Suponha que a organização na carta de exemplo seja os \emph{``Amigos de
+      Tamanhos de Fonte Nocivos''}, razão pela qual ela deveria ser
+    configurada em 14\Unit{pt} em vez de 12\Unit{pt}. Você pode conseguir
+    isso fazendo uma pequena alteração na primeira linha:%
     \lstinputcode[xleftmargin=1em]{letter-example-06-en.tex}%
-    Alternatively, the option could be set as an optional argument to
-    \DescRef{\LabelBase.env.letter}:
+    Alternativamente, a opção poderia ser definida como um argumento opcional
+    para \DescRef{\LabelBase.env.letter}:
     \lstinputcode[xleftmargin=1em]{letter-example-05-en.tex}%
-    Since the text area is not recalculated in this late change of the font
-    size, the two results differ in \autoref{fig:scrlttr2.letter-05-06}.
+    Como a área de texto não é recalculada nesta mudança tardia do tamanho da
+    fonte, os dois resultados diferem na \autoref{fig:scrlttr2.letter-05-06}.
     \begin{figure}
       \centering
       \frame{\includegraphics[width=.4\textwidth]{letter-example-05-en}}\quad
       \frame{\includegraphics[width=.4\textwidth]{letter-example-06-en}}
-      \caption[{Example: letter with address, salutation, text, closing phrase,
-        postscript, enclosures, distribution list, and noxiously large font
-        size}]
-      {result of a short letter with recipient, opening, text, closing,
-      postscript, enclosures, distribution list, and a noxiously large font
-      (the date is set by default): in the left-hand version, the font size
-      has been defined by the optional argument of
-      \DescRef{\LabelBase.env.letter}; in the right-hand one, the optional
-      argument of \DescRef{\LabelBase.cmd.documentclass} has been used}
+      \caption[{Exemplo: carta com endereço, saudação, texto, frase de
+        encerramento, pós-escrito, anexos, lista de distribuição e tamanho de
+        fonte nocivamente grande}]
+      {resultado de uma carta curta com destinatário, abertura, texto,
+      encerramento, pós-escrito, anexos, lista de distribuição e uma fonte
+      nocivamente grande (a data é definida por padrão): na versão à
+      esquerda, o tamanho da fonte foi definido pelo argumento opcional de
+      \DescRef{\LabelBase.env.letter}; na da direita, foi usado o argumento
+      opcional de \DescRef{\LabelBase.cmd.documentclass}}
       \label{fig:scrlttr2.letter-05-06}
     \end{figure}
   \end{Example}
@@ -143,13 +147,13 @@ therefore also explicitly prohibited.
   \IfThisCommonLabelBase{maincls}{%
     \par
     \phantomsection\label{sec:\ThisCommonLabelBase.fontOptions.end}%
-    The default for \Class{scrbook}, \Class{scrreprt}, and \Class{scrartcl} is
-    \OptionValue{fontsize}{11pt}.\textnote{\KOMAScript{} vs. standard classes}
-    In contrast, the default size in the standard classes is \Option{10pt}. 
-    You may need to account for this difference if you switch from a standard 
-    class to a \KOMAScript{} class\iffree{}{ or when using the
+    O padrão para \Class{scrbook}, \Class{scrreprt} e \Class{scrartcl} é
+    \OptionValue{fontsize}{11pt}.\textnote{\KOMAScript{} vs. classes padrão}
+    Em contraste, o tamanho padrão nas classes padrão é \Option{10pt}.
+    Você pode precisar considerar essa diferença se mudar de uma classe
+    padrão para uma classe \KOMAScript{}\iffree{}{ ou ao usar a opção
       \DescRef{maincls-experts.option.emulatestandardclasses}%
-      \IndexOption{emulatestandardclasses} option}.%
+      \IndexOption{emulatestandardclasses}}.%
   }{}%
 }%
 %
@@ -158,10 +162,10 @@ therefore also explicitly prohibited.
 \EndIndexGroup
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

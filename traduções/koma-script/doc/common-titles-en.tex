@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -30,51 +30,52 @@
 \translator{Gernot Hassenpflug\and Markus Kohm\and Krickette Murabayashi\and
 	Karl Hagen}
 
-\section{Document Titles}
+\section{Títulos de Documentos}
 \seclabel{titlepage}%
 \BeginIndexGroup
 \BeginIndex{}{title}%
 
 \IfThisCommonFirstRun{}{%
-  This information in \autoref{sec:\ThisCommonFirstLabelBase.titlepage}
-  largely applies to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.titlepage}, you  can skip to 
+  Esta informação na \autoref{sec:\ThisCommonFirstLabelBase.titlepage}
+  aplica-se amplamente a este capítulo. Portanto, se você já leu e compreendeu
+  a \autoref{sec:\ThisCommonFirstLabelBase.titlepage}, pode pular para a
   \autoref{sec:\ThisCommonLabelBase.titlepage.next},
   \autopageref{sec:\ThisCommonLabelBase.titlepage.next}.%
 }%
 \IfThisCommonLabelBase{scrextend}{\iftrue}{\csname iffalse\endcsname}%
-  \ However,\textnote{Attention!} the capabilities of \Package{scrextend}
-  for handling the document title are part of the optional, advanced
-  features. Therfore they are only available, if
-  \OptionValueRef{\ThisCommonLabelBase}{extendedfeature}{title} is
-  selected while loading the package (see
+  \ Contudo,\textnote{Atenção!} as capacidades do \Package{scrextend}
+  para lidar com o título do documento fazem parte dos recursos avançados
+  opcionais. Portanto, eles só estão disponíveis se
+  \OptionValueRef{\ThisCommonLabelBase}{extendedfeature}{title} for
+  selecionado ao carregar o pacote (veja
   \autoref{sec:\ThisCommonLabelBase.optionalFeatures},
   \DescRef{\ThisCommonLabelBase.option.extendedfeature}).
 
-  Furthermore, \Package{scrextend} cannot be used with a \KOMAScript{}
-  class. Because of this, you should replace
+  Além disso, o \Package{scrextend} não pode ser usado com uma classe
+  \KOMAScript{}. Por isso, você deve substituir
 \begin{lstcode}
   \documentclass{scrbook}
 \end{lstcode}
-  with
+  por
 \begin{lstcode}
   \documentclass{book}
   \usepackage[extendedfeature=title]{scrextend}
 \end{lstcode}
-  for all examples from \autoref{sec:maincls.titlepage}, if you want to
-  try them with \Package{scrextend}.
+  para todos os exemplos da \autoref{sec:maincls.titlepage}, se quiser
+  experimentá-los com o \Package{scrextend}.
 \fi
 
 \IfThisCommonLabelBase{scrextend}{}{%
-  In general, we distinguish two kinds of document titles. First, there are
-  title pages. These include title of the document, together with additional
-  information such as the author, on a separate page. In addition to the main
-  title page, there may be several other title pages, such as the half-title
-  or bastard title, publisher data, dedication, and so on. Second, there is
-  the in-page title. This kind of title appears at the top of a new page,
-  usually the first, and is specially emphasized. It too may be accompanied by
-  additional information, but it will be followed by more material on the same
-  page, for example by an abstract, the table of contents, or even a section.%
+  Em geral, distinguimos dois tipos de títulos de documentos. Primeiro, há as
+  páginas de título. Estas incluem o título do documento, juntamente com
+  informações adicionais como o autor, em uma página separada. Além da página
+  de título principal, pode haver várias outras páginas de título, como a
+  antetítulo ou falso título, dados da editora, dedicatória e assim por diante.
+  Segundo, há o título na página. Este tipo de título aparece no topo de uma
+  nova página, geralmente a primeira, e é especialmente enfatizado. Ele também
+  pode ser acompanhado por informações adicionais, mas será seguido por mais
+  material na mesma página, por exemplo, por um resumo, o sumário ou mesmo
+  uma seção.%
 }%
 
 \begin{Declaration}
@@ -85,34 +86,34 @@
   \Macro{coverpagerightmargin}
   \Macro{coverpagebottommargin}
 \end{Declaration}%
-This option\IfThisCommonLabelBase{maincls}{%
+Esta opção\IfThisCommonLabelBase{maincls}{%
 	\ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
 		\Class{scrartcl}}%
-}{} determines whether to use document title pages\Index{title>pages} or
-in-page titles\Index{title>in-page} when using
-\DescRef{\ThisCommonLabelBase.cmd.maketitle} (see
-\DescPageRef{\ThisCommonLabelBase.cmd.maketitle}). Any value from
-\autoref{tab:truefalseswitch}, \autopageref{tab:truefalseswitch} can be used
-for \PName{simple switch}.
+}{} determina se devem ser usadas páginas de título de
+documento\Index{title>pages} ou títulos na página\Index{title>in-page}
+ao usar \DescRef{\ThisCommonLabelBase.cmd.maketitle} (veja
+\DescPageRef{\ThisCommonLabelBase.cmd.maketitle}). Qualquer valor de
+\autoref{tab:truefalseswitch}, \autopageref{tab:truefalseswitch} pode ser
+usado para \PName{simple switch}.
 
-With the \OptionValue{titlepage}{true}%
+Com a opção \OptionValue{titlepage}{true}%
 \important{\OptionValue{titlepage}{true}}
-\IfThisCommonLabelBase{scrextend}{}{or \Option{titlepage}} option,
-invoking \DescRef{\ThisCommonLabelBase.cmd.maketitle} creates titles on
-separate pages. These pages are set inside a
-\DescRef{\ThisCommonLabelBase.env.titlepage} environment, and they
-normally have neither header nor footer. Compared to standard {\LaTeX},
-{\KOMAScript} significantly expands the handling of the titles. These
-additional elements can be found on the following pages.
+\IfThisCommonLabelBase{scrextend}{}{ou \Option{titlepage}},
+invocar \DescRef{\ThisCommonLabelBase.cmd.maketitle} cria títulos em
+páginas separadas. Estas páginas são compostas dentro de um ambiente
+\DescRef{\ThisCommonLabelBase.env.titlepage}, e normalmente não têm
+cabeçalho nem rodapé. Comparado ao {\LaTeX} padrão, o {\KOMAScript}
+expande significativamente o tratamento dos títulos. Estes elementos
+adicionais podem ser encontrados nas páginas seguintes.
 
-In contrast, with the
-\OptionValue{titlepage}{false}\important{\OptionValue{titlepage}{false}}
-option, invoking \DescRef{\ThisCommonLabelBase.cmd.maketitle} creates an
-\emph{in-page} title. This means that the title is specially emphasized, but
-it may be followed by more material on the same page, for instance an abstract
-or a section.%
+Em contraste, com a opção
+\OptionValue{titlepage}{false}\important{\OptionValue{titlepage}{false}},
+invocar \DescRef{\ThisCommonLabelBase.cmd.maketitle} cria um título
+\emph{na página}. Isto significa que o título é especialmente enfatizado,
+mas pode ser seguido por mais material na mesma página, por exemplo, um
+resumo ou uma seção.%
 
-The third choice,%
+A terceira escolha,%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -121,27 +122,28 @@ The third choice,%
     \ChangedAt{v3.12}{\Package{scrextend}}%
   }{\InternalCommonFileUseError}%
 } \OptionValue{titlepage}{firstiscover}%
-\important{\OptionValue{titlepage}{firstiscover}} not only activates title
-pages but also prints the first title page of
-\DescRef{\ThisCommonLabelBase.cmd.maketitle}\IndexCmd{maketitle}, i.\,e.
-either the half-title or the main title, as a cover\Index{cover} page. Any
-other setting of the \Option{titlepage} option will cancel this setting. The
-margins\important{\Macro{coverpage\dots margin}} of the cover page are given
-by \Macro{coverpagetopmargin}, \Macro{coverpageleftmargin},
-\Macro{coverpagerightmargin}, and \Macro{coverpagebottommargin}. The defaults
-of these depend on the lengths of \Length{topmargin}\IndexLength{topmargin}
-and \Length{evensidemargin}\IndexLength{evensidemargin} and can be changed
-with \Macro{renewcommand}.
+\important{\OptionValue{titlepage}{firstiscover}} não apenas ativa páginas
+de título, mas também imprime a primeira página de título de
+\DescRef{\ThisCommonLabelBase.cmd.maketitle}\IndexCmd{maketitle}, ou seja,
+o antetítulo ou o título principal, como uma página de
+capa\Index{cover}. Qualquer outra configuração da opção \Option{titlepage}
+cancelará esta configuração. As margens\important{\Macro{coverpage\dots margin}}
+da página de capa são dadas por \Macro{coverpagetopmargin},
+\Macro{coverpageleftmargin}, \Macro{coverpagerightmargin} e
+\Macro{coverpagebottommargin}. Os padrões destes dependem dos comprimentos
+de \Length{topmargin}\IndexLength{topmargin} e
+\Length{evensidemargin}\IndexLength{evensidemargin} e podem ser alterados
+com \Macro{renewcommand}.
 
 \IfThisCommonLabelBase{maincls}{%
-  The default of the \Class{scrbook} and \Class{scrreprt} classes is to use
-  title pages. The \Class{scrartcl} class, on the other hand, uses in-page
-  titles by default.%
+  O padrão das classes \Class{scrbook} e \Class{scrreprt} é usar páginas
+  de título. A classe \Class{scrartcl}, por outro lado, usa títulos na
+  página por padrão.%
 }{%
   \IfThisCommonLabelBase{scrextend}{%
-    The default depends on the class used and \Package{scrextend} recognizes
-    it in a way that compatible with the standard class. If a class does not
-    set up a comparable default, it will be an in-page title.%
+    O padrão depende da classe usada e o \Package{scrextend} o reconhece
+    de uma forma compatível com a classe padrão. Se uma classe não
+    configurar um padrão comparável, será um título na página.%
   }{\InternalCommonFileUsageError}%
 }%
 %
@@ -151,38 +153,39 @@ with \Macro{renewcommand}.
 \begin{Declaration}
   \begin{Environment}{titlepage}\end{Environment}%
 \end{Declaration}%
-The standard classes and {\KOMAScript} set all title pages in a special
-environment: the \Environment{titlepage} environment.  This environment always
-starts a new page\,---\,in two-sided printing a new right-hand page\,---\,and
-in single-column mode. For this page, the style is changed to
-\DescRef{maincls.cmd.thispagestyle}%
-\PParameter{\DescRef{maincls.pagestyle.empty}}, so that neither page number
-nor running head is output. At the end of the environment, the page is
-automatically shipped out. Should you not be able to use the automatic layout
-of the title pages provided by \DescRef{\ThisCommonLabelBase.cmd.maketitle},
-described next, you should design a new one with the help of this environment.
+As classes padrão e o {\KOMAScript} compõem todas as páginas de título em
+um ambiente especial: o ambiente \Environment{titlepage}. Este ambiente
+sempre inicia uma nova página\,---\,na impressão em dois lados, uma nova
+página direita\,---\,e em modo de coluna única. Para esta página, o estilo
+é alterado para \DescRef{maincls.cmd.thispagestyle}%
+\PParameter{\DescRef{maincls.pagestyle.empty}}, de modo que nem o número
+da página nem o cabeçalho corrente sejam impressos. No final do ambiente,
+a página é automaticamente enviada para saída. Se você não puder usar o
+layout automático das páginas de título fornecido por
+\DescRef{\ThisCommonLabelBase.cmd.maketitle}, descrito a seguir, você deve
+criar um novo com a ajuda deste ambiente.
 
 \IfThisCommonFirstRun{\iftrue}{%
-  A simple example for a title page with \Environment{titlepage} is shown in
-  \autoref{sec:\ThisCommonFirstLabelBase.titlepage} on
+  Um exemplo simples de uma página de título com \Environment{titlepage} é
+  mostrado na \autoref{sec:\ThisCommonFirstLabelBase.titlepage} na
   \PageRefxmpl{\ThisCommonFirstLabelBase.env.titlepage}%
   \csname iffalse\endcsname%
 }%
   \begin{Example}
     \phantomsection\xmpllabel{env.titlepage}
-    Suppose you want a title page on which only the word ``Me'' stands at
-    the top on the left, as large as possible and in bold\,---\,no
-    author, no date, nothing else. The following document creates just
-    that:
+    Suponha que você queira uma página de título na qual apenas a palavra
+    ``Eu'' apareça no topo à esquerda, tão grande quanto possível e em
+    negrito\,---\,sem autor, sem data, nada mais. O documento seguinte cria
+    exatamente isso:
 \begin{lstcode}
   \documentclass{scrbook}
   \begin{document}
   \begin{titlepage}
-    \textbf{\Huge Me}
+    \textbf{\Huge Eu}
   \end{titlepage}
   \end{document}
 \end{lstcode}
-    It's simple, isn't it?
+    É simples, não é?
   \end{Example}
 \fi%
 \EndIndexGroup
@@ -191,39 +194,40 @@ described next, you should design a new one with the help of this environment.
 \begin{Declaration}
   \Macro{maketitle}\OParameter{page number}
 \end{Declaration}%
-While\textnote{\KOMAScript{} vs. standard classes} the standard classes
-produce at most one title page that can have three items (title, author, and
-date), with \KOMAScript{} \Macro{maketitle} can produce up to six pages. In
-contrast to the standard classes, \Macro{maketitle} in {\KOMAScript} accepts
-an optional numeric argument. If it is used, this number is the page number of
-the first title page. This page number is not output, but it affects the
-subsequent numbering. You should definitely choose an odd number, because
-otherwise the whole count gets mixed up. In my opinion, there are only two
-useful applications for the optional argument. On the one hand, you could give
-the the logical page number -1 to the half-title\Index[indexmain]{half-title}
-in order to give the full title page the number 1. On the other hand, you
-could use it to start at a higher page number, for example, 3, 5, or 7, to
-accommodate other title pages added by the publishing house.  The optional
-argument is ignored for \emph{in-page} titles. You can change the page style
-of such a title page by redefining the
-\DescRef{\ThisCommonLabelBase.cmd.titlepagestyle} macro (see
+Enquanto\textnote{\KOMAScript{} vs. classes padrão} as classes padrão
+produzem no máximo uma página de título que pode ter três itens (título,
+autor e data), com o \KOMAScript{} o \Macro{maketitle} pode produzir até
+seis páginas. Em contraste com as classes padrão, o \Macro{maketitle} no
+{\KOMAScript} aceita um argumento numérico opcional. Se for usado, este
+número é o número da página da primeira página de título. Este número de
+página não é impresso, mas afeta a numeração subsequente. Você deve
+definitivamente escolher um número ímpar, porque caso contrário a contagem
+toda fica confusa. Na minha opinião, há apenas duas aplicações úteis para o
+argumento opcional. Por um lado, você poderia dar o número de página lógico
+-1 ao antetítulo\Index[indexmain]{half-title} para dar à página de título
+completa o número 1. Por outro lado, você poderia usá-lo para começar em um
+número de página mais alto, por exemplo, 3, 5 ou 7, para acomodar outras
+páginas de título adicionadas pela editora. O argumento opcional é ignorado
+para títulos \emph{na página}. Você pode alterar o estilo de página de tal
+página de título redefinindo o macro
+\DescRef{\ThisCommonLabelBase.cmd.titlepagestyle} (veja
 \autoref{sec:maincls.pagestyle}, \DescPageRef{maincls.cmd.titlepagestyle}).
 
-The following commands do not lead immediately to the ship-out of the titles.
-The typesetting and ship-out of the title pages are always done by
-\Macro{maketitle}. Note also that \Macro{maketitle} should not be used inside
-a \DescRef{\ThisCommonLabelBase.env.titlepage} environment.
-As\textnote{Attention!} shown in the examples, you should use either
-\Macro{maketitle} or \DescRef{\ThisCommonLabelBase.env.titlepage}, but not
-both.
+Os comandos seguintes não levam imediatamente ao envio dos títulos. A
+composição e o envio das páginas de título são sempre feitos por
+\Macro{maketitle}. Note também que \Macro{maketitle} não deve ser usado
+dentro de um ambiente \DescRef{\ThisCommonLabelBase.env.titlepage}.
+Como\textnote{Atenção!} mostrado nos exemplos, você deve usar
+\Macro{maketitle} ou \DescRef{\ThisCommonLabelBase.env.titlepage}, mas não
+ambos.
 
-The following commands only define the contents of the title. Therefore they
-must be used before \Macro{maketitle}. It is, however, not necessary and, when
-using the \Package{babel} package\IndexPackage{babel} not recommended, to
-include these in the preamble before \Macro{begin}\PParameter{document} (see
-\cite{package:babel}). You can find examples
-\IfThisCommonFirstRun{in the descriptions of the other commands in this
-  section}{in \autoref{sec:\ThisCommonFirstLabelBase.titlepage}, starting on
+Os comandos seguintes apenas definem o conteúdo do título. Portanto, eles
+devem ser usados antes de \Macro{maketitle}. Não é, contudo, necessário e,
+ao usar o pacote \Package{babel}\IndexPackage{babel}, não recomendado,
+incluir estes no preâmbulo antes de \Macro{begin}\PParameter{document}
+(veja \cite{package:babel}). Você pode encontrar exemplos
+\IfThisCommonFirstRun{nas descrições dos outros comandos nesta seção}{na
+  \autoref{sec:\ThisCommonFirstLabelBase.titlepage}, começando na
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.extratitle}}.
 
 
@@ -232,60 +236,61 @@ include these in the preamble before \Macro{begin}\PParameter{document} (see
   \Macro{frontispiece}\Parameter{frontispiece}
 \end{Declaration}%
 \begin{Explain}%
-  In earlier times the inner book was often not protected from dirt by a
-  cover. This function was then assumed by the first page of the book, which
-  usually had just a short title, known as the \emph{half-title}. Nowadays the
-  extra page often appears before the real main title and contains information
-  about the publisher, series number, and similar information.
+  Em tempos anteriores, o livro interno muitas vezes não era protegido da
+  sujeira por uma capa. Esta função era então assumida pela primeira página
+  do livro, que geralmente tinha apenas um título curto, conhecido como o
+  \emph{antetítulo}. Hoje em dia, a página extra muitas vezes aparece antes
+  do título principal real e contém informações sobre a editora, número de
+  série e informações similares.
 \end{Explain}
-With {\KOMAScript}, it is possible to include a page before the real title
-page. The \PName{half-title} can be arbitrary text\,---\,even several
-paragraphs. The contents of the \PName{half-title} are output by {\KOMAScript}
-without additional formatting. Their organisation is completely left to the
-user. The verso of the half-title\IfThisCommonLabelBase{maincls}{%
+Com o {\KOMAScript}, é possível incluir uma página antes da página de
+título real. O \PName{half-title} pode ser um texto arbitrário\,---\,até
+vários parágrafos. O conteúdo do \PName{half-title} é impresso pelo
+{\KOMAScript} sem formatação adicional. Sua organização é completamente
+deixada ao usuário. O verso do antetítulo\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.25}{\Class{scrbook}\and\Class{scrreprt}\and\Class{scrartcl}}%
 }{%
   \IfThisCommonLabelBase{scrextend}{%
     \ChangedAt{v3.25}{\Package{scrextend}}%
   }{\ThisCommonLabelBaseFailure}%
-} is the frontispiece. The half-title is set on its own page even when in-page
-titles are used. The output of the half-title defined with \Macro{extratitle}
-takes place as part of the title produced by
+} é o frontispício. O antetítulo é composto em sua própria página mesmo
+quando títulos na página são usados. A saída do antetítulo definido com
+\Macro{extratitle} ocorre como parte do título produzido por
 \DescRef{\ThisCommonLabelBase.cmd.maketitle}.
 
 \IfThisCommonFirstRun{\iftrue}{%
-  An example of a simple title page with half-title and main title is shown
-  in \autoref{sec:\ThisCommonFirstLabelBase.titlepage} on
-  \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.extratitle}%
+  Um exemplo de uma página de título simples com antetítulo e título
+  principal é mostrado na \autoref{sec:\ThisCommonFirstLabelBase.titlepage}
+  na \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.extratitle}%
   \csname iffalse\endcsname%
 }%
   \begin{Example}
     \phantomsection\xmpllabel{cmd.extratitle}
-    Let's return to the previous example and suppose
-    that the Spartan ``Me'' is the half-title. The full title should
-    still follow the half-title. You can proceed as follows:
+    Voltemos ao exemplo anterior e suponhamos que o espartano ``Eu'' seja o
+    antetítulo. O título completo ainda deve seguir o antetítulo. Você pode
+    proceder da seguinte forma:
 \begin{lstcode}
   \documentclass{scrbook}
   \begin{document}
-    \extratitle{\textbf{\Huge Me}}
-    \title{It's me}
+    \extratitle{\textbf{\Huge Eu}}
+    \title{Sou eu}
     \maketitle
   \end{document}
 \end{lstcode}
-    You can centre the half-title horizontally and put it a little lower down
-    the page:
+    Você pode centralizar o antetítulo horizontalmente e colocá-lo um pouco
+    mais abaixo na página:
 \begin{lstcode}
   \documentclass{scrbook}
   \begin{document}
     \extratitle{\vspace*{4\baselineskip}
-      \begin{center}\textbf{\Huge Me}\end{center}}
-    \title{It's me}
+      \begin{center}\textbf{\Huge Eu}\end{center}}
+    \title{Sou eu}
     \maketitle
   \end{document}
 \end{lstcode}
-    The command\textnote{Attention!} \DescRef{\ThisCommonLabelBase.cmd.title}
-    is necessary in order to make the examples above work correctly. It is
-    explained next.
+    O comando\textnote{Atenção!} \DescRef{\ThisCommonLabelBase.cmd.title}
+    é necessário para fazer os exemplos acima funcionarem corretamente. Ele
+    é explicado a seguir.
   \end{Example}
 \fi%
 \EndIndexGroup
@@ -302,101 +307,105 @@ takes place as part of the title produced by
   \Macro{and}%
   \Macro{thanks}\Parameter{footnote}
 \end{Declaration}%
-There are seven elements available for the content of the main title page. The
-main title page is output as part of the title pages created by
-\DescRef{\ThisCommonLabelBase.cmd.maketitle}, while the definitions given here
-only apply to the respective elements.
+Há sete elementos disponíveis para o conteúdo da página de título
+principal. A página de título principal é impressa como parte das páginas
+de título criadas por \DescRef{\ThisCommonLabelBase.cmd.maketitle},
+enquanto as definições dadas aqui se aplicam apenas aos respectivos
+elementos.
 
 \BeginIndexGroup\BeginIndex{FontElement}{titlehead}%
 \LabelFontElement{titlehead}%
-The\important{\Macro{titlehead}} \PName{title head}%
-\Index[indexmain]{title>head} is defined with the command
-\Macro{titlehead}. It occupies the entire text width, at the top of the page,
-in normal justification, and it can be freely designed by the user. It uses
-the font element\important{\FontElement{titlehead}} with same name (see
+O\important{\Macro{titlehead}} \PName{title head}%
+\Index[indexmain]{title>head} é definido com o comando \Macro{titlehead}.
+Ele ocupa toda a largura do texto, no topo da página, em justificação
+normal, e pode ser livremente projetado pelo usuário. Ele usa o elemento de
+fonte\important{\FontElement{titlehead}} de mesmo nome (veja
 \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{subject}\LabelFontElement{subject}%
-The\important{\Macro{subject}} \PName{subject}\Index[indexmain]{subject} is
-output with the font element\important{\FontElement{subject}} of the same name
-immediately above the \PName{title}.%
+O\important{\Macro{subject}} \PName{subject}\Index[indexmain]{subject} é
+impresso com o elemento de fonte\important{\FontElement{subject}} de mesmo
+nome imediatamente acima do \PName{title}.%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{title}\LabelFontElement{title}%
-The\important{\Macro{title}} \PName{title} is set in a very large font size.
-Along\IfThisCommonLabelBase{maincls}{%
+O\important{\Macro{title}} \PName{title} é composto em um tamanho de fonte
+muito grande. Junto\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v2.8p}{\Class{scrbook}\and \Class{scrreprt}\and
-    \Class{scrartcl}}}{} with the font size, the font element
+    \Class{scrartcl}}}{} com o tamanho da fonte, o elemento de fonte
 \FontElement{title}\IndexFontElement[indexmain]{title}%
-\important{\FontElement{title}} is applied (see
+\important{\FontElement{title}} é aplicado (veja
 \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{subtitle}\LabelFontElement{subtitle}%
-The\important{\Macro{subtitle}}
+O\important{\Macro{subtitle}}
 \PName{subtitle}\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v2.97c}{\Class{scrbook}\and \Class{scrreprt}\and
-    \Class{scrartcl}}}{} is set just below the title using the font
-element\important{\FontElement{subtitle}} of the same name (see
+    \Class{scrartcl}}}{} é composto logo abaixo do título usando o elemento
+de fonte\important{\FontElement{subtitle}} de mesmo nome (veja
 \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{author}\LabelFontElement{author}%
-Below\important{\Macro{author}} the \PName{subtitle} appears the
-\PName{author}\Index[indexmain]{author}. Several authors can be specified in
-the argument of \Macro{author}. They should be separated by
-\Macro{and}\important{\Macro{and}}. The output uses the font 
-element\important{\FontElement{author}} of the same name. (see
+Abaixo\important{\Macro{author}} do \PName{subtitle} aparece o
+\PName{author}\Index[indexmain]{author}. Vários autores podem ser
+especificados no argumento de \Macro{author}. Eles devem ser separados por
+\Macro{and}\important{\Macro{and}}. A saída usa o elemento de
+fonte\important{\FontElement{author}} de mesmo nome. (veja
 \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{date}\LabelFontElement{date}%
-Below\important{\Macro{date}} the author or authors appears the
-date\Index{date} in the font of the element of the same name. The default
-value is the current date, as produced by \Macro{today}\IndexCmd{today}. The
-\Macro{date} command accepts arbitrary information\,---\,even an empty
-argument. The output uses the font element\important{\FontElement{date}} of
-the same name (see \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
+Abaixo\important{\Macro{date}} do autor ou autores aparece a
+data\Index{date} na fonte do elemento de mesmo nome. O valor padrão é a
+data atual, como produzida por \Macro{today}\IndexCmd{today}. O comando
+\Macro{date} aceita informações arbitrárias\,---\,até um argumento vazio. A
+saída usa o elemento de fonte\important{\FontElement{date}} de mesmo nome
+(veja \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
 \BeginIndexGroup\BeginIndex{FontElement}{publishers}%
 \LabelFontElement{publishers}%
-Finally\important{\Macro{publishers}} comes the
-\PName{publisher}\Index[indexmain]{publisher}. Of course this command can also
-be used for any other information of minor importance. If necessary, the
-\Macro{parbox} command can be used to typeset this information over the full
-page width like a regular paragraph instead of centring it. It should then be
-considered equivalent to the title head. Note, however, that this field is
-placed above any existing footnotes. The output uses the font 
-element\important{\FontElement{publishers}} of the same name (see
+Finalmente\important{\Macro{publishers}} vem o
+\PName{publisher}\Index[indexmain]{publisher}. Claro que este comando
+também pode ser usado para qualquer outra informação de menor importância.
+Se necessário, o comando \Macro{parbox} pode ser usado para compor esta
+informação sobre toda a largura da página como um parágrafo regular em vez
+de centralizá-la. Deve então ser considerado equivalente ao cabeçalho do
+título. Note, contudo, que este campo é colocado acima de quaisquer notas
+de rodapé existentes. A saída usa o elemento de
+fonte\important{\FontElement{publishers}} de mesmo nome (veja
 \autoref{tab:\ThisCommonFirstLabelBase.mainTitle},
 \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}).%
 \EndIndexGroup
 
-Footnotes\important{\Macro{thanks}}\Index{footnotes} on the title page are
-produced not with \Macro{footnote}, but with \Macro{thanks}. They serve
-typically for notes associated with the authors. Symbols are used as footnote
-markers instead of numbers. Note\textnote{Attention!} that \Macro{thanks} has
-to be used inside the argument of another command, such as in the 
-\PName{author} argument of the command \Macro{author}.
+Notas de rodapé\important{\Macro{thanks}}\Index{footnotes} na página de
+título são produzidas não com \Macro{footnote}, mas com \Macro{thanks}.
+Elas servem tipicamente para notas associadas aos autores. Símbolos são
+usados como marcadores de notas de rodapé em vez de números.
+Note\textnote{Atenção!} que \Macro{thanks} deve ser usado dentro do
+argumento de outro comando, como no argumento \PName{author} do comando
+\Macro{author}.
 \IfThisCommonLabelBase{scrextend}{%
-  However, in order for the \DescRef{\ThisCommonLabelBase.fontelement.footnote}
-  element to be aware of the \Package{scrextend} package, not only does the
-  title extension need to be enabled, it must also be set to use footnotes
-  with this package (see the introduction to
+  Contudo, para que o elemento
+  \DescRef{\ThisCommonLabelBase.fontelement.footnote} esteja ciente do
+  pacote \Package{scrextend}, não apenas a extensão de título precisa ser
+  ativada, ela também deve ser configurada para usar notas de rodapé com
+  este pacote (veja a introdução à
   \autoref{sec:\ThisCommonLabelBase.footnotes},
-  \autopageref{sec:\ThisCommonLabelBase.footnotes}). Otherwise, the font
-  specified by the class or other packages used for the footnotes will be
-  used.%
+  \autopageref{sec:\ThisCommonLabelBase.footnotes}). Caso contrário, a
+  fonte especificada pela classe ou outros pacotes usados para as notas de
+  rodapé será usada.%
 }{}%
 
-For%
+Para%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -404,12 +413,13 @@ For%
   \IfThisCommonLabelBase{scrextend}{%
     \ChangedAt{v3.12}{\Package{scrextend}}%
   }{\InternalCommonFileUsageError}%
-} the output of the title elements, the font\textnote{font} can be set using
-the \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} command (see
+} a saída dos elementos de título, a fonte\textnote{font} pode ser
+configurada usando os comandos
+\DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
-\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}). The defaults are listed
-in \autoref{tab:\ThisCommonFirstLabelBase.titlefonts}%
+\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}). Os padrões estão
+listados na \autoref{tab:\ThisCommonFirstLabelBase.titlefonts}%
 \IfThisCommonFirstRun{}{%
   , \autopageref{tab:\ThisCommonFirstLabelBase.titlefonts}%
 }.%
@@ -421,13 +431,13 @@ in \autoref{tab:\ThisCommonFirstLabelBase.titlefonts}%
     \setcapindent{0pt}%
 %  \addtokomafont{caption}{\raggedright}%
     \begin{captionbeside}
-      [{Font defaults for the elements of the title}]
+      [{Padrões de fonte para os elementos do título}]
       {\label{tab:\ThisCommonLabelBase.titlefonts}%
-        \hspace{0pt plus 1ex}Font defaults for the elements of the title}
+        \hspace{0pt plus 1ex}Padrões de fonte para os elementos do título}
       [l]
       \begin{tabular}[t]{ll}
         \toprule
-        Element name & Default \\
+        Nome do elemento & Padrão \\
         \midrule
         \FontElement{author} & \Macro{Large} \\
         \FontElement{date} & \Macro{Large} \\
@@ -439,7 +449,7 @@ in \autoref{tab:\ThisCommonFirstLabelBase.titlefonts}%
         \FontElement{subtitle} &
                                  \DescRef{\ThisCommonLabelBase.cmd.usekomafont}%
                                  \PParameter{title}\Macro{large} \\
-        \FontElement{title} & 
+        \FontElement{title} &
                               \DescRef{\ThisCommonLabelBase.cmd.usekomafont}%
                               \PParameter{disposition} \\
         \FontElement{titlehead} & \\
@@ -449,20 +459,20 @@ in \autoref{tab:\ThisCommonFirstLabelBase.titlefonts}%
   \end{table}%
 }{}%
 
-With the exception of \PName{title head} and any footnotes, all output is
-centred horizontally. %
+Com exceção de \PName{title head} e quaisquer notas de rodapé, toda a saída
+é centralizada horizontalmente. %
 \iffree{%
-  \IfThisCommonLabelBase{scrextend}{The formatting of each element is}{These
-    details are} briefly summarized in
+  \IfThisCommonLabelBase{scrextend}{A formatação de cada elemento é}{Estes
+    detalhes são} resumida brevemente na
   \autoref{tab:\ThisCommonFirstLabelBase.mainTitle}\IfThisCommonFirstRun{}{%
     , \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}}.%
 }{%
   \IfThisCommonLabelBase{scrextend}{%
-    The alignment of individual elements can also be found in
+    O alinhamento de elementos individuais também pode ser encontrado na
     \autoref{tab:\ThisCommonFirstLabelBase.mainTitle}\IfThisCommonFirstRun{}{%
       , \autopageref{tab:\ThisCommonFirstLabelBase.mainTitle}}.%
   }{%
-    For a summary, see \autoref{tab:\ThisCommonFirstLabelBase.mainTitle}.%
+    Para um resumo, veja \autoref{tab:\ThisCommonFirstLabelBase.mainTitle}.%
   }%
 }%
 \IfThisCommonFirstRun{%
@@ -471,24 +481,24 @@ centred horizontally. %
     \KOMAoptions{captions=topbeside}%
     \setcapindent{0pt}%
     % \caption
-    \begin{captionbeside}[Main title]{%
+    \begin{captionbeside}[Título principal]{%
         \hspace{0pt plus 1ex}%
-        Font and horizontal positioning of the elements in the main title page
-        in the order of their vertical position from top to bottom when 
-        typeset with \DescRef{\ThisCommonLabelBase.cmd.maketitle}}
+        Fonte e posicionamento horizontal dos elementos na página de título
+        principal na ordem de sua posição vertical de cima para baixo quando
+        compostos com \DescRef{\ThisCommonLabelBase.cmd.maketitle}}
       [l]
       \setlength{\tabcolsep}{.85\tabcolsep}% Umbruchoptimierung
       \begin{tabular}[t]{llll}
         \toprule
-        Element    & Command            & Font               & Alignment     \\
+        Elemento   & Comando            & Fonte              & Alinhamento   \\
         \midrule
-        Title head & \Macro{titlehead}  & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{titlehead} & justified \\
-        Subject    & \Macro{subject}    & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{subject} & centred \\
-        Title      & \Macro{title}      & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{title}\Macro{huge}  & centred  \\
-        Subtitle   & \Macro{subtitle}   & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{subtitle}  & centred \\
-        Authors    & \Macro{author}     & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{author}  & centred \\
-        Date       & \Macro{date}       & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{date}  & centred  \\
-        Publishers & \Macro{publishers} & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{publishers} & centred \\
+        Cabeçalho do título & \Macro{titlehead}  & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{titlehead} & justificado \\
+        Assunto    & \Macro{subject}    & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{subject} & centralizado \\
+        Título     & \Macro{title}      & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{title}\Macro{huge}  & centralizado  \\
+        Subtítulo  & \Macro{subtitle}   & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{subtitle}  & centralizado \\
+        Autores    & \Macro{author}     & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{author}  & centralizado \\
+        Data       & \Macro{date}       & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{date}  & centralizado  \\
+        Editora    & \Macro{publishers} & \DescRef{\ThisCommonLabelBase.cmd.usekomafont}\PParameter{publishers} & centralizado \\
         \bottomrule
       \end{tabular}
     \end{captionbeside}
@@ -496,41 +506,43 @@ centred horizontally. %
   \end{table}
 }{}
 
-Note\textnote{Attention!} that for the main title, \Macro{huge} will be used
-after the font switching element
-\DescRef{\ThisCommonLabelBase.fontelement.title}\IndexFontElement{title}. So
-you cannot change the size of the main title using
-\DescRef{\ThisCommonLabelBase.cmd.setkomafont} or
+Note\textnote{Atenção!} que para o título principal, \Macro{huge} será
+usado após o elemento de mudança de fonte
+\DescRef{\ThisCommonLabelBase.fontelement.title}\IndexFontElement{title}.
+Portanto, você não pode alterar o tamanho do título principal usando
+\DescRef{\ThisCommonLabelBase.cmd.setkomafont} ou
 \DescRef{\ThisCommonLabelBase.cmd.addtokomafont}.%
 
 \IfThisCommonFirstRun{\iftrue}{%
-  An example for a title page using all the elements offered by \KOMAScript{}
-  is shown in \autoref{sec:\ThisCommonFirstLabelBase.titlepage} on
+  Um exemplo de uma página de título usando todos os elementos oferecidos
+  pelo \KOMAScript{} é mostrado na
+  \autoref{sec:\ThisCommonFirstLabelBase.titlepage} na
   \PageRefxmpl{\ThisCommonFirstLabelBase.maintitle}.%
   \csname iffalse\endcsname%
 }%
   \begin{Example}
     \phantomsection\xmpllabel{maintitle}%
-    Suppose you are writing a dissertation. The title page should have the
-    university's name and address at the top, flush left, and the semester,
-    flush right. As usual, a title including author and submission date
-    should be given. The adviser must also be indicated, together with the
-    fact that the document is a dissertation. You can do this as follows:
+    Suponha que você esteja escrevendo uma dissertação. A página de título
+    deve ter o nome e endereço da universidade no topo, alinhado à
+    esquerda, e o semestre, alinhado à direita. Como de costume, um título
+    incluindo autor e data de submissão deve ser dado. O orientador também
+    deve ser indicado, juntamente com o fato de que o documento é uma
+    dissertação. Você pode fazer isso da seguinte forma:
 \begin{lstcode}
   \documentclass{scrbook}
   \usepackage[english]{babel}
   \begin{document}
-  \titlehead{{\Large Unseen University
-      \hfill SS~2002\\}
-    Higher Analytical Institute\\
-    Mythological Rd\\
-    34567 Etherworld}
-  \subject{Dissertation}
-  \title{Digital space simulation with the DSP\,56004}
-  \subtitle{Short but sweet?}
-  \author{Fuzzy George}
-  \date{30. February 2002}
-  \publishers{Adviser Prof. John Eccentric Doe}
+  \titlehead{{\Large Universidade Invisível
+      \hfill 2º Semestre 2002\\}
+    Instituto de Análise Superior\\
+    Rua Mitológica\\
+    34567 Mundo Etéreo}
+  \subject{Dissertação}
+  \title{Simulação de espaço digital com o DSP\,56004}
+  \subtitle{Curto mas doce?}
+  \author{Jorge Confuso}
+  \date{30 de Fevereiro de 2002}
+  \publishers{Orientador Prof. Dr. João Excêntrico}
   \maketitle
   \end{document}
 \end{lstcode}
@@ -538,31 +550,33 @@ you cannot change the size of the main title using
 \fi
 
 \begin{Explain}
-  A common misconception concerns the function of the full title page. It is
-  often erroneously assumed to be the cover\Index{cover} or dust jacket.
-  Therefore, it is frequently expected that the title page will not follow the
-  normal layout for two-sided typesetting but will have equally large left and
-  right margins.
+  Um equívoco comum diz respeito à função da página de título completa. Ela
+  é frequentemente erroneamente assumida como sendo a capa\Index{cover} ou
+  sobrecapa. Portanto, é frequentemente esperado que a página de título não
+  siga o layout normal para composição em dois lados, mas tenha margens
+  esquerda e direita igualmente grandes.
 
-  But if you pick up a book and open it, you will quickly find at least one
-  title page inside the cover, within the so-called book block. Precisely
-  these title pages are produced by
+  Mas se você pegar um livro e abri-lo, rapidamente encontrará pelo menos
+  uma página de título dentro da capa, dentro do chamado bloco do livro.
+  Precisamente estas páginas de título são produzidas por
   \DescRef{\ThisCommonLabelBase.cmd.maketitle}.
 
-  As is the case with the half-title, the full title page belongs to the book
-  block, and therefore should have the same page layout as the rest of the
-  document. A cover is actually something that you should create in a
-  separate document. After all, it often has a very distinct format. It can
-  also be designed with the help of a graphics or DTP program. A separate
-  document should also be used because the cover will be printed on a
-  different medium, such as cardboard, and possibly with another printer.
+  Como é o caso com o antetítulo, a página de título completa pertence ao
+  bloco do livro e, portanto, deve ter o mesmo layout de página que o
+  restante do documento. Uma capa é na verdade algo que você deve criar em
+  um documento separado. Afinal, ela muitas vezes tem um formato muito
+  distinto. Ela também pode ser projetada com a ajuda de um programa
+  gráfico ou DTP. Um documento separado também deve ser usado porque a capa
+  será impressa em um meio diferente, como papelão, e possivelmente com
+  outra impressora.
 
-  Nevertheless, since \KOMAScript~3.12 the first title page issued by
-  \DescRef{\ThisCommonLabelBase.cmd.maketitle} can be formatted as a cover
-  page with different margins. Changes to the margins on this page do not
-  affect the other margins. For more information about this option, see
+  No entanto, desde o \KOMAScript~3.12, a primeira página de título emitida
+  por \DescRef{\ThisCommonLabelBase.cmd.maketitle} pode ser formatada como
+  uma página de capa com margens diferentes. Mudanças nas margens desta
+  página não afetam as outras margens. Para mais informações sobre esta
+  opção, veja
   \OptionValueRef{\ThisCommonLabelBase}{titlepage}{firstiscover}%
-  \IndexOption{titlepage~=\textKValue{firstiscover}} on
+  \IndexOption{titlepage~=\textKValue{firstiscover}} na
   \DescPageRef{\ThisCommonLabelBase.option.titlepage}.
 \end{Explain}
 %
@@ -573,16 +587,16 @@ you cannot change the size of the main title using
   \Macro{uppertitleback}\Parameter{titlebackhead}%
   \Macro{lowertitleback}\Parameter{titlebackfoot}
 \end{Declaration}%
-In\textnote{\KOMAScript{} vs. standard classes} two-sided printing, the
-standard classes leave the back (verso) of the title page empty. However, with
-{\KOMAScript} the back of the full title page can be used for other
-information. There are exactly two elements which the user can freely format:
-\PName{titlebackhead}\Index{title>back}\Index{title>verso} and
-\PName{titlebackfoot}. The header can extend to the footer and vice versa.
-\iffree{Using this guide as an example, the legal disclaimer was set with the
-  help of the \Macro{uppertitleback} command.}{The publishers information of
-  this book, for example, could have been set either with
-  \Macro{uppertitleback} or \Macro{lowertitleback}.}%
+Na\textnote{\KOMAScript{} vs. classes padrão} impressão em dois lados, as
+classes padrão deixam o verso da página de título vazio. Contudo, com o
+{\KOMAScript} o verso da página de título completa pode ser usado para
+outras informações. Há exatamente dois elementos que o usuário pode
+formatar livremente: \PName{titlebackhead}\Index{title>back}%
+\Index{title>verso} e \PName{titlebackfoot}. O cabeçalho pode se estender
+ao rodapé e vice-versa. \iffree{Usando este guia como exemplo, o aviso
+  legal foi composto com a ajuda do comando \Macro{uppertitleback}.}{As
+  informações da editora deste livro, por exemplo, poderiam ter sido
+  compostas com \Macro{uppertitleback} ou \Macro{lowertitleback}.}%
 %
 \EndIndexGroup
 
@@ -590,12 +604,12 @@ information. There are exactly two elements which the user can freely format:
 \begin{Declaration}
   \Macro{dedication}\Parameter{dedication}
 \end{Declaration}%
-{\KOMAScript} offers its own dedication page. This
-dedication\Index{dedication} is centred and set by default with a slightly
-larger font\textnote{font}.
+O {\KOMAScript} oferece sua própria página de dedicatória. Esta
+dedicatória\Index{dedication} é centralizada e composta por padrão com uma
+fonte ligeiramente maior\textnote{font}.
 \BeginIndexGroup\BeginIndex{FontElement}{dedication}%
 \LabelFontElement{dedication}
-The%
+A%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -603,44 +617,45 @@ The%
   \IfThisCommonLabelBase{scrextend}{%
     \ChangedAt{v3.12}{\Package{scrextend}}%
   }{\InternalCommonFileUseError}%
-}\important{\FontElement{dedication}} exact font setting for the
-\FontElement{dedication} element, which is taken from
+}\important{\FontElement{dedication}} configuração de fonte exata para o
+elemento \FontElement{dedication}, que é tirada da
 \autoref{tab:\ThisCommonFirstLabelBase.titlefonts},
-\autopageref{tab:\ThisCommonFirstLabelBase.titlefonts}, can be changed with
-the \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} commands (see
+\autopageref{tab:\ThisCommonFirstLabelBase.titlefonts}, pode ser alterada
+com os comandos \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
 \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}).%
 \EndIndexGroup
 
 \IfThisCommonFirstRun{\iftrue}{%
-  An example with all title pages provided by \KOMAScript{} is shown in
-  \autoref{sec:\ThisCommonFirstLabelBase.titlepage} on
+  Um exemplo com todas as páginas de título fornecidas pelo \KOMAScript{} é
+  mostrado na \autoref{sec:\ThisCommonFirstLabelBase.titlepage} na
   \PageRefxmpl{\ThisCommonFirstLabelBase.fulltitle}.%
   \csname iffalse\endcsname%
 }%
   \begin{Example}
     \phantomsection\xmpllabel{fulltitle}%
-    Suppose you have written a book of poetry and want to
-    dedicate it to your spouse. A solution would look like this:
+    Suponha que você tenha escrito um livro de poesia e queira dedicá-lo ao
+    seu cônjuge. Uma solução seria assim:
 \begin{lstcode}
   \documentclass{scrbook}
   \usepackage[english]{babel}
   \begin{document}
-  \extratitle{\textbf{\Huge In Love}}
-  \title{In Love}
-  \author{Prince Ironheart}
+  \extratitle{\textbf{\Huge Apaixonado}}
+  \title{Apaixonado}
+  \author{Príncipe Coração de Ferro}
   \date{1412}
-  \lowertitleback{This poem book was set with%
-       the help of {\KOMAScript} and {\LaTeX}}
-  \uppertitleback{Self-mockery Publishers}
-  \dedication{To my treasured hazel-hen\\
-    in eternal love\\
-    from your dormouse.}
+  \lowertitleback{Este livro de poemas foi composto com%
+       a ajuda do {\KOMAScript} e {\LaTeX}}
+  \uppertitleback{Editora Auto-zombaria}
+  \dedication{À minha querida galinha-selvagem\\
+    em amor eterno\\
+    do seu ratinho-do-campo.}
   \maketitle
   \end{document}
 \end{lstcode}
-    Please use your own favourite pet names to personalize it.
+    Por favor, use seus próprios apelidos carinhosos favoritos para
+    personalizá-lo.
   \end{Example}%
 \fi%
 \EndIndexGroup
@@ -649,10 +664,10 @@ the \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

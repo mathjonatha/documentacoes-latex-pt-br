@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,136 +28,137 @@
                   KOMA-Script guide (common paragraphs)]
 \translator{Markus Kohm\and Krickette Murabayashi\and Karl Hagen}
 
-\section{Compatibility with Earlier Versions of \KOMAScript}
+\section{Compatibilidade com Versões Anteriores do \KOMAScript}
 \seclabel{compatibilityOptions}
 \BeginIndexGroup
-\BeginIndex{}{Compatibility}
+\BeginIndex{}{Compatibilidade}
 
 \IfThisCommonFirstRun{}{%
-  The information in
-  \autoref{sec:\ThisCommonFirstLabelBase.compatibilityOptions} applies equally
-  to this chapter.
-  \IfThisCommonLabelBase{scrlttr2}{However, this feature has existed in
-    \Class{scrlttr2} since version~2.9t, whereas \Package{scrletter} does not
-    offer it. }{}%
-  So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.compatibilityOptions} you can skip
-  ahead to \autopageref{sec:\ThisCommonLabelBase.compatibilityOptions.next},
+  As informações em
+  \autoref{sec:\ThisCommonFirstLabelBase.compatibilityOptions} aplicam-se
+  igualmente a este capítulo.
+  \IfThisCommonLabelBase{scrlttr2}{No entanto, este recurso existe na
+    \Class{scrlttr2} desde a versão~2.9t, enquanto o \Package{scrletter} não
+    o oferece. }{}%
+  Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.compatibilityOptions}, pode pular
+  para a \autopageref{sec:\ThisCommonLabelBase.compatibilityOptions.next},
   \autopageref{sec:\ThisCommonLabelBase.compatibilityOptions.next}.%
 }
 
 \IfThisCommonLabelBaseOneOf{typearea,maincls,scrlttr2}{%
-  Those who produce their documents from source code typically attach the
-  utmost importance to the fact that future \LaTeX{} runs will yield exactly
-  the same result. In some cases, however, improvements and bug fixes to the
-  \IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{class}{package} will
-  result in changes of behaviour, especially to the layout. This, however,
-  may be undesirable.%
+  Aqueles que produzem seus documentos a partir de código-fonte normalmente
+  atribuem a máxima importância ao fato de que futuras execuções do \LaTeX{}
+  produzirão exatamente o mesmo resultado. Em alguns casos, no entanto,
+  melhorias e correções de bugs na
+  \IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{classe}{pacote} resultarão em
+  mudanças de comportamento, especialmente no layout. Isso, no entanto, pode
+  ser indesejável.%
 }{%
   \IfThisCommonLabelBase{scrextend}{%
-  % In some cases, improvements and bug fixes to the package will result
-  % in changes of behaviour, especially to the layout. This, however,
-  % may be undesirable. Those who produce their documents from source code
-  % typically attach the utmost importance to the fact that future 
-  % \LaTeX{} runs will yield exactly the same result.%
+  % Em alguns casos, melhorias e correções de bugs no pacote resultarão em
+  % mudanças de comportamento, especialmente no layout. Isso, no entanto,
+  % pode ser indesejável. Aqueles que produzem seus documentos a partir de
+  % código-fonte normalmente atribuem a máxima importância ao fato de que
+  % futuras execuções do \LaTeX{} produzirão exatamente o mesmo resultado.%
   }{%
   \ThisCommonLabelBaseFailure
   % \IfThisCommonLabelBase{scrlttr2}{%
-  % In some cases, improvements and bug fixes to the package will result
-  % in changes of behaviour, especially to the layout. This, however,
-  % may be undesirable.
+  % Em alguns casos, melhorias e correções de bugs no pacote resultarão em
+  % mudanças de comportamento, especialmente no layout. Isso, no entanto,
+  % pode ser indesejável.
   % }{}%
   }%
 }%
 
 
 \begin{Declaration}
-  \OptionVName{version}{value}%
+  \OptionVName{version}{valor}%
   \OptionValue{version}{first}%
   \OptionValue{version}{last}
 \end{Declaration}
 %\ChangedAt{v2.96a}{\Class{scrbook}\and \Class{scrreprt}\and \Class{scrartcl}}%
 %\ChangedAt{v2.9t}{\Class{scrlttr2}}%
 %\ChangedAt{v3.01b}{\Package{typearea}}%
-\IfThisCommonLabelBase{scrextend}{With \Package{scrextend}, you can}{Since
+\IfThisCommonLabelBase{scrextend}{Com o \Package{scrextend}, você pode}{Desde
   \IfThisCommonLabelBase{typearea}{%
-    Version~3.01b, \Package{typearea}\ChangedAt{v3.01b}{\Package{typearea}}}{%
+    a versão~3.01b, o \Package{typearea}\ChangedAt{v3.01b}{\Package{typearea}}}{%
     \IfThisCommonLabelBase{maincls}{%
-      Version~2.96a, \KOMAScript{}\ChangedAt{v2.96a}{\Class{scrbook}\and
+      a versão~2.96a, o \KOMAScript{}\ChangedAt{v2.96a}{\Class{scrbook}\and
         \Class{scrreprt}\and \Class{scrartcl}}}{%
       \IfThisCommonLabelBase{scrlttr2}{%
-        Version~2.9t, \Class{scrlttr2}\OnlyAt{\Class{scrlttr2}}%
+        a versão~2.9t, a \Class{scrlttr2}\OnlyAt{\Class{scrlttr2}}%
         \ChangedAt{v2.9t}{\Class{scrlttr2}}}{%
         \InteralCommonFileUsageError}%
     }%
   }%
-\ has been able to} %
-choose whether the source file should, as much as possible, 
-continue to produce exactly the same result within a \LaTeX{} run or should
-be formatted according to the modifications of the latest version%
-\IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{ of the class}{}. You
-can specify the version with which you want your file to be compatible by
-using the \Option{version} option. Compatibility with the oldest supported
-\KOMAScript{} version can be achieved with
-\OptionValue{version}{first}\important{\OptionValue{version}{first}} or
-\OptionValue{version}{2.9} or \OptionValue{version}{2.9t}. Setting
-\PName{value} to an unknown release number will result in a warning message
-and selects \OptionValue{version}{first} for safety.
+\ tem sido capaz de} %
+escolher se o arquivo-fonte deve, tanto quanto possível, continuar a produzir
+exatamente o mesmo resultado dentro de uma execução do \LaTeX{} ou deve ser
+formatado de acordo com as modificações da versão mais recente%
+\IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{ da classe}{}. Você pode
+especificar a versão com a qual deseja que seu arquivo seja compatível usando
+a opção \Option{version}. A compatibilidade com a versão mais antiga
+suportada do \KOMAScript{} pode ser alcançada com
+\OptionValue{version}{first}\important{\OptionValue{version}{first}} ou
+\OptionValue{version}{2.9} ou \OptionValue{version}{2.9t}. Definir
+\PName{valor} para um número de lançamento desconhecido resultará em uma
+mensagem de aviso e selecionará \OptionValue{version}{first} por segurança.
 
-With \OptionValue{version}{last}\important{\OptionValue{version}{last}}%
-\textnote{default}, you can select the latest version. In this case, you give
-up backwards compatibility. If the option is used without a value,
-\PValue{last} is assumed. This\ChangedAt{v3.01a}{\Class{scrbook}\and
+Com \OptionValue{version}{last}\important{\OptionValue{version}{last}}%
+\textnote{padrão}, você pode selecionar a versão mais recente. Neste caso,
+você abre mão da compatibilidade retroativa. Se a opção for usada sem um
+valor, \PValue{last} será assumido. Isso\ChangedAt{v3.01a}{\Class{scrbook}\and
   \Class{scrreprt}\and \Class{scrartcl}\and \Class{scrlttr2}\and
-  \Package{scrextend}} also corresponds to the default setting, as long as you
-do not use any deprecated options.
+  \Package{scrextend}} também corresponde à configuração padrão, desde que
+você não use nenhuma opção obsoleta.
 
-\IfThisCommonLabelBase{scrextend}{% scrextend doesn't recognize obsolete options
+\IfThisCommonLabelBase{scrextend}{% scrextend não reconhece opções obsoletas
 }{%
-  If\textnote{Attention!} you use a deprecated option of \KOMAScript~2,
-  \KOMAScript~3 will switch to \OptionValue{version}{first} automatically.
-  This will also result in a warning message that explains how to prevent
-  this switch. Alternatively, you can choose a different setting for
-  \Option{version} with the desired compatibility after the deprecated
-  option.%
+  Se\textnote{Atenção!} você usar uma opção obsoleta do \KOMAScript~2, o
+  \KOMAScript~3 mudará automaticamente para \OptionValue{version}{first}.
+  Isso também resultará em uma mensagem de aviso que explica como evitar essa
+  mudança. Alternativamente, você pode escolher uma configuração diferente
+  para \Option{version} com a compatibilidade desejada após a opção obsoleta.%
 }
 
-Compatibility is primarily a question of line and page breaks (wrapping). If
-you choose compatibility with an older version, new options that do not affect
-wrapping are still available. The \Option{version} option does not affect any
-wrapping changes that are the result of fixing unambiguous errors.
-If\textnote{Hint!} you need unconditional wrapping compatibility even in the
-case of bugs, you should physically save the old \KOMAScript{} version you
-need together with your document.
+A compatibilidade é principalmente uma questão de quebras de linha e de
+página (quebra). Se você escolher compatibilidade com uma versão mais antiga,
+novas opções que não afetam a quebra ainda estarão disponíveis. A opção
+\Option{version} não afeta quaisquer mudanças de quebra que sejam resultado
+da correção de erros inequívocos. Se\textnote{Dica!} você precisar de
+compatibilidade de quebra incondicional mesmo no caso de bugs, você deve
+salvar fisicamente a versão antiga do \KOMAScript{} que você precisa junto
+com seu documento.
 
 \IfThisCommonLabelBase{scrlttr2}{%
   \begin{Example}
-    The example letters in this chapter should use all the features of the
-	latest version of \KOMAScript{}. For this, the we set the compatibility
-	correspondingly when loading the class:%
+    As cartas de exemplo neste capítulo devem usar todos os recursos da
+    versão mais recente do \KOMAScript{}. Para isso, definimos a
+    compatibilidade correspondentemente ao carregar a classe:%
     \lstinputcode[xleftmargin=1em,lastline=1]{letter-example-00-en.tex}%
-    In this case the symbolic value \PValue{last} has been used to select the
-    latest version.%
+    Neste caso, o valor simbólico \PValue{last} foi usado para selecionar a
+    versão mais recente.%
     \iftrue% Umbruchkorrektur
-    Here, the latest version was simply chosen with the symbolic value
-    \PValue{last}.%
+    Aqui, a versão mais recente foi simplesmente escolhida com o valor
+    simbólico \PValue{last}.%
     \else%
-    In order not to have to specify a new version number for each new version,
-    the symbolic value \PValue{last} was chosen here.%
+    Para não ter que especificar um novo número de versão para cada nova
+    versão, o valor simbólico \PValue{last} foi escolhido aqui.%
     \fi
   \end{Example}}{}
 
-Note\textnote{Attention!} that you cannot change the \Option{version} option
-after loading the %
-\IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{class}{%
+Note\textnote{Atenção!} que você não pode alterar a opção \Option{version}
+após carregar a %
+\IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{classe}{%
   \IfThisCommonLabelBase{typearea}{\Package{typearea}}{%
 	\IfThisCommonLabelBase{scrextend}{\Package{scrextend}}{%
       \InternalCommonFileUsageError }%
   }%
-\ package}. Setting this option with
-\DescRef{\ThisCommonLabelBase.cmd.KOMAoptions} or
-\DescRef{\ThisCommonLabelBase.cmd.KOMAoption} will
-therefore cause an error.%
+\ pacote}. Definir esta opção com
+\DescRef{\ThisCommonLabelBase.cmd.KOMAoptions} ou
+\DescRef{\ThisCommonLabelBase.cmd.KOMAoption} causará,
+portanto, um erro.%
 \EndIndexGroup
 %
 \EndIndexGroup
@@ -166,10 +167,10 @@ therefore cause an error.%
 \label{sec:\ThisCommonLabelBase.compatibilityOptions.end}
 \endinput
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,18 +28,18 @@
                   KOMA-Script guide (common paragraphs)]
 \translator{Gernot Hassenpflug\and Krickette Murabayashi\and Karl Hagen}
 
-\section{Early or Late Selection of Options}
+\section{Seleção Antecipada ou Tardia de Opções}
 \seclabel{options}
 \BeginIndexGroup
 \BeginIndex{}{options}%
 
 \IfThisCommonFirstRun{%
-  This section introduces a special feature of \KOMAScript{} which, in
-  addition to \IfThisCommonLabelBase{typearea}{\Package{typearea}}{%
-    \IfThisCommonLabelBase{maincls}{\Class{scrbook}, \Class{scrreprt}, and
+  Esta seção apresenta um recurso especial do \KOMAScript{} que, além de
+  \IfThisCommonLabelBase{typearea}{\Package{typearea}}{%
+    \IfThisCommonLabelBase{maincls}{\Class{scrbook}, \Class{scrreprt} e
       \Class{scrartcl}}{%
-      \IfThisCommonLabelBase{scrlttr2}{the \Class{scrlttr2} class}{%
-        \IfThisCommonLabelBase{scrextend}{the classes and
+      \IfThisCommonLabelBase{scrlttr2}{a classe \Class{scrlttr2}}{%
+        \IfThisCommonLabelBase{scrextend}{as classes e
           \Package{scrextend}}{%
             \IfThisCommonLabelBase{scrjura}{\Package{scrjura}}{%
               \IfThisCommonLabelBase{scrlayer}{\Package{scrlayer}}{%
@@ -48,23 +48,24 @@
                   \IfThisCommonLabelBase{scrlayer-notecolumn}{%
                     \Package{scrlayer-notecolumn}}{%
                     \InternalCommonFileUsageError}}}}}}}}%
-  , is also relevant to other \KOMAScript{} packages and classes. %
-  \IfThisCommonLabelBase{scrlttr2}{So that each chapter may stand on its own,
-    this section appears in nearly identical form in several chapters, but if
-    you are studying all of \KOMAScript{}, you of course only need to read it
-    one time.%
-  }{This section appears in nearly identical form in several chapters, so you
-    can find all the information about a single package or class in the
-    relevant chapter. Users who are interested not just in a particular
-    package or class but in getting an overview of \KOMAScript{} as a whole
-    only need to read this section in one of the chapters and can
-    \IfThisCommonLabelBase{maincls}{skip the rest of the chapter.}{%
-      then skip it as they study the guide.}%
+  , também é relevante para outros pacotes e classes do \KOMAScript{}. %
+  \IfThisCommonLabelBase{scrlttr2}{Para que cada capítulo possa ser
+    autossuficiente, esta seção aparece de forma quase idêntica em vários
+    capítulos, mas se você está estudando todo o \KOMAScript{}, é claro que
+    precisa lê-la apenas uma vez.%
+  }{Esta seção aparece de forma quase idêntica em vários capítulos, para que
+    você possa encontrar todas as informações sobre um único pacote ou classe
+    no capítulo relevante. Usuários que estão interessados não apenas em um
+    pacote ou classe específico, mas em obter uma visão geral do
+    \KOMAScript{} como um todo, precisam ler esta seção em apenas um dos
+    capítulos e podem
+    \IfThisCommonLabelBase{maincls}{pular o restante do capítulo.}{%
+      então pulá-la enquanto estudam o guia.}%
   }%
 }{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.options} applies
-  equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.options}, you can skip ahead to
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.options} aplicam-se
+  igualmente a este capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.options}, pode pular para
   \autoref{sec:\ThisCommonLabelBase.options.next},
   \autopageref{sec:\ThisCommonLabelBase.options.next}.%
 }
@@ -72,111 +73,114 @@
 
 
 \begin{Declaration}
-  \Macro{documentclass}\OParameter{option list}%
-                       \Parameter{{\KOMAScript} class}
-  \Macro{usepackage}\OParameter{option list}%
-                    \Parameter{package list}
+  \Macro{documentclass}\OParameter{lista de opções}%
+                       \Parameter{classe \KOMAScript}
+  \Macro{usepackage}\OParameter{lista de opções}%
+                    \Parameter{lista de pacotes}
 \end{Declaration}
-\LaTeX{} allows users to pass class options\textnote{class options} as a
-comma-separated list of keywords in the optional argument to
-\Macro{documentclass}. In addition to being passed to the class, these options
-are also passed on to all packages\textnote{global options} that can
-understand them. Users can also pass a similar comma-separated list of
-keywords in the optional argument of \Macro{usepackage}\textnote{packet
-  options}. \KOMAScript{} extends\ChangedAt{v3.00}{\Class{scrbook}\and
-  \Class{scrreprt}\and \Class{scrartcl}\and \Package{scrextend}\and
-  \Package{typearea}} the option mechanism for
-\IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{the \KOMAScript{} classes and
-} some packages with further options. Thus most \KOMAScript{} options can also
-take a value, so an option does not necessarily take the form \PName{option},
-but can also take the form \PName{option}\texttt{=}\PName{value}%
-\important{\PName{option}\texttt{=}\PName{value}}. Except for this difference,
-\Macro{documentclass} and \Macro{usepackage} in \KOMAScript{} function as
-described in \cite{latex:usrguide} or any introduction to \LaTeX, for example
-\cite{lshort}.
+O \LaTeX{} permite que os usuários passem opções de classe\textnote{opções de
+  classe} como uma lista de palavras-chave separadas por vírgulas no argumento
+opcional de \Macro{documentclass}. Além de serem passadas para a classe, essas
+opções também são repassadas para todos os pacotes\textnote{opções globais}
+que possam compreendê-las. Os usuários também podem passar uma lista similar
+de palavras-chave separadas por vírgulas no argumento opcional de
+\Macro{usepackage}\textnote{opções de pacote}. O \KOMAScript{}
+estende\ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
+  \Class{scrartcl}\and \Package{scrextend}\and \Package{typearea}} o mecanismo
+de opções para
+\IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{as classes \KOMAScript{} e
+}alguns pacotes com opções adicionais. Assim, a maioria das opções do
+\KOMAScript{} também pode receber um valor, de modo que uma opção não
+necessariamente assume a forma \PName{opção}, mas também pode assumir a forma
+\PName{opção}\texttt{=}\PName{valor}%
+\important{\PName{opção}\texttt{=}\PName{valor}}. Exceto por essa diferença,
+\Macro{documentclass} e \Macro{usepackage} no \KOMAScript{} funcionam como
+descrito em \cite{latex:usrguide} ou em qualquer introdução ao \LaTeX, por
+exemplo \cite{lshort}.
 
 \IfThisCommonLabelBaseNotOneOf{%
   scrjura,scrlayer,scrlayer-scrpage,scrlayer-notecolumn,scrextend%
 }{%
-  When using a \KOMAScript{} class\textnote{Attention!}, you should not
-  specify options when loading the \Package{typearea} or \Package{scrbase}
-  packages. The reason for this restriction is that the class already loads
-  these packages without options, and \LaTeX{} refuses to load a package
-  multiple times with different option settings.%
-  \IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{ In general, it is not
-    necessary to load either one of these packages explicitly when using any 
-    \KOMAScript{} class.}{}%
+  Ao usar uma classe \KOMAScript{}\textnote{Atenção!}, você não deve
+  especificar opções ao carregar os pacotes \Package{typearea} ou
+  \Package{scrbase}. A razão para essa restrição é que a classe já carrega
+  esses pacotes sem opções, e o \LaTeX{} recusa-se a carregar um pacote
+  várias vezes com configurações de opções diferentes.%
+  \IfThisCommonLabelBaseOneOf{maincls,scrlttr2}{ Em geral, não é necessário
+    carregar nenhum desses pacotes explicitamente ao usar qualquer classe
+    \KOMAScript{}.}{}%
   \par
 }{}
 
 % The alternative text for wrapping optimization was redundant and, as
 % it's not required for the English version, has been deleted.
-Setting the options with \Macro{documentclass} has one\textnote{Attention!}
-major disadvantage: unlike the interface described below, the options in 
-\Macro{documentclass} are not robust. So commands, lengths, counters, and
-similar constructs may break inside the optional argument of this command.
-For example, with many non-\KOMAScript{} classes, using a \LaTeX{} length
-in the value of an option results in an error%
-\IfThisCommonLabelBaseNotOneOf{maincls,scrlttr2}{ before the value is passed
-  to a \KOMAScript{} package and it can take control of the option
-  execution}{}%
-. So if you want to use a \LaTeX{} length, counter, or command as part of the
-value of an option, you should use \DescRef{\LabelBase.cmd.KOMAoptions} or
-\DescRef{\LabelBase.cmd.KOMAoption}. These commands will be described next.%
+Definir as opções com \Macro{documentclass} tem uma\textnote{Atenção!} grande
+desvantagem: ao contrário da interface descrita abaixo, as opções em
+\Macro{documentclass} não são robustas. Portanto, comandos, comprimentos,
+contadores e construções semelhantes podem falhar dentro do argumento opcional
+deste comando. Por exemplo, com muitas classes que não são do \KOMAScript{},
+usar um comprimento \LaTeX{} no valor de uma opção resulta em um erro%
+\IfThisCommonLabelBaseNotOneOf{maincls,scrlttr2}{ antes que o valor seja
+  passado para um pacote \KOMAScript{} e este possa assumir o controle da
+  execução da opção}{}%
+. Portanto, se você quiser usar um comprimento, contador ou comando \LaTeX{}
+como parte do valor de uma opção, deve usar
+\DescRef{\LabelBase.cmd.KOMAoptions} ou \DescRef{\LabelBase.cmd.KOMAoption}.
+Esses comandos serão descritos a seguir.%
 %
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{KOMAoptions}\Parameter{option list}
-  \Macro{KOMAoption}\Parameter{option}\Parameter{value list}
+  \Macro{KOMAoptions}\Parameter{lista de opções}
+  \Macro{KOMAoption}\Parameter{opção}\Parameter{lista de valores}
 \end{Declaration}
-\KOMAScript{}\ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
-  \Class{scrartcl}\and \Package{scrextend}\and \Package{typearea}} also
-provides the ability to change the values of most
-\IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{class and }package options
-even after loading the \IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{%
-  class or} package. You can use the \Macro{KOMAoptions} command to change the
-values of a list of options, as in
-\DescRef{\ThisCommonLabelBase.cmd.documentclass} or
-\DescRef{\ThisCommonLabelBase.cmd.usepackage}. Each option in the
-\PName{option list} has the form \PName{option}\texttt{=}\PName{value}%
-\important{\PName{option}\texttt{=}\PName{value},\dots}.
+O \KOMAScript{}\ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
+  \Class{scrartcl}\and \Package{scrextend}\and \Package{typearea}} também
+fornece a capacidade de alterar os valores da maioria das opções de
+\IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{classe e }pacote mesmo após
+carregar o \IfThisCommonLabelBaseOneOf{scrextend,scrjura}{}{pacote ou a}%
+classe. Você pode usar o comando \Macro{KOMAoptions} para alterar os valores
+de uma lista de opções, como em \DescRef{\ThisCommonLabelBase.cmd.documentclass}
+ou \DescRef{\ThisCommonLabelBase.cmd.usepackage}. Cada opção na \PName{lista
+  de opções} tem a forma \PName{opção}\texttt{=}\PName{valor}%
+\important{\PName{opção}\texttt{=}\PName{valor},\dots}.
 
-Some options also have a default value. If you do not specify a value, that is
-if you give the option simply as \PName{option}, then this default value will
-be used.
+Algumas opções também têm um valor padrão. Se você não especificar um valor,
+ou seja, se você fornecer a opção simplesmente como \PName{opção}, então esse
+valor padrão será usado.
 
-Some options can have several values simultaneously. For such options, it is
-possible, with the help of \Macro{KOMAoption}, to pass a list of values to a
-single \PName{option}. The individual values are given as a comma-separated
-\PName{value list}\important{\PName{value},\dots}.
+Algumas opções podem ter vários valores simultaneamente. Para tais opções, é
+possível, com a ajuda de \Macro{KOMAoption}, passar uma lista de valores para
+uma única \PName{opção}. Os valores individuais são fornecidos como uma
+\PName{lista de valores}\important{\PName{valor},\dots} separada por vírgulas.
 
 \begin{Explain}
-  \KOMAScript{} uses the commands \DescRef{scrbase.cmd.FamilyOptions} and
-  \DescRef{scrbase.cmd.FamilyOption} with the family ``\PValue{KOMA}'' to
-  implement this ability.
+  O \KOMAScript{} usa os comandos \DescRef{scrbase.cmd.FamilyOptions} e
+  \DescRef{scrbase.cmd.FamilyOption} com a família ``\PValue{KOMA}'' para
+  implementar essa funcionalidade.
   \IfThisCommonLabelBaseOneOf{typearea}{% Umbruchkorrektur
-    Advanced users will find more on these instructions in
+    Usuários avançados encontrarão mais informações sobre essas instruções em
     \autoref{sec:scrbase.keyvalue}, \DescPageRef{scrbase.cmd.FamilyOptions}.
   }{%
-    See \autoref{part:forExperts}, \autoref{sec:scrbase.keyvalue},
+    Veja \autoref{part:forExperts}, \autoref{sec:scrbase.keyvalue},
     \DescPageRef{scrbase.cmd.FamilyOptions}.  }%
 \end{Explain}
 
-Options set with \Macro{KOMAoptions} or \Macro{KOMAoption} will reach
-\IfThisCommonLabelBase{scrextend}{}{both the \KOMAScript{} class and }any
-previously loaded \KOMAScript{} packages that recognise these options. If an
-option or a value is unknown, \hyperref[cha:scrbase]{\Package{scrbase}}%
+Opções definidas com \Macro{KOMAoptions} ou \Macro{KOMAoption} alcançarão
+\IfThisCommonLabelBase{scrextend}{}{tanto a classe \KOMAScript{} quanto }%
+quaisquer pacotes \KOMAScript{} carregados anteriormente que reconheçam essas
+opções. Se uma opção ou um valor for desconhecido, o
+\hyperref[cha:scrbase]{\Package{scrbase}}%
 \IndexPackage{scrbase}\important{\hyperref[cha:scrbase]{\Package{scrbase}}}
-will report it as an error.%
+reportará isso como um erro.%
 %
 \iffalse% Umbruchkorrekturtext
 \iffree{}{\IfThisCommonLabelBase{scrlayer-scrpage}{\par
-  Incidentally, the \Package{scrpage2}\IndexPackage{scrpage2}%
-  \important{\Package{scrpage2}}, which is considered obsolete, does not have
-  this extension. Options can therefore only be set when the package is loaded
-  with the option explained previously.}{}}%
+  A propósito, o \Package{scrpage2}\IndexPackage{scrpage2}%
+  \important{\Package{scrpage2}}, que é considerado obsoleto, não possui essa
+  extensão. As opções só podem ser definidas quando o pacote é carregado com a
+  opção explicada anteriormente.}{}}%
 \fi%
 %
 \EndIndexGroup
@@ -187,10 +191,10 @@ will report it as an error.%
 \label{sec:\ThisCommonLabelBase.options.end}
 \endinput
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

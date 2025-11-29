@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,40 +28,41 @@
                   KOMA-Script guide (common paragraph: Head and Foot Height)]
 \translator{Markus Kohm\and Jana Schubert\and Jens Hühne\and Karl Hagen}
 
-\section{Header and Footer Height}
+\section{Altura de Cabeçalho e Rodapé}
 \seclabel{height}
 \BeginIndexGroup
 \BeginIndex{}{header>height}%
 \BeginIndex{}{footer>height}%
 \IfThisCommonLabelBase{scrlayer-scrpage}{%
   \begin{Explain}%
-    The \LaTeX{} standard classes do not use the footer much, and if they do
-    use it, they put the contents into a \Macro{mbox} which results in the
-    footer being a single text line. This is probably the reason that \LaTeX{}
-    itself does not have a well-defined footer height. Although the distance
-    between the last baseline of the text area and the baseline of the footer
-    is defined with \Length{footskip}\IndexLength[indexmain]{footskip}, if the
-    footer consists of more than one text line, there is no definite statement
-    whether this length should be the distance to the first or the last
-    baseline of the footer.
+    As classes padrão do \LaTeX{} não usam muito o rodapé e, quando o usam,
+    colocam o conteúdo dentro de um \Macro{mbox}, o que resulta no rodapé
+    sendo uma única linha de texto. Esta é provavelmente a razão pela qual o
+    próprio \LaTeX{} não tem uma altura de rodapé bem definida. Embora a
+    distância entre a última linha de base da área de texto e a linha de base
+    do rodapé seja definida com \Length{footskip}\IndexLength[indexmain]{footskip},
+    se o rodapé consistir em mais de uma linha de texto, não há uma declaração
+    definitiva se este comprimento deve ser a distância até a primeira ou a
+    última linha de base do rodapé.
 
-    Although the page header of the standard classes will also be put into a
-    horizontal box, and therefore is also a single text line, \LaTeX{} in fact
-    provides a length to set the height of the header. The reason for this may
-    be that this height is needed to determine the start of the text area.
+    Embora o cabeçalho de página das classes padrão também seja colocado em
+    uma caixa horizontal e, portanto, também seja uma única linha de texto, o
+    \LaTeX{} de fato fornece um comprimento para definir a altura do
+    cabeçalho. A razão para isso pode ser que esta altura é necessária para
+    determinar o início da área de texto.
   \end{Explain}%
 }{%
-  The header and footer of a page are central elements not just of a page
-  style. They can also serve to restrict layers using the appropriate options
-  (see \autoref{tab:scrlayer.layerkeys},
-  \autopageref{tab:scrlayer.layerkeys}). Therefore the heights of these
-  elements must be defined.%
+  O cabeçalho e o rodapé de uma página são elementos centrais não apenas de
+  um estilo de página. Eles também podem servir para restringir camadas
+  usando as opções apropriadas (veja \autoref{tab:scrlayer.layerkeys},
+  \autopageref{tab:scrlayer.layerkeys}). Portanto, as alturas desses
+  elementos devem ser definidas.%
 }
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.height} applies
-  equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.height}, you can skip ahead to 
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.height} aplicam-se
+  igualmente a este capítulo. Portanto, se você já leu e entendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.height}, você pode pular para
   \autoref{sec:\ThisCommonLabelBase.height.next},
   \autopageref{sec:\ThisCommonLabelBase.height.next}.%
 }
@@ -73,55 +74,57 @@
     \OptionVName{autoenlargeheadfoot}{simple switch}%
   }{}%
 \end{Declaration}
-The \Package{scrlayer} package introduces a new length, \Length{footheight},
-analogous to \Length{headheight}%
-\IfThisCommonLabelBase{scrlayer-scrpage}{}{of the \LaTeX{} kernel}.
-Additionally,
+O pacote \Package{scrlayer} introduz um novo comprimento, \Length{footheight},
+análogo a \Length{headheight}%
+\IfThisCommonLabelBase{scrlayer-scrpage}{}{do kernel do \LaTeX{}}.
+Adicionalmente,
 \Package{scrlayer\IfThisCommonLabelBase{scrlayer-scrpage}{-scrpage}{}}
-interprets \Length{footskip} to be the distance from the last baseline of the
-text area to the first normal baseline of the footer. The
+interpreta \Length{footskip} como sendo a distância da última linha de base da
+área de texto até a primeira linha de base normal do rodapé. O pacote
 \hyperref[cha:typearea]{\Package{typearea}}\IndexPackage{typearea}%
-\important{\hyperref[cha:typearea]{\Package{typearea}}} package interprets
-\Length{footheight} in the same way, so \Package{typearea}'s options for the
-footer height can also be used to set the values for the \Package{scrlayer}
-package. See the \DescRef{typearea.option.footheight} and 
-\DescRef{typearea.option.footlines} options in
-\autoref{sec:typearea.typearea}, \DescPageRef{typearea.option.footheight})
-and option \DescRef{typearea.option.footinclude} on
-\DescPageRef{typearea.option.footinclude} of the same section.
+\important{\hyperref[cha:typearea]{\Package{typearea}}} interpreta
+\Length{footheight} da mesma maneira, portanto as opções do
+\Package{typearea} para a altura do rodapé também podem ser usadas para
+definir os valores para o pacote \Package{scrlayer}. Veja as opções
+\DescRef{typearea.option.footheight} e \DescRef{typearea.option.footlines}
+em \autoref{sec:typearea.typearea}, \DescPageRef{typearea.option.footheight})
+e a opção \DescRef{typearea.option.footinclude} em
+\DescPageRef{typearea.option.footinclude} da mesma seção.
 
-If you do not use the \hyperref[cha:typearea]{\Package{typearea}}%
-\important{\hyperref[cha:typearea]{\Package{typearea}}} package, you should
-adjust the header and footer heights using appropriate values for the lengths
-where necessary. For the header, at least, the \Package{geometry} package, for
-example, provides similar settings.
+Se você não usar o pacote \hyperref[cha:typearea]{\Package{typearea}}%
+\important{\hyperref[cha:typearea]{\Package{typearea}}}, você deve ajustar
+as alturas de cabeçalho e rodapé usando valores apropriados para os
+comprimentos quando necessário. Para o cabeçalho, pelo menos, o pacote
+\Package{geometry}, por exemplo, fornece configurações semelhantes.
 \IfThisCommonLabelBase{scrlayer-scrpage}{\par%
-  If you choose a header or footer height that is too small for the actual
-  content, \Package{scrlayer-scrpage} tries by default to adjust the lengths
-  appropriately. At the same time, it will issue a warning containing
-  suggestions for suitable settings. These automatic changes take effect
-  immediately after the need for them has been detected and are not
-  automatically reversed, for example, when the content of the header or
-  footer becomes smaller afterwards.
-  However,\ChangedAt{v3.25}{\Package{scrlayer-scrpage}}, this behaviour can be
-  changed by using the \Option{autoenlargeheadfoot} option. This option
-  recognizes the values for simple switches in \autoref{tab:truefalseswitch},
-  \autopageref{tab:truefalseswitch}. The option is activated by default. If it
-  is deactivated, the header and footer are no longer enlarged
-  automatically. Only a warning with hints for suitable settings is issued.%
+  Se você escolher uma altura de cabeçalho ou rodapé que seja muito pequena
+  para o conteúdo real, \Package{scrlayer-scrpage} tenta, por padrão,
+  ajustar os comprimentos apropriadamente. Ao mesmo tempo, ele emitirá um
+  aviso contendo sugestões para configurações adequadas. Essas alterações
+  automáticas entram em vigor imediatamente após a necessidade delas ter sido
+  detectada e não são revertidas automaticamente, por exemplo, quando o
+  conteúdo do cabeçalho ou rodapé se tornar menor posteriormente.
+  No entanto,\ChangedAt{v3.25}{\Package{scrlayer-scrpage}}, este
+  comportamento pode ser alterado usando a opção \Option{autoenlargeheadfoot}.
+  Esta opção reconhece os valores para interruptores simples em
+  \autoref{tab:truefalseswitch}, \autopageref{tab:truefalseswitch}. A opção
+  é ativada por padrão. Se ela for desativada, o cabeçalho e o rodapé não
+  são mais ampliados automaticamente. Apenas um aviso com dicas para
+  configurações adequadas é emitido.%
 }{%
   \IfThisCommonLabelBase{scrlayer}{\par%
-    If you choose a header or footer height that is too small for the actual
-    content, \Package{scrlayer} usually accepts this without issuing an error
-    message or a warning. The header then expands according to its height,
-    usually upwards, with the footer moved down accordingly. Information about
-    this change is not obtained automatically. However, packages like
+    Se você escolher uma altura de cabeçalho ou rodapé que seja muito pequena
+    para o conteúdo real, \Package{scrlayer} geralmente aceita isso sem
+    emitir uma mensagem de erro ou um aviso. O cabeçalho então se expande de
+    acordo com sua altura, geralmente para cima, com o rodapé movido para
+    baixo de acordo. Informações sobre essa alteração não são obtidas
+    automaticamente. No entanto, pacotes como
     \hyperref[cha:scrlayer-scrpage]{\Package{scrlayer-scrpage}}%
     \important{\hyperref[cha:scrlayer-scrpage]{\Package{scrlayer-scrpage}}}%
-    \IndexPackage{scrlayer-scrpage} that build upon \Package{scrlayer} may
-    contain their own tests which can lead to their own actions (see
-    \DescRef{scrlayer-scrpage.length.headheight} and
-    \DescRef{scrlayer-scrpage.length.footheight} on
+    \IndexPackage{scrlayer-scrpage} que se baseiam em \Package{scrlayer} podem
+    conter seus próprios testes que podem levar às suas próprias ações (veja
+    \DescRef{scrlayer-scrpage.length.headheight} e
+    \DescRef{scrlayer-scrpage.length.footheight} em
     \DescPageRef{scrlayer-scrpage.length.headheight}).%
   }{}%
 }%
@@ -129,11 +132,11 @@ example, provides similar settings.
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:
 

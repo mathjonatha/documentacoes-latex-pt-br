@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -29,43 +29,43 @@
 \translator{Markus Kohm\and Gernot Hassenpflug\and Krickette Murabayashi\and
 	Karl Hagen}
 
-\section{Interleaf Pages}
+\section{Páginas Intermediárias}
 \seclabel{emptypage}%
 \BeginIndexGroup
 \BeginIndex{}{interleaf page}%%
 \BeginIndex{}{page>style}%
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.emptypage} applies
-  equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.emptypage}, you can skip ahead to
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.emptypage} aplicam-se
+  igualmente a este capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.emptypage}, você pode pular para
   \autoref{sec:\ThisCommonLabelBase.emptypage.next},
   \autopageref{sec:\ThisCommonLabelBase.emptypage.next}.%
 }
 
 \IfThisCommonLabelBase{scrextend}{}{%
-  Interleaf pages are pages that are inserted between parts of a document.
-  Traditionally, these pages are completely blank. \LaTeX{}, however, sets
-  them by default with the current page style. \KOMAScript{} provides several
-  extensions to this functionality.
+  Páginas intermediárias são páginas que são inseridas entre partes de um documento.
+  Tradicionalmente, essas páginas são completamente em branco. O \LaTeX{}, no entanto, as define
+  por padrão com o estilo de página atual. O \KOMAScript{} fornece várias
+  extensões a essa funcionalidade.
 
-  Interleaf pages are mostly found in books. Because book chapters commonly
-  start on the right (recto) page of a two-page spread, an empty left (verso)
-  page must be inserted if the previous chapter ends on a recto page. For this
-  reason, interleaf pages really only exist for two-sided printing.
+  Páginas intermediárias são encontradas principalmente em livros. Como os capítulos de livros normalmente
+  começam na página direita (recto) de uma dupla de páginas, uma página esquerda (verso)
+  vazia deve ser inserida se o capítulo anterior terminar em uma página recto. Por essa
+  razão, as páginas intermediárias realmente existem apenas para impressão em frente e verso.
 %
   \iffalse % Umbruchkorrektur
-  The blank versos in one-sided printing are not true interleaf pages,
-  although they may appear as such in counting the printed sheets.%
+  Os versos em branco na impressão de um lado não são verdadeiras páginas intermediárias,
+  embora possam aparecer como tal na contagem das folhas impressas.%
   \fi%
 
   \IfThisCommonLabelBase{scrlttr2}{%
-    Interleaf pages are unusual in letters. This is not least because
-    two-sided letters are rare, as letters are usually not
-    bound. Nevertheless, \KOMAScript{} also supports interleaf pages for
-    two-sided letters. However, since the commands described here are seldom
-    used in letters, you will not find any examples here. If necessary, please
-    refer to the examples in \autoref{sec:maincls.emptypage}, starting on
+    Páginas intermediárias são incomuns em cartas. Isso se deve não apenas ao fato de que
+    cartas em frente e verso são raras, já que as cartas geralmente não são
+    encadernadas. No entanto, o \KOMAScript{} também suporta páginas intermediárias para
+    cartas em frente e verso. Entretanto, como os comandos descritos aqui são raramente
+    usados em cartas, você não encontrará nenhum exemplo aqui. Se necessário, consulte
+    os exemplos em \autoref{sec:maincls.emptypage}, começando em
     \autopageref{sec:maincls.emptypage}.%
   }{}%
 }%
@@ -74,24 +74,24 @@
   \OptionVName{cleardoublepage}{page style}
   \OptionValue{cleardoublepage}{current}
 \end{Declaration}%
-With this option,\IfThisCommonLabelBase{maincls}{%
+Com esta opção,\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
     \ChangedAt{v3.00}{\Class{scrlttr2}}%
   }{}%
-} you can define the page style of the interleaf pages created by the commands
+} você pode definir o estilo de página das páginas intermediárias criadas pelos comandos
 \DescRef{\LabelBase.cmd.cleardoublepage},
-\DescRef{\LabelBase.cmd.cleardoubleoddpage}, or
-\DescRef{\LabelBase.cmd.cleardoubleevenpage} to advance to the desired page.
-You can use any previously defined \PName{page style} (see
-\autoref{sec:\ThisCommonLabelBase.pagestyle} from
-\autopageref{sec:\ThisCommonLabelBase.pagestyle} and
-\autoref{cha:scrlayer-scrpage} from \autopageref{cha:scrlayer-scrpage}).
-In addition, \OptionValue{cleardoublepage}{current} is also possible.
-This case corresponds to the default prior to \KOMAScript~2.98c and creates an
-interleaf page without changing the page style. Starting with
+\DescRef{\LabelBase.cmd.cleardoubleoddpage}, ou
+\DescRef{\LabelBase.cmd.cleardoubleevenpage} para avançar para a página desejada.
+Você pode usar qualquer \PName{page style} previamente definido (veja
+\autoref{sec:\ThisCommonLabelBase.pagestyle} de
+\autopageref{sec:\ThisCommonLabelBase.pagestyle} e
+\autoref{cha:scrlayer-scrpage} de \autopageref{cha:scrlayer-scrpage}).
+Além disso, \OptionValue{cleardoublepage}{current} também é possível.
+Este caso corresponde ao padrão anterior ao \KOMAScript~2.98c e cria uma
+página intermediária sem alterar o estilo de página. A partir do
 \KOMAScript~3.00\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -99,31 +99,31 @@ interleaf page without changing the page style. Starting with
   \IfThisCommonLabelBase{scrlttr2}{%
     \ChangedAt{v3.00}{\Class{scrlttr2}}%
   }{}%
-}, the default\textnote{default} follows the recommendation of most
-typographers and creates interleaf pages with the
+}, o padrão\textnote{default} segue a recomendação da maioria dos
+tipógrafos e cria páginas intermediárias com o
 \IfThisCommonLabelBase{scrextend}{%
   \DescRef{maincls.pagestyle.empty}}{%
   \DescRef{\ThisCommonLabelBase.pagestyle.empty}}\IndexPagestyle{empty}
-page style unless you switch compatibility to earlier \KOMAScript{} versions
-(see option \DescRef{\ThisCommonLabelBase.option.version}%
+estilo de página, a menos que você mude a compatibilidade para versões anteriores do \KOMAScript{}
+(veja a opção \DescRef{\ThisCommonLabelBase.option.version}%
 \important{\OptionValueRef{\LabelBase}{version}{2.98c}},
 \autoref{sec:\ThisCommonLabelBase.compatibilityOptions},
 \DescPageRef{\ThisCommonLabelBase.option.version}).
 \IfThisCommonLabelBase{maincls}{\iftrue}{\csname iffalse\endcsname}
   \begin{Example}
     \phantomsection\xmpllabel{option.cleardoublepage}%
-    Suppose you want interleaf pages that are empty except for the pagination% 
-    \iffree{, so they are created with \IfThisCommonLabelBase{scrextend}{%
+    Suponha que você queira páginas intermediárias que estejam vazias exceto pela paginação%
+    \iffree{, de modo que sejam criadas com \IfThisCommonLabelBase{scrextend}{%
         \DescRef{maincls.pagestyle.plain}}{%
-        \DescRef{\LabelBase.pagestyle.plain}}}{}. You can achieve this,
-    for example, with:
+        \DescRef{\LabelBase.pagestyle.plain}}}{}. Você pode conseguir isso,
+    por exemplo, com:
 \begin{lstcode}
   \KOMAoptions{cleardoublepage=plain}
 \end{lstcode}
-    You can find more information about the
+    Você pode encontrar mais informações sobre o
     \IfThisCommonLabelBase{scrextend}{%
       \DescRef{maincls.pagestyle.plain}}{\DescRef{\LabelBase.pagestyle.plain}}
-    page style in \IfThisCommonLabelBase{scrextend}{%
+    estilo de página em \IfThisCommonLabelBase{scrextend}{%
       \autoref{sec:maincls.pagestyle}}{%
       \autoref{sec:\LabelBase.pagestyle}},
     \IfThisCommonLabelBase{scrextend}{%
@@ -132,22 +132,22 @@ page style unless you switch compatibility to earlier \KOMAScript{} versions
   \end{Example}
 \else
   \IfThisCommonLabelBase{scrextend}{%
-    You can find an example for setting the page style of interleaf pages in
+    Você pode encontrar um exemplo para configurar o estilo de página das páginas intermediárias em
     \autoref{sec:\ThisCommonFirstLabelBase.emptypage},
     \PageRefxmpl{\ThisCommonFirstLabelBase.option.cleardoublepage}.%
     \iffalse% Umbruchvariante ohne Beispiel
   }{\csname iffalse\endcsname}
     \begin{Example}
       \phantomsection\xmpllabel{option.cleardoublepage}%
-      Suppose you want interleaf pages that are empty except for the pagination,
-      so they are created with the \IfThisCommonLabelBase{scrextend}{%
+      Suponha que você queira páginas intermediárias que estejam vazias exceto pela paginação,
+      de modo que sejam criadas com o \IfThisCommonLabelBase{scrextend}{%
         \DescRef{maincls.pagestyle.plain}}{\DescRef{\LabelBase.pagestyle.plain}}
-      page style. You can achieve this with
+      estilo de página. Você pode conseguir isso com
 \begin{lstcode}
   \KOMAoptions{cleardoublepage=plain}
 \end{lstcode}
-      You can find more information about the
-      \DescRef{maincls.pagestyle.plain} page style in
+      Você pode encontrar mais informações sobre o
+      \DescRef{maincls.pagestyle.plain} estilo de página em
       \autoref{sec:maincls.pagestyle}, \DescPageRef{maincls.pagestyle.plain}.
     \end{Example}%
   \fi%
@@ -173,15 +173,15 @@ page style unless you switch compatibility to earlier \KOMAScript{} versions
   \Macro{cleardoubleevenplainpage}%
   \Macro{cleardoubleevenstandardpage}
 \end{Declaration}%
-The\textnote{standard classes} {\LaTeX} kernel provides the \Macro{clearpage}
-command, which ensures that all pending floats are output and then starts a
-new page. There is also the \Macro{cleardoublepage} command, which works like
-\Macro{clearpage} but which starts a new right-hand page in two-sided printing
-(see the \Option{twoside} layout option in \autoref{sec:typearea.options},
-\DescPageRef{typearea.option.twoside}). An empty left-hand page in the current
-page style is output if necessary.
+O\textnote{standard classes} kernel do {\LaTeX} fornece o comando \Macro{clearpage},
+que garante que todos os floats pendentes sejam produzidos e então inicia uma
+nova página. Há também o comando \Macro{cleardoublepage}, que funciona como
+\Macro{clearpage}, mas que inicia uma nova página da direita na impressão em frente e verso
+(veja a opção de layout \Option{twoside} em \autoref{sec:typearea.options},
+\DescPageRef{typearea.option.twoside}). Uma página esquerda vazia no estilo de
+página atual é produzida se necessário.
 
-With\IfThisCommonLabelBase{maincls}{%
+Com\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
 }{%
@@ -189,87 +189,87 @@ With\IfThisCommonLabelBase{maincls}{%
     \ChangedAt{v3.00}{\Class{scrlttr2}}%
   }{}%
 } \Macro{cleardoubleoddstandardpage}, {\KOMAScript}\textnote{\KOMAScript}
-works as exactly in the way just described for the standard classess.  The
+funciona exatamente da maneira descrita para as classes padrão. O comando
 \Macro{cleardoubleoddplainpage}%
 \important{\IfThisCommonLabelBase{scrextend}{%
-    \DescRef{maincls.pagestyle.plain}}{\DescRef{\LabelBase.pagestyle.plain}}}
-command, on the other hand, additionally changes the page style of the empty
-left page to \IfThisCommonLabelBase{scrextend}{%
+    \DescRef{maincls.pagestyle.plain}}{\DescRef{\LabelBase.pagestyle.plain}}},
+por outro lado, adicionalmente altera o estilo de página da página
+esquerda vazia para \IfThisCommonLabelBase{scrextend}{%
   \DescRef{maincls.pagestyle.plain}}{\DescRef{\LabelBase.pagestyle.plain}}%
-\IndexPagestyle{plain} in order to suppress the
-\IfThisCommonLabelBase{scrlttr2}{page header}{running title}.  Likewise, the
-\Macro{cleardoubleoddemptypage}\important{%
+\IndexPagestyle{plain} a fim de suprimir o
+\IfThisCommonLabelBase{scrlttr2}{cabeçalho da página}{título corrente}. Da mesma forma, o
+comando \Macro{cleardoubleoddemptypage}\important{%
   \IfThisCommonLabelBase{scrextend}{\DescRef{maincls.pagestyle.empty}}{%
-    \DescRef{\LabelBase.pagestyle.empty}}} command uses the
+    \DescRef{\LabelBase.pagestyle.empty}}} usa o
 \IfThisCommonLabelBase{scrextend}{\DescRef{maincls.pagestyle.empty}}{%
-  \DescRef{\LabelBase.pagestyle.empty}}\IndexPagestyle{empty} page style to
-suppress both \IfThisCommonLabelBase{scrlttr2}{page header and page footer}%
-{running title and page number} on the empty left-hand side. The page is thus
-completely empty. If you want to specify your own \PName{page style} for the
-interleaf page, this should be given as an argument of
-\Macro{cleardoubleoddusingpagestyle}. You can use any previously defined
-\PName{page style} (see \autoref{cha:scrlayer-scrpage}).
+  \DescRef{\LabelBase.pagestyle.empty}}\IndexPagestyle{empty} estilo de página para
+suprimir tanto o \IfThisCommonLabelBase{scrlttr2}{cabeçalho quanto o rodapé da página}%
+{título corrente e o número da página} no lado esquerdo vazio. A página fica assim
+completamente vazia. Se você quiser especificar seu próprio \PName{page style} para a
+página intermediária, este deve ser fornecido como um argumento de
+\Macro{cleardoubleoddusingpagestyle}. Você pode usar qualquer \PName{page style}
+previamente definido (veja \autoref{cha:scrlayer-scrpage}).
 
 \IfThisCommonLabelBase{scrlttr2}{}{%
-  Sometimes\textnote{odd-side interleaf pages} you want chapters to start not
-  on the right-hand but on the left-hand page. Although this layout contradicts
-  classic typography, it can be appropriate if the double-page spread at the
-  beginning of the chapter very specific contents. For this reason,
-  \KOMAScript{} provides the \Macro{cleardoubleevenstandardpage} command,
-  which is equivalent to the \Macro{cleardoubleoddstandardpage} command
-  except that the next page is a left page. The same applies to the
-  \Macro{cleardoubleevenplainpage}, \Macro{cleardoubleevenemptypage}, and
-  \Macro{cleardoubleevenpageusingstyle} commands%
+  Às vezes\textnote{odd-side interleaf pages} você quer que os capítulos comecem não
+  na página da direita, mas na página da esquerda. Embora esse layout contradiga
+  a tipografia clássica, pode ser apropriado se a dupla de páginas no
+  início do capítulo tiver conteúdos muito específicos. Por essa razão,
+  o \KOMAScript{} fornece o comando \Macro{cleardoubleevenstandardpage},
+  que é equivalente ao comando \Macro{cleardoubleoddstandardpage}
+  exceto que a próxima página é uma página esquerda. O mesmo se aplica aos
+  comandos \Macro{cleardoubleevenplainpage}, \Macro{cleardoubleevenemptypage}, e
+  \Macro{cleardoubleevenpageusingstyle}%
   \IfThisCommonLabelBase{maincls}{% Umbruchoptimierungsalternative
-  , the last of which expects an argument}{}.%
+  , sendo que o último espera um argumento}{}.%
 }
 
-The \Macro{cleardoublestandardpage}, \Macro{cleardoubleemptypage}, and
-\Macro{cleardoubleplainpage} commands, and the single-argument
-\Macro{cleardoublepageusingstyle} command, as well as the standard
-\Macro{cleardoublepage} command, %
+Os comandos \Macro{cleardoublestandardpage}, \Macro{cleardoubleemptypage}, e
+\Macro{cleardoubleplainpage}, e o comando com um único argumento
+\Macro{cleardoublepageusingstyle}, assim como o comando padrão
+\Macro{cleardoublepage}, %
 \IfThisCommonLabelBase{maincls}{%
-  depend on the \DescRef{maincls.option.open}\IndexOption{open}%
-  \important{\DescRef{maincls.option.open}} option explained in
-  \autoref{sec:maincls.structure}, \DescPageRef{maincls.option.open} and,
-  depending on that setting, correspond to one of the commands explained in
-  the preceding paragraphs.  }{%
-  correspond to the commands previously explained for the
-  \IfThisCommonLabelBase{scrlttr2}{\Class{scrlttr2} class}{%
-    \IfThisCommonLabelBase{scrextend}{\Package{scrextend} package}{%
+  dependem da opção \DescRef{maincls.option.open}\IndexOption{open}%
+  \important{\DescRef{maincls.option.open}} explicada em
+  \autoref{sec:maincls.structure}, \DescPageRef{maincls.option.open} e,
+  dependendo dessa configuração, correspondem a um dos comandos explicados nos
+  parágrafos anteriores.  }{%
+  correspondem aos comandos anteriormente explicados para a
+  \IfThisCommonLabelBase{scrlttr2}{classe \Class{scrlttr2}}{%
+    \IfThisCommonLabelBase{scrextend}{pacote \Package{scrextend}}{%
       \InternalCommonFileUsageError}%
   }%
   \IfThisCommonLabelBase{scrlttr2}{. %
-    The remaining commands are defined in \Class{scrlttr2} for completeness
-    only. You can find more information on them in
+    Os comandos restantes são definidos na \Class{scrlttr2} apenas por completude.
+    Você pode encontrar mais informações sobre eles em
     \autoref{sec:maincls.emptypage}, \DescPageRef{maincls.cmd.cleardoublepage}
-    if necessary%
+    se necessário%
   }{%
-    \ to transition to the next odd page%
+    \ para transição para a próxima página ímpar%
   }.%
 }%
 \IfThisCommonLabelBaseOneOf{scrlttr2,scrextend}{\iffalse}{\csname
   iftrue\endcsname}
   \begin{Example}
     \phantomsection\xmpllabel{cmd.cleardoublepage}%
-    Suppose you want to insert a double-page spread into your document with a
-    picture on the left-hand page and a new chapter starting on the right-hand
-    page. If the previous chapter ends with a left-hand page, an interleaf 
-    page has to be added, which should be completely empty. The picture should
-    be the same size as the text area without any header or footer. 
+    Suponha que você queira inserir uma dupla de páginas em seu documento com uma
+    imagem na página esquerda e um novo capítulo começando na página direita.
+    Se o capítulo anterior termina com uma página esquerda, uma página intermediária
+    tem que ser adicionada, que deve estar completamente vazia. A imagem deve
+    ter o mesmo tamanho que a área de texto sem nenhum cabeçalho ou rodapé.
 \iffalse% Umbruchkorrekturtext
-      First of all,
+      Primeiramente,
 \begin{lstcode}
   \KOMAoptions{cleardoublepage=empty}
 \end{lstcode}
-      ensures that interleaf pages use the
+      garante que as páginas intermediárias usem o
       \IfThisCommonLabelBase{scrextend}{\DescRef{maincls.pagestyle.empty}}{%
-    	\DescRef{\LabelBase.pagestyle.empty}} page style. You can put this
-      setting in the document preamble, or you can set it as an optional 
-      argument of \DescRef{\ThisCommonLabelBase.cmd.documentclass}.
+    	\DescRef{\LabelBase.pagestyle.empty}} estilo de página. Você pode colocar esta
+      configuração no preâmbulo do documento, ou você pode defini-la como um argumento
+      opcional de \DescRef{\ThisCommonLabelBase.cmd.documentclass}.
 \fi
 
-    At the relevant place in your document, write:
+    No local relevante em seu documento, escreva:
 \begin{lstcode}
   \cleardoubleevenemptypage
   \thispagestyle{empty}
@@ -279,25 +279,25 @@ The \Macro{cleardoublestandardpage}, \Macro{cleardoubleemptypage}, and
                   {picture}
   \chapter{Chapter Heading}
 \end{lstcode}
-    The first of these lines switches to the next left-hand page. If needed it
-    also adds a completely blank right-hand page. The second line makes sure
-    that the following left-hand page will also be set using the 
+    A primeira dessas linhas muda para a próxima página esquerda. Se necessário,
+    também adiciona uma página direita completamente em branco. A segunda linha garante
+    que a página esquerda seguinte também será definida usando o
     \IfThisCommonLabelBase{scrextend}{\DescRef{maincls.pagestyle.empty}}{%
-    	\DescRef{\LabelBase.pagestyle.empty}} page style. The third through
-    sixth lines load an image file named \File{picture} and scale it to the
-    desired size without distorting it. This command requires the 
-    \Package{graphicx}\IndexPackage{graphicx} package (see
-    \cite{package:graphics}). The last line starts
-    a new chapter on the next page, which will be a right-hand one.
+    	\DescRef{\LabelBase.pagestyle.empty}} estilo de página. A terceira até a
+    sexta linhas carregam um arquivo de imagem chamado \File{picture} e o dimensionam para o
+    tamanho desejado sem distorcê-lo. Este comando requer o
+    pacote \Package{graphicx}\IndexPackage{graphicx} (veja
+    \cite{package:graphics}). A última linha inicia
+    um novo capítulo na próxima página, que será uma página direita.
   \end{Example}%
 \fi%
 
-In two-sided printing, \Macro{cleardoubleoddpage} always moves to the next
-left-hand page and \Macro{cleardoubleevenpage} to the next right-hand
-page. The style of the interleaf page to be inserted if necessary is defined
-with the \DescRef{\LabelBase.option.cleardoublepage} option.%
+Na impressão em frente e verso, \Macro{cleardoubleoddpage} sempre move para a próxima
+página esquerda e \Macro{cleardoubleevenpage} para a próxima página direita.
+O estilo da página intermediária a ser inserida se necessário é definido
+com a opção \DescRef{\LabelBase.option.cleardoublepage}.%
 \IfThisCommonLabelBase{scrextend}{\par%
-  For an example that uses \Macro{cleardoubleevenemptypage}, see
+  Para um exemplo que usa \Macro{cleardoubleevenemptypage}, veja
   \autoref{sec:maincls.emptypage},
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.cleardoublepage}.%
 }{}%
@@ -305,12 +305,12 @@ with the \DescRef{\LabelBase.option.cleardoublepage} option.%
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:
 
 %  LocalWords:  mutatis mutandis Interleaf interleaf

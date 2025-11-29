@@ -29,284 +29,281 @@
 \translator{Kevin Pfeiffer\and Gernot Hassenpflug\and 
   Krickette Murabayashi\and Markus Kohm\and Karl Hagen}
 
-\chapter{Introduction}
+\chapter{Introdução}
 \labelbase{introduction}
 
-This chapter contains, among other things, important information about the 
-structure of the manual and the history of {\KOMAScript}, which begins 
-years before the first version. You will also find information on how to
-install {\KOMAScript} and what to do if you encounter errors.
+Este capítulo contém, entre outras coisas, informações importantes sobre a
+estrutura do manual e a história do {\KOMAScript}, que começa
+anos antes da primeira versão. Você também encontrará informações sobre como
+instalar o {\KOMAScript} e o que fazer se encontrar erros.
 
-\section{Preliminary Note}\seclabel{preface}
+\section{Nota Preliminar}\seclabel{preface}
 
-{\KOMAScript} is very complex. This is due to the fact that it consists of not
-just a single class or a single package but a bundle of many classes and
-packages. Although the classes are designed as counterparts to the standard
-classes, that does not mean they provide only the commands, environments, and
-settings of the standard classes, or that they imitate their appearance. The
-capabilities of {\KOMAScript} sometimes far surpass those of the standard
-classes. Some of them should be considered extensions to the basic
-capabilities of the \LaTeX{} kernel.
+O {\KOMAScript} é muito complexo. Isso se deve ao fato de que ele consiste não
+apenas de uma única classe ou de um único pacote, mas de um conjunto de muitas classes e
+pacotes. Embora as classes sejam projetadas como contrapartes às classes
+padrão, isso não significa que elas forneçam apenas os comandos, ambientes e
+configurações das classes padrão, ou que imitem sua aparência. As
+capacidades do {\KOMAScript} às vezes superam em muito as das classes
+padrão. Algumas delas devem ser consideradas extensões às capacidades básicas
+do kernel do \LaTeX{}.
 
-The foregoing means that the documentation of {\KOMAScript} has to be
-extensive. In addition, {\KOMAScript} is not normally taught. That means there
-are no teachers who know their students and can therefore choose the teaching
-materials and adapt them accordingly. It would be easy to write documentation
-for a specific audience. The difficulty facing the author, however, is that
-the manual must serve all potential audiences. I have tried to create a guide
-that is equally suitable for the computer scientist and the fishmonger's
-secretary. I have tried, although this is actually an impossible task. The
-result is numerous compromises, and I would ask you to take this issue into
-account if you have any complaints or suggestions to help improve the current
-situation.
+O que foi dito anteriormente significa que a documentação do {\KOMAScript} tem que ser
+extensa. Além disso, o {\KOMAScript} normalmente não é ensinado. Isso significa que não há
+professores que conhecem seus alunos e que, portanto, podem escolher os materiais de ensino
+e adaptá-los de acordo. Seria fácil escrever documentação
+para um público específico. A dificuldade que o autor enfrenta, no entanto, é que
+o manual deve servir a todos os públicos potenciais. Tentei criar um guia
+que seja igualmente adequado para o cientista da computação e para a
+secretária do peixeiro. Tentei, embora esta seja de fato uma tarefa impossível. O
+resultado são numerosos compromissos, e eu gostaria de pedir que você leve esta questão em
+conta se tiver quaisquer reclamações ou sugestões para ajudar a melhorar a
+situação atual.
 
-Despite the length of this manual, I would ask you to consult the
-documentation first in case you have problems. You should start by referring
-to the multi-part index at the end of this document. In addition to this
-manual, documentation includes all the text documents that are part of the
-bundle. See \File{manifest.tex} for a complete list.
+Apesar do comprimento deste manual, eu gostaria de pedir que você consulte a
+documentação primeiro em caso de problemas. Você deve começar consultando
+o índice em várias partes no final deste documento. Além deste
+manual, a documentação inclui todos os documentos de texto que fazem parte do
+conjunto. Veja \File{manifest.tex} para uma lista completa.
 
-\section{Structure of the Guide}\seclabel{structure}
+\section{Estrutura do Guia}\seclabel{structure}
 
-This manual is divided into several parts: There is a section for average
-users, one for advanced users and experts, and an appendix with further
-information and examples for those who want to understand {\KOMAScript}
-thoroughly.
+Este manual está dividido em várias partes: Há uma seção para usuários
+médios, uma para usuários avançados e especialistas, e um apêndice com
+informações adicionais e exemplos para aqueles que desejam compreender o {\KOMAScript}
+profundamente.
 
-\autoref{part:forAuthors} is intended for all {\KOMAScript} users. This means
-that some information in this section is directed at newcomers to \LaTeX. In
-particular, this part contains many examples that are intended to clarify the
-explanations. Do not hesitate to try these examples yourself and discover how
-{\KOMAScript} works by modifying them. That said, the {\KOMAScript} user guide
-is not intended to be a {\LaTeX} primer. Those new to {\LaTeX} should look at
-\emph{The Not So Short Introduction to {\LaTeXe}} \cite{lshort} or
-\emph{{\LaTeXe} for Authors} \cite{latex:usrguide} or a {\LaTeX} reference
-book. You will also find useful information in the many {\LaTeX} FAQs,
-including the \emph{{\TeX} Frequently Asked Questions on the Web}
-\cite{UK:FAQ}. Although the length of the \emph{{\TeX} Frequently Asked
-	Questions on the Web} is considerable, you should get at least a rough
-overview of it and consult it in case you have problems, as well as this
-\iffree{guide}{book}.
+O \autoref{part:forAuthors} é destinado a todos os usuários do {\KOMAScript}. Isso significa
+que algumas informações nesta seção são direcionadas a iniciantes em \LaTeX. Em
+particular, esta parte contém muitos exemplos que visam esclarecer as
+explicações. Não hesite em experimentar esses exemplos você mesmo e descobrir como
+o {\KOMAScript} funciona modificando-os. Dito isso, o guia do usuário do {\KOMAScript}
+não se destina a ser uma introdução ao {\LaTeX}. Aqueles que são novos no {\LaTeX} devem consultar
+\emph{The Not So Short Introduction to {\LaTeXe}} \cite{lshort} ou
+\emph{{\LaTeXe} for Authors} \cite{latex:usrguide} ou um livro de referência
+sobre {\LaTeX}. Você também encontrará informações úteis nas muitas FAQs do {\LaTeX},
+incluindo as \emph{{\TeX} Frequently Asked Questions on the Web}
+\cite{UK:FAQ}. Embora o comprimento das \emph{{\TeX} Frequently Asked
+	Questions on the Web} seja considerável, você deve obter pelo menos uma
+visão geral aproximada e consultá-las em caso de problemas, assim como este
+\iffree{guia}{livro}.
 
-\autoref{part:forExperts} is intended for advanced {\KOMAScript} users, those
-who are already familiar with \LaTeX{} or who have been working with
-{\KOMAScript} for a while and want to understand more about how {\KOMAScript}
-works, how it interacts with other packages, and how to perform more
-specialized tasks with it. For this purpose, we return to some aspects of the
-class descriptions from \autoref{part:forAuthors} and explain them in more
-detail. In addition we document some commands that are particularly intended
-for advanced users and experts. This is supplemented by the documentation of
-packages that are normally hidden from the user, insofar as they do their work
-beneath the surface of the classes and user packages. These packages are
-specifically designed to be used by authors of classes and packages.
+O \autoref{part:forExperts} é destinado a usuários avançados do {\KOMAScript}, aqueles
+que já estão familiarizados com \LaTeX{} ou que têm trabalhado com
+{\KOMAScript} há algum tempo e desejam entender mais sobre como o {\KOMAScript}
+funciona, como ele interage com outros pacotes, e como realizar tarefas mais
+especializadas com ele. Para este propósito, retornamos a alguns aspectos das
+descrições de classes do \autoref{part:forAuthors} e os explicamos em mais
+detalhes. Além disso, documentamos alguns comandos que são particularmente destinados
+a usuários avançados e especialistas. Isso é complementado pela documentação de
+pacotes que normalmente ficam ocultos do usuário, na medida em que fazem seu trabalho
+sob a superfície das classes e pacotes de usuário. Esses pacotes são
+especificamente projetados para serem usados por autores de classes e pacotes.
 
-The appendix\iffree{, which can only be found in the German book version,}{}
-contains information beyond that which is covered in \autoref{part:forAuthors}
-and \autoref{part:forExperts}. Advanced users will find background information
-on issues of typography to give them a basis for their own decisions. In
-addition, the appendix provides examples for aspiring package authors. These
-examples are not intended simply to be copied. Rather, they provide
-information about planning and implementing projects, as well as some basic
-\LaTeX{} commands for package authors.
+O apêndice\iffree{, que só pode ser encontrado na versão alemã em livro,}{}
+contém informações além daquelas que são cobertas no \autoref{part:forAuthors}
+e no \autoref{part:forExperts}. Usuários avançados encontrarão informações de fundo
+sobre questões de tipografia para lhes dar uma base para suas próprias decisões. Além
+disso, o apêndice fornece exemplos para aspirantes a autores de pacotes. Esses
+exemplos não se destinam simplesmente a serem copiados. Em vez disso, eles fornecem
+informações sobre planejamento e implementação de projetos, bem como alguns
+comandos básicos do \LaTeX{} para autores de pacotes.
 
-The guide's layout should help you read only those parts that are actually of
-interest. Each class and package typically has its own chapter.
-Cross-references to another chapter are thus usually also references to
-another part of the overall package. However, since the three main classes
-(\Class{scrbook}, \Class{scrrprt}, and \Class{scrartcl}) largely agree, they
-are introduced together in \autoref{cha:maincls}. Differences between the
-classes, e.\,g., for something that only affects the class
-\Class{scrartcl}\OnlyAt{\Class{scrartcl}}, are clearly highlighted in the
-margin, as shown here with \Class{scrartcl}.
+O layout do guia deve ajudá-lo a ler apenas aquelas partes que são realmente de
+interesse. Cada classe e pacote normalmente tem seu próprio capítulo.
+Referências cruzadas para outro capítulo são, portanto, geralmente também referências a
+outra parte do pacote geral. No entanto, como as três classes principais
+(\Class{scrbook}, \Class{scrrprt} e \Class{scrartcl}) concordam amplamente, elas
+são apresentadas juntas no \autoref{cha:maincls}. Diferenças entre as
+classes, por exemplo, para algo que afeta apenas a classe
+\Class{scrartcl}\OnlyAt{\Class{scrartcl}}, são claramente destacadas na
+margem, conforme mostrado aqui com \Class{scrartcl}.
 
-\begin{Explain} 
-  The primary documentation for {\KOMAScript} is in German and has been
-  translated for your convenience; like most of the {\LaTeX} world, its
-  commands, environments, options, etc., are in English. In a few cases, the
-  name of a command may sound a little strange, but even so, we hope and
-  believe that with the help of this guide, {\KOMAScript} will be usable
-  and useful to you.
+\begin{Explain}
+  A documentação primária do {\KOMAScript} está em alemão e foi
+  traduzida para sua conveniência; como a maior parte do mundo {\LaTeX}, seus
+  comandos, ambientes, opções, etc., estão em inglês. Em alguns casos, o
+  nome de um comando pode soar um pouco estranho, mas mesmo assim, esperamos e
+  acreditamos que, com a ajuda deste guia, o {\KOMAScript} será utilizável
+  e útil para você.
 \end{Explain}
 
-At this point you should know enough to understand the guide.
-It might, however, still be worth reading the rest of this chapter.
+Neste ponto você deve saber o suficiente para entender o guia.
+No entanto, ainda pode valer a pena ler o resto deste capítulo.
 
-\section{History of {\KOMAScript}}\seclabel{history}
+\section{História do {\KOMAScript}}\seclabel{history}
 
 %\begin{Explain}
-In the early 1990s, Frank Neukam needed a method to publish an instructor's
-lecture notes. At that time {\LaTeX} was {\LaTeX}2.09 and there was no
-distinction between classes and packages\,---\,there were only \emph{styles}.
-Frank felt that the standard document styles were not good enough for his
-work; he wanted additional commands and environments. At the same time he was
-interested in typography and, after reading Tschichold's \emph{Ausgew\"ahlte
-  Aufs\"atze \"uber Fragen der Gestalt des Buches und der Typographie}
-(Selected Articles on the Problems of Book Design and Typography)
-\cite{JTsch87}, he decided to write his own document style\,---\,and not just
-a one-time solution to his lecture notes, but an entire style family, one
-specifically designed for European and German typography. Thus {\Script} was
-born.
+No início da década de 1990, Frank Neukam precisava de um método para publicar as
+anotações de aula de um instrutor. Naquela época, o {\LaTeX} era {\LaTeX}2.09 e não havia
+distinção entre classes e pacotes\,---\,havia apenas \emph{estilos}.
+Frank sentiu que os estilos de documento padrão não eram bons o suficiente para seu
+trabalho; ele queria comandos e ambientes adicionais. Ao mesmo tempo ele estava
+interessado em tipografia e, após ler \emph{Ausgew\"ahlte
+  Aufs\"atze \"uber Fragen der Gestalt des Buches und der Typographie} de Tschichold
+(Artigos Selecionados sobre os Problemas do Design de Livros e da Tipografia)
+\cite{JTsch87}, ele decidiu escrever seu próprio estilo de documento\,---\,e não apenas
+uma solução pontual para suas anotações de aula, mas toda uma família de estilos,
+especificamente projetada para a tipografia europeia e alemã. Assim nasceu o {\Script}.
 
-Markus Kohm, the developer of {\KOMAScript}, came across {\Script} in December
-1992 and added an option to use the A5 paper format. At that time neither the
-standard style nor {\Script} provided support for A5 paper. Therefore it did
-not take long until Markus made the first changes to {\Script}. This and other
-changes were then incorporated into {\ScriptII}, released by Frank in December
+Markus Kohm, o desenvolvedor do {\KOMAScript}, descobriu o {\Script} em dezembro de
+1992 e adicionou uma opção para usar o formato de papel A5. Naquela época, nem o
+estilo padrão nem o {\Script} forneciam suporte para papel A5. Portanto, não
+demorou muito até que Markus fizesse as primeiras mudanças no {\Script}. Essa e outras
+mudanças foram então incorporadas ao {\ScriptII}, lançado por Frank em dezembro de
 1993.
 
-In mid-1994, {\LaTeXe} became available and brought with it many changes.
-Users of {\ScriptII} were faced with either limiting their usage to
-{\LaTeXe}'s compatibility mode or giving up {\Script} altogether.  This
-situation led Markus to put together a new {\LaTeXe} package, released on
-7~July 1994 as {\KOMAScript}. A few months later, Frank declared {\KOMAScript}
-to be the official successor to {\Script}. {\KOMAScript} originally provided
-no \emph{letter} class, but this deficiency was soon remedied by Axel
-Kielhorn, and the result became part of {\KOMAScript} in December 1994.  Axel
-also wrote the first true German-language user guide, which was followed by an
-English-language guide by Werner Lemberg.
+Em meados de 1994, o {\LaTeXe} tornou-se disponível e trouxe consigo muitas mudanças.
+Os usuários do {\ScriptII} foram confrontados com a opção de limitar seu uso ao
+modo de compatibilidade do {\LaTeXe} ou abandonar completamente o {\Script}. Esta
+situação levou Markus a criar um novo pacote {\LaTeXe}, lançado em
+7 de julho de 1994 como {\KOMAScript}. Alguns meses depois, Frank declarou o {\KOMAScript}
+como o sucessor oficial do {\Script}. O {\KOMAScript} originalmente não fornecia
+uma classe \emph{letter} (carta), mas essa deficiência foi logo corrigida por Axel
+Kielhorn, e o resultado tornou-se parte do {\KOMAScript} em dezembro de 1994. Axel
+também escreveu o primeiro guia do usuário verdadeiramente em língua alemã, que foi seguido por um
+guia em língua inglesa de Werner Lemberg.
 
-Since then much time has passed. {\LaTeX} has changed in only minor ways, but
-the {\LaTeX} landscape has changed a great deal; many new packages and classes
-are now available and {\KOMAScript} itself has grown far beyond what it was in
-1994. The initial goal was to provide good {\LaTeX} classes for
-German-language authors, but today its primary purpose is to provide
-more-flexible alternatives to the standard classes. {\KOMAScript}'s success
-has led to e-mail from users all over the world, and this has led to many new
-macros\,---\,all needing documentation; hence this ``small guide.''
+Desde então, muito tempo passou. O {\LaTeX} mudou apenas de maneiras menores, mas
+a paisagem do {\LaTeX} mudou bastante; muitos novos pacotes e classes
+estão agora disponíveis e o próprio {\KOMAScript} cresceu muito além do que era em
+1994. O objetivo inicial era fornecer boas classes {\LaTeX} para
+autores de língua alemã, mas hoje seu propósito principal é fornecer
+alternativas mais flexíveis às classes padrão. O sucesso do {\KOMAScript}
+levou a e-mails de usuários de todo o mundo, e isso levou a muitos novos
+macros\,---\,todos precisando de documentação; daí este ``pequeno guia''.
 %\end{Explain}
 
 
-\section{Special Thanks}
+\section{Agradecimentos Especiais}
 \seclabel{thanks}
 
-Acknowledgements in the introduction? No, the proper acknowledgements can be
-found in the addendum. My comments here are not intended for the authors of
-this guide\,---\,and those thanks should rightly come from you, the reader,
-anyhow. I, the author of {\KOMAScript}, would like to extend my personal
-thanks to Frank Neukam.  Without his {\Script} family, {\KOMAScript} would not
-have come about.  I am indebted to the many persons who have contributed to
-{\KOMAScript}, but with their indulgence, I would like to specifically mention
-Jens-Uwe Morawski and Torsten Kr\"uger. The English translation of the guide
-is, among many other things, due to Jens's untiring commitment. Torsten was
-the best beta-tester I ever had. His work has particularly enhanced the
-usability of \Class{scrlttr2} and \Class{scrpage2}. Many thanks to all who
-encouraged me to go on, to make things better and less error-prone, or to
-implement additional features.
+Agradecimentos na introdução? Não, os agradecimentos apropriados podem ser
+encontrados no adendo. Meus comentários aqui não são destinados aos autores deste
+guia\,---\,e esses agradecimentos devem vir justamente de você, o leitor,
+de qualquer forma. Eu, o autor do {\KOMAScript}, gostaria de estender meus
+agradecimentos pessoais a Frank Neukam. Sem sua família {\Script}, o {\KOMAScript} não
+teria surgido. Sou grato às muitas pessoas que contribuíram para o
+{\KOMAScript}, mas com sua indulgência, gostaria de mencionar especificamente
+Jens-Uwe Morawski e Torsten Kr\"uger. A tradução inglesa do guia
+é, entre muitas outras coisas, devida ao compromisso incansável de Jens. Torsten foi
+o melhor testador beta que já tive. Seu trabalho melhorou particularmente a
+usabilidade de \Class{scrlttr2} e \Class{scrpage2}. Muitos agradecimentos a todos que
+me encorajaram a continuar, a tornar as coisas melhores e menos propensas a erros, ou a
+implementar recursos adicionais.
 
-Special thanks go as well to the founders and members of DANTE,
-Deutschsprachige Anwendervereinigung {\TeX}~e.V\kern-.18em, (the
-German-Language {\TeX} User Group). Without the DANTE server, {\KOMAScript}
-could not have been released and distributed. Thanks as well to everybody on
-the {\TeX} newsgroups and mailing lists who answer questions and have helped
-me provide support for {\KOMAScript}.
+Agradecimentos especiais vão também aos fundadores e membros da DANTE,
+Deutschsprachige Anwendervereinigung {\TeX}~e.V\kern-.18em, (o
+Grupo de Usuários {\TeX} de Língua Alemã). Sem o servidor DANTE, o {\KOMAScript}
+não poderia ter sido lançado e distribuído. Agradecimentos também a todos nos
+grupos de notícias e listas de discussão do {\TeX} que respondem perguntas e me ajudaram
+a fornecer suporte para o {\KOMAScript}.
 
-My thanks also go to all those who have always encouraged me to go further and
-to implement this or that feature better, with fewer flaws, or simply as an
-extension. I would also like to thank the very generous donor who has given me
-the most significant amount of money I have ever been paid for the work done
-so far on \KOMAScript{}.
+Meus agradecimentos também vão a todos aqueles que sempre me encorajaram a ir mais longe e
+a implementar este ou aquele recurso melhor, com menos falhas, ou simplesmente como uma
+extensão. Eu também gostaria de agradecer ao doador muito generoso que me deu
+a quantia mais significativa de dinheiro que já recebi pelo trabalho feito
+até agora no \KOMAScript{}.
 
-\section{Legal Notes}
+\section{Notas Legais}
 \seclabel{legal}
 
-{\KOMAScript} is released under the {\LaTeX} Project Public License. You will
-find it in the file \File{lppl.txt}. An unofficial German-language translation
-is also available in \File{lppl-de.txt} and is valid for all German-speaking
-countries.
+O {\KOMAScript} é lançado sob a {\LaTeX} Project Public License. Você
+encontrará isso no arquivo \File{lppl.txt}. Uma tradução não oficial em alemão
+também está disponível em \File{lppl-de.txt} e é válida para todos os países de língua alemã.
 
-\iffree{This document and the {\KOMAScript} bundle are provided ``as is'' and
-  without warranty of any kind.}%
-{Please note: the printed version of this guide is not free under the
-  conditions of the {\LaTeX} Project Public Licence. If you need a free
-  version of this guide, use the version that is provided as part of the
-  {\KOMAScript} bundle.}
+\iffree{Este documento e o conjunto {\KOMAScript} são fornecidos ``como estão'' e
+  sem garantia de qualquer tipo.}%
+{Por favor note: a versão impressa deste guia não é livre sob as
+  condições da {\LaTeX} Project Public Licence. Se você precisar de uma versão
+  gratuita deste guia, use a versão que é fornecida como parte do
+  conjunto {\KOMAScript}.}
 
 
-\section{Installation}
+\section{Instalação}
 \seclabel{installation}
 
-The three most important \TeX{} distributions, Mac\TeX, MiK\TeX, and
-\TeX{}~Live, make {\KOMAScript} available through their package management
-software. You should install and update {\KOMAScript} using these tools, if
-possible. Manual installation without using the package managers is described
-in the file \File{INSTALL.txt}, which is part of every {\KOMAScript}
-distribution. You should also read the documentation that comes with the
-{\TeX} distribution you are using.
+As três distribuições \TeX{} mais importantes, Mac\TeX, MiK\TeX, e
+\TeX{}~Live, disponibilizam o {\KOMAScript} através de seu software de gerenciamento
+de pacotes. Você deve instalar e atualizar o {\KOMAScript} usando essas ferramentas, se
+possível. A instalação manual sem usar os gerenciadores de pacotes é descrita
+no arquivo \File{INSTALL.txt}, que faz parte de toda distribuição {\KOMAScript}.
+Você também deve ler a documentação que vem com a
+distribuição {\TeX} que você está usando.
 
 
-\section{Bug Reports and Other Requests}
+\section{Relatórios de Bugs e Outras Solicitações}
 \seclabel{errors}
 
-If you think you have found an error in the documentation or a bug in one of
-the {\KOMAScript} classes, packages, or another part of {\KOMAScript}, please
-do the following:
+Se você acha que encontrou um erro na documentação ou um bug em uma das
+classes, pacotes ou outra parte do {\KOMAScript}, por favor
+faça o seguinte:
 \begin{itemize}
-\item Does the problem also occur if a standard class is used instead of a
-  {\KOMAScript} class? In this case, the error is most likely not with
-  {\KOMAScript}, and it makes more sense to ask your question in a public
-  forum, a mailing list, or Usenet.
-\item Which {\KOMAScript} version do you use? For related information, see the
-  \File{log} file of the \LaTeX{} run of any document that uses a
-  {\KOMAScript} class.
-\item If you do not use an up-to-date \KOMAScript{} version, please consider
-  to install a new \KOMAScript{} release. If the problem does not occur with
-  an updated \KOMAScript, you've already found a solution.
-\item Which operating system and which \TeX{} distribution do you use? This
-  information might seem rather superfluous for a system-independent package
-  like {\KOMAScript} or {\LaTeX}, but time and again they have certainly been
-  shown to play a role.
-\item What exactly is the problem or the error? Describe the problem. It's
-  better to be too detailed than too short. Often it makes sense to explain
-  the background.
-\item What does a minimal working example look like? You can easily create one
-  by commenting out content and packages from the document step by step.  The
-  result is a document that only contains the packages and parts necessary to
-  reproduce the problem. In addition, all loaded images should be replaced by
-  \Macro{rule} statements of the appropriate size or by an example image from
-  package \Package{mwe} \cite{package:mwe}. Before sending your minimal
-  working example,remove the commented-out parts, insert the command
-  \Macro{listfiles} in the preamble, and perform another {\LaTeX} run. At the
-  end of the \File{log} file, you will see an overview of the packages
-  used. Add the minimal working example and the log file to the end of your
-  description of the problem.
+\item O problema também ocorre se uma classe padrão for usada em vez de uma
+  classe {\KOMAScript}? Neste caso, o erro provavelmente não está no
+  {\KOMAScript}, e faz mais sentido fazer sua pergunta em um fórum
+  público, uma lista de discussão ou Usenet.
+\item Qual versão do {\KOMAScript} você usa? Para informações relacionadas, veja o
+  arquivo \File{log} da execução do \LaTeX{} de qualquer documento que usa uma
+  classe {\KOMAScript}.
+\item Se você não usa uma versão atualizada do \KOMAScript{}, por favor considere
+  instalar uma nova versão do \KOMAScript{}. Se o problema não ocorrer com
+  um \KOMAScript{} atualizado, você já encontrou uma solução.
+\item Qual sistema operacional e qual distribuição \TeX{} você usa? Esta
+  informação pode parecer bastante supérflua para um pacote independente de sistema
+  como {\KOMAScript} ou {\LaTeX}, mas repetidamente eles certamente têm
+  se mostrado importantes.
+\item Qual é exatamente o problema ou o erro? Descreva o problema. É
+  melhor ser muito detalhado do que muito breve. Muitas vezes faz sentido explicar
+  o contexto.
+\item Como é um exemplo mínimo funcional? Você pode criar um facilmente
+  comentando conteúdo e pacotes do documento passo a passo. O
+  resultado é um documento que contém apenas os pacotes e partes necessários para
+  reproduzir o problema. Além disso, todas as imagens carregadas devem ser substituídas por
+  instruções \Macro{rule} do tamanho apropriado ou por uma imagem de exemplo do
+  pacote \Package{mwe} \cite{package:mwe}. Antes de enviar seu exemplo mínimo
+  funcional, remova as partes comentadas, insira o comando
+  \Macro{listfiles} no preâmbulo e execute novamente o {\LaTeX}. No
+  final do arquivo \File{log}, você verá uma visão geral dos pacotes
+  usados. Adicione o exemplo mínimo funcional e o arquivo log ao final de sua
+  descrição do problema.
 \end{itemize}
 
-Do not send packages, PDF, PS, or DVI files. If the entire issue or bug
-description, including the minimal example and the \File{log} file is larger
-than a few tens of kilobytes, you're likely doing something wrong.
+Não envie pacotes, arquivos PDF, PS ou DVI. Se toda a questão ou descrição do bug,
+incluindo o exemplo mínimo e o arquivo \File{log} for maior
+que algumas dezenas de kilobytes, você provavelmente está fazendo algo errado.
 
-If you've followed all these steps, please create a new ticket in the
-\KOMAScript{} ticket system at \url{https://sf.net/p/koma-script/tickets}. If
-you are not able to do so, you may alternatively send your {\KOMAScript}
-(only) bug report to \href{mailto:komascript@gmx.info}{komascript@gmx.info}.
+Se você seguiu todas essas etapas, por favor crie um novo ticket no
+sistema de tickets do \KOMAScript{} em \url{https://sf.net/p/koma-script/tickets}. Se
+você não puder fazer isso, você pode alternativamente enviar seu relatório de bug do {\KOMAScript}
+(apenas) para \href{mailto:komascript@gmx.info}{komascript@gmx.info}.
 
-If you want to ask your question in a Usenet group, mailing list, or Internet
-forum, you should follow the procedures mentioned above and include a minimal
-working example as part of your question, but usually you don't need to
-provide the \File{log}-file. Instead, just add the list of packages and
-package versions from the \File{log}-file and, if your minimal working example
-compiles with errors, you should quote those messages from the \File{log}
-file.
+Se você quiser fazer sua pergunta em um grupo Usenet, lista de discussão ou fórum de
+Internet, você deve seguir os procedimentos mencionados acima e incluir um exemplo mínimo
+funcional como parte de sua pergunta, mas geralmente você não precisa
+fornecer o arquivo \File{log}. Em vez disso, apenas adicione a lista de pacotes e
+versões de pacotes do arquivo \File{log} e, se seu exemplo mínimo funcional
+compilar com erros, você deve citar essas mensagens do arquivo \File{log}.
 
-Please note that default settings which are not typographically optimal do not
-represent errors. For reasons of compatibility, defaults are preserved
-whenever possible in new versions of {\KOMAScript}. Furthermore, typographical
-best practices are partly a matter of language and culture, and so the default
-settings of {\KOMAScript} are necessarily a compromise.
+Por favor note que configurações padrão que não são tipograficamente ótimas não
+representam erros. Por razões de compatibilidade, os padrões são preservados
+sempre que possível em novas versões do {\KOMAScript}. Além disso, as melhores práticas tipográficas
+são em parte uma questão de idioma e cultura, e assim as configurações
+padrão do {\KOMAScript} são necessariamente um compromisso.
 
-\section{Additional Information}
+\section{Informações Adicionais}
 \seclabel{moreinfos}
 
-Once you become familiar with {\KOMAScript}, you may want examples that show
-how to accomplish more difficult tasks. Such examples go beyond the basic
-instructional scope of this manual and so are not included. However, you will
-find more examples on the website of the {\KOMAScript} Documentation Project
-\cite{homepage}. These examples are designed for advanced {\LaTeX} users and
-are not particularly suitable for beginners. The main language of the site
-is German, but English is also welcome.
+Uma vez que você se familiarize com o {\KOMAScript}, você pode querer exemplos que mostrem
+como realizar tarefas mais difíceis. Tais exemplos vão além do escopo
+instrucional básico deste manual e, portanto, não são incluídos. No entanto, você
+encontrará mais exemplos no site do Projeto de Documentação do {\KOMAScript}
+\cite{homepage}. Esses exemplos são projetados para usuários avançados de {\LaTeX} e
+não são particularmente adequados para iniciantes. O idioma principal do site
+é o alemão, mas o inglês também é bem-vindo.
 
 \endinput
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8

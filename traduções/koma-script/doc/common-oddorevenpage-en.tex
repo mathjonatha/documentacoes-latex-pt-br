@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -29,47 +29,46 @@
                                      Even Pages)]
 \translator{Markus Kohm\and Krickette Murabayashi\and Karl Hagen}
 
-\section{Detecting Odd and Even Pages}
+\section{Detectando Páginas Ímpares e Pares}
 \seclabel{oddOrEven}%
 \BeginIndexGroup%
 \BeginIndex{}{page>odd}%
 \BeginIndex{}{page>even}%
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:maincls.oddOrEven} applies equally to this
-  chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.oddOrEven}, you can skip ahead to
+  As informações em \autoref{sec:maincls.oddOrEven} aplicam-se igualmente a este
+  capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.oddOrEven}, pode pular para
   \autopageref{sec:\ThisCommonLabelBase.oddOrEven.next},
   \autopageref{sec:\ThisCommonLabelBase.oddOrEven.next}.%
 }
 
-In two-sided documents we distinguish left and right pages. Left pages always
-have an even page number, and right pages always have an odd page number. %
+Em documentos de dois lados, distinguimos páginas esquerdas e direitas. Páginas esquerdas sempre
+têm um número de página par, e páginas direitas sempre têm um número de página ímpar. %
 \IfThisCommonLabelBase{maincls}{%
-  Identifying right and left pages is equivalent to identifying even- or
-  odd-numbered pages, and so we normally refer to them as even and odd pages
-  in this \iffree{guide}{book}.
+  Identificar páginas direitas e esquerdas é equivalente a identificar páginas
+  de numeração par ou ímpar, e por isso normalmente nos referimos a elas como páginas pares e ímpares
+  neste \iffree{guia}{livro}.
 
   % Umbruchkorrekturtext
   \iftrue%
-    In one-sided documents, the distinction between left and right pages does
-    not exist. Nevertheless, there are still pages with even and odd page 
-    numbers.%
+    Em documentos de um lado, a distinção entre páginas esquerdas e direitas não
+    existe. No entanto, ainda existem páginas com números de página pares e ímpares.%
   \fi%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
-    As a rule, letters will be set one-sided. However, if you need to print
-    letters using both sides of the paper or, in exceptional cases, are
-    generating real two-sided letters, it may be useful to know whether you
-    are currently on an even or odd page.%
+    Como regra, cartas serão compostas em um lado. No entanto, se você precisar imprimir
+    cartas usando ambos os lados do papel ou, em casos excepcionais, estiver
+    gerando cartas realmente de dois lados, pode ser útil saber se você
+    está atualmente em uma página par ou ímpar.%
   }{}%
 }
 
 
 \begin{Declaration}
-  \Macro{Ifthispageodd}\Parameter{true part}\Parameter{false part}
+  \Macro{Ifthispageodd}\Parameter{parte verdadeira}\Parameter{parte falsa}
 \end{Declaration}%
-If\IfThisCommonLabelBase{maincls}{%
+Se\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.28}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
 }{%
@@ -81,46 +80,46 @@ If\IfThisCommonLabelBase{maincls}{%
     }{}%
   }%
 } %
-you want to determine whether text appears on an even or odd page,
-\KOMAScript{} provides the \Macro{Ifthispageodd} command. The \PName{true
-	part} argument is executed only if you are currently on an odd page. 
-Otherwise the \PName{false part} argument is executed.
+você quiser determinar se o texto aparece em uma página par ou ímpar,
+o \KOMAScript{} fornece o comando \Macro{Ifthispageodd}. O argumento \PName{parte
+	verdadeira} é executado somente se você estiver atualmente em uma página ímpar.
+Caso contrário, o argumento \PName{parte falsa} é executado.
 %
 \IfThisCommonLabelBase{scrextend}{\iffalse}{\csname iftrue\endcsname}%
 \begin{Example}
-  Suppose you simply want to show whether a text will be placed onto an
-  even or odd page. You may achieve that
-  using{\phantomsection\xmpllabel{Ifthispageodd}}
+  Suponha que você simplesmente queira mostrar se um texto será colocado em uma
+  página par ou ímpar. Você pode conseguir isso
+  usando{\phantomsection\xmpllabel{Ifthispageodd}}
 \begin{lstcode}
-  This page has an \Ifthispageodd{odd}{even} 
-  page number.
+  Esta página tem um número de página
+  \Ifthispageodd{ímpar}{par}.
 \end{lstcode}
-  This results in the output
+  Isso resulta na saída
   \begin{quote}
-    This page has an \Ifthispageodd{odd}{even} page number.
+    Esta página tem um número de página \Ifthispageodd{ímpar}{par}.
   \end{quote}
 \end{Example}
 \fi
 
-Because the \Macro{Ifthispageodd} command uses a mechanism that is very
-similar to a label and a reference to it, at least two {\LaTeX} runs are
-required after each change to the text. Only then will the decision be
-correct. In the first run, a heuristic is used to make the initial choice.
+Como o comando \Macro{Ifthispageodd} usa um mecanismo que é muito
+similar a um rótulo e uma referência a ele, pelo menos duas execuções do {\LaTeX} são
+necessárias após cada mudança no texto. Somente então a decisão estará
+correta. Na primeira execução, uma heurística é usada para fazer a escolha inicial.
 
-In \autoref{sec:maincls-experts.addInfos},
-\DescPageRef{maincls-experts.cmd.Ifthispageodd}, advanced users can find more
-information about the problems of detecting left and right pages, or even and
-odd page numbers.%
+Em \autoref{sec:maincls-experts.addInfos},
+\DescPageRef{maincls-experts.cmd.Ifthispageodd}, usuários avançados podem encontrar mais
+informações sobre os problemas de detectar páginas esquerdas e direitas, ou números de
+página pares e ímpares.%
 \IfThisCommonLabelBase{scrextend}{%
-  An example for \Macro{Ifthispageodd} is shown on
-  \PageRefxmpl{maincls.Ifthispageodd} in \autoref{sec:maincls.oddOrEven}.%
+  Um exemplo para \Macro{Ifthispageodd} é mostrado em
+  \PageRefxmpl{maincls.Ifthispageodd} em \autoref{sec:maincls.oddOrEven}.%
 }{}%
 %
 \EndIndexGroup
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8

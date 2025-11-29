@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -28,76 +28,76 @@
                   KOMA-Script guide (common paragraphs: Footnotes)]
 \translator{Markus Kohm\and Krickette Murabayashi\and Karl Hagen}
 
-\section{Footnotes}
+\section{Notas de Rodapé}
 \seclabel{footnotes}%
 \BeginIndexGroup
 \BeginIndex{}{footnotes}%
 
 \IfThisCommonFirstRun{}{%
-  The information in \autoref{sec:\ThisCommonFirstLabelBase.footnotes} applies
-  equally to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.footnotes}, you can skip ahead to
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.footnotes} se aplicam
+  igualmente a este capítulo. Portanto, se você já leu e entendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.footnotes}, você pode pular para
   \autopageref{sec:\ThisCommonLabelBase.footnotes.next},
   \autopageref{sec:\ThisCommonLabelBase.footnotes.next}.%
   \IfThisCommonLabelBase{scrlttr2}{ %
-    If you do not use a \KOMAScript{} class, \Package{scrletter}%
-    \OnlyAt{\Package{scrletter}} relies on the
-    \hyperref[cha:scrextend]{\Package{scrextend}}\IndexPackage{scrextend}%
-    \important{\hyperref[cha:scrextend]{\Package{scrextend}}} package.
-    Therefore, see also \autoref{sec:scrextend.footnotes},
-    \autopageref{sec:scrextend.footnotes} when using \Package{scrletter}.%
+    Se você não usa uma classe \KOMAScript{}, \Package{scrletter}%
+    \OnlyAt{\Package{scrletter}} depende do
+    pacote \hyperref[cha:scrextend]{\Package{scrextend}}\IndexPackage{scrextend}%
+    \important{\hyperref[cha:scrextend]{\Package{scrextend}}}.
+    Portanto, veja também \autoref{sec:scrextend.footnotes},
+    \autopageref{sec:scrextend.footnotes} ao usar \Package{scrletter}.%
     \iffalse% Umbruchkorrekturtext
-    \ Note in particular that in this case some typical \KOMAScript{}
-    extensions are not active by default\textnote{default}. Instead, the
-    footnotes make use of the class used, or the \LaTeX{} kernel.%
+    \ Note particularmente que neste caso algumas extensões típicas do \KOMAScript{}
+    não estão ativas por padrão\textnote{padrão}. Em vez disso, as
+    notas de rodapé fazem uso da classe usada, ou do núcleo do \LaTeX{}.%
     \fi%
   }{}%
 }
 
 \IfThisCommonLabelBase{maincls}{%
-  Unlike\textnote{\KOMAScript{} vs. standard classes} the standard classes,
-  \KOMAScript{} offers the ability to configure the format of the footnote
-  block.%
+  Ao contrário\textnote{\KOMAScript{} vs. classes padrão} das classes padrão,
+  o \KOMAScript{} oferece a capacidade de configurar o formato do bloco de
+  notas de rodapé.%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
-    You can find the basic commands to set footnotes in any introduction to
-    \LaTeX, for example \cite{lshort}. \KOMAScript{}%
-    \textnote{\KOMAScript{} vs. standard classes} provides additional features
-    to change the format of the footnote block. %
+    Você pode encontrar os comandos básicos para definir notas de rodapé em
+    qualquer introdução ao \LaTeX, por exemplo \cite{lshort}. \KOMAScript{}%
+    \textnote{\KOMAScript{} vs. classes padrão} fornece recursos adicionais
+    para alterar o formato do bloco de notas de rodapé. %
     \iffalse % Umbruchoptimierung
-	
-      Whether footnotes should be allowed for letters depends very much on the
-      type of letter and its layout. For example, you should not allow
-      footnotes to overlap visually with the letterhead footer or be confused
-      with the courtesy-copy list. Doing so is the responsibility of the
-      user.%
 
-      Since footnotes are rarely used in letters, examples in this section have
-      been omitted. If you need examples, you can find them in
-      \autoref{sec:\ThisCommonFirstLabelBase.footnotes}, 
+      Se notas de rodapé devem ser permitidas em cartas depende muito do
+      tipo de carta e seu layout. Por exemplo, você não deve permitir que
+      notas de rodapé se sobreponham visualmente ao rodapé do papel timbrado ou
+      sejam confundidas com a lista de cópias de cortesia. Fazer isso é
+      responsabilidade do usuário.%
+
+      Como as notas de rodapé são raramente usadas em cartas, exemplos nesta
+      seção foram omitidos. Se você precisa de exemplos, você pode encontrá-los em
+      \autoref{sec:\ThisCommonFirstLabelBase.footnotes},
       \autopageref{sec:\ThisCommonFirstLabelBase.footnotes}.%
     \fi%
   }{%
     \IfThisCommonLabelBase{scrextend}{%
-      The footnote capabilities of the \KOMAScript{} classes are also
-      provided by \Package{scrextend}. By default, the formatting of
-      footnotes is left to the class used. This changes as soon as you
-      issue the \DescRef{\ThisCommonLabelBase.cmd.deffootnote} command,
-      which is explained in detail on
+      As capacidades de notas de rodapé das classes \KOMAScript{} também são
+      fornecidas pelo \Package{scrextend}. Por padrão, a formatação das
+      notas de rodapé é deixada para a classe usada. Isso muda assim que você
+      emite o comando \DescRef{\ThisCommonLabelBase.cmd.deffootnote},
+      que é explicado em detalhes em
       \DescPageRef{\ThisCommonLabelBase.cmd.deffootnote}.
-      
-      The options for adjusting the dividing line above footnotes, however,
-      are not provided by \Package{scrextend}.%
+
+      As opções para ajustar a linha divisória acima das notas de rodapé,
+      no entanto, não são fornecidas pelo \Package{scrextend}.%
     }{\InternalCommonFileUsageError}%
   }%
 }%
 
 \begin{Declaration}
-  \OptionVName{footnotes}{setting}
+  \OptionVName{footnotes}{configuração}
   \Macro{multfootsep}
 \end{Declaration}
-\IfThisCommonLabelBase{scrextend}{Many classes mark footnotes }{%
-  Footnotes %
+\IfThisCommonLabelBase{scrextend}{Muitas classes marcam notas de rodapé }{%
+  Notas de rodapé %
   \IfThisCommonLabelBase{maincls}{%
     \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
       \Class{scrartcl}}%
@@ -106,54 +106,54 @@
       \ChangedAt{v3.00}{\Class{scrlttr2}}%
     }{}%
   }%
-  are marked %
+  são marcadas %
 }%
-by default in the text with a small superscript number. If several footnotes
-appear in succession at the same point, it gives the impression that there is
-one footnote with a large number rather than multiple footnotes (e.\,g.
-footnote 12 instead of footnotes 1 and 2).
-With\important{\OptionValue{footnotes}{multiple}}
-\OptionValue{footnotes}{multiple}\IndexOption{footnotes=~multiple}, footnotes
-that follow each other directly are separated with a delimiter instead. The
-default delimiter in \Macro{multfootsep}\important{\Macro{multfootsep}} is
-defined as a comma without a space:
+por padrão no texto com um pequeno número sobrescrito. Se várias notas de
+rodapé aparecem em sucessão no mesmo ponto, isso dá a impressão de que há
+uma nota de rodapé com um número grande em vez de múltiplas notas de rodapé
+(por exemplo, nota de rodapé 12 em vez de notas de rodapé 1 e 2).
+Com\important{\OptionValue{footnotes}{multiple}}
+\OptionValue{footnotes}{multiple}\IndexOption{footnotes=~multiple}, notas de
+rodapé que seguem umas às outras diretamente são separadas com um delimitador.
+O delimitador padrão em \Macro{multfootsep}\important{\Macro{multfootsep}} é
+definido como uma vírgula sem espaço:
 \begin{lstcode}
   \newcommand*{\multfootsep}{,}
 \end{lstcode}
-This can be redefined.
+Isso pode ser redefinido.
 
-The whole mechanism is compatible with the 
-\Package{footmisc}\IndexPackage{footmisc}\important{\Package{footmisc}} 
-package, version~5.3d to 5.5b (see \cite{package:footmisc}). It affects
-footnote markers placed using 
-\DescRef{\ThisCommonLabelBase.cmd.footnote}\IndexCmd{footnote}, as well as 
-those placed directly with 
+Todo o mecanismo é compatível com o
+pacote \Package{footmisc}\IndexPackage{footmisc}\important{\Package{footmisc}},
+versões~5.3d a 5.5b (veja \cite{package:footmisc}). Ele afeta
+marcadores de notas de rodapé colocados usando
+\DescRef{\ThisCommonLabelBase.cmd.footnote}\IndexCmd{footnote}, bem como
+aqueles colocados diretamente com
 \DescRef{\ThisCommonLabelBase.cmd.footnotemark}\IndexCmd{footnotemark}.
 
-You can switch back to the default 
-\OptionValue{footnotes}{nomultiple} at any time using the 
-\DescRef{\ThisCommonLabelBase.cmd.KOMAoptions} or
-\DescRef{\ThisCommonLabelBase.cmd.KOMAoption} command. However, if you
-encounter any problems using another package that alters the footnotes, you
-should not use this option, nor should you change the \PName{setting} anywhere
-inside the document.
+Você pode voltar ao padrão
+\OptionValue{footnotes}{nomultiple} a qualquer momento usando o
+comando \DescRef{\ThisCommonLabelBase.cmd.KOMAoptions} ou
+\DescRef{\ThisCommonLabelBase.cmd.KOMAoption}. No entanto, se você
+encontrar algum problema ao usar outro pacote que altera as notas de rodapé,
+você não deve usar esta opção, nem deve alterar a \PName{configuração} em
+qualquer lugar dentro do documento.
 
-A summary of the available \PName{setting} values of \Option{footnotes} can
-be found in \autoref{tab:\ThisCommonFirstLabelBase.footnotes}%
+Um resumo dos valores de \PName{configuração} disponíveis para \Option{footnotes}
+pode ser encontrado em \autoref{tab:\ThisCommonFirstLabelBase.footnotes}%
 \IfThisCommonFirstRun{%
   .
   \begin{table}
-    \caption[{Available values for the \Option{footnotes} option}]
-    {Available values for the \Option{footnotes} option to configure footnotes}
+    \caption[{Valores disponíveis para a opção \Option{footnotes}}]
+    {Valores disponíveis para a opção \Option{footnotes} para configurar notas de rodapé}
     \label{tab:\ThisCommonLabelBase.footnotes}
     \begin{desctabular}
       \pventry{multiple}{%
-        Consecutive footnote marks will be separated by
+        Marcadores de notas de rodapé consecutivos serão separados por
         \DescRef{\ThisCommonLabelBase.cmd.multfootsep}\IndexCmd{multfootsep}.%
         \IndexOption{footnotes~=\textKValue{multiple}}}%
       \pventry{nomultiple}{%
-        Consecutive footnote marks will be handled like single footnotes
-		and not separated from each other.%
+        Marcadores de notas de rodapé consecutivos serão tratados como
+        notas de rodapé únicas e não separados uns dos outros.%
         \IndexOption{footnotes~=\textKValue{nomultiple}}}%
     \end{desctabular}
   \end{table}%
@@ -165,18 +165,19 @@ be found in \autoref{tab:\ThisCommonFirstLabelBase.footnotes}%
 
 
 \begin{Declaration}
-  \Macro{footnote}\OParameter{number}\Parameter{text}%
-  \Macro{footnotemark}\OParameter{number}%
-  \Macro{footnotetext}\OParameter{number}\Parameter{text}%
+  \Macro{footnote}\OParameter{número}\Parameter{texto}%
+  \Macro{footnotemark}\OParameter{número}%
+  \Macro{footnotetext}\OParameter{número}\Parameter{texto}%
   \Macro{multiplefootnoteseparator}%
 \end{Declaration}%
-Footnotes in \KOMAScript{} are produced, as they are in the standard classes,
-with the \Macro{footnote} command, or alternatively the pair of commands
-\Macro{footnotemark} and \Macro{footnotetext}. As in the standard classes,
-it is possible for a page break to occur within a footnote. Normally this
-happens if the footnote mark is placed so near the bottom of a page as to
-leave \LaTeX{} no choice but to move the footnote to the next page.
-Unlike\textnote{\KOMAScript{} vs. standard classes}
+Notas de rodapé no \KOMAScript{} são produzidas, como são nas classes padrão,
+com o comando \Macro{footnote}, ou alternativamente o par de comandos
+\Macro{footnotemark} e \Macro{footnotetext}. Como nas classes padrão,
+é possível que ocorra uma quebra de página dentro de uma nota de rodapé.
+Normalmente isso acontece se o marcador de nota de rodapé é colocado tão perto
+da parte inferior de uma página que não deixa ao \LaTeX{} nenhuma escolha senão
+mover a nota de rodapé para a próxima página.
+Ao contrário\textnote{\KOMAScript{} vs. classes padrão}
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -185,57 +186,59 @@ Unlike\textnote{\KOMAScript{} vs. standard classes}
     \ChangedAt{v3.00}{\Class{scrlttr2}}%
   }{}%
 } %
-the standard classes, \KOMAScript{} can recognize and separate consecutive
-footnotes automatically. 
-See\important{\DescRef{\ThisCommonLabelBase.option.footnotes}} the previously
-documented option \DescRef{\ThisCommonLabelBase.option.footnotes}.
+das classes padrão, o \KOMAScript{} pode reconhecer e separar notas de rodapé
+consecutivas automaticamente.
+Veja\important{\DescRef{\ThisCommonLabelBase.option.footnotes}} a opção
+documentada anteriormente \DescRef{\ThisCommonLabelBase.option.footnotes}.
 
-If instead you want to place this delimiter manually, you can do so by calling
-\Macro{multiplefootnoteseparator}. However, users should not redefine this
-command, as it contains not only the delimiter but also the delimiter's
-formatting, for example the font size selection and the superscript. The
-delimiter itself is stored in the previously described
+Se em vez disso você quiser colocar este delimitador manualmente, você pode
+fazê-lo chamando \Macro{multiplefootnoteseparator}. No entanto, os usuários não
+devem redefinir este comando, pois ele contém não apenas o delimitador, mas
+também a formatação do delimitador, por exemplo a seleção de tamanho de fonte e
+o sobrescrito. O delimitador em si é armazenado no comando
 \DescRef{\ThisCommonLabelBase.cmd.multfootsep}%
 \important{\DescRef{\ThisCommonLabelBase.cmd.multfootsep}}%
-\IndexCmd{multfootsep} command.
+\IndexCmd{multfootsep} descrito anteriormente.
 
 \IfThisCommonFirstRun{\iftrue}{%
-  You can find examples and additional hints in
-  \autoref{sec:\ThisCommonFirstLabelBase.footnotes} from
+  Você pode encontrar exemplos e dicas adicionais em
+  \autoref{sec:\ThisCommonFirstLabelBase.footnotes} de
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.footnote}.%
   \csname iffalse\endcsname }%
   \begin{Example}
     \phantomsection\xmpllabel{cmd.footnote}%
-    Suppose you want to put two footnotes after a single word. First you try
+    Suponha que você queira colocar duas notas de rodapé após uma única palavra.
+    Primeiro você tenta
 \begin{lstcode}
-  Word\footnote{1st footnote}\footnote{2nd footnote}
+  Palavra\footnote{1ª nota de rodapé}\footnote{2ª nota de rodapé}
 \end{lstcode}
-    Let's assume that the footnotes are numbered 1 and 2. Since the two
-    footnote numbers follow each other directly, it creates the impression
-    that the word has only one footnote numbered 12. You can change this
-    behaviour by using
+    Vamos supor que as notas de rodapé estejam numeradas 1 e 2. Como os dois
+    números de notas de rodapé seguem um ao outro diretamente, isso cria a
+    impressão de que a palavra tem apenas uma nota de rodapé numerada 12. Você
+    pode alterar este comportamento usando
 \begin{lstcode}
   \KOMAoptions{footnotes=multiple}
 \end{lstcode}
-    to enable the automatic recognition of footnote sequences. Alternatively,
-    you can use
+    para habilitar o reconhecimento automático de sequências de notas de rodapé.
+    Alternativamente, você pode usar
 \begin{lstcode}
-  word\footnote{Footnote 1}%
+  palavra\footnote{Nota de rodapé 1}%
   \multiplefootnoteseparator
-  \footnote{Footnote 2}
+  \footnote{Nota de rodapé 2}
 \end{lstcode}
-    This should give you the desired result even if automatic detection
-    fails or cannot be used for some reason.
-	
-    Now suppose you also want the footnote numbers to be separated not just by
-    a comma, but by a comma and a space. In this case, write
+    Isso deve dar a você o resultado desejado mesmo se a detecção automática
+    falhar ou não puder ser usada por alguma razão.
+
+    Agora suponha que você também queira que os números de notas de rodapé sejam
+    separados não apenas por uma vírgula, mas por uma vírgula e um espaço. Neste
+    caso, escreva
 \begin{lstcode}
   \renewcommand*{\multfootsep}{,\nobreakspace}
 \end{lstcode}
-    in the preamble of your document.
-    \Macro{nobreakspace}\IndexCmd{nobreakspace} was used here instead of a
-    normal space to avoid paragraph or page breaks within the sequence of
-    footnotes.
+    no preâmbulo do seu documento.
+    \Macro{nobreakspace}\IndexCmd{nobreakspace} foi usado aqui em vez de um
+    espaço normal para evitar quebras de parágrafo ou página dentro da sequência
+    de notas de rodapé.
   \end{Example}%
 \fi%
 %
@@ -243,61 +246,61 @@ delimiter itself is stored in the previously described
 
 
 \begin{Declaration}
-  \Macro{footref}\Parameter{reference}
+  \Macro{footref}\Parameter{referência}
 \end{Declaration}
-Sometimes\IfThisCommonLabelBase{maincls}{%
+Às vezes\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
     \ChangedAt{v3.00}{\Class{scrlttr2}}%
-  }{}} you have a footnote in a document to which there are several references
-in the text. An inconvenient way to typeset this would be to use
-\DescRef{\ThisCommonLabelBase.cmd.footnotemark} to set the number directly.
-The disadvantage of this method is that you need to know the number and
-manually set every \DescRef{\ThisCommonLabelBase.cmd.footnotemark} command.
-And if the number changes because you add or remove an earlier footnote, you
-will have to change each \DescRef{\ThisCommonLabelBase.cmd.footnotemark}.
-\KOMAScript{} thefore offers the \Macro{label}\IndexCmd{label}%
-\important{\Macro{label}} mechanism to handle such cases. After placing a
-\Macro{label} inside the footnote, you can use \Macro{footref} to set all the
-other marks for this footnote in the text.
+  }{}} você tem uma nota de rodapé em um documento à qual há várias referências
+no texto. Uma maneira inconveniente de compor isso seria usar
+\DescRef{\ThisCommonLabelBase.cmd.footnotemark} para definir o número diretamente.
+A desvantagem deste método é que você precisa saber o número e
+manualmente definir cada comando \DescRef{\ThisCommonLabelBase.cmd.footnotemark}.
+E se o número mudar porque você adiciona ou remove uma nota de rodapé anterior,
+você terá que alterar cada \DescRef{\ThisCommonLabelBase.cmd.footnotemark}.
+O \KOMAScript{} portanto oferece o mecanismo \Macro{label}\IndexCmd{label}%
+\important{\Macro{label}} para lidar com tais casos. Depois de colocar um
+\Macro{label} dentro da nota de rodapé, você pode usar \Macro{footref} para
+definir todos os outros marcadores para esta nota de rodapé no texto.
 \IfThisCommonFirstRun{\iftrue}{\csname iffalse\endcsname}%
   \begin{Example}
     \phantomsection\xmpllabel{cmd.footref}%
-    You are writing a text in which you must create a footnote each time a
-    brand name occurs, indicating that it is a registered trademark. You can
-    write, for example,
+    Você está escrevendo um texto no qual você deve criar uma nota de rodapé
+    cada vez que um nome de marca ocorre, indicando que é uma marca registrada.
+    Você pode escrever, por exemplo,
 \begin{lstcode}
-  Company SplishSplash\footnote{This is a registered trade name.
-    All rights are reserved.\label{refnote}}
-  produces not only SplishPlump\footref{refnote}
-  but also SplishPlash\footref{refnote}.
+  Empresa SplishSplash\footnote{Este é um nome comercial registrado.
+    Todos os direitos são reservados.\label{refnote}}
+  produz não apenas SplishPlump\footref{refnote}
+  mas também SplishPlash\footref{refnote}.
 \end{lstcode}
-    This will produce the same footnote mark three times, but only one
-    footnote text. The first footnote mark is produced by
-    \DescRef{\ThisCommonLabelBase.cmd.footnote} itself, and the following two
-    footnote marks are produced by the additional \Macro{footref}
-    commands. The footnote text will be produced by
-    \DescRef{\ThisCommonLabelBase.cmd.footnote}. 
+    Isso produzirá o mesmo marcador de nota de rodapé três vezes, mas apenas um
+    texto de nota de rodapé. O primeiro marcador de nota de rodapé é produzido
+    pelo próprio \DescRef{\ThisCommonLabelBase.cmd.footnote}, e os dois
+    marcadores de notas de rodapé seguintes são produzidos pelos comandos
+    \Macro{footref} adicionais. O texto da nota de rodapé será produzido por
+    \DescRef{\ThisCommonLabelBase.cmd.footnote}.
   \end{Example}
 \fi%
-When setting footnote marks with the \Macro{label} mechanism, any
-changes to the footnote numbers will require at least two \LaTeX{} runs to
-ensure correct numbers for all \Macro{footref} marks.%
+Ao definir marcadores de notas de rodapé com o mecanismo \Macro{label}, quaisquer
+alterações nos números de notas de rodapé exigirão pelo menos duas execuções do
+\LaTeX{} para garantir números corretos para todos os marcadores \Macro{footref}.%
 \IfThisCommonLabelBaseOneOf{scrlttr2,scrextend}{\par%
-  You can find an example of how to use \Macro{footref} in
-  \autoref{sec:\ThisCommonFirstLabelBase.footnotes} on
+  Você pode encontrar um exemplo de como usar \Macro{footref} em
+  \autoref{sec:\ThisCommonFirstLabelBase.footnotes} em
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.footref}. %
 }{}%
 \IfThisCommonLabelBase{scrlttr2}{}{%
   \par
-  Note\textnote{Attention!} that statements like \Macro{ref}\IndexCmd{ref}
-  or \Macro{pageref}\IndexCmd{pageref} are fragile and therefore you should
-  put \Macro{protect}\IndexCmd{protect} in front of them if they appear in
-  moving arguments such as headings. %
+  Note\textnote{Atenção!} que declarações como \Macro{ref}\IndexCmd{ref}
+  ou \Macro{pageref}\IndexCmd{pageref} são frágeis e portanto você deve
+  colocar \Macro{protect}\IndexCmd{protect} na frente delas se elas aparecerem em
+  argumentos móveis como títulos. %
 }%
-By the way, from\IfThisCommonLabelBase{maincls}{%
+A propósito, a partir\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}\and \Package{scrextend}}%
 }{%
@@ -305,35 +308,36 @@ By the way, from\IfThisCommonLabelBase{maincls}{%
     \ChangedAt{v3.33}{\Class{scrlttr2}}%
   }{}%
 } %
-\LaTeX{} 2021-05-01 on, the command is provided by \LaTeX{} itself.%
+de \LaTeX{} 2021-05-01, o comando é fornecido pelo próprio \LaTeX{}.%
 \EndIndexGroup
 
 
 \begin{Declaration}
-  \Macro{deffootnote}\OParameter{mark width}\Parameter{indent}%
-                     \Parameter{parindent}\Parameter{definition}%
-  \Macro{deffootnotemark}\Parameter{definition}%
+  \Macro{deffootnote}\OParameter{largura da marca}\Parameter{recuo}%
+                     \Parameter{recuo do parágrafo}\Parameter{definição}%
+  \Macro{deffootnotemark}\Parameter{definição}%
   \Macro{thefootnotemark}
 \end{Declaration}%
-\IfThisCommonLabelBase{maincls}{The \KOMAScript{} classes set}{\KOMAScript{}
-  sets}\textnote{\KOMAScript{} vs. standard classes} footnotes slightly
-differently than the standard classes do. As in the standard classes, the
-footnote mark in the text is rendered with small, superscript numbers. The
-same formatting is used in the footnote itself. The mark in the footnote is
-typeset right-justified in a box with a width of \PName{mark width}. The first
-line of the footnote follows directly.
+\IfThisCommonLabelBase{maincls}{As classes \KOMAScript{} definem}{\KOMAScript{}
+  define}\textnote{\KOMAScript{} vs. classes padrão} notas de rodapé ligeiramente
+diferentes do que as classes padrão fazem. Como nas classes padrão, a
+marca de nota de rodapé no texto é renderizada com números pequenos e
+sobrescritos. A mesma formatação é usada na própria nota de rodapé. A marca na
+nota de rodapé é composta alinhada à direita em uma caixa com uma largura de
+\PName{largura da marca}. A primeira linha da nota de rodapé segue diretamente.
 
-All subsequent lines will be indented by the length of \PName{indent}. If the
-optional parameter \PName{mark width} is not specified, it defaults to
-\PName{indent}. If the footnote consists of more than one paragraph, the first
-line of each paragraph is indented by the value of \PName{parindent}.
+Todas as linhas subsequentes serão recuadas pelo comprimento de \PName{recuo}.
+Se o parâmetro opcional \PName{largura da marca} não for especificado, ele
+assume o padrão de \PName{recuo}. Se a nota de rodapé consiste em mais de um
+parágrafo, a primeira linha de cada parágrafo é recuada pelo valor de
+\PName{recuo do parágrafo}.
 
 \autoref{fig:\ThisCommonFirstLabelBase.deffootnote} %
-\IfThisCommonFirstRun{}{on
+\IfThisCommonFirstRun{}{em
   \autopageref{fig:\ThisCommonFirstLabelBase.deffootnote} }{}%
-shows the different parameters%
-\IfThisCommonLabelBase{maincls}{ again}{}%
-. The default configuration of the \KOMAScript{} classes is as follows:
+mostra os diferentes parâmetros%
+\IfThisCommonLabelBase{maincls}{ novamente}{}%
+. A configuração padrão das classes \KOMAScript{} é a seguinte:
 \IfThisCommonLabelBase{scrextend}{\iftrue}{\csname iffalse\endcsname}%
 \begin{lstcode}
   \deffootnote[1em]{1.5em}{1em}{%
@@ -346,17 +350,18 @@ shows the different parameters%
   }
 \end{lstcode}
 \fi%
-\Macro{textsuperscript} controls both the
-superscript and the smaller font size. The command \Macro{thefootnotemark}
-contains the current footnote mark without any formatting.%
+\Macro{textsuperscript} controla tanto o
+sobrescrito quanto o tamanho de fonte menor. O comando \Macro{thefootnotemark}
+contém a marca de nota de rodapé atual sem qualquer formatação.%
 \IfThisCommonLabelBase{scrextend}{ %
-  The \Package{scrextend} package, by contrast, does not change the default
-  footnote settings of the class you are using. Simply loading the package,
-  therefore, should not lead to any changes in the formatting of footnote
-  marks or footnote text. To use the default settings of the \KOMAScript{}
-  classes with \Package{scrextend}, you must change the settings above
-  yourself. For example, you can insert the line of code above immediately
-  after loading the \Package{scrextend} package.%
+  O pacote \Package{scrextend}, por outro lado, não altera as
+  configurações padrão de notas de rodapé da classe que você está usando.
+  Simplesmente carregar o pacote, portanto, não deve levar a quaisquer
+  alterações na formatação de marcadores de notas de rodapé ou texto de notas
+  de rodapé. Para usar as configurações padrão das classes \KOMAScript{}
+  com \Package{scrextend}, você deve alterar as configurações acima
+  você mesmo. Por exemplo, você pode inserir a linha de código acima imediatamente
+  após carregar o pacote \Package{scrextend}.%
 }{}%
 
 \IfThisCommonLabelBase{maincls}{%
@@ -365,9 +370,9 @@ contains the current footnote mark without any formatting.%
     \KOMAoption{captions}{bottombeside}
     \setcapindent{0pt}%
     \begin{captionbeside}
-      [{Parameters that control the footnote layout}]%
+      [{Parâmetros que controlam o layout de notas de rodapé}]%
       {\label{fig:\ThisCommonLabelBase.deffootnote}\hspace{0pt plus 1ex}%
-        Parameters that control the footnote layout}%
+        Parâmetros que controlam o layout de notas de rodapé}%
       [l]
       \setlength{\unitlength}{1mm}
       \begin{picture}(100,22)
@@ -387,8 +392,8 @@ contains the current footnote mark without any formatting.%
         % box of the footnote mark
         \put(0,16.5){\framebox(14.5,4.5){\mbox{}}}
         % description of paragraphs
-        \put(45,16){\makebox(0,0)[l]{\textsf{first paragraph of a footnote}}}
-        \put(45,5){\makebox(0,0)[l]{\textsf{next paragraph of a footnote}}}
+        \put(45,16){\makebox(0,0)[l]{\textsf{primeiro parágrafo de uma nota de rodapé}}}
+        \put(45,5){\makebox(0,0)[l]{\textsf{próximo parágrafo de uma nota de rodapé}}}
         % help lines
         \thicklines
         \multiput(0,0)(0,3){7}{\line(0,1){2}}
@@ -397,17 +402,17 @@ contains the current footnote mark without any formatting.%
         \put(2,7){\vector(1,0){3}}
         \put(5,7){\line(1,0){5}}
         \put(15,7){\vector(-1,0){5}}
-        \put(15,7){\makebox(0,0)[l]{\small\PName{parindent}}}
-        % 
+        \put(15,7){\makebox(0,0)[l]{\small\PName{recuo do parágrafo}}}
+        %
         \put(-3,13){\vector(1,0){3}}
         \put(0,13){\line(1,0){5}}
         \put(10,13){\vector(-1,0){5}}
-        \put(10,13){\makebox(0,0)[l]{\small\PName{indent}}}
-        % 
+        \put(10,13){\makebox(0,0)[l]{\small\PName{recuo}}}
+        %
         \put(-3,19){\vector(1,0){3}}
         \put(0,19){\line(1,0){14.5}}
         \put(19.5,19){\vector(-1,0){5}}
-        \put(19.5,19){\makebox(0,0)[l]{\small\PName{mark width}}}
+        \put(19.5,19){\makebox(0,0)[l]{\small\PName{largura da marca}}}
       \end{picture}
     \end{captionbeside}
   \end{figure}}
@@ -415,47 +420,48 @@ contains the current footnote mark without any formatting.%
 \BeginIndexGroup
 \BeginIndex{FontElement}{footnote}\LabelFontElement{footnote}%
 \BeginIndex{FontElement}{footnotelabel}\LabelFontElement{footnotelabel}%
-The footnote\IfThisCommonLabelBase{maincls}{%
+A nota de rodapé\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v2.8q}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}%
-}}{}, including the footnote mark, uses the font specified in the
-\FontElement{footnote}\important{\FontElement{footnote}} element. You can
-change the font of the footnote mark separately using the 
-\DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} commands (see
+}}{}, incluindo a marca de nota de rodapé, usa a fonte especificada no
+elemento \FontElement{footnote}\important{\FontElement{footnote}}. Você pode
+alterar a fonte da marca de nota de rodapé separadamente usando os
+comandos \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
 \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont})
-for the \FontElement{footnotelabel}\important{\FontElement{footnotelabel}}
-element. See also \autoref{tab:\ThisCommonLabelBase.fontelements},
+para o elemento \FontElement{footnotelabel}\important{\FontElement{footnotelabel}}.
+Veja também \autoref{tab:\ThisCommonLabelBase.fontelements},
 \autopageref{tab:\ThisCommonLabelBase.fontelements}.
-The default setting is no change to the font.%
+A configuração padrão é nenhuma alteração na fonte.%
 \IfThisCommonLabelBase{scrextend}{ %
-  However, with \Package{scrextend} these elements will only change the fonts 
-  if footnotes are handled by the package, that is, after using
+  No entanto, com \Package{scrextend} estes elementos só alterarão as fontes
+  se as notas de rodapé forem tratadas pelo pacote, isto é, após usar
   \Macro{deffootnote}.%
-}{} Please don't misuse this element for other purposes, for example to set
-the footnotes ragged right (see also \DescRef{\LabelBase.cmd.raggedfootnote},
+}{} Por favor, não use indevidamente este elemento para outros propósitos, por
+exemplo para definir as notas de rodapé alinhadas à direita (veja também
+\DescRef{\LabelBase.cmd.raggedfootnote},
 \DescPageRef{\LabelBase.cmd.raggedfootnote}).
 
 \BeginIndex{FontElement}{footnotereference}%
 \LabelFontElement{footnotereference}%
-The footnote mark in the text is defined separately from the mark in
-front of the actual footnote. This is done with
-\Macro{deffootnotemark}. The default setting is:
+A marca de nota de rodapé no texto é definida separadamente da marca na
+frente da nota de rodapé real. Isso é feito com
+\Macro{deffootnotemark}. A configuração padrão é:
 \begin{lstcode}
   \deffootnotemark{%
     \textsuperscript{\thefootnotemark}}
 \end{lstcode}
-With\IfThisCommonLabelBase{maincls}{%
+Com\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v2.8q}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
-}{} this default, the font for the 
-\FontElement{footnotereference}\important{\FontElement{footnotereference}}
-element is used (see \autoref{tab:\ThisCommonLabelBase.fontelements},
-\autopageref{tab:\ThisCommonLabelBase.fontelements}). Thus, the footnote marks
-in the text and in the footnote itself are identical. You can change the font
-with the commands \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (see
+}{} este padrão, a fonte para o
+elemento \FontElement{footnotereference}\important{\FontElement{footnotereference}}
+é usada (veja \autoref{tab:\ThisCommonLabelBase.fontelements},
+\autopageref{tab:\ThisCommonLabelBase.fontelements}). Assim, as marcas de notas de
+rodapé no texto e na própria nota de rodapé são idênticas. Você pode alterar a
+fonte com os comandos \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
 \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}).
 
@@ -463,29 +469,29 @@ with the commands \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
   \begin{Example}
     \phantomsection
     \xmpllabel{cmd.deffootnote}%
-    One\textnote{Hint!} feature that is often requested is footnote marks
-    which are neither in superscript nor in a smaller font. They should not
-    touch the footnote text but be separated by a small space. You can
-    accomplish this as follows:
+    Um\textnote{Dica!} recurso que é frequentemente solicitado são marcadores
+    de notas de rodapé que não estão em sobrescrito nem em uma fonte menor.
+    Eles não devem tocar o texto da nota de rodapé, mas ser separados por um
+    pequeno espaço. Você pode conseguir isso da seguinte forma:
 \begin{lstcode}
   \deffootnote{1em}{1em}{\thefootnotemark\ }
 \end{lstcode}
-    This will set the footnote mark and subsequent space right-aligned in a 
-    box of width 1\Unit{em}. The lines of the footnote text that follow are 
-    also indented by 1\Unit{em} from the left margin.
+    Isso definirá o marcador de nota de rodapé e espaço subsequente alinhados à
+    direita em uma caixa de largura 1\Unit{em}. As linhas do texto de nota de
+    rodapé que seguem também são recuadas 1\Unit{em} da margem esquerda.
 
-    Another\textnote{Hint!} layout that is often requested is footnote marks
-    that are left-aligned. You can obtain them with the following
-    definition:
+    Outro\textnote{Dica!} layout que é frequentemente solicitado são marcadores
+    de notas de rodapé alinhados à esquerda. Você pode obtê-los com a seguinte
+    definição:
 \begin{lstcode}
   \deffootnote{1.5em}{1em}{%
       \makebox[1.5em][l]{\thefootnotemark}}
 \end{lstcode}
-  
-    If, however you want to change the font for all footnotes, for example
-    to sans serif, this can easily be done with the commands
-    \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-    \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (see
+
+    Se, no entanto você quiser alterar a fonte para todas as notas de rodapé,
+    por exemplo para sans serif, isso pode ser facilmente feito com os comandos
+    \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+    \DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
     \autoref{sec:\ThisCommonLabelBase.textmarkup},
     \DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}):
 \begin{lstcode}
@@ -493,12 +499,12 @@ with the commands \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
 \end{lstcode}
   \end{Example}%
   \IfThisCommonLabelBase{scrextend}{}{%
-    As the examples show, {\KOMAScript} allows a wide variety of different
-    footnote formats with this simple user interface.%
+    Como os exemplos mostram, {\KOMAScript} permite uma ampla variedade de
+    formatos de notas de rodapé diferentes com esta interface de usuário simples.%
   }%
 \fi%
 \IfThisCommonFirstRun{}{%
-  For examples, see \autoref{sec:\ThisCommonFirstLabelBase.footnotes},
+  Para exemplos, veja \autoref{sec:\ThisCommonFirstLabelBase.footnotes},
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.deffootnote}.%
 }{}%
 %
@@ -507,9 +513,9 @@ with the commands \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
 
 \IfThisCommonLabelBase{scrextend}{\iffalse}{\csname iftrue\endcsname}
 \begin{Declaration}
-  \Macro{setfootnoterule}\OParameter{thickness}\Parameter{length}%
+  \Macro{setfootnoterule}\OParameter{espessura}\Parameter{comprimento}%
 \end{Declaration}%
-Generally,\IfThisCommonLabelBase{maincls}{%
+Geralmente,\IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.06}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
 }{%
@@ -520,20 +526,20 @@ Generally,\IfThisCommonLabelBase{maincls}{%
       \ChangedAt{v3.06}{\Package{scrextend}}%
     }{}%
   }%
-} a horizontal rule is set between the text area and the footnote area, but
-normally this rule does not extend the full width of the type area. With
-\Macro{setfootnoterule}, you can set the exact thickness and length of the
-rule. In this case, the parameters \PName{thickness} and \PName{length} are
-only evaluated when setting the rule itself. If the optional argument
-\PName{thickness} has been omitted, the thickness of the rule will not be
-changed. Empty arguments for \PName{thickness} or \PName{length} are also
-allowed and do not change the corresponding parameters. Using absurd values
-will result in warning messages both when setting and when using the
-parameters.
+} uma régua horizontal é definida entre a área de texto e a área de notas de
+rodapé, mas normalmente esta régua não se estende por toda a largura da área
+de composição. Com \Macro{setfootnoterule}, você pode definir a espessura e o
+comprimento exatos da régua. Neste caso, os parâmetros \PName{espessura} e
+\PName{comprimento} são avaliados apenas ao definir a própria régua. Se o
+argumento opcional \PName{espessura} foi omitido, a espessura da régua não será
+alterada. Argumentos vazios para \PName{espessura} ou \PName{comprimento}
+também são permitidos e não alteram os parâmetros correspondentes. Usar valores
+absurdos resultará em mensagens de aviso tanto ao definir quanto ao usar os
+parâmetros.
 
 \BeginIndexGroup
 \BeginIndex{FontElement}{footnoterule}\LabelFontElement{footnoterule}%
-You can%
+Você pode%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.07}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -546,14 +552,14 @@ You can%
     }{}%
   }%
 } %
-change the colour of the rule with the
-\FontElement{footnoterule}\important{\FontElement{footnoterule}} element using
-the \DescRef{\ThisCommonLabelBase.cmd.setkomafont} and
-\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} commands (see
+alterar a cor da régua com o
+elemento \FontElement{footnoterule}\important{\FontElement{footnoterule}} usando
+os comandos \DescRef{\ThisCommonLabelBase.cmd.setkomafont} e
+\DescRef{\ThisCommonLabelBase.cmd.addtokomafont} (veja
 \autoref{sec:\ThisCommonLabelBase.textmarkup},
-\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}). The default is no change
-of font or colour. In order to change the colour, you must also load a colour
-package like
+\DescPageRef{\ThisCommonLabelBase.cmd.setkomafont}). O padrão é nenhuma alteração
+de fonte ou cor. Para alterar a cor, você também deve carregar um pacote de
+cores como
 \Package{xcolor}\IndexPackage{xcolor}\important{\Package{xcolor}}.%
 \EndIndexGroup
 \EndIndexGroup
@@ -562,7 +568,7 @@ package like
 \begin{Declaration}
   \Macro{raggedfootnote}
 \end{Declaration}
-By default%
+Por padrão%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.23}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -575,34 +581,35 @@ By default%
     }{}%
   }%
 } %
-\KOMAScript{} justifies footnotes just as in the standard classes.
-But\IfThisCommonLabelBase{scrextend}{%
-  \ if you use \DescRef{\LabelBase.cmd.deffootnote}%
+o \KOMAScript{} justifica notas de rodapé assim como nas classes padrão.
+Mas\IfThisCommonLabelBase{scrextend}{%
+  \ se você usar \DescRef{\LabelBase.cmd.deffootnote}%
   \important{\DescRef{\LabelBase.cmd.deffootnote}}%
   \IndexCmd{deffootnote}%
 }{%
-  \textnote{\KOMAScript{} vs. standard classes}%
-} you can also change the justification separately from the rest of the
-document by redefining \Macro{raggedfootnote}. Valid definitions are
+  \textnote{\KOMAScript{} vs. classes padrão}%
+} você também pode alterar a justificação separadamente do resto do
+documento redefinindo \Macro{raggedfootnote}. Definições válidas são
 \Macro{raggedright}\IndexCmd{raggedright},
 \Macro{raggedleft}\IndexCmd{raggedleft},
-\Macro{centering}\IndexCmd{centering}, \Macro{relax}\IndexCmd{relax} or an
-empty definition, which is the default. The alignment commands of the
-\Package{ragged2e}\IndexPackage{ragged2e} package are also valid (see
+\Macro{centering}\IndexCmd{centering}, \Macro{relax}\IndexCmd{relax} ou uma
+definição vazia, que é o padrão. Os comandos de alinhamento do
+pacote \Package{ragged2e}\IndexPackage{ragged2e} também são válidos (veja
 \cite{package:ragged2e}).  \IfThisCommonLabelBase{scrextend}{%
-  You can find a suitable example in
+  Você pode encontrar um exemplo adequado em
   \autoref{sec:\ThisCommonFirstLabelBase.footnotes},
   \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.raggedfootnote}.%
   \iffalse }{\csname iftrue\endcsname}%
   \begin{Example}
     \phantomsection\xmpllabel{cmd.raggedfootnote}%
-    Suppose you are using footnotes only to provide references to very long
-    links, where line breaks would produce poor results if justified. You can
-    use
+    Suponha que você esteja usando notas de rodapé apenas para fornecer referências
+    a links muito longos, onde quebras de linha produziriam resultados ruins se
+    justificadas. Você pode usar
 \begin{lstcode}
-  \let\raggedfootnote\raggedright    
+  \let\raggedfootnote\raggedright
 \end{lstcode}
-    in your document's preamble to switch to ragged-right footnotes.
+    no preâmbulo do seu documento para alternar para notas de rodapé alinhadas à
+    direita.
   \end{Example}%
 \fi
 \EndIndexGroup
@@ -612,14 +619,14 @@ empty definition, which is the default. The alignment commands of the
   \DoHook{footnote/text/end}%
 \end{Declaration}
 \BeginIndex{}{hook}%
-For\ChangedAt{v3.36}{\Class{scrbook}\and \Class{scrreprt}\and
-  \Class{scrartcl}\and \Package{scrextend}} experts there are also two hooks
-of type \emph{do-hook} (see \autoref{sec:scrbase.hooks} from
-\autopageref{sec:scrbase.hooks}). The first of these is used at the very
-beginning of \Macro{@makefntext} before
-\DescRef{\LabelBase.cmd.raggedfootnote} is executed. The second one at the end
-before the paragraph is finished. Currently neither hook is used by
-\KOMAScript{} itself.%
+Para\ChangedAt{v3.36}{\Class{scrbook}\and \Class{scrreprt}\and
+  \Class{scrartcl}\and \Package{scrextend}} especialistas também há dois ganchos
+do tipo \emph{do-hook} (veja \autoref{sec:scrbase.hooks} de
+\autopageref{sec:scrbase.hooks}). O primeiro destes é usado no início
+de \Macro{@makefntext} antes de
+\DescRef{\LabelBase.cmd.raggedfootnote} ser executado. O segundo no final
+antes do parágrafo ser finalizado. Atualmente nenhum gancho é usado pelo
+próprio \KOMAScript{}.%
 \EndIndexGroup
 %
 \EndIndexGroup

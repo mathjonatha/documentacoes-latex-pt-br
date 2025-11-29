@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -29,61 +29,62 @@
 \translator{Gernot Hassenpflug\and Markus Kohm\and Krickette Murabayashi\and
 	Karl Hagen}
 
-\section{Marking Paragraphs}
+\section{Marcação de Parágrafos}
 \seclabel{parmarkup}%
 \BeginIndexGroup
 \BeginIndex{}{paragraph>marking}%
 
 \IfThisCommonLabelBase{maincls}{%
-  The\textnote{paragraph indent vs. paragraph spacing} standard classes
-  normally set paragraphs\Index[indexmain]{paragraph} indented and without any
-  vertical, inter-paragraph space. This is the best solution when using a
-  regular page layout like the ones produced with the \Package{typearea}
-  package. If neither indentation nor vertical space is used, only the length
-  of the last line would give the reader a guide to the paragraph break. In
-  extreme cases, it is very difficult to tell whether a line is full or not.
-  Furthermore, typographers find that a signal given at the paragraph's end is
-  easily forgotten by the start of the next line. A signal at the paragraph's
-  beginning is more easily remembered. Inter-paragraph spacing has the
-  drawback of disappearing in some contexts. For instance, after a displayed
-  formula it would be impossible to detect if the previous paragraph continues
-  or a new one begins. Also, at the top of a new page, it might be necessary
-  to look at the previous page to determine if a new paragraph has been
-  started or not. All these problems disappear when using indentation. A
-  combination of indentation and vertical inter-paragraph spacing is redundant
-  and therefore should be avoided. Indentation\Index[indexmain]{indentation}
-  alone is sufficient. The only drawback of indentation is that it shortens
-  the line length. The use of inter-paragraph spacing\Index{paragraph>spacing}
-  is therefore justified when using short lines, such as in a newspaper.%
+  As\textnote{recuo de parágrafo vs. espaçamento de parágrafo} classes
+  padrão normalmente configuram parágrafos\Index[indexmain]{paragraph}
+  recuados e sem qualquer espaçamento vertical entre parágrafos. Esta é a
+  melhor solução quando se usa um layout de página regular como aqueles
+  produzidos com o pacote \Package{typearea}. Se nem recuo nem espaço
+  vertical forem usados, apenas o comprimento da última linha forneceria ao
+  leitor uma indicação da quebra de parágrafo. Em casos extremos, é muito
+  difícil dizer se uma linha está completa ou não. Além disso, tipógrafos
+  consideram que um sinal dado no final do parágrafo é facilmente esquecido
+  no início da próxima linha. Um sinal no início do parágrafo é mais
+  facilmente lembrado. O espaçamento entre parágrafos tem a desvantagem de
+  desaparecer em alguns contextos. Por exemplo, após uma fórmula destacada,
+  seria impossível detectar se o parágrafo anterior continua ou se um novo
+  começa. Além disso, no topo de uma nova página, pode ser necessário olhar
+  para a página anterior para determinar se um novo parágrafo foi iniciado ou
+  não. Todos esses problemas desaparecem ao usar recuo. Uma combinação de
+  recuo e espaçamento vertical entre parágrafos é redundante e, portanto,
+  deve ser evitada. O recuo\Index[indexmain]{indentation} sozinho é
+  suficiente. A única desvantagem do recuo é que ele encurta o comprimento da
+  linha. O uso de espaçamento entre parágrafos\Index{paragraph>spacing} é,
+  portanto, justificado ao usar linhas curtas, como em um jornal.%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
-    The preliminaries of \autoref{sec:maincls.parmarkup},
-    \autopageref{sec:maincls.parmarkup} explain why paragraph indentation is
-    preferred to paragraph spacing. But the elements to which this explanation
-    refers, for example figures, tables, lists, equations, and even new pages,
-    are rare in normal letters. Letters are usually not so long that an
-    unrecognised paragraph will have serious consequences to the readability
-    of the document. The arguments for indentation, therefore, are less
-    consequential for standard letters. This may be one reason that you often
-    find paragraphs in letters marked with vertical spacing. But two
-    advantages of paragraph indentation remain. One is that such a letter
-    stands out from the crowd. Another is that it maintains the \emph{brand
-    identity}, that is the uniform appearance, of all documents from a single
-    source.%
+    Os preliminares de \autoref{sec:maincls.parmarkup},
+    \autopageref{sec:maincls.parmarkup} explicam por que o recuo de parágrafo
+    é preferível ao espaçamento de parágrafo. Mas os elementos aos quais esta
+    explicação se refere, por exemplo, figuras, tabelas, listas, equações e
+    até novas páginas, são raros em cartas normais. Cartas geralmente não são
+    tão longas que um parágrafo não reconhecido terá consequências sérias para
+    a legibilidade do documento. Os argumentos para o recuo, portanto, são
+    menos consequentes para cartas padrão. Esta pode ser uma razão pela qual
+    você frequentemente encontra parágrafos em cartas marcados com
+    espaçamento vertical. Mas duas vantagens do recuo de parágrafo permanecem.
+    Uma é que tal carta se destaca da multidão. Outra é que mantém a
+    \emph{identidade da marca}, isto é, a aparência uniforme de todos os
+    documentos de uma única fonte.%
   }{\InternalCommonFileUsageError}%
 } %
 \IfThisCommonFirstRun{}{%
-  Apart from these suggestions, the information described in
-  \autoref{sec:\ThisCommonFirstLabelBase.parmarkup} for the other
-  \KOMAScript{} classes is valid for letters too. So if you have already read
-  and understood \autoref{sec:\ThisCommonFirstLabelBase.parmarkup} you can
-  skip ahead to \autoref{sec:\ThisCommonLabelBase.parmarkup.next} on
+  Além dessas sugestões, a informação descrita em
+  \autoref{sec:\ThisCommonFirstLabelBase.parmarkup} para as outras classes
+  \KOMAScript{} também é válida para cartas. Portanto, se você já leu e
+  entendeu \autoref{sec:\ThisCommonFirstLabelBase.parmarkup}, você pode pular
+  para \autoref{sec:\ThisCommonLabelBase.parmarkup.next} na
   \autopageref{sec:\ThisCommonLabelBase.parmarkup.next}.%
   \IfThisCommonLabelBase{scrlttr2}{ %
-    This also applies if you work not with the
-    \Class{scrlttr2}\OnlyAt{scrlttr2} class but with the \Package{scrletter}
-    package. The package does not provide its own settings for paragraph
-    formatting but relies entirely on the class being used.%
+    Isso também se aplica se você trabalha não com a classe
+    \Class{scrlttr2}\OnlyAt{scrlttr2}, mas com o pacote \Package{scrletter}. O
+    pacote não fornece suas próprias configurações para formatação de
+    parágrafo, mas depende inteiramente da classe sendo usada.%
   }{}%
 }
 
@@ -92,37 +93,38 @@
   \OptionVName{parskip}{method}
 \end{Declaration}
 \IfThisCommonLabelBase{maincls}{%
-  Once in a while you may require a document layout with vertical
-  inter-paragraph spacing instead of indentation. The \KOMAScript{} classes
-  provide several ways to accomplish this with the
+  De vez em quando você pode precisar de um layout de documento com
+  espaçamento vertical entre parágrafos em vez de recuo. As classes
+  \KOMAScript{} fornecem várias maneiras de realizar isso com a opção
   \Option{parskip}\ChangedAt{v3.00}{\Class{scrbook}\and \Class{scrreprt}\and
-    \Class{scrartcl}} option.%
+    \Class{scrartcl}}.%
 }{%
   \IfThisCommonLabelBase{scrlttr2}{%
-    In letters, you often encounter paragraphs marked not by indentation of
-    the first line but by a vertical space between them. The \KOMAScript{}
-    class \Class{scrlttr2}\OnlyAt{scrlttr2} provides ways to accomplish this
-    with the \Option{parskip} option.%
+    Em cartas, você frequentemente encontra parágrafos marcados não por recuo
+    da primeira linha, mas por um espaço vertical entre eles. A classe
+    \KOMAScript{} \Class{scrlttr2}\OnlyAt{scrlttr2} fornece maneiras de
+    realizar isso com a opção \Option{parskip}.%
   }{\InternalCommonFileUsageError}%
 } %
-The \PName{method} consists of two elements. The first element is either
+O \PName{method} consiste em dois elementos. O primeiro elemento é
 \PValue{full}\important{\OptionValue{parskip}{full}\\
-  \OptionValue{parskip}{half}} or \PValue{half}, where \PValue{full} stands
-for a paragraph spacing of one line and \PValue{half} stands for a paragraph
-spacing of half a line. The second element consists of one of the characters
-``\PValue{*}'', ``\PValue{+}'', or ``\PValue{-}'' and can be omitted. Without
-the second element\important{\OptionVName{parskip}{distance}}, the final line
-of a paragraph will end with a white space of at least 1\Unit{em}. With the
-plus character as the second element%
-\important{\OptionValue{parskip}{\PName{distance}+}}, the white space will be
-at least one third\,---\,and with the
-asterisk\important{\OptionValue{parskip}{\PName{distance}*}} one
-fourth\,---\,the width of a normal line. With the minus variant%
-\important{\OptionValue{parskip}{\PName{Abstand}-}}, no provision is made for
-white space in the last line of a paragraph.
+  \OptionValue{parskip}{half}} ou \PValue{half}, onde \PValue{full}
+representa um espaçamento de parágrafo de uma linha e \PValue{half}
+representa um espaçamento de parágrafo de meia linha. O segundo elemento
+consiste em um dos caracteres ``\PValue{*}'', ``\PValue{+}'' ou
+``\PValue{-}'' e pode ser omitido. Sem o segundo
+elemento\important{\OptionVName{parskip}{distance}}, a linha final de um
+parágrafo terminará com um espaço em branco de pelo menos 1\Unit{em}. Com o
+caractere de adição como segundo
+elemento\important{\OptionValue{parskip}{\PName{distance}+}}, o espaço em
+branco será de pelo menos um terço\,---\,e com o
+asterisco\important{\OptionValue{parskip}{\PName{distance}*}} um
+quarto\,---\,da largura de uma linha normal. Com a variante de
+menos\important{\OptionValue{parskip}{\PName{Abstand}-}}, nenhuma provisão é
+feita para espaço em branco na última linha de um parágrafo.
 
-You can change the setting at any time. If you change it inside the document,
-the \Macro{selectfont}\IndexCmd{selectfont}%
+Você pode mudar a configuração a qualquer momento. Se você alterá-la dentro
+do documento, o comando \Macro{selectfont}\IndexCmd{selectfont}%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v3.08}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
@@ -133,75 +135,73 @@ the \Macro{selectfont}\IndexCmd{selectfont}%
     \InternalComonFileUsageError%
   }%
 } %
-command will be called implicitly. Changes to paragraph spacing within a 
-paragraph will not be visible until the end of the paragraph.
+será chamado implicitamente. Mudanças no espaçamento de parágrafo dentro de
+um parágrafo não serão visíveis até o final do parágrafo.
 
-In addition to the resulting eight combinations for \PName{method}, you can
-use the values for simple switches shown in \autoref{tab:truefalseswitch},
-\autopageref{tab:truefalseswitch}. Activating the option%
-\important{\Option{parskip}\\\OptionValue{parskip}{true}} corresponds to using
-\PValue{full} with no second element and therefore results in inter-paragraph
-spacing of one line with at least 1\Unit{em} white space at the end of the
-last line of each paragraph. Deactivating%
-\important{\OptionValue{parskip}{false}} the option re-activates the default
-indentation of 1\Unit{em} at the first line of the paragraph instead of
-paragraph spacing. A summary of all possible values for \PName{method} are
-shown in \autoref{tab:\ThisCommonFirstLabelBase.parskip}%
+Além das oito combinações resultantes para \PName{method}, você pode usar os
+valores para chaves simples mostrados em \autoref{tab:truefalseswitch},
+\autopageref{tab:truefalseswitch}. Ativar a
+opção\important{\Option{parskip}\\\OptionValue{parskip}{true}} corresponde a
+usar \PValue{full} sem segundo elemento e, portanto, resulta em espaçamento
+entre parágrafos de uma linha com pelo menos 1\Unit{em} de espaço em branco
+no final da última linha de cada parágrafo.
+Desativar\important{\OptionValue{parskip}{false}} a opção reativa o recuo
+padrão de 1\Unit{em} na primeira linha do parágrafo em vez de espaçamento de
+parágrafo. Um resumo de todos os valores possíveis para \PName{method} é
+mostrado em \autoref{tab:\ThisCommonFirstLabelBase.parskip}%
 \IfThisCommonFirstRun{.%
   \begin{desclist}
 %  \begin{table}
   \desccaption
 %    \caption
-  [{Available values of option \Option{parskip}}]{%
-    Available values of option \Option{parskip} to select
-    how paragraph are
-    distinguished\label{tab:\ThisCommonFirstLabelBase.parskip}%
+  [{Valores disponíveis da opção \Option{parskip}}]{%
+    Valores disponíveis da opção \Option{parskip} para selecionar como os
+    parágrafos são distinguidos\label{tab:\ThisCommonFirstLabelBase.parskip}%
   }%
   {%
-    Available values of option \Option{parskip} (\emph{continuation})%
+    Valores disponíveis da opção \Option{parskip} (\emph{continuação})%
   }%
   % \begin{desctabular}
   \entry{\PValue{false}, \PValue{off}, \PValue{no}%
     \IndexOption{parskip~=\textKValue{false}}}{%
-    Paragraphs are identified by indentation of the first line by 1em.
-    There is no spacing requirement at the end of the last line
-    of a paragraph.}%
+    Parágrafos são identificados por recuo da primeira linha em 1em. Não há
+    requisito de espaçamento no final da última linha de um parágrafo.}%
   \entry{\PValue{full}, \PValue{true}, \PValue{on}, \PValue{yes}%
     \IndexOption{parskip~=\textKValue{full}}%
   }{%
-    Paragraphs are identified by a vertical space of one line between
-    paragraphs. There must be at least 1\Unit{em} of free space at the
-    end of the last line of the paragraph.}%
+    Parágrafos são identificados por um espaço vertical de uma linha entre
+    parágrafos. Deve haver pelo menos 1\Unit{em} de espaço livre no final da
+    última linha do parágrafo.}%
   \pventry{full-}{%
-    Paragraphs are identified by a vertical space of one line between
-    paragraphs. There is no spacing requirement at the end of the last line
-    of a paragraph.\IndexOption{parskip~=\textKValue{full-}}}%
+    Parágrafos são identificados por um espaço vertical de uma linha entre
+    parágrafos. Não há requisito de espaçamento no final da última linha de
+    um parágrafo.\IndexOption{parskip~=\textKValue{full-}}}%
   \pventry{full+}{%
-    Paragraphs are identified by a vertical space of one line between
-    paragraphs. There must be at least a third of a line of free space at the
-    end of a paragraph.\IndexOption{parskip~=\textKValue{full+}}}%
+    Parágrafos são identificados por um espaço vertical de uma linha entre
+    parágrafos. Deve haver pelo menos um terço de uma linha de espaço livre
+    no final de um parágrafo.\IndexOption{parskip~=\textKValue{full+}}}%
   \pventry{full*}{%
-    Paragraphs are identified by a vertical space of one line between
-    paragraphs. There must be at least a quarter of a line of free space at
-    the end of a paragraph.\IndexOption{parskip~=\textKValue{full*}}}%
+    Parágrafos são identificados por um espaço vertical de uma linha entre
+    parágrafos. Deve haver pelo menos um quarto de uma linha de espaço livre
+    no final de um parágrafo.\IndexOption{parskip~=\textKValue{full*}}}%
   \pventry{half}{%
-    Paragraphs are identified by a vertical space of half a line between
-    paragraphs. There must be at least 1\Unit{em} free space at the end of the
-    last line of a paragraph.\IndexOption{parskip~=\textKValue{half}}}%
+    Parágrafos são identificados por um espaço vertical de meia linha entre
+    parágrafos. Deve haver pelo menos 1\Unit{em} de espaço livre no final da
+    última linha de um parágrafo.\IndexOption{parskip~=\textKValue{half}}}%
   \pventry{half-}{%
-    Paragraphs are identified by a vertical space of half a line between
-    paragraphs. There is no spacing requirement at the end of the last line
-    of a paragraph.\IndexOption{parskip~=\textKValue{half-}}}%
+    Parágrafos são identificados por um espaço vertical de meia linha entre
+    parágrafos. Não há requisito de espaçamento no final da última linha de
+    um parágrafo.\IndexOption{parskip~=\textKValue{half-}}}%
   \pventry{half+}{%
-    Paragraphs are identified by a vertical space of half a line between
-    paragraphs. There must be at least a third of a line of free space at the
-    end of a paragraph.\IndexOption{parskip~=\textKValue{half+}}}%
+    Parágrafos são identificados por um espaço vertical de meia linha entre
+    parágrafos. Deve haver pelo menos um terço de uma linha de espaço livre
+    no final de um parágrafo.\IndexOption{parskip~=\textKValue{half+}}}%
   \pventry{half*}{%
-    Paragraphs are identified by a vertical space of half a line between
-    paragraphs. There must be at least a quarter of a line of free space at
-    the end of a paragraph.\IndexOption{parskip~=\textKValue{half*}}}%
+    Parágrafos são identificados por um espaço vertical de meia linha entre
+    parágrafos. Deve haver pelo menos um quarto de uma linha de espaço livre
+    no final de um parágrafo.\IndexOption{parskip~=\textKValue{half*}}}%
   \pventry{never}{%
-    No%
+    Nenhum%
     \IfThisCommonLabelBase{maincls}{%
       \ChangedAt{v3.08}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
@@ -210,39 +210,40 @@ shown in \autoref{tab:\ThisCommonFirstLabelBase.parskip}%
         \ChangedAt{v3.08}{\Class{scrlttr2}}%
       }{}%
     } %
-    inter-paragraph spacing will be inserted even if additional vertical
-    spacing is needed for vertical adjustment with
+    espaçamento entre parágrafos será inserido mesmo se espaçamento vertical
+    adicional for necessário para ajuste vertical com
     \Macro{flushbottom}.\IndexCmd{flushbottom}%
     \IndexOption{parskip~=\textKValue{never}}}%
 %  \end{desctabular}
 %  \end{table}%
   \end{desclist}%
-}{ at \autopageref{tab:\ThisCommonFirstLabelBase.parskip}.}
+}{ na \autopageref{tab:\ThisCommonFirstLabelBase.parskip}.}
 
-All\textnote{Attention!} eight \PValue{full} and \PValue{half} option values
-also change the spacing before, after, and inside list environments. This
-prevents these environments or the paragraphs inside them from having
-a larger separation than that between the paragraphs of normal text.%
+Todos\textnote{Atenção!} os oito valores de opção \PValue{full} e
+\PValue{half} também alteram o espaçamento antes, depois e dentro de
+ambientes de lista. Isso evita que esses ambientes ou os parágrafos dentro
+deles tenham uma separação maior do que aquela entre os parágrafos de texto
+normal.%
 \IfThisCommonLabelBase{maincls}{ %
-  Additionally, these options ensure that the table of contents and the lists
-  of figures and tables are set without any additional spacing.%
+  Adicionalmente, essas opções garantem que o sumário e as listas de figuras
+  e tabelas sejam configurados sem qualquer espaçamento adicional.%
 }{ %
-  Several elements of the letterhead are always set without inter-paragraph
-  spacing.%
+  Vários elementos do cabeçalho da carta são sempre configurados sem
+  espaçamento entre parágrafos.%
 }%
 
-The default\textnote{default} behaviour of \KOMAScript{} is
-\OptionValue{parskip}{false}. In this case, there is no spacing between
-paragraphs, only an indentation of the first line by 1\Unit{em}.%
+O comportamento\textnote{padrão} padrão do \KOMAScript{} é
+\OptionValue{parskip}{false}. Neste caso, não há espaçamento entre
+parágrafos, apenas um recuo da primeira linha em 1\Unit{em}.%
 %
 \EndIndexGroup
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:

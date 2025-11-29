@@ -8,7 +8,7 @@
 % the LaTeX Project Public License, version 1.3c of the license.
 % The latest version of this license is in
 %   http://www.latex-project.org/lppl.txt
-% and version 1.3c or later is part of all distributions of LaTeX 
+% and version 1.3c or later is part of all distributions of LaTeX
 % version 2005/12/01 or later and of this work.
 %
 % This work has the LPPL maintenance status "author-maintained".
@@ -29,42 +29,42 @@
 \translator{Gernot Hassenpflug\and Markus Kohm\and Krickette Murabayashi\and
 	Karl Hagen}
 
-\section{Text Markup}
+\section{Marcação de Texto}
 \seclabel{textmarkup}%
 \BeginIndexGroup%
 \BeginIndex{}{text>markup}%
 \BeginIndex{}{font}%
 
 \IfThisCommonFirstRun{}{%
-  The information in in \autoref{sec:\ThisCommonFirstLabelBase.textmarkup}
-  largely applies to this chapter. So if you have already read and understood
-  \autoref{sec:\ThisCommonFirstLabelBase.textmarkup}, you can
+  As informações em \autoref{sec:\ThisCommonFirstLabelBase.textmarkup}
+  aplicam-se amplamente a este capítulo. Portanto, se você já leu e compreendeu
+  \autoref{sec:\ThisCommonFirstLabelBase.textmarkup}, você pode
   \IfThisCommonLabelBaseOneOf{scrextend,scrjura,scrlayer-notecolumn}{}{%
-    limit yourself to examining
+    limitar-se a examinar
     \autoref{tab:\ThisCommonLabelBase.fontelements},
-    \autopageref{tab:\ThisCommonLabelBase.fontelements} and then }%
-  skip ahead to \autoref{sec:\ThisCommonLabelBase.textmarkup.next},
+    \autopageref{tab:\ThisCommonLabelBase.fontelements} e então }%
+  pular para \autoref{sec:\ThisCommonLabelBase.textmarkup.next},
   \autopageref{sec:\ThisCommonLabelBase.textmarkup.next}.%
-  \IfThisCommonLabelBase{scrextend}{\ In this case, however,
-    note\textnote{limitation} that \Package{scrextend} supports only the
-    elements for the document title, the dictum, the footnotes, and the
-    \DescRef{maincls.env.labeling} environment.  from
+  \IfThisCommonLabelBase{scrextend}{\ Neste caso, porém,
+    note\textnote{limitação} que \Package{scrextend} suporta apenas os
+    elementos para o título do documento, o dictum, as notas de rodapé, e o
+    ambiente \DescRef{maincls.env.labeling} de
     \autoref{tab:maincls.fontelements},
-    \autopageref{tab:maincls.fontelements}.  Although the
-    \DescRef{maincls.fontelement.disposition} element exists,
-    \Package{scrextend} uses it only for the document title.%
+    \autopageref{tab:maincls.fontelements}. Embora o
+    elemento \DescRef{maincls.fontelement.disposition} exista,
+    \Package{scrextend} o utiliza apenas para o título do documento.%
   }{}%
 }
 
 % Umbruchkorrektur
 \IfThisCommonLabelBaseOneOf{scrlayer-scrpage,scrextend}{}{%
-  {\LaTeX} offers different possibilities for logical and direct
-  markup\Index{logical markup}\Index{markup} of text. %
+  {\LaTeX} oferece diferentes possibilidades para marcação lógica e direta
+  de texto\Index{logical markup}\Index{markup}. %
   \IfThisCommonLabelBaseOneOf{scrlttr2}{}{%
-    In addition to the choice of the font, this includes commands for choosing
-    the font size and orientation. %
-  } For more information about the standard font facilities, see
-  \cite{lshort}, \cite{latex:usrguide}, and \cite{latex:fntguide}.%
+    Além da escolha da fonte, isso inclui comandos para escolher
+    o tamanho e orientação da fonte. %
+  } Para mais informações sobre os recursos de fonte padrão, consulte
+  \cite{lshort}, \cite{latex:usrguide}, e \cite{latex:fntguide}.%
 }
 
 % Both commands are in LaTeX for a long time, so I do not describe them any
@@ -77,75 +77,74 @@
     \Macro{textsuperscript}\Parameter{text}%
     \Macro{textsubscript}\Parameter{text}
   \end{Declaration}
-  The \LaTeX{} kernel defines the command
-  \Macro{textsuperscript}\IndexCmd{textsuperscript} to put text in
-  superscript\Index{text>superscript}\Index{superscript}. Unfortunately,
-  \LaTeX{}\textnote{\Latex~2015/01/01} itself did not offer a command to
-  produce text in subscript\Index{text>subscript}\Index{subscript} until
-  release 2015/01/01. \KOMAScript{} defines \Macro{textsubscript} for this
-  purpose. %
+  O núcleo do \LaTeX{} define o comando
+  \Macro{textsuperscript}\IndexCmd{textsuperscript} para colocar texto em
+  sobrescrito\Index{text>superscript}\Index{superscript}. Infelizmente,
+  o próprio \LaTeX{}\textnote{\Latex~2015/01/01} não oferecia um comando para
+  produzir texto em subscrito\Index{text>subscript}\Index{subscript} até
+  a versão 2015/01/01. \KOMAScript{} define \Macro{textsubscript} para este
+  propósito. %
   \ifthiscommonfirst
     \begin{Example}
       \phantomsection
       \xmpllabel{cmd.textsubscript}%
-      You are writing a text on human metabolism. From time to time you
-      have to give some simple chemical formulas in which the numbers are
-      in subscript. To allow for logical markup, you first define in the
-      document preamble or in a separate package:
+      Você está escrevendo um texto sobre metabolismo humano. De tempos em tempos,
+      você precisa fornecer algumas fórmulas químicas simples nas quais os números
+      estão em subscrito. Para permitir marcação lógica, você primeiro define no
+      preâmbulo do documento ou em um pacote separado:
 \begin{lstcode}
   \newcommand*{\molec}[2]{#1\textsubscript{#2}}
 \end{lstcode}
       \newcommand*{\molec}[2]{#1\textsubscript{#2}}
-      Using this you then write:
+      Usando isso você então escreve:
 \begin{lstcode}
-  The cell produces its energy partly from the reaction of \molec C6\molec
-  H{12}\molec O6 and \molec O2 to produce \molec H2\Molec O{} and
-  \molec C{}\molec O2.  However, arsenic (\molec{As}{}) has quite a
-  detrimental effect on the metabolism.
+  A célula produz sua energia parcialmente da reação de \molec C6\molec
+  H{12}\molec O6 e \molec O2 para produzir \molec H2\Molec O{} e
+  \molec C{}\molec O2.  No entanto, arsênio (\molec{As}{}) tem um
+  efeito bastante prejudicial no metabolismo.
 \end{lstcode}
-      The output looks as follows:
+      A saída fica assim:
       \begin{ShowOutput}
-        The cell produces its energy partly from the reaction of \molec C6\molec
-        H{12}\molec O6 and \molec O2 to produce \molec H2\molec O{} and
-        \molec C{}\molec O2.  However, arsenic (\molec{As}{}) has quite a
-        detrimental effect on the metabolism.
+        A célula produz sua energia parcialmente da reação de \molec C6\molec
+        H{12}\molec O6 e \molec O2 para produzir \molec H2\molec O{} e
+        \molec C{}\molec O2.  No entanto, arsênio (\molec{As}{}) tem um
+        efeito bastante prejudicial no metabolismo.
       \end{ShowOutput}
 
-      Some time later you decide that the chemical formulas should be
-      typeset in sans serif. Now you can see the advantages of using
-      logical markup. You only have the redefine the \Macro{molec}
-      command:
+      Algum tempo depois você decide que as fórmulas químicas devem ser
+      compostas em fonte sem serifa. Agora você pode ver as vantagens de usar
+      marcação lógica. Você só precisa redefinir o comando \Macro{molec}:
 \begin{lstcode}
   \newcommand*{\molec}[2]{\textsf{#1\textsubscript{#2}}}
 \end{lstcode}
       \renewcommand*{\molec}[2]{\textsf{#1\textsubscript{#2}}}
-      Now the output in the whole document changes to:
+      Agora a saída em todo o documento muda para:
       \begin{ShowOutput}
-        The cell produces its energy partly from the reaction of \molec
-        C6\molec H{12}\molec O6 and \molec O2 to produce \molec H2\molec
-        O{} and \molec C{}\molec O2.  However, arsenic (\molec{As}{}) has
-        quite a detrimental effect on the metabolism.
+        A célula produz sua energia parcialmente da reação de \molec
+        C6\molec H{12}\molec O6 e \molec O2 para produzir \molec H2\molec
+        O{} e \molec C{}\molec O2.  No entanto, arsênio (\molec{As}{}) tem
+        um efeito bastante prejudicial no metabolismo.
       \end{ShowOutput}
     \end{Example}
     \iftrue
       \begin{Explain}
-        The example above uses the notation ``\verb|\molec C6|''. 
-        This makes use of the fact that arguments consisting of only one
-        character do not have to be enclosed in parentheses. That is why
-        ``\verb|\molec C6|'' is similar to ``\verb|\molec{C}{6}|''. You
-        may already be familiar with this notation from indices or powers in
-        mathematical environments, such as ``\verb|$x^2$|'' instead of
+        O exemplo acima usa a notação ``\verb|\molec C6|''.
+        Isso faz uso do fato de que argumentos consistindo de apenas um
+        caractere não precisam ser colocados entre parênteses. É por isso que
+        ``\verb|\molec C6|'' é semelhante a ``\verb|\molec{C}{6}|''. Você
+        pode já estar familiarizado com essa notação de índices ou potências em
+        ambientes matemáticos, como ``\verb|$x^2$|'' em vez de
         ``\verb|$x^{2}$|''
-        for ``$x^2$''.
+        para ``$x^2$''.
       \end{Explain}
     \else % maybe some time I've made an English book
-      Advanced users can find information about the reason the example above
-      does work unless you put all arguments of \Macro{molec} into braces in
+      Usuários avançados podem encontrar informações sobre a razão pela qual o exemplo acima
+      funciona a menos que você coloque todos os argumentos de \Macro{molec} entre chaves em
       \autoref{sec:experts.knowhow},
       \DescPageRef{experts.macroargs}.%
     \fi%
   \else%
-    You can find an example that uses it in
+    Você pode encontrar um exemplo que o utiliza em
     \autoref{sec:\ThisCommonFirstLabelBase.textmarkup},
     \PageRefxmpl{\ThisCommonFirstLabelBase.cmd.textsubscript}.
   \fi%
@@ -163,7 +162,7 @@
     \Macro{maybesffamily}%
     \Macro{textmaybesf}\Parameter{text}%
   \end{Declaration}
-  The%
+  Os%
   \IfThisCommonLabelBase{maincls}{%
     \ChangedAt{v3.39}{\Class{scrbook}\and \Class{scrreprt}\and
       \Class{scrartcl}}%
@@ -175,716 +174,716 @@
         \ChangedAt{v3.39}{\Class{scrlttr2}}%
       }{}%
     }%
-  } \Macro{maybesffamily} and \Macro{textmaybesf} commands behave differently
-  depending on the setting of option \Option{sfdefaults}. One of the default
-  values for simple switches from \autoref{tab:truefalseswitch} can be used
-  here. Only if this option is enabled will \Macro{maybesffamily} result in
-  \Macro{sffamily} and \Macro{textmaybesf} use \Macro{textsf}. This is also
-  the default setting. KOMA-Script itself uses \Macro{maybesffamily} in the
-  default settings of elements \IfThisCommonLabelBase{scrextend}{}{%
+  } comandos \Macro{maybesffamily} e \Macro{textmaybesf} comportam-se de forma diferente
+  dependendo da configuração da opção \Option{sfdefaults}. Um dos valores
+  padrão para chaves simples de \autoref{tab:truefalseswitch} pode ser usado
+  aqui. Somente se esta opção estiver habilitada \Macro{maybesffamily} resultará em
+  \Macro{sffamily} e \Macro{textmaybesf} usará \Macro{textsf}. Esta é também
+  a configuração padrão. O próprio KOMA-Script usa \Macro{maybesffamily} nas
+  configurações padrão dos elementos \IfThisCommonLabelBase{scrextend}{}{%
     \DescRef{\LabelBase.fontelement.descriptionlabel}, %
   }%
   \IfThisCommonLabelBase{scrlttr2}{%
     \DescRef{\LabelBase.fontelement.backaddress}, %
     \DescRef{\LabelBase.fontelement.refname}, %
-    and \DescRef{\LabelBase.fontelement.lettertitle}%
+    e \DescRef{\LabelBase.fontelement.lettertitle}%
   }{%
     \IfThisCommonLabelBase{scrextend}{%
       \DescRef{maincls.fontelement.disposition} %
     }{%
       \DescRef{\LabelBase.fontelement.disposition}, %
     }%
-    and \DescRef{\LabelBase.fontelement.dictum}%
-  }. \Macro{maybesffamily} may thus also be used as part of the
-  \PName{commands} of the \DescRef{\LabelBase.cmd.setkomafont} and
-  \DescRef{\LabelBase.cmd.addtokomafont} statements explained below.%
+    e \DescRef{\LabelBase.fontelement.dictum}%
+  }. \Macro{maybesffamily} pode assim também ser usado como parte dos
+  \PName{commands} das instruções \DescRef{\LabelBase.cmd.setkomafont} e
+  \DescRef{\LabelBase.cmd.addtokomafont} explicadas abaixo.%
   \EndIndexGroup%
   \fi
-  
+
 
 \begin{Declaration}
   \Macro{setkomafont}\Parameter{element}\Parameter{commands}%
   \Macro{addtokomafont}\Parameter{element}\Parameter{commands}%
   \Macro{usekomafont}\Parameter{element}
 \end{Declaration}%
-With%
+Com%
 \IfThisCommonLabelBase{maincls}{%
   \ChangedAt{v2.8p}{\Class{scrbook}\and \Class{scrreprt}\and
     \Class{scrartcl}}%
-}{} the help of the \Macro{setkomafont} and \Macro{addtokomafont}
-commands, you can attach particular font styling \PName{commands} that change
-the appearance of a given \PName{element}. Theoretically, all statements,
-including literal text, can be used as \PName{commands}. You
-should\textnote{Attention!}, however, limit yourself to those statements that
-really change font attributes only. These are usually commands like
+}{} a ajuda dos comandos \Macro{setkomafont} e \Macro{addtokomafont},
+você pode anexar \PName{commands} de estilo de fonte particulares que alteram
+a aparência de um dado \PName{element}. Teoricamente, todas as instruções,
+incluindo texto literal, podem ser usadas como \PName{commands}. Você
+deve\textnote{Atenção!}, no entanto, limitar-se àquelas instruções que
+realmente mudam apenas atributos de fonte. Estes são geralmente comandos como
 \Macro{rmfamily}, \Macro{sffamily}, \Macro{ttfamily}, \Macro{upshape},
 \Macro{itshape}, \Macro{slshape}, \Macro{scshape}, \Macro{mdseries},
-\Macro{bfseries}, \Macro{normalfont}, as well as the font size commands
+\Macro{bfseries}, \Macro{normalfont}, bem como os comandos de tamanho de fonte
 \Macro{Huge}, \Macro{huge}, \Macro{LARGE}, \Macro{Large}, \Macro{large},
 \Macro{normalsize}, \Macro{small}, \Macro{footnotesize}, \Macro{scriptsize},
-and \Macro{tiny}. You can find these commands explained in \cite{lshort},
-\cite{latex:usrguide}, or \cite{latex:fntguide}. Colour switching commands
-like \Macro{normalcolor} (see \cite{package:graphics} and
-\cite{package:xcolor}) are also acceptable.%
+e \Macro{tiny}. Você pode encontrar estes comandos explicados em \cite{lshort},
+\cite{latex:usrguide}, ou \cite{latex:fntguide}. Comandos de mudança de cor
+como \Macro{normalcolor} (veja \cite{package:graphics} e
+\cite{package:xcolor}) também são aceitáveis.%
 \iffalse % Umbruchkorrekturtext
-  \ The behaviour when using other commands, especially those that lead to
-  redefinitions or generate output, is undefined. Strange behaviour is possible
-  and does not represent a bug.
+  \ O comportamento ao usar outros comandos, especialmente aqueles que levam a
+  redefinições ou geram saída, é indefinido. Comportamento estranho é possível
+  e não representa um bug.
 \else
-  \ The use of other commands, in particular those that redefine things or
-  or lead to output, is not supported. Strange behaviour is possible in these
-  cases and does not represent a bug.
+  \ O uso de outros comandos, em particular aqueles que redefinem coisas ou
+  levam a saída, não é suportado. Comportamento estranho é possível nestes
+  casos e não representa um bug.
 \fi
 
-The command \Macro{setkomafont} provides an element with a completely new
-definition of its font styling. In contrast, the \Macro{addtokomafont} command
-merely extends an existing definition. You should not use either command
-inside the document body but only in the preamble. For examples of their use,
-refer to the sections for the respective element.%
+O comando \Macro{setkomafont} fornece a um elemento uma definição completamente nova
+de seu estilo de fonte. Em contraste, o comando \Macro{addtokomafont}
+meramente estende uma definição existente. Você não deve usar nenhum comando
+dentro do corpo do documento mas apenas no preâmbulo. Para exemplos de seu uso,
+consulte as seções para o respectivo elemento.%
 \IfThisCommonLabelBase{scrlayer-notecolumn}{}{%
-  \ The name and meaning of each element
-  \IfThisCommonLabelBaseOneOf{scrlayer-scrpage,scrjura}{, as well as their
-    defaults,}{} are listed in \IfThisCommonLabelBase{scrextend}{%
+  \ O nome e significado de cada elemento
+  \IfThisCommonLabelBaseOneOf{scrlayer-scrpage,scrjura}{, bem como seus
+    padrões,}{} estão listados em \IfThisCommonLabelBase{scrextend}{%
     \autoref{tab:maincls.fontelements}, \autopageref{tab:maincls.fontelements}
   }{%
     \autoref{tab:\ThisCommonLabelBase.fontelements} %
   }.%
   \IfThisCommonLabelBase{scrextend}{ %
-    However, in \Package{scrextend} only\textnote{limitation} the listed
-    elements for the document title, dictum, footnotes, and the
-    \DescRef{maincls.env.labeling} environment are supported. Although the
-    \DescRef{maincls.fontelement.disposition} element exists,
-    \Package{scrextend} uses it only for the document title.%
+    No entanto, em \Package{scrextend} apenas\textnote{limitação} os elementos listados
+    para o título do documento, dictum, notas de rodapé, e o
+    ambiente \DescRef{maincls.env.labeling} são suportados. Embora o
+    elemento \DescRef{maincls.fontelement.disposition} exista,
+    \Package{scrextend} o usa apenas para o título do documento.%
   }{%
     \IfThisCommonLabelBase{scrlayer-scrpage}{ %
-      The specified defaults apply only if the corresponding element has not
-      already been defined before loading \Package{scrlayer-scrpage}. For
-      example, the \KOMAScript{} classes define
-      \DescRef{maincls.fontelement.pageheadfoot}, and then
-      \Package{scrlayer-scrpage} uses the setting it finds.%
+      Os padrões especificados aplicam-se apenas se o elemento correspondente não
+      já foi definido antes de carregar \Package{scrlayer-scrpage}. Por
+      exemplo, as classes \KOMAScript{} definem
+      \DescRef{maincls.fontelement.pageheadfoot}, e então
+      \Package{scrlayer-scrpage} usa a configuração que encontra.%
     }{%
       \IfThisCommonLabelBase{scrjura}{}{ %
-        The default values can be found in the corresponding sections.%
+        Os valores padrão podem ser encontrados nas seções correspondentes.%
       }%
     }%
   }%
 }%
 
 \IfThisCommonLabelBaseOneOf{scrlttr2,scrextend}{% Umbruchvarianten
-  The \Macro{usekomafont} command can be used to switch the current font style
-  to the specified \PName{Element}.%
+  O comando \Macro{usekomafont} pode ser usado para mudar o estilo de fonte atual
+  para o \PName{Element} especificado.%
 }{%
-  With the \Macro{usekomafont} command, the current font style can be changed
-  to the one defined for the specified \PName{element}.%
+  Com o comando \Macro{usekomafont}, o estilo de fonte atual pode ser alterado
+  para aquele definido para o \PName{element} especificado.%
 }
 
 \IfThisCommonLabelBase{maincls}{\iftrue}{\csname iffalse\endcsname}
   \begin{Example}
     \phantomsection\xmpllabel{cmd.setkomafont}%
-    Suppose you want to use the same font specification for the element
+    Suponha que você queira usar a mesma especificação de fonte para o elemento
     \DescRef{\ThisCommonLabelBase.fontelement.captionlabel}
-    that is used with
-    \DescRef{\ThisCommonLabelBase.fontelement.descriptionlabel}. This can be
-    easily done with:
+    que é usada com
+    \DescRef{\ThisCommonLabelBase.fontelement.descriptionlabel}. Isso pode ser
+    facilmente feito com:
 \begin{lstcode}
   \setkomafont{captionlabel}{%
     \usekomafont{descriptionlabel}%
   }
 \end{lstcode}
-    You can find other examples in the explanation of each element.
+    Você pode encontrar outros exemplos na explicação de cada elemento.
   \end{Example}
 
   \begin{desclist}
     \desccaption{%
-      Elements whose font style can be changed in \Class{scrbook},
-      \Class{scrreprt} or \Class{scrartcl} with \Macro{setkomafont} and
+      Elementos cujo estilo de fonte pode ser alterado em \Class{scrbook},
+      \Class{scrreprt} ou \Class{scrartcl} com \Macro{setkomafont} e
       \Macro{addtokomafont}%
       \label{tab:maincls.fontelements}%
-      \label{tab:scrextend.fontelements}%     
+      \label{tab:scrextend.fontelements}%
     }{%
-      Elements whose font style can be changed (\emph{continued})%
+      Elementos cujo estilo de fonte pode ser alterado (\emph{continuação})%
     }%
     \feentry{author}{%
       \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}\and \Package{scrextend}}%
-      author of the document in the title, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.author} when
-      \DescRef{\ThisCommonLabelBase.cmd.maketitle} is used (see
+      autor do documento no título, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.author} quando
+      \DescRef{\ThisCommonLabelBase.cmd.maketitle} é usado (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.author})}%
-    \feentry{caption}{text of a figure or table caption (see
+    \feentry{caption}{texto de uma legenda de figura ou tabela (veja
       \autoref{sec:maincls.floats}, \DescPageRef{\ThisCommonLabelBase.cmd.caption})}%
-    \feentry{captionlabel}{label of a figure or table caption; applied in
-      addition to the \DescRef{\ThisCommonLabelBase.fontelement.caption}
-      element (see \autoref{sec:maincls.floats},
+    \feentry{captionlabel}{rótulo de uma legenda de figura ou tabela; aplicado em
+      adição ao elemento \DescRef{\ThisCommonLabelBase.fontelement.caption}
+      (veja \autoref{sec:maincls.floats},
       \DescPageRef{\ThisCommonLabelBase.cmd.caption})}%
-    \feentry{chapter}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.chapter} (see
+    \feentry{chapter}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.chapter} (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.chapter})}%
     \feentry{chapterentry}{%
-      table of contents entry for the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.chapter} (see
+      entrada no sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.chapter} (veja
       \autoref{sec:maincls.toc}, \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{chapterentrydots}{%
       \ChangedAt{v3.15}{\Class{scrbook}\and \Class{scrreprt}}%
-      optional points connecting table-of-content entries for the
-      \DescRef{\ThisCommonLabelBase.cmd.chapter} level, differing from the
-      \DescRef{\ThisCommonLabelBase.fontelement.chapterentry} element,
-      \Macro{normalfont} and \Macro{normalsize} (see
+      pontos opcionais conectando entradas do sumário para o
+      nível \DescRef{\ThisCommonLabelBase.cmd.chapter}, diferindo do
+      elemento \DescRef{\ThisCommonLabelBase.fontelement.chapterentry},
+      \Macro{normalfont} e \Macro{normalsize} (veja
       \autoref{sec:maincls.toc}, \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{chapterentrypagenumber}{%
-      page number of the table of contents entry for the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.chapter}, differing from the element
-      \DescRef{\ThisCommonLabelBase.fontelement.chapterentry} (see
+      número de página da entrada do sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.chapter}, diferindo do elemento
+      \DescRef{\ThisCommonLabelBase.fontelement.chapterentry} (veja
       \autoref{sec:maincls.toc}, \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{chapterprefix}{%
-      label, e.\,g., ``Chapter'', appearing before the chapter number in both
-      \OptionValueRef{maincls}{chapterprefix}{true} and
-      \OptionValueRef{maincls}{appendixprefix}{true} (see
+      rótulo, e.\,g., ``Capítulo'', aparecendo antes do número do capítulo em ambos
+      \OptionValueRef{maincls}{chapterprefix}{true} e
+      \OptionValueRef{maincls}{appendixprefix}{true} (veja
       \autoref{sec:maincls.structure},
       \DescPageRef{\ThisCommonLabelBase.option.chapterprefix})}%
     \feentry{date}{%
       \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}\and \Package{scrextend}}%
-      date of the document in the main title, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.date} when
-      \DescRef{\ThisCommonLabelBase.cmd.maketitle} is used (see
+      data do documento no título principal, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.date} quando
+      \DescRef{\ThisCommonLabelBase.cmd.maketitle} é usado (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.date})}%
     \feentry{dedication}{%
       \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}\and \Package{scrextend}}%
-      dedication page after the main title, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.dedication} when
-      \DescRef{\ThisCommonLabelBase.cmd.maketitle} is used (see
+      página de dedicatória após o título principal, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.dedication} quando
+      \DescRef{\ThisCommonLabelBase.cmd.maketitle} é usado (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.dedication})}%
-    \feentry{descriptionlabel}{labels, i.\,e., the optional argument of
-      \DescRef{\ThisCommonLabelBase.cmd.item.description} in the
-      \DescRef{\ThisCommonLabelBase.env.description} environment (see
+    \feentry{descriptionlabel}{rótulos, i.\,e., o argumento opcional de
+      \DescRef{\ThisCommonLabelBase.cmd.item.description} no
+      ambiente \DescRef{\ThisCommonLabelBase.env.description} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.description})}%
-    \feentry{dictum}{dictum or epigraph (see \autoref{sec:maincls.dictum},
+    \feentry{dictum}{dictum ou epígrafe (veja \autoref{sec:maincls.dictum},
       \DescPageRef{\ThisCommonLabelBase.cmd.dictum})}%
-    \feentry{dictumauthor}{author of a dictum or epigraph; applied in addition
-      to the element \DescRef{\ThisCommonLabelBase.fontelement.dictum} (see
+    \feentry{dictumauthor}{autor de um dictum ou epígrafe; aplicado em adição
+      ao elemento \DescRef{\ThisCommonLabelBase.fontelement.dictum} (veja
       \autoref{sec:maincls.dictum}, \DescPageRef{\ThisCommonLabelBase.cmd.dictum})}%
-    \feentry{dictumtext}{alternative name for
+    \feentry{dictumtext}{nome alternativo para
       \DescRef{\ThisCommonLabelBase.fontelement.dictum}}%
-    \feentry{disposition}{all sectioning command titles, i.\,e., the arguments
-      of \DescRef{\ThisCommonLabelBase.cmd.part} down to
-      \DescRef{\ThisCommonLabelBase.cmd.subparagraph} and
-      \DescRef{\ThisCommonLabelBase.cmd.minisec}, including the title of the
-      abstract; applied before the element of the respective unit (see
+    \feentry{disposition}{todos os títulos de comando de seccionamento, i.\,e., os argumentos
+      de \DescRef{\ThisCommonLabelBase.cmd.part} até
+      \DescRef{\ThisCommonLabelBase.cmd.subparagraph} e
+      \DescRef{\ThisCommonLabelBase.cmd.minisec}, incluindo o título do
+      resumo; aplicado antes do elemento da respectiva unidade (veja
       \autoref{sec:maincls.structure}, \autopageref{sec:maincls.structure})}%
     \feentry{enumeratelabel}{%
       \ChangedAt{v3.44}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Default for the preset numbers of the environment
-      \DescRef{\ThisCommonLabelBase.env.enumerate} (see
+      Padrão para os números predefinidos do ambiente
+      \DescRef{\ThisCommonLabelBase.env.enumerate} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
-    \feentry{footnote}{footnote text and marker (see
+    \feentry{footnote}{texto e marcador de nota de rodapé (veja
       \autoref{sec:maincls.footnotes}, \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
-    \feentry{footnotelabel}{marker for a footnote; applied in addition to the
-      element \DescRef{\ThisCommonLabelBase.fontelement.footnote} (see
+    \feentry{footnotelabel}{marcador para uma nota de rodapé; aplicado em adição ao
+      elemento \DescRef{\ThisCommonLabelBase.fontelement.footnote} (veja
       \autoref{sec:maincls.footnotes}, \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
-    \feentry{footnotereference}{footnote reference in the text (see
+    \feentry{footnotereference}{referência de nota de rodapé no texto (veja
       \autoref{sec:maincls.footnotes}, \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
     \feentry{footnoterule}{%
-      horizontal rule\ChangedAt{v3.07}{\Class{scrbook}\and
-        \Class{scrreprt}\and \Class{scrartcl}} above the footnotes at the end
-      of the text area (see \autoref{sec:maincls.footnotes},
+      régua horizontal\ChangedAt{v3.07}{\Class{scrbook}\and
+        \Class{scrreprt}\and \Class{scrartcl}} acima das notas de rodapé no final
+      da área de texto (veja \autoref{sec:maincls.footnotes},
       \DescPageRef{\ThisCommonLabelBase.cmd.setfootnoterule})}%
     \feentry{itemizelabel}{%
       \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Default for the preset symbols of the environment
-      \DescRef{\ThisCommonLabelBase.env.itemize} (see
+      Padrão para os símbolos predefinidos do ambiente
+      \DescRef{\ThisCommonLabelBase.env.itemize} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
     \feentry{labelenumi}{%
       \ChangedAt{v3.44}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item number definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelenumi} (see
+      Fonte a ser usada na definição do número do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelenumi} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
     \feentry{labelenumii}{%
       \ChangedAt{v3.44}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item number definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelenumii} (see
+      Fonte a ser usada na definição do número do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelenumii} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
     \feentry{labelenumiii}{%
       \ChangedAt{v3.44}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item number definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelenumiii} (see
+      Fonte a ser usada na definição do número do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelenumiii} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
     \feentry{labelenumiv}{%
       \ChangedAt{v3.44}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item number definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelenumiv} (see
+      Fonte a ser usada na definição do número do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelenumiv} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
-    \feentry{labelinglabel}{labels, i.\,e., the optional argument of
-      \DescRef{\ThisCommonLabelBase.cmd.item.labeling} in the
-      \DescRef{\ThisCommonLabelBase.env.labeling} environment (see
+    \feentry{labelinglabel}{rótulos, i.\,e., o argumento opcional de
+      \DescRef{\ThisCommonLabelBase.cmd.item.labeling} no
+      ambiente \DescRef{\ThisCommonLabelBase.env.labeling} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.labeling})}%
-    \feentry{labelingseparator}{separator, i.\,e., the optional argument of
-      the \DescRef{\ThisCommonLabelBase.env.labeling} environment; applied in
-      addition to the element
-      \DescRef{\ThisCommonLabelBase.fontelement.labelinglabel} (see
+    \feentry{labelingseparator}{separador, i.\,e., o argumento opcional do
+      ambiente \DescRef{\ThisCommonLabelBase.env.labeling}; aplicado em
+      adição ao elemento
+      \DescRef{\ThisCommonLabelBase.fontelement.labelinglabel} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.labeling})}%
     \feentry{labelitemi}{%
       \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item symbol definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelitemi} (see
+      Fonte a ser usada na definição do símbolo do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelitemi} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
     \feentry{labelitemii}{%
       \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item symbol definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelitemii} (see
+      Fonte a ser usada na definição do símbolo do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelitemii} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
     \feentry{labelitemiii}{%
       \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item symbol definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelitemiii} (see
+      Fonte a ser usada na definição do símbolo do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelitemiii} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
     \feentry{labelitemiv}{%
       \ChangedAt{v3.33}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}}%
-      Font to be used in the item symbol definition
-      \DescRef{\ThisCommonLabelBase.cmd.labelitemiv} (see
+      Fonte a ser usada na definição do símbolo do item
+      \DescRef{\ThisCommonLabelBase.cmd.labelitemiv} (veja
       \autoref{sec:maincls.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
-    \feentry{minisec}{title of \DescRef{\ThisCommonLabelBase.cmd.minisec} (see
+    \feentry{minisec}{título de \DescRef{\ThisCommonLabelBase.cmd.minisec} (veja
       \autoref{sec:maincls.structure} ab \DescPageRef{\ThisCommonLabelBase.cmd.minisec})}%
-    \feentry{pagefoot}{only used if package \Package{scrlayer-scrpage} has
-      been loaded (see \autoref{cha:scrlayer-scrpage},
+    \feentry{pagefoot}{usado apenas se o pacote \Package{scrlayer-scrpage} foi
+      carregado (veja \autoref{cha:scrlayer-scrpage},
       \DescPageRef{scrlayer-scrpage.fontelement.pagefoot})}%
-    \feentry{pagehead}{alternative name for
+    \feentry{pagehead}{nome alternativo para
       \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}}%
-    \feentry{pageheadfoot}{the header and footer of a page (see
-      \autoref{sec:maincls.pagestyle} from
+    \feentry{pageheadfoot}{o cabeçalho e rodapé de uma página (veja
+      \autoref{sec:maincls.pagestyle} de
       \autopageref{sec:maincls.pagestyle})}%
-    \feentry{pagenumber}{page number in the header or footer (see
+    \feentry{pagenumber}{número de página no cabeçalho ou rodapé (veja
       \autoref{sec:maincls.pagestyle})}%
-    \feentry{pagination}{alternative name for
+    \feentry{pagination}{nome alternativo para
       \DescRef{\ThisCommonLabelBase.fontelement.pagenumber}}%
-    \feentry{paragraph}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.paragraph} (see
+    \feentry{paragraph}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.paragraph} (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.paragraph})}%
-    \feentry{part}{title of the \DescRef{\ThisCommonLabelBase.cmd.part}
-      sectioning command, without the line containing the part number (see
+    \feentry{part}{título do comando de seccionamento \DescRef{\ThisCommonLabelBase.cmd.part},
+      sem a linha contendo o número da parte (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.part})}%
     \feentry{partentry}{%
-      table of contents entry for the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.part} (see \autoref{sec:maincls.toc},
+      entrada do sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.part} (veja \autoref{sec:maincls.toc},
       \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{partentrypagenumber}{%
-      page number of the table of contents entry for the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.part}; applied in addition to the
-      element \DescRef{\ThisCommonLabelBase.fontelement.partentry} (see
+      número de página da entrada do sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.part}; aplicado em adição ao
+      elemento \DescRef{\ThisCommonLabelBase.fontelement.partentry} (veja
       \autoref{sec:maincls.toc}, \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
-    \feentry{partnumber}{line containing the part number in a title of the
-      sectioning command \DescRef{\ThisCommonLabelBase.cmd.part} (see
+    \feentry{partnumber}{linha contendo o número da parte em um título do
+      comando de seccionamento \DescRef{\ThisCommonLabelBase.cmd.part} (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.part})}%
     \feentry{publishers}{%
       \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}\and \Package{scrextend}}%
-      publishers of the document in the main title, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.publishers} when
-      \DescRef{\ThisCommonLabelBase.cmd.maketitle} is used (see
+      editores do documento no título principal, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.publishers} quando
+      \DescRef{\ThisCommonLabelBase.cmd.maketitle} é usado (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.publishers})}%
-    \feentry{section}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.section} (see
+    \feentry{section}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.section} (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.section})}%
     \feentry{sectionentry}{%
-      table of contents entry for sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.section} (only available in
-      \Class{scrartcl}, see \autoref{sec:maincls.toc},
+      entrada do sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.section} (disponível apenas em
+      \Class{scrartcl}, veja \autoref{sec:maincls.toc},
       \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{sectionentrydots}{%
       \ChangedAt{v3.15}{\Class{scrartcl}}%
-      optional points connecting table-of-content entries for the
-      \DescRef{\ThisCommonLabelBase.cmd.section} level, differing from the
-      \DescRef{\ThisCommonLabelBase.fontelement.sectionentry} element,
-      \Macro{normalfont} and \Macro{normalsize} (only available in
-      \Class{scrartcl}, see \autoref{sec:maincls.toc},
+      pontos opcionais conectando entradas do sumário para o
+      nível \DescRef{\ThisCommonLabelBase.cmd.section}, diferindo do
+      elemento \DescRef{\ThisCommonLabelBase.fontelement.sectionentry},
+      \Macro{normalfont} e \Macro{normalsize} (disponível apenas em
+      \Class{scrartcl}, veja \autoref{sec:maincls.toc},
       \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
     \feentry{sectionentrypagenumber}{%
-      page number of the table of contents entry for the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.section}; applied in addition to
-      element \DescRef{\ThisCommonLabelBase.fontelement.sectionentry} (only
-      available in \Class{scrartcl}, see \autoref{sec:maincls.toc},
+      número de página da entrada do sumário para o comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.section}; aplicado em adição ao
+      elemento \DescRef{\ThisCommonLabelBase.fontelement.sectionentry} (disponível
+      apenas em \Class{scrartcl}, veja \autoref{sec:maincls.toc},
       \DescPageRef{\ThisCommonLabelBase.cmd.tableofcontents})}%
-    \feentry{sectioning}{alternative name for
+    \feentry{sectioning}{nome alternativo para
       \DescRef{\ThisCommonLabelBase.fontelement.disposition}}%
     \feentry{subject}{%
-      topic of the document, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.subject} on the main title page (see
+      tópico do documento, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.subject} na página de título principal (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.subject})}%
-    \feentry{subparagraph}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.subparagraph} (see
+    \feentry{subparagraph}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.subparagraph} (veja
       \autoref{sec:maincls.structure},
       \DescPageRef{\ThisCommonLabelBase.cmd.subparagraph})}%
-    \feentry{subsection}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.subsection} (see
+    \feentry{subsection}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.subsection} (veja
       \autoref{sec:maincls.structure}, \DescPageRef{\ThisCommonLabelBase.cmd.subsection})}%
-    \feentry{subsubsection}{title of the sectioning command
-      \DescRef{\ThisCommonLabelBase.cmd.subsubsection} (see
+    \feentry{subsubsection}{título do comando de seccionamento
+      \DescRef{\ThisCommonLabelBase.cmd.subsubsection} (veja
       \autoref{sec:maincls.structure},
       \DescPageRef{\ThisCommonLabelBase.cmd.subsubsection})}%
     \feentry{subtitle}{%
-      subtitle of the document, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.subtitle} on the main title page (see
+      subtítulo do documento, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.subtitle} na página de título principal (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.title})}%
-    \feentry{title}{main title of the document, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.title} (for details about the title
-      size see the additional note in the text of
-      \autoref{sec:maincls.titlepage} from \DescPageRef{\ThisCommonLabelBase.cmd.title})}%
+    \feentry{title}{título principal do documento, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.title} (para detalhes sobre o tamanho do título
+      veja a nota adicional no texto de
+      \autoref{sec:maincls.titlepage} de \DescPageRef{\ThisCommonLabelBase.cmd.title})}%
     \feentry{titlehead}{%
       \ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
         \Class{scrartcl}\and \Package{scrextend}}%
-      heading above the main title of the document, i.\,e., the argument of
-      \DescRef{\ThisCommonLabelBase.cmd.titlehead} when
-      \DescRef{\ThisCommonLabelBase.cmd.maketitle} is used (see
+      cabeçalho acima do título principal do documento, i.\,e., o argumento de
+      \DescRef{\ThisCommonLabelBase.cmd.titlehead} quando
+      \DescRef{\ThisCommonLabelBase.cmd.maketitle} é usado (veja
       \autoref{sec:maincls.titlepage}, \DescPageRef{\ThisCommonLabelBase.cmd.titlehead})}%
   \end{desclist}
 \else
   \IfThisCommonLabelBase{scrextend}{\iftrue}{\csname iffalse\endcsname}
     \begin{Example}
-      Suppose you want to print the document title in a red serif font.
-      You can do this using:
+      Suponha que você queira imprimir o título do documento em uma fonte serifada vermelha.
+      Você pode fazer isso usando:
 \begin{lstcode}
   \setkomafont{title}{\color{red}}
 \end{lstcode}
-      You will need the \Package{color} or the \Package{xcolor} package for
-      the \Macro{color}\PParameter{red} command. Using \Macro{normalfont} is
-      unnecessary in this case because it is already part of the definition of
-      the title itself. This\textnote{Attention!} example also needs the
-      \OptionValueRef{scrextend}{extendedfeature}{title} option (see
-      \autoref{sec:scrextend.optionalFeatures}, 
+      Você precisará do pacote \Package{color} ou do pacote \Package{xcolor} para
+      o comando \Macro{color}\PParameter{red}. Usar \Macro{normalfont} é
+      desnecessário neste caso porque já faz parte da definição do
+      próprio título. Este\textnote{Atenção!} exemplo também precisa da
+      opção \OptionValueRef{scrextend}{extendedfeature}{title} (veja
+      \autoref{sec:scrextend.optionalFeatures},
       \DescPageRef{scrextend.option.extendedfeature}).
     \end{Example}
   \else
     \IfThisCommonLabelBase{scrlttr2}{%
-      You can find a general example that uses both \Macro{setkomafont} and
-      \Macro{usekomafont} in \autoref{sec:maincls.textmarkup} on
+      Você pode encontrar um exemplo geral que usa tanto \Macro{setkomafont} quanto
+      \Macro{usekomafont} em \autoref{sec:maincls.textmarkup} em
       \PageRefxmpl{maincls.cmd.setkomafont}.
 
       \begin{desclist}
         \desccaption{%
-          Elements whose font style can be changed in the \Class{scrlttr2}
-          class or the \Package{scrletter} package with the
-          \Macro{setkomafont} and \Macro{addtokomafont}
-          commands\label{tab:scrlttr2.fontelements}%
+          Elementos cujo estilo de fonte pode ser alterado na classe \Class{scrlttr2}
+          ou no pacote \Package{scrletter} com os comandos
+          \Macro{setkomafont} e \Macro{addtokomafont}%
+          \label{tab:scrlttr2.fontelements}%
         }{%
-          Elements whose font style can be changed (\emph{continued})%
+          Elementos cujo estilo de fonte pode ser alterado (\emph{continuação})%
         }%
-        \feentry{addressee}{recipient's name and address in the address field
+        \feentry{addressee}{nome e endereço do destinatário no campo de endereço
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.option.addrfield})}%
         \feentry{backaddress}{%
-          return address for a window envelope
+          endereço de retorno para envelope com janela
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.option.backaddress})}%
         \feentry{descriptionlabel}{%
-          label, i.\,e. the optional argument of
-          \DescRef{\ThisCommonLabelBase.cmd.item.description}, in a
-          \DescRef{\ThisCommonLabelBase.env.description} environment
+          rótulo, i.\,e. o argumento opcional de
+          \DescRef{\ThisCommonLabelBase.cmd.item.description}, em um
+          ambiente \DescRef{\ThisCommonLabelBase.env.description}
           (\autoref{sec:scrlttr2.lists},
           \DescPageRef{\ThisCommonLabelBase.env.description})}%
         \feentry{enumeratelabel}{%
           \ChangedAt{v3.44}{\Class{scrlttr2}}%
-          Default for the preset numbers of the environment
-          \DescRef{\ThisCommonLabelBase.env.enumerate} (see
+          Padrão para os números predefinidos do ambiente
+          \DescRef{\ThisCommonLabelBase.env.enumerate} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
         \feentry{foldmark}{%
-          fold mark on the letterhead page; allows change of line colour
+          marca de dobra na página do cabeçalho da carta; permite mudança de cor da linha
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.option.foldmarks})}%
         \feentry{footnote}{%
-          footnote text and marker (\autoref{sec:scrlttr2.footnotes},
+          texto e marcador de nota de rodapé (\autoref{sec:scrlttr2.footnotes},
           \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
         \feentry{footnotelabel}{%
-          footnote marker; applied in addition to the
-          \DescRef{\ThisCommonLabelBase.fontelement.footnote} element
+          marcador de nota de rodapé; aplicado em adição ao
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.footnote}
           (\autoref{sec:scrlttr2.footnotes},
           \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
         \feentry{footnotereference}{%
-          footnote reference in the text (\autoref{sec:scrlttr2.footnotes},
+          referência de nota de rodapé no texto (\autoref{sec:scrlttr2.footnotes},
           \DescPageRef{\ThisCommonLabelBase.cmd.footnote})}%
         \feentry{footnoterule}{%
-          horizontal rule\ChangedAt{v3.07}{\Class{scrlttr2}} above the
-          footnotes at the end of the text area
+          régua horizontal\ChangedAt{v3.07}{\Class{scrlttr2}} acima das
+          notas de rodapé no final da área de texto
           (\autoref{sec:maincls.footnotes},
           \DescPageRef{\ThisCommonLabelBase.cmd.setfootnoterule})}%
         \feentry{fromaddress}{%
-          sender's address in the letterhead
+          endereço do remetente no cabeçalho da carta
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.fromaddress})}%
         \feentry{fromname}{%
-          sender's name in the letterhead, not including \PValue{fromaddress}
+          nome do remetente no cabeçalho da carta, não incluindo \PValue{fromaddress}
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.fromname})}%
         \feentry{fromrule}{%
-          horizontal rule in the letterhead; intended for colour changes
+          régua horizontal no cabeçalho da carta; destinada para mudanças de cor
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.option.fromrule})}%
         \feentry{itemizelabel}{%
           \ChangedAt{v3.33}{\Class{scrlttr2}}%
-          Default for the preset symbols of the environment
-          \DescRef{\ThisCommonLabelBase.env.itemize} (see
+          Padrão para os símbolos predefinidos do ambiente
+          \DescRef{\ThisCommonLabelBase.env.itemize} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
         \feentry{labelenumi}{%
           \ChangedAt{v3.44}{\Class{scrlttr2}}%
-          Font to be used in the item number definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelenumi} (see
+          Fonte a ser usada na definição do número do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelenumi} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
         \feentry{labelenumii}{%
           \ChangedAt{v3.44}{\Class{scrlttr2}}%
-          Font to be used in the item number definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelenumii} (see
+          Fonte a ser usada na definição do número do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelenumii} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
         \feentry{labelenumiii}{%
           \ChangedAt{v3.44}{\Class{scrlttr2}}%
-          Font to be used in the item number definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelenumiii} (see
+          Fonte a ser usada na definição do número do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelenumiii} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
         \feentry{labelenumiv}{%
           \ChangedAt{v3.44}{\Class{scrlttr2}}%
-          Font to be used in the item number definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelenumiv} (see
+          Fonte a ser usada na definição do número do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelenumiv} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.enumerate})}%
         \feentry{labelinglabel}{%
-          labels, i.\,e. the optional argument of
-          \DescRef{\ThisCommonLabelBase.cmd.item.labeling} in the
-          \DescRef{\ThisCommonLabelBase.env.labeling} environment %
-          (see \autoref{sec:scrlttr2.lists},
+          rótulos, i.\,e. o argumento opcional de
+          \DescRef{\ThisCommonLabelBase.cmd.item.labeling} no
+          ambiente \DescRef{\ThisCommonLabelBase.env.labeling} %
+          (veja \autoref{sec:scrlttr2.lists},
           \DescPageRef{\ThisCommonLabelBase.env.labeling})}%
         \feentry{labelingseparator}{%
-          separator, i.\,e. the optional argument of the
-          \DescRef{\ThisCommonLabelBase.env.labeling} environment; applied in
-          addition to the
-          \DescRef{\ThisCommonLabelBase.fontelement.labelinglabel} element
-          (see \autoref{sec:scrlttr2.lists},
+          separador, i.\,e. o argumento opcional do
+          ambiente \DescRef{\ThisCommonLabelBase.env.labeling}; aplicado em
+          adição ao
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.labelinglabel}
+          (veja \autoref{sec:scrlttr2.lists},
           \DescPageRef{\ThisCommonLabelBase.env.labeling})}%
         \feentry{labelitemi}{%
           \ChangedAt{v3.33}{\Class{scrlttr2}}%
-          Font to be used in the item symbol definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelitemi} (see
+          Fonte a ser usada na definição do símbolo do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelitemi} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
         \feentry{labelitemii}{%
           \ChangedAt{v3.33}{\Class{scrlttr2}}%
-          Font to be used in the item symbol definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelitemii} (see
+          Fonte a ser usada na definição do símbolo do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelitemii} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
         \feentry{labelitemiii}{%
           \ChangedAt{v3.33}{\Class{scrlttr2}}%
-          Font to be used in the item symbol definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelitemiii} (see
+          Fonte a ser usada na definição do símbolo do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelitemiii} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
         \feentry{labelitemiv}{%
           \ChangedAt{v3.33}{\Class{scrlttr2}}%
-          Font to be used in the item symbol definition
-          \DescRef{\ThisCommonLabelBase.cmd.labelitemiv} (see
+          Fonte a ser usada na definição do símbolo do item
+          \DescRef{\ThisCommonLabelBase.cmd.labelitemiv} (veja
           \autoref{sec:scrlttr2.lists}, \DescPageRef{\ThisCommonLabelBase.env.itemize})}%
         \feentry{pagefoot}{%
-          depending on the page style used after the
-          \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot} element for
-          the footer (\autoref{sec:\LabelBase.pagestyle},
+          dependendo do estilo de página usado após o
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot} para
+          o rodapé (\autoref{sec:\LabelBase.pagestyle},
           \DescPageRef{\LabelBase.fontelement.pagefoot})}%
         \feentry{pagehead}{%
-          depending on the page style used after the
-          \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot} element for
-          the header (\autoref{sec:\LabelBase.pagestyle},
+          dependendo do estilo de página usado após o
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot} para
+          o cabeçalho (\autoref{sec:\LabelBase.pagestyle},
           \DescPageRef{\LabelBase.fontelement.pagefoot})}%
         \feentry{pageheadfoot}{%
-          the header and footer of a page for all page styles that have been
-          defined using \KOMAScript{} (\autoref{sec:\LabelBase.pagestyle},
+          o cabeçalho e rodapé de uma página para todos os estilos de página que foram
+          definidos usando \KOMAScript{} (\autoref{sec:\LabelBase.pagestyle},
           \DescPageRef{\ThisCommonLabelBase.fontelement.pageheadfoot})}%
         \feentry{pagenumber}{%
-          page number in the header or footer %
+          número de página no cabeçalho ou rodapé %
           (\autoref{sec:\LabelBase.pagestyle},
           \DescPageRef{\ThisCommonLabelBase.fontelement.pagenumber})}%
         \feentry{pagination}{%
-          alternative name for
+          nome alternativo para
           \DescRef{\ThisCommonLabelBase.fontelement.pagenumber}}%
         \feentry{placeanddate}{%
           \ChangedAt{v3.12}{\Class{scrlttr2}}%
-          place and date, if a date line will be used instead of a normal
-          reference line (\autoref{sec:scrlttr2.firstpage},
+          local e data, se uma linha de data for usada em vez de uma
+          linha de referência normal (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.placeseparator})}%
         \feentry{refname}{%
-          description or title of the fields in the reference line %
+          descrição ou título dos campos na linha de referência %
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.yourref})}%
         \feentry{refvalue}{%
-          content of the fields in the reference line %
+          conteúdo dos campos na linha de referência %
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.yourref})}%
         \feentry{specialmail}{%
-          delivery type in the address field %
+          tipo de entrega no campo de endereço %
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.specialmail})}%
         \feentry{lettersubject}{%
           \ChangedAt{v3.17}{\Class{scrlttr2}\and \Package{scrletter}}%
-          subject in the opening of the letter %
+          assunto na abertura da carta %
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.subject})}%
         \feentry{lettertitle}{%
           \ChangedAt{v3.17}{\Class{scrlttr2}\and \Package{scrletter}}%
-          title in the opening of the letter %
+          título na abertura da carta %
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.title})}%
         \feentry{toaddress}{%
-          variation of the
-          \DescRef{\ThisCommonLabelBase.fontelement.addressee} element to
-          format the recipient's address, not including the name, in the
-          address field (\autoref{sec:scrlttr2.firstpage},
+          variação do
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.addressee} para
+          formatar o endereço do destinatário, não incluindo o nome, no
+          campo de endereço (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.toaddress})}%
         \feentry{toname}{%
-          variation of the
-          \DescRef{\ThisCommonLabelBase.fontelement.addressee} element to
-          format the recipient's name in the address field
+          variação do
+          elemento \DescRef{\ThisCommonLabelBase.fontelement.addressee} para
+          formatar o nome do destinatário no campo de endereço
           (\autoref{sec:scrlttr2.firstpage},
           \DescPageRef{\ThisCommonLabelBase.variable.toname})}%
       \end{desclist}
     }{%
       \IfThisCommonLabelBase{scrlayer-scrpage}{%
         \begin{desclist}
-          \desccaption[{Elements of \Package{scrlayer-scrpage} whose font
-            styles can be changed with the \Macro{setkomafont} and
-            \Macro{addtokomafont} commands}]%
-          {Elements of \Package{scrlayer-scrpage} whose font styles can be
-            changed with the \Macro{setkomafont} and \Macro{addtokomafont}
-            commands, and their defaults, if they have not been defined
-            before loading \Package{scrlayer-scrpage}%
+          \desccaption[{Elementos do \Package{scrlayer-scrpage} cujos estilos
+            de fonte podem ser alterados com os comandos \Macro{setkomafont} e
+            \Macro{addtokomafont}}]%
+          {Elementos do \Package{scrlayer-scrpage} cujos estilos de fonte podem ser
+            alterados com os comandos \Macro{setkomafont} e \Macro{addtokomafont},
+            e seus padrões, se não foram definidos
+            antes de carregar \Package{scrlayer-scrpage}%
             \label{tab:scrlayer-scrpage.fontelements}%
           }%
-          {Elements whose font style can be changed (\emph{continued})}%
+          {Elementos cujo estilo de fonte pode ser alterado (\emph{continuação})}%
           \feentry{footbotline}{%
-            horizontal line below the footer of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the fonts of elements
+            linha horizontal abaixo do rodapé de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e as fontes dos elementos
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
-            \IndexFontElement{pageheadfoot} and
+            \IndexFontElement{pageheadfoot} e
             \DescRef{\ThisCommonLabelBase.fontelement.pagefoot}%
-            \IndexFontElement{pagefoot}. It is recommended to use this element
-            for colour changes only.\par
-            \mbox{Default: \emph{empty}}%
+            \IndexFontElement{pagefoot}. Recomenda-se usar este elemento
+            apenas para mudanças de cor.\par
+            \mbox{Padrão: \emph{vazio}}%
           }%
           \feentry{footsepline}{%
-            horizontal line above the footer of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the fonts of elements
+            linha horizontal acima do rodapé de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e as fontes dos elementos
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
-            \IndexFontElement{pageheadfoot} and
+            \IndexFontElement{pageheadfoot} e
             \DescRef{\ThisCommonLabelBase.fontelement.pagefoot}%
-            \IndexFontElement{pagefoot}. It is recommended to use this element
-            for colour changes only.\par
-            \mbox{Default: \emph{empty}}%
+            \IndexFontElement{pagefoot}. Recomenda-se usar este elemento
+            apenas para mudanças de cor.\par
+            \mbox{Padrão: \emph{vazio}}%
           }%
           \feentry{headsepline}{%
-            horizontal line below the header of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the fonts of elements
+            linha horizontal abaixo do cabeçalho de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e as fontes dos elementos
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
-            \IndexFontElement{pageheadfoot} and
+            \IndexFontElement{pageheadfoot} e
             \DescRef{scrlayer-scrpage.fontelement.pagehead}%
-            \IndexFontElement{pagehead}. It is recommended to use this element
-            for colour changes only.\par
-            Default: \emph{empty}%
+            \IndexFontElement{pagehead}. Recomenda-se usar este elemento
+            apenas para mudanças de cor.\par
+            Padrão: \emph{vazio}%
           }%
           \feentry{headtopline}{%
-            horizontal line above the header of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the fonts of elements
+            linha horizontal acima do cabeçalho de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e as fontes dos elementos
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
-            \IndexFontElement{pageheadfoot} and
+            \IndexFontElement{pageheadfoot} e
             \DescRef{scrlayer-scrpage.fontelement.pagehead}%
-            \IndexFontElement{pagehead}. It is recommended to use this element
-            for colour changes only.\par
-            \mbox{Default: \emph{empty}}%
+            \IndexFontElement{pagehead}. Recomenda-se usar este elemento
+            apenas para mudanças de cor.\par
+            \mbox{Padrão: \emph{vazio}}%
           }%
           \feentry{pagefoot}{%
-            contents of the page footer of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the font of element
+            conteúdo do rodapé da página de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e a fonte do elemento
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
             \IndexFontElement{pageheadfoot}.\par
-            \mbox{Default: \emph{empty}}%
+            \mbox{Padrão: \emph{vazio}}%
           }%
           \feentry{pagehead}{%
-            contents of the page header of a page style defined using
-            \Package{scrlayer-scrpage}. The font will be applied after
-            \Macro{normalfont}\IndexCmd{normalfont} and the font of element
+            conteúdo do cabeçalho da página de um estilo de página definido usando
+            \Package{scrlayer-scrpage}. A fonte será aplicada após
+            \Macro{normalfont}\IndexCmd{normalfont} e a fonte do elemento
             \DescRef{\ThisCommonLabelBase.fontelement.pageheadfoot}%
             \IndexFontElement{pageheadfoot}.\par
-            \mbox{Default: \emph{empty}}%
+            \mbox{Padrão: \emph{vazio}}%
           }%
           \feentry{pageheadfoot}{%
-            contents of the page header or footer of a page style defined
-            using \Package{scrlayer-scrpage}. The font will be applied after
+            conteúdo do cabeçalho ou rodapé da página de um estilo de página definido
+            usando \Package{scrlayer-scrpage}. A fonte será aplicada após
             \Macro{normalfont}\IndexCmd{normalfont}.\par
-            \mbox{Default: \Macro{normalcolor}\Macro{slshape}}%
+            \mbox{Padrão: \Macro{normalcolor}\Macro{slshape}}%
           }%
           \feentry{pagenumber}{%
-            pagination set with
-            \DescRef{\ThisCommonLabelBase.cmd.pagemark}. If you redefine
-            \DescRef{\ThisCommonLabelBase.cmd.pagemark}, you have to be sure
-            that your redefinition also uses
+            paginação definida com
+            \DescRef{\ThisCommonLabelBase.cmd.pagemark}. Se você redefinir
+            \DescRef{\ThisCommonLabelBase.cmd.pagemark}, você deve garantir
+            que sua redefinição também use
             \Macro{usekomafont}\PParameter{pagenumber}!\par
-            \mbox{Default: \Macro{normalfont}}%
+            \mbox{Padrão: \Macro{normalfont}}%
           }%
         \end{desclist}
       }{%
         \IfThisCommonLabelBase{scrjura}{%
           \begin{table}
-            \caption{Elements whose \Package{scrjura} font styles can be
-              changed with \Macro{setkomafont} and \Macro{addtokomafont},
-              including their default settings}%
+            \caption{Elementos cujos estilos de fonte do \Package{scrjura} podem ser
+              alterados com \Macro{setkomafont} e \Macro{addtokomafont},
+              incluindo suas configurações padrão}%
             \label{tab:scrjura.fontelements}%
             \begin{desctabular}
               \feentry{Clause}{%
-                alias for \FontElement{\PName{environment name}.Clause}
-                within a contract environment, for example
-                \FontElement{contract.Clause} within
-                \DescRef{\ThisCommonLabelBase.env.contract}; if no
-                corresponding element is defined,
-                \FontElement{contract.Clause} is used%
+                alias para \FontElement{\PName{environment name}.Clause}
+                dentro de um ambiente de contrato, por exemplo
+                \FontElement{contract.Clause} dentro de
+                \DescRef{\ThisCommonLabelBase.env.contract}; se nenhum
+                elemento correspondente está definido,
+                \FontElement{contract.Clause} é usado%
               }%
               \feentry{contract.Clause}{%
-                heading of a paragraph within
-                \DescRef{\ThisCommonLabelBase.env.contract} (see
+                cabeçalho de um parágrafo dentro de
+                \DescRef{\ThisCommonLabelBase.env.contract} (veja
                 \autoref{sec:\ThisCommonLabelBase.contract},
                 \DescPageRef{\ThisCommonLabelBase.fontelement.contract.Clause});
                 \par
-                \mbox{Default: \Macro{sffamily}\Macro{bfseries}\Macro{large}}%
+                \mbox{Padrão: \Macro{sffamily}\Macro{bfseries}\Macro{large}}%
               }%
               \entry{\DescRef{\ThisCommonLabelBase.fontelement./Name/.Clause}}{%
                 \IndexFontElement[indexmain]{\PName{name}.Clause}%
-                heading of a paragraph within a \PName{name} environment
-                defined with
+                cabeçalho de um parágrafo dentro de um ambiente \PName{name}
+                definido com
                 \DescRef{\ThisCommonLabelBase.cmd.DeclareNewJuraEnvironment}
-                as long as the setting was made with \Option{ClauseFont} or
-                the item was subsequently defined (see
+                desde que a configuração tenha sido feita com \Option{ClauseFont} ou
+                o item tenha sido subsequentemente definido (veja
                 \autoref{sec:\ThisCommonLabelBase.newenv},
                 \DescPageRef{\ThisCommonLabelBase.fontelement./Name/.Clause});
                 \par
-                \mbox{Default: \emph{none}}%
+                \mbox{Padrão: \emph{nenhum}}%
               }%
               \feentry{parnumber}{%
-                paragraph numbers within a contract environment (see
+                números de parágrafo dentro de um ambiente de contrato (veja
                 \autoref{sec:\ThisCommonLabelBase.par},
                 \DescPageRef{\ThisCommonLabelBase.fontelement.parnumber});\par
-                \mbox{Default: \emph{empty}}%
+                \mbox{Padrão: \emph{vazio}}%
               }%
               \feentry{sentencenumber}{%
                 \ChangedAt{v3.26}{\Package{scrjura}}%
-                sentence number of \DescRef{\ThisCommonLabelBase.cmd.Sentence}
-                (see \autoref{sec:\ThisCommonLabelBase.sentence},
+                número da sentença de \DescRef{\ThisCommonLabelBase.cmd.Sentence}
+                (veja \autoref{sec:\ThisCommonLabelBase.sentence},
                 \DescPageRef{%
                   \ThisCommonLabelBase.fontelement.sentencenumber});\par
-                \mbox{Default: \emph{empty}}%
+                \mbox{Padrão: \emph{vazio}}%
               }%
             \end{desctabular}
           \end{table}
@@ -908,32 +907,32 @@ refer to the sections for the respective element.%
   \Macro{useseriesofkomafont}\Parameter{element}%
   \Macro{useshapeofkomafont}\Parameter{element}
 \end{Declaration}
-Sometimes\ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
-  \Class{scrartcl}\and \Package{scrextend}}, although this is not recommended,
-the font setting of an element is used for settings that are not actually
-related to the font. If you want to apply only the font setting of an element
-but not those other settings, you can use \Macro{usefontofkomafont} instead of
-\DescRef{\ThisCommonLabelBase.cmd.usekomafont}. This will activate the font
-size and baseline skip, the font encoding, the font family, the font series,
-and the font shape of an element, but no further settings as long as those
-further settings are local.
+Às vezes\ChangedAt{v3.12}{\Class{scrbook}\and \Class{scrreprt}\and
+  \Class{scrartcl}\and \Package{scrextend}}, embora isso não seja recomendado,
+a configuração de fonte de um elemento é usada para configurações que não estão realmente
+relacionadas à fonte. Se você quiser aplicar apenas a configuração de fonte de um elemento
+mas não essas outras configurações, você pode usar \Macro{usefontofkomafont} em vez de
+\DescRef{\ThisCommonLabelBase.cmd.usekomafont}. Isso ativará o tamanho da fonte
+e espaço entre linhas, a codificação da fonte, a família da fonte, a série da fonte,
+e a forma da fonte de um elemento, mas nenhuma configuração adicional desde que essas
+configurações adicionais sejam locais.
 
-You can also switch to a single one of those attributes using one of the other
-commands. Note that \Macro{usesizeofkomafont} uses both the font
-size and the baseline skip.%
+Você também pode mudar para um único desses atributos usando um dos outros
+comandos. Note que \Macro{usesizeofkomafont} usa tanto o tamanho da fonte
+quanto o espaço entre linhas.%
 %
 \IfThisCommonLabelBase{scrextend}{% Umbruchvariante!
 }{%
   \IfThisCommonLabelBase{scrjura}{%
     \par%
-    However, the misuse of the font settings is strongly discouraged (see
+    No entanto, o uso indevido das configurações de fonte é fortemente desencorajado (veja
     \autoref{sec:maincls-experts.fonts},
     \DescPageRef{maincls-experts.cmd.addtokomafontrelaxlist})!%
   }{%
     \par%
-    However, you should not take these commands as legitimizing the insertion
-    of arbitrary commands in an element's font setting. To do so can lead
-    quickly to errors (see \autoref{sec:maincls-experts.fonts},
+    No entanto, você não deve tomar esses comandos como legitimando a inserção
+    de comandos arbitrários na configuração de fonte de um elemento. Fazê-lo pode levar
+    rapidamente a erros (veja \autoref{sec:maincls-experts.fonts},
     \DescPageRef{maincls-experts.cmd.addtokomafontrelaxlist}).%
   }%
 }%
@@ -941,10 +940,10 @@ size and the baseline skip.%
 %
 \EndIndexGroup
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "scrguide-en.tex"
 %%% coding: utf-8
 %%% ispell-local-dictionary: "en_GB"
 %%% eval: (flyspell-mode 1)
-%%% End: 
+%%% End:
